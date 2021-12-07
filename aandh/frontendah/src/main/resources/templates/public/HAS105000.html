@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" lang="zh-Hant-TW">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+<title>華南產物保險-健康傷害險</title>
+<!-- jQuery -->
+<script src="../../shigen/plugin/jquery.min.js"></script>
+<!-- jQuery UI -->
+<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+<!-- bootstrap -->
+<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+<!-- table tabulator -->
+<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+<!-- fontawsome -->
+<script defer src="../../shigen/fonts/js/all.min.js"></script>
+<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+<!--load all styles -->
+<!-- Plug CSS樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+<!-- 共用樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type.css">
+<!-- 主題顏色切換 糖果世代 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+<!-- 主題顏色切換 海神寶藍 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+<!-- 主題顏色切換 法拉利紅 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+<!-- 主題顏色切換 繽紛馬卡 -->
+<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+<!-- 主題顏色切換 煙花季節 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+<!-- 主題顏色切換 冬雪初現 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+<!-- 自訂JS樣式 -->
+<script src="../../shigen/js/type.js"></script>
+<script src="../../shigen/js/common.js"></script>
+<script src="../../shigen/js/global.js"></script>
+<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+<div class="ajax-aside-nav"></div>
+<section>
+    <div class="ajax-section-main"></div>
+    <div class="container-fluid">
+        <div class="content">
+            <div class="bread-crumbs">
+                <a href="">基本檔設定</a>
+            </div>
+            <div class="big_title title s1">HAS105000 疾病代碼維護</div>
+            <div class="row-group">
+                <div class="row">
+                    <div class="col-12 text-left content_function_bar">
+                        <button class="btn btn-oneBig">新增</button>
+                        <button class="btn btn-oneBig">刪除</button>
+                        <button class="btn btn-oneBig">修改</button>
+                        <button class="btn btn-oneBig">清除</button>
+                        <button class="btn btn-oneBig">查詢</button>
+                        <button class="btn btn-oneBig">離開</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="item_title title s2">查詢</div> -->
+            <div class="row-group">
+                <div class="row">
+					<table id="" class="tblDataArea" border="0" width="95%" align="center">
+                        <tbody>
+                            <tr>
+                                <td class="tdDatapass">疾病分類
+								</td>
+								<td class="tdDatapass">
+									<select name="ddlQiinscls:DropDownList1" onchange="__doPostBack('ddlQiinscls$DropDownList1','')" language="javascript" id="ddlQiinscls_DropDownList1">
+										<option selected="selected" value="1">1&#160;全部</option>
+									</select>
+								</td>
+								<td class="tdDatapass">疾病名稱
+								</td>
+								<td class="tdDatapass">
+									<input name="txtName" type="text" id="txtName" style="width:94px;" />
+								</td>
+								<TD class="tdDatapass" width="15%">疾病代碼</TD>
+								<TD class="tdDatapass"><input name="txtID" type="text" id="txtID" style="width:92px;" /></TD>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- 保單新增 -->
+                    <table class="tblDataArea" border="0" width="95%" align="center">
+                        <tbody>
+                            <tr>
+                                <td class="tdDataCaption">
+									疾病分類
+                                </td>
+                                <td class="tdDataField">
+									<select name="ddlQiinscls:DropDownList1" onchange="__doPostBack('ddlQiinscls$DropDownList1','')" language="javascript" id="ddlQiinscls_DropDownList1">
+										<option selected="selected" value="1">1&#160;全部</option>
+                                    </select>
+                                    <span id="rfvDISEASE_KDISEASE_GRP" title="請輸入疾病分類" controltovalidate="ddl_DISEASE_KDISEASE_GRP" errormessage="請輸入疾病分類" display="Dynamic" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;">*</span>
+								</td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption">
+									疾病代碼
+                                </td>
+								<td class="tdDataField">
+									<input name="txt_DISEASE_KDISEASE" type="text" maxlength="10" id="txt_DISEASE_KDISEASE" style="width:160px;" /><span id="rfvDISEASE_KDISEASE" title="請輸入疾病代碼" controltovalidate="txt_DISEASE_KDISEASE" errormessage="請輸入疾病代碼" display="Dynamic" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;">*</span>
+								</td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption" noWrap>保發代碼
+								</td>
+								<td class="tdDataField" noWrap><input name="txt_DISEASE_IDEVCODE" type="text" maxlength="10" id="txt_DISEASE_IDEVCODE" style="width:104px;" /></td>
+							</tr>
+							<tr>
+								<td class="tdDataCaption" noWrap>疾病中文簡稱
+								</td>
+								<td class="tdDataField" noWrap><input name="txt_DISEASE_NNAME" type="text" maxlength="20" id="txt_DISEASE_NNAME" style="width:232px;" /><span id="rfvDISEASE_NNAME" title="請輸入疾病中文簡稱" controltovalidate="txt_DISEASE_NNAME" errormessage="請輸入疾病中文簡稱" display="Dynamic" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;">*</span></td>
+							</tr>
+							<tr>
+								<td class="tdDataCaption" noWrap>疾病中文全名
+								</td>
+								<td class="tdDataField" noWrap><input name="txt_DISEASE_NDISEASE_C" type="text" maxlength="50" id="txt_DISEASE_NDISEASE_C" style="width:568px;" /><span id="rfvDISEASE_NDISEASE_C" title="請輸入疾病中文全名" controltovalidate="txt_DISEASE_NDISEASE_C" errormessage="請輸入疾病中文全名" display="Dynamic" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;">*</span></td>
+							</tr>
+							<tr>
+								<td class="tdDataCaption" noWrap>疾病英文全名
+								</td>
+								<td class="tdDataField" noWrap><input name="txt_DISEASE_NDISEASE_E" type="text" maxlength="50" id="txt_DISEASE_NDISEASE_E" style="width:568px;" /></td>
+							</tr>
+							<tr>
+								<td class="tdDataCaption" noWrap>備註說明
+								</td>
+								<td class="tdDataField" noWrap><textarea name="txt_DISEASE_XMEMO" rows="4" id="txt_DISEASE_XMEMO" style="width:100%;"></textarea></td>
+							</tr>
+							<tr>
+								<td class="tdDataCaption" noWrap>生效日期
+								</td>
+								<td class="tdDataField" noWrap>
+                                    <input name="txt_DISEASE_DBGN:txtDate" type="text" value="109/03/24" maxlength="10" size="10" id="txt_DISEASE_DBGN_txtDate" onchange="javascript:this.value=ucRocDate_FormatDateText(this.value,true);" /><div id="txt_DISEASE_DBGN_divCalender" style="display:none;behavior:url('/SCERP/ISNEControl/ucRocDate.htc');" IsRocDate="true"></div><button title="選擇日期" class="cssUICommandButtonSmall" onclick="javascript:document.all.txt_DISEASE_DBGN_divCalender.Open('txt_DISEASE_DBGN_txtDate');">...</button><input name="txt_DISEASE_DBGN:txtDateIsRocDate" id="txt_DISEASE_DBGN_txtDateIsRocDate" type="hidden" value="true" />
+<span id="txt_DISEASE_DBGN_cvdDate" controltovalidate="txt_DISEASE_DBGN_txtDate" errormessage="請輸入正確日期格式" display="Dynamic" evaluationfunction="CustomValidatorEvaluateIsValid" clientvalidationfunction="ucRocDate_ValidateRocYYYYsMMsDD" style="color:Red;display:none;">請輸入正確日期格式</span><span id="txt_DISEASE_DBGN_RequiredFieldValidator1" controltovalidate="txt_DISEASE_DBGN_txtDate" errormessage="請輸入生效日期" display="None" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;"></span>
+                                </td>
+							</tr>
+							<tr>
+								<td class="tdDataCaption" noWrap>停用日期
+								</td>
+								<td class="tdDataField" noWrap>
+                                    <input name="txt_DISEASE_DEND:txtDate" type="text" maxlength="10" size="10" id="txt_DISEASE_DEND_txtDate" onchange="javascript:this.value=ucRocDate_FormatDateText(this.value,true);" /><div id="txt_DISEASE_DEND_divCalender" style="display:none;behavior:url('/SCERP/ISNEControl/ucRocDate.htc');" IsRocDate="true"></div><button title="選擇日期" class="cssUICommandButtonSmall" onclick="javascript:document.all.txt_DISEASE_DEND_divCalender.Open('txt_DISEASE_DEND_txtDate');">...</button><input name="txt_DISEASE_DEND:txtDateIsRocDate" id="txt_DISEASE_DEND_txtDateIsRocDate" type="hidden" value="true" />
+<span id="txt_DISEASE_DEND_cvdDate" controltovalidate="txt_DISEASE_DEND_txtDate" errormessage="請輸入正確日期格式" display="Dynamic" evaluationfunction="CustomValidatorEvaluateIsValid" clientvalidationfunction="ucRocDate_ValidateRocYYYYsMMsDD" style="color:Red;display:none;">請輸入正確日期格式</span><span id="txt_DISEASE_DEND_RequiredFieldValidator1" controltovalidate="txt_DISEASE_DEND_txtDate" errormessage="日期欄位必須填寫" display="None" enabled="False" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;"></span>
+								</td>
+							</tr>
+							
+                        </tbody>
+                    </table>
+
+               </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <!-- content end  -->
+    </div>
+</section>
+<!-- dialog -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+                <button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="foo">
+                <div id="example-table"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+
+</html>

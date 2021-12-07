@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" lang="zh-Hant-TW">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+    <title>華南產物保險-健康傷害險</title>
+    <!-- jQuery -->
+    <script src="../../shigen/plugin/jquery.min.js"></script>
+    <!-- jQuery UI -->
+    <link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+    <script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+    <!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+    <script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+    <!-- bootstrap -->
+    <script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+    <!-- table tabulator -->
+    <script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+    <!-- fontawsome -->
+    <script defer src="../../shigen/fonts/js/all.min.js"></script>
+    <link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+    <!--load all styles -->
+    <!-- Plug CSS樣式 -->
+    <link rel="stylesheet" href="../../shigen/css/type_plug.css">
+    <!-- 共用樣式 -->
+    <link rel="stylesheet" href="../../shigen/css/type.css">
+    <!-- 主題顏色切換 糖果世代 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+    <!-- 主題顏色切換 海神寶藍 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+    <!-- 主題顏色切換 法拉利紅 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+    <!-- 主題顏色切換 繽紛馬卡 -->
+    <link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+    <!-- 主題顏色切換 煙花季節 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+    <!-- 主題顏色切換 冬雪初現 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+    <link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+    <!-- 自訂JS樣式 -->
+    <script src="../../shigen/js/type.js"></script>
+    <script src="../../shigen/js/common.js"></script>
+    <script src="../../shigen/js/global.js"></script>
+    <!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+    <div class="ajax-aside-nav"></div>
+    <section>
+        <div class="ajax-section-main"></div>
+        <div class="container-fluid">
+            <div class="content">
+                <div class="bread-crumbs">
+                    <a href="">承保受理作業</a>
+                </div>
+                <div class="big_title title s1">HAS308000 續保通知明細處理</div>
+                <div class="row-group">
+                    <div class="row">
+                        <div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-oneBig">產出續保檔</button>
+                            <button class="btn btn-oneBig">查詢續保資料</button>
+                            <button class="btn btn-oneBig">清除</button>
+                            <button class="btn btn-oneBig">列印續保單</button>
+                            <button class="btn btn-oneBig">列印團件續保評估表</button>
+                            <button class="btn btn-oneBig">列印續保通知書</button>
+                            <button class="btn btn-oneBig">列印不續保通知書</button>
+                            <button class="btn btn-oneBig">列印續保明細表</button>
+                            <button class="btn btn-oneBig">列印不續保明細表</button>
+                            <button class="btn btn-oneBig">列印續保綜合率明細表</button>
+                            <button class="btn btn-oneBig">離開</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row-group">
+                    <div class="row">
+
+                    </div>
+                </div>
+                <!-- 抬頭 -->
+                <!-- <div class="item_title title s2">董監事名冊</div> -->
+                
+                <!-- 保險表格 -->
+                
+               
+                <!-- 頁籤 -->
+                <div class="row-group">
+                    <ul class="row nav nav-pills" id="pills-tab" role="tablist">
+                        <li class="nav-item"><a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1"
+                                role="tab" aria-controls="pills-1" aria-selected="true">1:查詢條件</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-2-tab" data-toggle="pill" href="#pills-2"
+                                role="tab" aria-controls="pills-2" aria-selected="false">2:續保件</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-3-tab" data-toggle="pill" href="#pills-3"
+                                role="tab" aria-controls="pills-3" aria-selected="false">3:不續保件</a></li>
+                       
+                    </ul>
+                </div>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="row-group tab-pane fade show active" id="pills-1" role="tabpanel"
+                        aria-labelledby="pills-1-tab">
+                        <table class="tblDataArea tblInquireArea" width="95%">
+                            <tbody>
+                                <tr>
+                                    <td class="tdDataCaption">強制列印續保單-保單號</td>
+                                    <td class="tdDataField" style="HEIGHT: 27px">
+                                        <input name="txtQIPOLICY" type="text" maxlength="20" id="txtQIPOLICY" style="width:120px;"></td>
+                                </tr>
+                                <tr>
+                                <td class="tdDataCaption">保單到期年月</td>
+                                <td class="tdDataField" style="HEIGHT: 27px" class="tdQueryField">
+                                    <input name="txtQDply_year_bgn" type="text" maxlength="3" id="txtQDply_year_bgn" style="width:50px;"><font color="#005B86" face="新細明體">年(YYY)</font>
+                                    <input name="txtQDply_month_bgn" type="text" maxlength="2" id="txtQDply_month_bgn" style="width:50px;"><font color="#005B86" face="新細明體">月* ~</font>
+                                    <input name="txtQDply_year_end" type="text" maxlength="3" id="txtQDply_year_end" style="width:50px;"><font color="#005B86" face="新細明體">年(YYY)</font>
+                                    <input name="txtQDply_month_end" type="text" maxlength="2" id="txtQDply_month_end" style="width:50px;"><font color="#005B86" face="新細明體">月*</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption">險別</td>
+                                <td class="tdDataField">
+                                    <select name="ddliinscls" onchange="" language="javascript" id="ddliinscls" style="width: 150px;">
+                                    <option value=""></option>
+                                    <option value="A">A&nbsp;責任險</option>
+                                    <option value="I">I&nbsp;傷害險</option>
+                                    <option selected="selected" value="H">H&nbsp;健康險</option>
+        
+                                    </select>
+        
+                                    &nbsp;*</td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption">保單類別</td>
+                                <td class="tdDataField">
+                                    <select name="ddliinskind:DropDownList1" id="ddliinskind">
+                                    <option selected="selected" value=""></option>
+                                    <option value="GH0">GH0&nbsp;日額甲型</option>
+                                    <option value="GM0">GM0&nbsp;個人組合</option>
+                                    <option value="GD0">GD0&nbsp;重大疾病</option>
+                                    <option value="GC0">GC0&nbsp;初次罹癌</option>
+                                    <option value="GI0">GI0&nbsp;癌症住院</option>
+                                    <option value="MH0">MH0&nbsp;團體健康</option>
+                                    <option value="MM0">MM0&nbsp;團體組合</option>
+                                    <option value="MH1">MH1&nbsp;團體健康(甲型)</option>
+                                    <option value="MM1">MM1&nbsp;團體組合(甲型)</option>
+                                    <option value="DH0">DH0&nbsp;重大傷病</option>
+                                    <option value="MR0">MR0&nbsp;團體住院醫療(實支實付型)</option>
+                                    <option value="GC1">GC1&nbsp;團體癌症</option>
+                                    <option value="GC2">GC2&nbsp;團體癌症身故</option>
+                                    <option value="MH2">MH2&nbsp;住院日額醫療</option>
+                                    <option value="GC3">GC3&nbsp;初次罹癌(台灣中油)</option>
+                                    <option value="GC4">GC4&nbsp;團體癌症(台灣中油)</option>
+                                    <option value="MH3">MH3&nbsp;團體住院醫療日額(台灣中油)</option>
+                                    <option value="MR1">MR1&nbsp;團體住院醫療限額(台灣中油)</option>
+                                    <option value="MR2">MR2&nbsp;團體醫療(實支實付型)</option>
+        
+                                    </select>
+                                    <font color="#005B86" face="新細明體">&nbsp;*</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption">公司代號</td>
+                                <td class="tdDataField">
+                                    <input name="txtQIisbrch" type="text" value="%" maxlength="2" id="txtQIisbrch" style="width:50px;">
+                                    <font color="#005B86" face="新細明體">&nbsp;* (%:表示全部)</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption">經手人</td>
+                                <td class="tdDataField">
+                                    <input name="txtQIofficer_Bgn" type="text" maxlength="8" id="txtQIofficer_Bgn" style="width:120px;"></td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption">保源</td>
+                                <td class="tdDataField">
+                                    <input name="txtQIres_Bgn" type="text" maxlength="12" id="txtQIres_Bgn" style="width:120px;"></td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption">專案代號</td>
+                                <td class="tdDataField">
+                                    <input name="txtQIproject_Bgn" type="text" maxlength="10" id="txtQIproject_Bgn" style="width:120px;"></td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption">保單號碼</td>
+                                <td class="tdDataField">
+                                    <input name="txtQIpolicy_Bgn" type="text" maxlength="20" id="txtQIpolicy_Bgn" onchange="CopyObjValue(txtQIpolicy_Bgn,txtQIpolicy_End);" onkeypress="_ToUpper(this);" style="width:120px;">~
+                                    <input name="txtQIpolicy_End" type="text" maxlength="20" id="txtQIpolicy_End" onkeypress="_ToUpper(this);" style="width:120px;"></td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption">產生新資料</td>
+                                <td class="tdDataField">
+                                    <select name="ddlAdd" id="ddlAdd" style="width:20%;">
+                                    <option value="N">N:否</option>
+                                    <option selected="selected" value="Y">Y:是</option>
+        
+                                    </select>
+                                    <input id="chkReCreate" type="checkbox" style="width:2%;" name="chkReCreate"><label for="chkReCreate">
+                                        <font color="#005B86" face="新細明體">強制重新產生資料(勾選後將修改過資料刪除並重新產生資料)</font>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption">類別</td>
+                                <td class="tdDataField">
+                                    <select name="ddlType" id="ddlType" style="width: 100px;">
+                                        <option selected="selected" value="1">1:一般續保</option>
+                                        <option value="2">2:自動續保</option>
+        
+                                        </select></td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption">列印格式</td>
+                                <td class="tdDataField">
+                                    <input id="rbQueryPPDF" type="radio" style="width:2%;" name="PrintType" value="rbQueryPPDF">
+                                    <font color="#005B86" face="新細明體">PDF</font><label for="rbQueryPPDF"></label>
+                                    <input id="rbQueryPEXCEL" type="radio" style="width:2%;" name="PrintType" value="rbQueryPEXCEL"><label for="rbQueryPEXCEL"><font color="#005B86" face="新細明體">Excel</font></label>
+                                    <font color="#005B86" face="新細明體">(此功能僅提供[列印續保明細表]與[列印不續保明細表]使用)</font>
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        
+                        
+                    </div><!-- pills-1 end -->
+                    <div class="row-group tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody><tr valign="bottom">
+                                <td nowrap="" align="left">
+                                    <a id="dgdbanSUPERVISOR_LIST_btnFirstPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">第一頁</a>&nbsp;
+                                    <a id="dgdbanSUPERVISOR_LIST_btnPrevPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">上一頁</a>&nbsp;
+                                    <a id="dgdbanSUPERVISOR_LIST_btnNextPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">下一頁</a>&nbsp;
+                                    <a id="dgdbanSUPERVISOR_LIST_btnLastPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">最後一頁</a>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="dgdbanSUPERVISOR_LIST_lblTotalCaption" class="cssDataGridBannerLabel">總共</span>
+                                <span id="dgdbanSUPERVISOR_LIST_lblTotalCount" class="cssDataGridBannerLabel">0</span>
+                                <span id="dgdbanSUPERVISOR_LIST_lblTotalCaptionEnd" class="cssDataGridBannerLabel">筆</span>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaption" class="cssDataGridBannerLabel">每頁</span>
+                                    <input name="dgdbanSUPERVISOR_LIST:txtPageSize" type="text" value="8" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtPageSize" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnPageSize','');return false;}" style="width:32px;">
+                                    <span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaptionEnd" class="cssDataGridBannerLabel">筆</span>
+                                    <button class="btn btn-secondary">go</button>
+                                
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="dgdbanSUPERVISOR_LIST_lblPageCountCaption" class="cssDataGridBannerLabel">總共</span>
+                                    <span id="dgdbanSUPERVISOR_LIST_lblTotalPage" class="cssDataGridBannerLabel">1</span>
+                                    <span id="dgdbanSUPERVISOR_LIST_lblPageCountCaptionEnd" class="cssDataGridBannerLabel">頁</span>&nbsp;
+                                </td>
+                                <td align="right">
+                                    <span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaption" class="cssDataGridBannerLabel">目前第</span>
+                                <input name="dgdbanSUPERVISOR_LIST:txtGotoPage" type="text" value="1" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtGotoPage" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnGotoPage','');return false;}" style="width:29px;">
+                                <span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaptionEnd" class="cssDataGridBannerLabel">頁</span>
+                                <button class="btn btn-secondary">go</button>
+                                <button class="btn btn-secondary">匯出資料</button>
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tr class="cssDataGridHeader">
+                                <th style="width: 50px;"><a href=""></a></th>
+                                <th><a href="">保單號</a></th>
+                                <th><a href="">出單單位</a></th>
+                                <th><a href="">經手人代號</a></th>
+                                <th><a href="">經手人姓名</a></th>
+                                <th><a href="">通路代號</a></th>
+                                <th><a href="">通路名稱</a></th>
+                                <th><a href="">專案名稱</a></th>
+                                <th><a href="">要保人姓名</a></th>
+                                <th><a href="">保險人姓名</a></th>
+                                <th><a href="">主約方案</a></th>
+                                <th><a href="">系統訊息</a></th>
+                                <th><a href="">是否修改</a></th>
+                                <th><a href="">修改訊息</a></th>
+                            </tr>
+                            <tr>
+                                <td><button type="button" class="btn-editt">選取</button></td>
+                                <td>0008MMOX000018</td>
+                                <td>保險部</td>
+                                <td>00728</td>
+                                <td>李文華</td>
+                                <td></td>
+                                <td></td>
+                                <td>健康傷害險</td>
+                                <td>施小美</td>
+                                <td>施小美</td>
+                                <td>健康傷害險</td>
+                                <td>已投保</td>
+                                <td>成立</td>
+                                <td></td>
+
+                            </tr>
+                            <tr>
+                                <td><button type="button" class="btn-editt">選取</button></td>
+                                <td>0008MMOX000018</td>
+                                <td>保險部</td>
+                                <td>00728</td>
+                                <td>李文華</td>
+                                <td></td>
+                                <td></td>
+                                <td>健康傷害險</td>
+                                <td>施小美</td>
+                                <td>施小美</td>
+                                <td>健康傷害險</td>
+                                <td>已投保</td>
+                                <td>成立</td>
+                                <td></td>
+
+                            </tr>
+                            <tr>
+                                <td><button type="button" class="btn-editt">選取</button></td>
+                                <td>0008MMOX000018</td>
+                                <td>保險部</td>
+                                <td>00728</td>
+                                <td>李文華</td>
+                                <td></td>
+                                <td></td>
+                                <td>健康傷害險</td>
+                                <td>施小美</td>
+                                <td>施小美</td>
+                                <td>健康傷害險</td>
+                                <td>已投保</td>
+                                <td>成立</td>
+                                <td></td>
+
+                            </tr>
+                        </table>
+                    </div><!-- pills-2 end -->
+                    <div class="row-group tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3-tab">
+
+
+                        <table class="tblDataArea" border="0" width="95%" align="center">
+                            <tbody>
+                                
+                                <tr>
+                                    <td class="tdDataCaption">
+                                        保單號
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labEIPOLICY2" type="text" readonly="readonly" id="labEIPOLICY2">
+                                    </td>
+                                    
+                                    <td class="tdDataCaption">
+                                        險別
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labEIINSCLS2" type="text" readonly="readonly" id="labEIINSCLS2">
+                                    </td>
+                                    <td class="tdDataCaption">
+                                        保單類別
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labEIINSKIND2" type="text" readonly="readonly" id="labEIINSKIND2">
+                                    </td>
+                                    
+                                    <td class="tdDataCaption">
+                                        出單單位
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labEIISSBRCH2" type="text" readonly="readonly" id="labEIISSBRCH2">
+                                    </td>
+                                    <td class="tdDataCaption">
+                                        專案代號
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labEIPROJECT2" type="text" readonly="readonly" id="labEIPROJECT2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">
+                                        經手人代號
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labEIOFFICER2" type="text" readonly="readonly" id="labEIOFFICER2">
+                                    </td>
+                                    
+                                    <td class="tdDataCaption">
+                                        經手人名稱
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labENOFFICER2" type="text" readonly="readonly" id="labENOFFICER2">
+                                    </td>
+                                    <td class="tdDataCaption">
+                                        保源代號
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labEIRES2" type="text" readonly="readonly" id="labEIRES2">
+                                    </td>
+                                    
+                                    <td class="tdDataCaption">
+                                        保源名稱
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labENRES2" type="text" readonly="readonly" id="labENRES2">
+                                    </td>
+                                    <td class="tdDataCaption">
+                                        專案名稱
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labENPROJECT2" type="text" readonly="readonly" id="labENPROJECT2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">
+                                        要保人ID
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labEIINS2" type="text" readonly="readonly" id="labEIINS2">
+                                    </td>
+                                    
+                                    <td class="tdDataCaption">
+                                        要保人名稱
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labENINS2" type="text" readonly="readonly" id="labENINS2">
+                                    </td>
+                                    <td class="tdDataCaption">
+                                        被保險人ID
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labEIISSU2" type="text" readonly="readonly" id="labEIISSU2">
+                                    </td>
+                                    
+                                    <td class="tdDataCaption">
+                                        被保險人姓名
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labENISSU2" type="text" readonly="readonly" id="labENISSU2">
+                                    </td>
+                                    <td class="tdDataCaption">
+                                        生日
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labEDBIRTH2" type="text" readonly="readonly" id="labEDBIRTH2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">
+                                        系統訊息
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labENERROR2" type="text" readonly="readonly" id="labENERROR2">
+                                    </td>
+                                    
+                                    <td class="tdDataCaption">
+                                        是否承保
+                                    </td>
+                                    <td class="tdDataField">
+                                        <select name="ddlEAUTOYN2" id="ddlEAUTOYN2" style="width: 135px; border-radius: 5px;">
+                                            <option value="">Y</option>
+                                            <option value="">N</option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">
+                                        主約方案
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labEISOLUTION2" type="text" readonly="readonly" id="labEISOLUTION2">
+                                    </td>
+                                    
+                                    <td class="tdDataCaption">
+                                       性別
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="labEFSEX2" type="text" readonly="readonly" id="labEFSEX2">
+                                    </td>
+                                    <td class="tdDataCaption">
+                                        承保年齡
+                                     </td>
+                                     <td class="tdDataField">
+                                         <input name="labEAGE2" type="text" readonly="readonly" id="labEAGE2">
+                                     </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">
+                                        修改訊息
+                                    </td>
+                                    <td class="tdDataField" colspan="8">
+                                        <textarea name="txtEUSERMEMO2" id="txtEUSERMEMO2" style="height:72px;"></textarea>
+                                    </td>
+                                    <td class="tdDataField" colspan="1">
+                                        <button type="button" class="btn-editt" id="btnEUpdate2" Runat="server" Text="修改">修改</button>
+                                        <button type="button" class="btn-del" id="btnECancel2" Runat="server" Text="清除">清除</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+
+
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody><tr valign="bottom">
+                                <td nowrap="" align="left">
+                                    <!-- <input type="submit" name="dgdbanSUPERVISOR_LIST:btnNewItem" value="新增董監事名單" id="dgdbanSUPERVISOR_LIST_btnNewItem" accesskey="I" tabindex="-1" class="cssUICommandButtonSmall" />&nbsp; -->
+                                   
+                                </td>
+                                <td nowrap="" align="left">
+                                    <a id="dgdbanSUPERVISOR_LIST_btnFirstPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">第一頁</a>&nbsp;
+                                    <a id="dgdbanSUPERVISOR_LIST_btnPrevPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">上一頁</a>&nbsp;
+                                    <a id="dgdbanSUPERVISOR_LIST_btnNextPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">下一頁</a>&nbsp;
+                                    <a id="dgdbanSUPERVISOR_LIST_btnLastPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">最後一頁</a>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="dgdbanSUPERVISOR_LIST_lblTotalCaption" class="cssDataGridBannerLabel">總共</span>
+                                <span id="dgdbanSUPERVISOR_LIST_lblTotalCount" class="cssDataGridBannerLabel">0</span>
+                                <span id="dgdbanSUPERVISOR_LIST_lblTotalCaptionEnd" class="cssDataGridBannerLabel">筆</span>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaption" class="cssDataGridBannerLabel">每頁</span>
+                                    <input name="dgdbanSUPERVISOR_LIST:txtPageSize" type="text" value="8" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtPageSize" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnPageSize','');return false;}" style="width:32px;">
+                                    <span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaptionEnd" class="cssDataGridBannerLabel">筆</span>
+                                    <button class="btn btn-secondary">go</button>
+                                
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="dgdbanSUPERVISOR_LIST_lblPageCountCaption" class="cssDataGridBannerLabel">總共</span>
+                                    <span id="dgdbanSUPERVISOR_LIST_lblTotalPage" class="cssDataGridBannerLabel">1</span>
+                                    <span id="dgdbanSUPERVISOR_LIST_lblPageCountCaptionEnd" class="cssDataGridBannerLabel">頁</span>&nbsp;
+                                </td>
+                                <td align="right">
+                                    <span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaption" class="cssDataGridBannerLabel">目前第</span>
+                                <input name="dgdbanSUPERVISOR_LIST:txtGotoPage" type="text" value="1" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtGotoPage" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnGotoPage','');return false;}" style="width:29px;">
+                                <span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaptionEnd" class="cssDataGridBannerLabel">頁</span>
+                                <button class="btn btn-secondary">go</button>
+                                <button class="btn btn-secondary">匯出資料</button>
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                        <table class="tblCssDataGrid">
+                            <tr class="cssDataGridHeader">
+                               
+                                
+                                <th><a href="">保單號</a></th>
+                                <th><a href="">出單單位</a></th>
+                                <th><a href="">經手人代號</a></th>
+                                <th><a href="">經手人姓名</a></th>
+                                <th><a href="">通路代號</a></th>
+                                <th><a href="">通路名稱</a></th>
+                                <th><a href="">要保人姓名</a></th>
+                                <th><a href="">專案代號</a></th>
+                                <th><a href="">專案名稱</a></th>
+                                <th><a href="">保險人姓名</a></th>
+                                <th><a href="">主約方案</a></th>
+                                <th><a href="">系統訊息</a></th>
+                                <th><a href="">是否修改</a></th>
+                                <th><a href="">修改訊息</a></th>
+                            </tr>
+                            <tr>
+                                <td>0008MMOX000018</td>
+                                <td>保險部</td>
+                                <td>00728</td>
+                                <td>李文華</td>
+                                <td></td>
+                                <td></td>
+                                <td>健康傷害險</td>
+                                <td>施小美</td>
+                                <td>施小美</td>
+                                <td>健康傷害險</td>
+                                <td>已投保</td>
+                                <td>成立</td>
+                                <td>否</td>
+                                <td></td>
+                            </tr>
+                            <tr class="tableTRcolor">
+                                <td>0008MMOX000018</td>
+                                <td>保險部</td>
+                                <td>00728</td>
+                                <td>李文華</td>
+                                <td></td>
+                                <td></td>
+                                <td>健康傷害險</td>
+                                <td>施小美</td>
+                                <td>施小美</td>
+                                <td>健康傷害險</td>
+                                <td>已投保</td>
+                                <td>成立</td>
+                                <td>否</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>0008MMOX000018</td>
+                                <td>保險部</td>
+                                <td>00728</td>
+                                <td>李文華</td>
+                                <td></td>
+                                <td></td>
+                                <td>健康傷害險</td>
+                                <td>施小美</td>
+                                <td>施小美</td>
+                                <td>健康傷害險</td>
+                                <td>已投保</td>
+                                <td>成立</td>
+                                <td>否</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>0008MMOX000018</td>
+                                <td>保險部</td>
+                                <td>00728</td>
+                                <td>李文華</td>
+                                <td></td>
+                                <td></td>
+                                <td>健康傷害險</td>
+                                <td>施小美</td>
+                                <td>施小美</td>
+                                <td>健康傷害險</td>
+                                <td>已投保</td>
+                                <td>成立</td>
+                                <td>否</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>0008MMOX000018</td>
+                                <td>保險部</td>
+                                <td>00728</td>
+                                <td>李文華</td>
+                                <td></td>
+                                <td></td>
+                                <td>健康傷害險</td>
+                                <td>施小美</td>
+                                <td>施小美</td>
+                                <td>健康傷害險</td>
+                                <td>已投保</td>
+                                <td>成立</td>
+                                <td>否</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>0008MMOX000018</td>
+                                <td>保險部</td>
+                                <td>00728</td>
+                                <td>李文華</td>
+                                <td></td>
+                                <td></td>
+                                <td>健康傷害險</td>
+                                <td>施小美</td>
+                                <td>施小美</td>
+                                <td>健康傷害險</td>
+                                <td>已投保</td>
+                                <td>成立</td>
+                                <td>否</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>0008MMOX000018</td>
+                                <td>保險部</td>
+                                <td>00728</td>
+                                <td>李文華</td>
+                                <td></td>
+                                <td></td>
+                                <td>健康傷害險</td>
+                                <td>施小美</td>
+                                <td>施小美</td>
+                                <td>健康傷害險</td>
+                                <td>已投保</td>
+                                <td>成立</td>
+                                <td>否</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>0008MMOX000018</td>
+                                <td>保險部</td>
+                                <td>00728</td>
+                                <td>李文華</td>
+                                <td></td>
+                                <td></td>
+                                <td>健康傷害險</td>
+                                <td>施小美</td>
+                                <td>施小美</td>
+                                <td>健康傷害險</td>
+                                <td>已投保</td>
+                                <td>成立</td>
+                                <td>否</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div><!-- pills-3 end -->
+                    
+                   
+                </div>
+
+                
+
+                
+
+
+              
+               
+
+                
+            </div>
+        </div>
+        <!-- content end  -->
+        </div>
+    </section>
+    <!-- dialog -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+                    <button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="foo">
+                    <div id="example-table"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+
+</html>

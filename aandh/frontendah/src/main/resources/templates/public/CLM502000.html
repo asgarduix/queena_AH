@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" lang="zh-Hant-TW">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+<title>華南產物保險-健康傷害險</title>
+<!-- jQuery -->
+<script src="../../shigen/plugin/jquery.min.js"></script>
+<!-- jQuery UI -->
+<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+<!-- bootstrap -->
+<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+<!-- table tabulator -->
+<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+<!-- fontawsome -->
+<script defer src="../../shigen/fonts/js/all.min.js"></script>
+<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+<!--load all styles -->
+<!-- Plug CSS樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+<!-- 共用樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type.css">
+<!-- 主題顏色切換 糖果世代 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+<!-- 主題顏色切換 海神寶藍 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+<!-- 主題顏色切換 法拉利紅 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+<!-- 主題顏色切換 繽紛馬卡 -->
+<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+<!-- 主題顏色切換 煙花季節 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+<!-- 主題顏色切換 冬雪初現 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+<!-- 自訂JS樣式 -->
+<script src="../../shigen/js/type.js"></script>
+<script src="../../shigen/js/common.js"></script>
+<script src="../../shigen/js/global.js"></script>
+<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+	<div class="ajax-aside-navCLM"></div>
+	<section>
+		<div class="ajax-section-main"></div>
+		<div class="container-fluid">
+			<div class="content">
+				<div class="bread-crumbs">
+					<a href="">理賠作業</a>
+				</div>
+                <div class="big_title title s1">CLM502000-受理預估作業</div>
+                <div class="row-group">
+					<div class="row">
+						<div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-oneBig">銷案</button>
+                            <button class="btn btn-oneBig">刪除</button>
+                            <button class="btn btn-oneBig">修改</button>
+                            <!-- <button class="btn btn-oneBig"onClick="window.open('HIV201001(CLM502000).html', 'newwindow', config='height=900,width=1000,toolbar=no');">啟動調查</button> -->
+                            <button class="btn btn-oneBig">初步報告書</button>
+                            <button class="btn btn-oneBig">歷史紀錄</button>
+                            <button class="btn btn-oneBig"onClick="window.open('RIN302000.html', 'newwindow', config='height=900,width=1000,toolbar=no');">估攤總攬</button>
+                            <!-- <button class="btn btn-oneBig">案袋列印</button> -->
+                            <button class="btn btn-oneBig">新增</button>
+                            <button class="btn btn-oneBig">清除</button>
+                            <button class="btn btn-oneBig" onClick="window.open('browsepage(CLM502000).html', 'newwindow', config='height=900,width=1000,toolbar=no');">查詢</button>
+                            <button class="btn btn-oneBig">離開</button>
+						</div>
+					</div>
+				</div>
+                
+                <table class="tblDataArea tblInquireArea" cellspacing="0" cellpadding="0" width="100%">
+                    <tbody>
+                        <tr>
+                        <td class="tdDataCaption">事故人ID</td>
+                        <td class="tdDataField">
+                            <input name="txtQueryID" type="text" value="00" id="txtQueryID">
+                        </td>
+                        <td class="tdDataCaption">事故人姓名</td>
+                        <td class="tdDataField">
+                            <input name="txtQueryName" type="text" value="00" id="txtQueryName">
+                        </td>
+                        <td class="tdDataCaption">賠案號碼</td>
+                        <td class="tdDataField">
+                            <input name="txtQueryCLAIM" type="text" value="00" id="txtQueryCLAIM">
+                        </td>
+                        <td class="tdDataCaption">保單號碼</td>
+                        <td class="tdDataField" colspan="3">
+                            <input name="txtQueryPOLICY" type="text" maxlength="40" id="txtQueryPOLICY">
+                        </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">出險日期</td>
+                            <td class="tdDataField" colspan="3">
+                                <input class="mingo data_time" name="" type="text" style="width:20%;" maxlength="10" size="10" id="UcRocDbgn" >
+                            <!-- <button title="選擇日期" class="" >...</button> -->
+                            <input name="" id="" type="hidden" value="true">
+                            <span id="UcRocDbgn_txtDate" style="color:Red;display:none;">日期格式錯誤</span>
+                            <span id="" style="color:Red;display:none;"></span>
+                            ~
+                            <input class="mingo data_time" name=""  style="width: 20%;" type="text" maxlength="10" size="10" id="UcRocDend">
+                            <!-- <button title="選擇日期" class="" >...</button> -->
+                            <input name="" id="" type="hidden" value="true">
+                            <span id="UcRocDend_txtDate" style="color:Red;display:none;">日期格式錯誤</span>
+                            <span id="" style="color:Red;display:none;"></span>
+                            </td>
+                            <td class="tdDataCaption">受理日期</td>
+                            <td class="tdDataField" colspan="3">
+                                <input class="mingo data_time" name="" type="text" style="width:20%;" maxlength="10" size="10" id="UcRocDbgn" >
+                                <!-- <button title="選擇日期" class="" >...</button> -->
+                                <input name="" id="" type="hidden" value="true">
+                                <span id="UcRocDbgn_txtDate" style="color:Red;display:none;">日期格式錯誤</span>
+                                <span id="" style="color:Red;display:none;"></span>
+                                ~
+                                <input class="mingo data_time" name=""  style="width: 20%;" type="text" maxlength="10" size="10" id="UcRocDend">
+                                <!-- <button title="選擇日期" class="" >...</button> -->
+                                <input name="" id="" type="hidden" value="true">
+                                <span id="UcRocDend_txtDate" style="color:Red;display:none;">日期格式錯誤</span>
+                                <span id="" style="color:Red;display:none;"></span>
+                            </td>
+                            </tr>
+                    </tbody>
+                    </table>
+
+            <div style="height: 20px;"></div>
+                <!-- 受理文件欄位 -->
+                <table class="tblDataArea" width="100%" align="center" border="0">
+                    <tbody>
+                        <tr>
+                        <td class="tdDataCaption">出險日期</td>
+                        <td class="tdDataField">
+                            <input class="mingo data_time" name="" type="text" style="width:20%;" maxlength="10" size="10" id="UcRocDbgn" >
+                            <!-- <button title="選擇日期" class="" >...</button> -->
+                            <input name="" id="" type="hidden" value="true">
+                            <span id="UcRocDbgn_txtDate" style="color:Red;display:none;">日期格式錯誤</span>
+                            <span id="" style="color:Red;display:none;"></span>
+                            -
+                                <input name="txtTemp14" type="text" maxlength="5" id="txtTemp14">時
+                        </td>
+                        <td class="tdDataCaption">事故人ID</td>
+                        <td class="tdDataField">
+                            <input name="txt_CLMM_OBJ_ISSU_IISSU" type="text" maxlength="20" id="txt_CLMM_OBJ_ISSU_IISSU">
+                        </td>
+                        <td class="tdDataCaption">保單號碼</td>
+                        <td class="tdDataField">
+                            <input name="txt_CLMM_CM_CLAIM_IPOLICY" type="text" maxlength="20" id="txt_CLMM_CM_CLAIM_IPOLICY">
+                        </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">續賠案件</td>
+                            <td class="tdDataField">
+                                <input name="txtNewCLAIM" type="text" maxlength="20" id="txtNewCLAIM">
+                                <button id="btnAddNewClaim" class="btn btn-Chick">續賠賠案</button>
+                            </td>
+                            <td class="tdDataCaption">批單號</td>
+                            <td class="tdDataField" colspan="3">
+                                <input name="labIendors" type="text" maxlength="20" id="labIendors">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">接件號</td>
+                            <td class="tdDataField">
+                                <input name="labICase" type="text" maxlength="20" id="labICase">
+                            </td>
+                            <td class="tdDataCaption">賠案號</td>
+                            <td class="tdDataField">
+                                <input name="lab_CLMM_CM_CLAIM_ICLAIM" type="text" maxlength="20" id="lab_CLMM_CM_CLAIM_ICLAIM">
+                            </td>
+                            <td class="tdDataCaption">保單收費狀況</td>
+                            <td class="tdDataField">
+                                <input name="PayState" type="text" maxlength="20" id="PayState">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">是否墊付</td>
+                            <td class="tdDataField">
+                                <select name="ddl_CLMM_HAS_CLAIM_FSHARE" language="javascript" id="ddl_CLMM_HAS_CLAIM_FSHARE" style="width:150px;">
+                                    <option value="">是</option>
+                                    <option value="">否</option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">殘廢等級類別</td>
+                            <td class="tdDataField">
+                                <select name="ddl_CLMM_HAS_CLAIM_FCRIPPLE" language="javascript" id="ddl_CLMM_HAS_CLAIM_FCRIPPLE" style="width:150px;">
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">燒燙傷等級類別</td>
+                            <td class="tdDataField">
+                                <select name="ddl_CLMM_HAS_CLAIM_FCRIPPLE1" language="javascript" id="ddl_CLMM_HAS_CLAIM_FCRIPPLE1" style="width:150px;">
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">甲乙式</td>
+                            <td class="tdDataField">
+                                <select name="ddl_CLMM_HAS_CLAIM_FOLDTYPE" language="javascript" id="ddlddl_CLMM_HAS_CLAIM_FOLDTYPEiinskind1" style="width:150px;">
+                                    <option value="1">甲式</option>
+                                    <option value="2">乙式</option>
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">是否調查完成</td>
+                            <td class="tdDataField" >
+                                <select name="ddl_CLMM_HAS_CLAIM_FCHECKOUT" language="javascript" id="ddl_CLMM_HAS_CLAIM_FCHECKOUT" style="width:150px;">
+                                    <option value="Y">已完成</option>
+                                    <option value="N" Selected="True">未完成</option>
+                                    <option value="C">未完成同意理算</option>
+                                </select>
+                            </td>
+                            <td class="tdDataField" colspan="2">
+                                <button id="btnRecord" class="btn btn-Chick" onClick="window.open('CLMHISTORY(CLM502000).html', 'newwindow', config='height=900,width=1000,toolbar=no');">出險紀錄</button>
+                                <button id="btnPOLICY" class="btn btn-Chick" onClick="window.open('HAS801001.html', 'newwindow', config='height=900,width=1000,toolbar=no');">保單資料</button>
+                            </td>
+                        </tr>
+
+                </tbody>
+            </table>
+                
+                <div style="height: 20px;"></div>
+<!------------------------------------------------- tab開始 -->
+
+                <div class="row-group">
+                    <ul class="row nav nav-pills" id="pills-tab" role="tablist">
+                        <li class="nav-item"><a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1"
+                                role="tab" aria-controls="pills-1" aria-selected="true">1:受理資料</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-2-tab" data-toggle="pill" href="#pills-2"
+                                role="tab" aria-controls="pills-2" aria-selected="false">2:預估明細</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-3-tab" data-toggle="pill" href="#pills-3"
+                                role="tab" aria-controls="pills-3" aria-selected="false">3:理賠照會</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-4-tab" data-toggle="pill" href="#pills-4"
+                                role="tab" aria-controls="pills-4" aria-selected="false">4:疾病原因</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-5-tab" data-toggle="pill" href="#pills-5"
+                                role="tab" aria-controls="pills-5" aria-selected="false">5:受益人</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" id="pills-6-tab" data-toggle="pill" href="#pills-6"
+                                role="tab" aria-controls="pills-6" aria-selected="false">6:附加檔案</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-7-tab" data-toggle="pill" href="#pills-7"
+                                role="tab" aria-controls="pills-7" aria-selected="false">7:調查事項</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-8-tab" data-toggle="pill" href="#pills-8"
+                                role="tab" aria-controls="pills-8" aria-selected="false">8:審核意見</a></li> -->
+                    </ul>
+                </div>
+               
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="row-group tab-pane fade show active" id="pills-1" role="tabpanel"
+                        aria-labelledby="pills-1-tab">
+                        <table class="tblDataArea" width="100%" align="center" border="0">
+                            <tbody>
+                                <tr>
+                                <td class="tdDataCaption">賠案類別</td>
+                                <td class="tdDataField">
+                                    <select name="ddl_CLMM_HAS_CLAIM_FICLAINTYPE" language="javascript" id="ddl_CLMM_HAS_CLAIM_FICLAINTYPE" style="width:150px;">
+                                        <option value="">是</option>
+                                        <option value="">否</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
+                                </td>
+                                <td class="tdDataCaption">保單註記</td>
+                                <td class="tdDataField">
+                                    <select name="ddl_CLMM_HAS_CLAIM_FPOLICYNOTE" language="javascript" id="ddl_CLMM_HAS_CLAIM_FPOLICYNOTE" style="width:150px;">
+                                        <option value="">是</option>
+                                        <option value="">否</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
+                                </td>
+                                <td class="tdDataCaption">保單註記日</td>
+                                <td class="tdDataField">
+                                    <input class="mingo data_time" name="" type="text" style="width:55%;" maxlength="10" size="10" id="UcRocDbgn" >
+                                    <!-- <button title="選擇日期" class="" >...</button> -->
+                                    <input name="" id="" type="hidden" value="true">
+                                    <span id="UcRocDbgn_txtDate" style="color:Red;display:none;">日期格式錯誤</span>
+                                    <span id="" style="color:Red;display:none;"></span>
+                                </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">險別</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_CM_CLAIM_IINSCLS" type="text" maxlength="20" id="lab_CLMM_CM_CLAIM_IINSCLS">
+                                    </td>
+                                    <td class="tdDataCaption">保單類別</td>
+                                    <td class="tdDataField" >
+                                        <input name="lab_CLMM_CM_CLAIM_IINSKIND" type="text" maxlength="20" id="lab_CLMM_CM_CLAIM_IINSKIND">
+                                    </td>
+                                    <td class="tdDataCaption">保單種類</td>
+                                    <td class="tdDataField" >
+                                        <input name="lab_CLMM_HAS_CLAIM_NPOLICTTYPE" type="text" maxlength="20" id="lab_CLMM_HAS_CLAIM_NPOLICTTYPE">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">本單保額</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_PUBM_PN_MAIN_MTOT_AMT" type="text" maxlength="20" id="lab_PUBM_PN_MAIN_MTOT_AMT">
+                                    </td>
+                                    <td class="tdDataCaption">本公司保額</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_PUBM_PN_MAIN_MSKT_AMT" type="text" maxlength="20" id="lab_PUBM_PN_MAIN_MSKT_AMT">
+                                    </td>
+                                    <td class="tdDataCaption">預估理賠金額</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_Total" type="text" maxlength="20" id="lab_Total">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">共保註記</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_PUBM_PN_MAIN_FCOINS" type="text" maxlength="20" id="lab_PUBM_PN_MAIN_FCOINS">
+                                    </td>
+                                    <td class="tdDataCaption">Shares比例分子</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_PUBM_PN_MAIN_QCOINS_N" type="text" maxlength="20" id="lab_PUBM_PN_MAIN_QCOINS_N">
+                                    </td>
+                                    <td class="tdDataCaption">Shares比例分母</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_PUBM_PN_MAIN_QCOINS_M" type="text" maxlength="20" id="lab_PUBM_PN_MAIN_QCOINS_M">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">保單保期起日</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_PUBM_PN_MAIN_DPLY_BGN" type="text" maxlength="20" id="lab_PUBM_PN_MAIN_DPLY_BGN">
+                                    </td>
+                                    <td class="tdDataCaption">保單保期迄日</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_PUBM_PN_MAIN_DPLY_END" type="text" maxlength="20" id="lab_PUBM_PN_MAIN_DPLY_END">
+                                    </td>
+                                    <td class="tdDataCaption">受理日期</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_CM_CLAIM_DCLAIM" type="text" maxlength="20" id="lab_CLMM_CM_CLAIM_DCLAIM">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">簽單有效起日</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_PUBM_PN_MAIN_DEDR_BGN" type="text" maxlength="20" id="lab_PUBM_PN_MAIN_DEDR_BGN">
+                                    </td>
+                                    <td class="tdDataCaption">簽單有效迄日</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_PUBM_PN_MAIN_DEDR_END" type="text" maxlength="20" id="lab_PUBM_PN_MAIN_DEDR_END">
+                                    </td>
+                                    <td class="tdDataCaption">接件日期</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_CM_CLAIM_TCLAIM" type="text" maxlength="20" id="lab_CLMM_CM_CLAIM_TCLAIM">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">事故人姓名</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_OBJ_ISSU_NISSU" type="text" maxlength="20" id="lab_CLMM_OBJ_ISSU_NISSU">
+                                    </td>
+                                    <td class="tdDataCaption">出險實際年齡</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_OBJ_ISSU_IAGE" type="text" maxlength="20" id="lab_CLMM_OBJ_ISSU_IAGE">
+                                    </td>
+                                    <td class="tdDataCaption">生日</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_OBJ_ISSU_DBIRTH" type="text" maxlength="20" id="lab_CLMM_OBJ_ISSU_DBIRTH">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">性別</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_OBJ_ISSU_FSEX" type="text" maxlength="20" id="lab_CLMM_OBJ_ISSU_FSEX">
+                                    </td>
+                                    <td class="tdDataCaption">國籍別</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_OBJ_ISSU_FNATION" type="text" maxlength="20" id="lab_CLMM_OBJ_ISSU_FNATION">
+                                    </td>
+                                    <td class="tdDataCaption">指定受益人</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_OBJ_ISSU_FBENE" type="text" maxlength="20" id="lab_CLMM_OBJ_ISSU_FBENE">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">職業代號</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_OBJ_ISSU_IOCPY" type="text" maxlength="20" id="lab_CLMM_OBJ_ISSU_IOCPY">
+                                    </td>
+                                    <td class="tdDataCaption">職業名稱</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_OBJ_ISSU_NOCPY" type="text" maxlength="20" id="lab_CLMM_OBJ_ISSU_NOCPY">
+                                    </td>
+                                    <td class="tdDataCaption">職級</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_OBJ_ISSU_FOCPYCLS" type="text" maxlength="20" id="lab_CLMM_OBJ_ISSU_FOCPYCLS">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">公司電話</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_OBJ_ISSU_NJOBTEL" type="text" maxlength="20" id="lab_CLMM_OBJ_ISSU_NJOBTEL">
+                                    </td>
+                                    <td class="tdDataCaption">任職機構</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_OBJ_ISSU_NJOBCOMP" type="text" maxlength="20" id="lab_CLMM_OBJ_ISSU_NJOBCOMP">
+                                    </td>
+                                    <td class="tdDataCaption">職務名稱</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_OBJ_ISSU_NJOBTITLE" type="text" maxlength="20" id="lab_CLMM_OBJ_ISSU_NJOBTITLE">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">工作內容</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_OBJ_ISSU_NJOBCONT" type="text" maxlength="20" id="lab_CLMM_OBJ_ISSU_NJOBCONT">
+                                    </td>
+                                    <td class="tdDataCaption">居家地址</td>
+                                    <td class="tdDataField" colspan="3">
+                                        <input name="lab_CLMM_OBJ_ISSU_NLIVEADDR" type="text" maxlength="20" id="lab_CLMM_OBJ_ISSU_NLIVEADDR">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">出險地職務名稱</td>
+                                    <td class="tdDataField">
+                                        <input name="txticareer_clm" type="text" maxlength="10" id="txticareer_clm">
+                                        <input name="txtClass" type="text" maxlength="5" id="txtClass">
+                                    </td>
+                                    <td class="tdDataCaption">出險時工作內容</td>
+                                    <td class="tdDataField">
+                                        <input name="txt_CLMM_OBJ_ISSU_NJOB_CLM" type="text" maxlength="20" id="txt_CLMM_OBJ_ISSU_NJOB_CLM">
+                                    </td>
+                                    <td class="tdDataCaption">手機號碼</td>
+                                    <td class="tdDataField">
+                                        <input name="txt_CLMM_HAS_CLAIM_NMOBILE" type="text" maxlength="20" id="txt_CLMM_HAS_CLAIM_NMOBILE">
+                                    </td>
+                                </tr>
+                        </tbody>
+                        </table>
+                        <div style="height: 20px;"></div>
+                        <table class="tblDataArea" width="100%" align="center" border="0">
+                            <tbody>
+                                <tr>
+                                <td class="tdDataCaption">
+                                    <button id="txt_CLMM_CM_CLAIM_IADJER" class="btn btn-Chick" onClick="window.open('CLMIADJER(CLM502000).html', 'newwindow', config='height=900,width=1000,toolbar=no');">理賠人員ID</button>
+                                </td>
+                                <td class="tdDataField" colspan="2">
+                                    <input name="lab_CLMM_CM_CLAIM_IADJER" type="text" maxlength="20" id="lab_CLMM_CM_CLAIM_IADJER">
+                                </td>
+                                <td class="tdDataCaption">
+                                    <button id="btnMaj" class="btn btn-Chick" onClick="window.open('CLMMAJPage(CLM502000).html', 'newwindow', config='height=900,width=1000,toolbar=no');">更大事故編號</button>
+                                </td>
+                                <td class="tdDataField" colspan="2">
+                                    <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">出險原因代碼-舊版代碼</td>
+                                    <td class="tdDataField" colspan="5">
+                                        <select name="ddl_CLMM_CM_CLAIM_IACDRESN" language="javascript" id="ddl_CLMM_CM_CLAIM_IACDRESN" style="width:150px;">
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">出險原因代碼</td>
+                                    <td class="tdDataField" colspan="5">
+                                        <select name="ddl_IACDRESN" language="javascript" id="ddl_IACDRESN" style="width:150px;">
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                        </select>
+                                        <select name="ddl_CLMM_CM_CLAIM_IACDRESN_NEW" language="javascript" id="ddl_CLMM_CM_CLAIM_IACDRESN_NEW" style="width:150px;">
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">出險原因說明</td>
+                                    <td class="tdDataField" colspan="5">
+                                        <textarea name="txt_CLMM_CM_CLAIM_NACDRESN" id="txt_CLMM_CM_CLAIM_NACDRESN" style="width:100%; float: left; margin-top: 5px;"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">疾病代碼</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_HAS_CLAIM_KDISEASE" type="text" maxlength="20" id="lab_CLMM_HAS_CLAIM_KDISEASE">
+                                    </td>
+                                    <td class="tdDataCaption">疾病說明</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_HAS_CLAIM_NDISEASE" type="text" maxlength="20" id="lab_CLMM_HAS_CLAIM_NDISEASE">
+                                    </td>
+                                    <td class="tdDataCaption">部位代碼</td>
+                                    <td class="tdDataField">
+                                        <select name="ddl_CLMM_HAS_CLAIM_IPOSITION" language="javascript" id="ddl_CLMM_HAS_CLAIM_IPOSITION" style="width:150px;">
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">
+                                        <button id="btnNOTARY" class="btn btn-Chick" onClick="window.open('CLMNOTARYPage(CLM502000).html', 'newwindow', config='height=900,width=1000,toolbar=no');">公證公司代碼</button>
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="txt_CLMM_CM_CLAIM_INOTARY" type="text" maxlength="20" id="txt_CLMM_CM_CLAIM_INOTARY">
+                                    </td>
+                                    <td class="tdDataCaption">公證公司聯絡人</td>
+                                    <td class="tdDataField">
+                                        <input name="txt_CLMM_CM_CLAIM_NNOTARY" type="text" maxlength="20" id="txt_CLMM_CM_CLAIM_NNOTARY">
+                                    </td>
+                                    <td class="tdDataCaption">公證公司電話</td>
+                                    <td class="tdDataField">
+                                        <input name="txt_CLMM_HAS_CLAIM_NNOTARYTEL" type="text" maxlength="20" id="txt_CLMM_HAS_CLAIM_NNOTARYTEL">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">出險地區代碼</td>
+                                    <td class="tdDataField" colspan="2">
+                                        <select name="ddl_CLMM_CM_CLAIM_KACCAREA" language="javascript" id="ddl_CLMM_CM_CLAIM_KACCAREA" style="width:150px;">
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">受理單位-部門</td>
+                                    <td class="tdDataField" colspan="2">
+                                        <input name="lab_CLMM_CM_CLAIM_IKEYUNIT" type="text" maxlength="20" id="lab_CLMM_CM_CLAIM_IKEYUNIT">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">電子郵件收件者</td>
+                                    <td class="tdDataField" colspan="5">
+                                        <input name="txt_CLMM_CM_CLAIM_EMAILUSERS" type="text" maxlength="20" id="txt_CLMM_CM_CLAIM_EMAILUSERS">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">賠案處理方式與建議</td>
+                                    <td class="tdDataField"  colspan="5">
+                                        <textarea name="txt_CLMM_CM_CLAIM_NSUGESTION" id="txt_CLMM_CM_CLAIM_NSUGESTION" style="width:100%; float: left; margin-top: 5px;"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">賠案備註</td>
+                                    <td class="tdDataField" colspan="5">
+                                        <textarea name="txt_CLMM_CM_CLAIM_XMEMO" id="txt_CLMM_CM_CLAIM_XMEMO" style="width:100%; float: left; margin-top: 5px;"></textarea>
+                                    </td>
+                                </tr>
+                        </tbody>
+                        <div style="height: 20px;"></div>
+                        </table>
+                    </div>
+                    <!-- pills-1 end -->
+                    <div class="row-group tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
+                        <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                <td class="tdDataField">
+                                    <h3 style="color: #ed4c6c;">預估明細</h3>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody><tr valign="bottom">
+                                <td nowrap="" align="left">
+                                    <button class="btn btn-secondary" id="dgbCLAIMAPPDTL" onclick="window.open('CLM502001.html', 'newwindow', config='height=900,width=1000,toolbar=no');">新增預估明細</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                <span id="" class="">0</span>
+                                <span id="" class="">筆</span>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">每頁</span>
+                                    <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                    <span id="" class="">筆</span>
+                                    <button class="btn btn-secondary">go</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                    <span id="" class="">1</span>
+                                    <span id="" class="">頁</span>&nbsp;
+                                </td>
+                                <td align="right">
+                                    <span id="" class="">目前第</span>
+                                <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                <span id="" class="">頁</span>
+                                <button class="btn btn-secondary">go</button>
+                                <button class="btn btn-secondary">匯出資料</button>
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                                            <!-- 新ui開始 -->
+                                            <table class="tblDataYellow" width="100%" align="center" border="0">
+                                                <tbody>
+                                                <tr style="background-color:#e2cba6; ">
+                                                    <td class="tdDataScroleft">編輯</td>
+                                                    <td class="tdDataRight" style="width: 23%;">
+                                                        <button class="btn-addlist" id="btnUpdate" onclick="window.open('CLM502001.html', 'newwindow', config='height=900,width=1000,toolbar=no');">更新</button>
+                                                        <button type="button" id="btnDelete" class="btn-del">刪除</button>
+                                                    </td>
+                                                    <td class="tdDataScroleft">承保險種</td>
+                                                    <td class="tdDataRight" style="width: 24%;">
+                                                        MR27505
+                                                    </td>
+                                                    <td class="tdDataScroleft">險種說明</td>
+                                                    <td class="tdDataRight" style="width: 23%;">
+                                                        團體醫療保險(實支實付型)住院前後門診費用附加條款-住院前後門診費用
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdDataScroleft">預估給付項目</td>
+                                                    <td class="tdDataRight">
+                                                        住院前後門診金實支實付(75)
+                                                    </td>
+                                                   
+                                                    <td class="tdDataScroleft">本公司保額</td>
+                                                    <td class="tdDataRight">
+                                                        500
+                                                    </td>
+                                                    <td class="tdDataScroleft">殘廢等級</td>
+                                                    <td class="tdDataRight">
+                                                        
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdDataScroleft">醫院代碼</td>
+                                                    <td class="tdDataRight">
+                                                        長庚林小兒科診所
+                                                    </td>
+                                                    <td class="tdDataScroleft">住院天數</td>
+                                                    <td class="tdDataRight">
+                                                        0
+                                                    </td>
+                                                    <td class="tdDataScroleft">本公司預估賠款</td>
+                                                    <td class="tdDataRight">
+                                                        0
+                                                    </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdDataScroleft">申請金額</td>
+                                                    <td class="tdDataRight">
+                                                        0
+                                                    </td>
+                                                    <td class="tdDataScroleft">不給付金額</td>
+                                                    <td class="tdDataRight">
+                                                        0
+                                                    </td>
+                                                   
+                                                    <td class="tdDataScroleft">預估日期</td>
+                                                    <td class="tdDataRight">
+                                                        109/10/13
+                                                    </td>
+                                                   
+                                                    
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdDataScroleft">理賠群組1</td>
+                                                    <td class="tdDataRight">
+                                                        7505
+                                                    </td>
+                                                    <td class="tdDataScroleft">理賠群組2</td>
+                                                    <td class="tdDataRight">
+                                                        7505
+                                                    </td>
+                                                    <td class="tdDataScroleft">建檔日期</td>
+                                                    <td class="tdDataRight">
+                                                        109/10/13
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            </table>
+                                            <table class="tblDataYellow" width="100%" align="center" border="0">
+                                                <tbody>
+                                                <tr style="background-color:#e2cba6; ">
+                                                    <td class="tdDataScroleft">編輯</td>
+                                                    <td class="tdDataRight" style="width: 23%;">
+                                                        <button class="btn-addlist" id="btnUpdate" onclick="window.open('CLM502001.html', 'newwindow', config='height=900,width=1000,toolbar=no');">更新</button>
+                                                        <button type="button" id="btnDelete" class="btn-del">刪除</button>
+                                                    </td>
+                                                    <td class="tdDataScroleft">承保險種</td>
+                                                    <td class="tdDataRight" style="width: 24%;">
+                                                        MR27505
+                                                    </td>
+                                                    <td class="tdDataScroleft">險種說明</td>
+                                                    <td class="tdDataRight" style="width: 23%;">
+                                                        團體醫療保險(實支實付型)住院前後門診費用附加條款-住院前後門診費用
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdDataScroleft">預估給付項目</td>
+                                                    <td class="tdDataRight">
+                                                        住院前後門診金實支實付(75)
+                                                    </td>
+                                                   
+                                                    <td class="tdDataScroleft">本公司保額</td>
+                                                    <td class="tdDataRight">
+                                                        500
+                                                    </td>
+                                                    <td class="tdDataScroleft">殘廢等級</td>
+                                                    <td class="tdDataRight">
+                                                        
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdDataScroleft">醫院代碼</td>
+                                                    <td class="tdDataRight">
+                                                        長庚林小兒科診所
+                                                    </td>
+                                                    <td class="tdDataScroleft">住院天數</td>
+                                                    <td class="tdDataRight">
+                                                        0
+                                                    </td>
+                                                    <td class="tdDataScroleft">本公司預估賠款</td>
+                                                    <td class="tdDataRight">
+                                                        0
+                                                    </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdDataScroleft">申請金額</td>
+                                                    <td class="tdDataRight">
+                                                        0
+                                                    </td>
+                                                    <td class="tdDataScroleft">不給付金額</td>
+                                                    <td class="tdDataRight">
+                                                        0
+                                                    </td>
+                                                   
+                                                    <td class="tdDataScroleft">預估日期</td>
+                                                    <td class="tdDataRight">
+                                                        109/10/13
+                                                    </td>
+                                                   
+                                                    
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdDataScroleft">理賠群組1</td>
+                                                    <td class="tdDataRight">
+                                                        7505
+                                                    </td>
+                                                    <td class="tdDataScroleft">理賠群組2</td>
+                                                    <td class="tdDataRight">
+                                                        7505
+                                                    </td>
+                                                    <td class="tdDataScroleft">建檔日期</td>
+                                                    <td class="tdDataRight">
+                                                        109/10/13
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            </table>
+                                            <table class="tblDataYellow" width="100%" align="center" border="0">
+                                                <tbody>
+                                                <tr style="background-color:#e2cba6; ">
+                                                    <td class="tdDataScroleft">編輯</td>
+                                                    <td class="tdDataRight" style="width: 23%;">
+                                                        <button class="btn-addlist" id="btnUpdate" onclick="window.open('CLM502001.html', 'newwindow', config='height=900,width=1000,toolbar=no');">更新</button>
+                                                        <button type="button" id="btnDelete" class="btn-del">刪除</button>
+                                                    </td>
+                                                    <td class="tdDataScroleft">承保險種</td>
+                                                    <td class="tdDataRight" style="width: 24%;">
+                                                        MR27505
+                                                    </td>
+                                                    <td class="tdDataScroleft">險種說明</td>
+                                                    <td class="tdDataRight" style="width: 23%;">
+                                                        團體醫療保險(實支實付型)住院前後門診費用附加條款-住院前後門診費用
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdDataScroleft">預估給付項目</td>
+                                                    <td class="tdDataRight">
+                                                        住院前後門診金實支實付(75)
+                                                    </td>
+                                                   
+                                                    <td class="tdDataScroleft">本公司保額</td>
+                                                    <td class="tdDataRight">
+                                                        500
+                                                    </td>
+                                                    <td class="tdDataScroleft">殘廢等級</td>
+                                                    <td class="tdDataRight">
+                                                        
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdDataScroleft">醫院代碼</td>
+                                                    <td class="tdDataRight">
+                                                        長庚林小兒科診所
+                                                    </td>
+                                                    <td class="tdDataScroleft">住院天數</td>
+                                                    <td class="tdDataRight">
+                                                        0
+                                                    </td>
+                                                    <td class="tdDataScroleft">本公司預估賠款</td>
+                                                    <td class="tdDataRight">
+                                                        0
+                                                    </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdDataScroleft">申請金額</td>
+                                                    <td class="tdDataRight">
+                                                        0
+                                                    </td>
+                                                    <td class="tdDataScroleft">不給付金額</td>
+                                                    <td class="tdDataRight">
+                                                        0
+                                                    </td>
+                                                   
+                                                    <td class="tdDataScroleft">預估日期</td>
+                                                    <td class="tdDataRight">
+                                                        109/10/13
+                                                    </td>
+                                                   
+                                                    
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdDataScroleft">理賠群組1</td>
+                                                    <td class="tdDataRight">
+                                                        7505
+                                                    </td>
+                                                    <td class="tdDataScroleft">理賠群組2</td>
+                                                    <td class="tdDataRight">
+                                                        7505
+                                                    </td>
+                                                    <td class="tdDataScroleft">建檔日期</td>
+                                                    <td class="tdDataRight">
+                                                        109/10/13
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            </table>
+                                            <!-- 新ui結束 -->
+                    <table class="rightScroll tblCssDataGrid">
+                        <tbody><tr class="cssDataGridHeader">
+                            <th style="width: 50px;">更新<a href=""></a></th>
+                            <th style="width: 50px;">刪除<a href=""></a></th>
+                            <th><a href="">承保險種</a></th>
+                            <th><a href="">險種說明</a></th>
+                            <th><a href="">預估給付項目</a></th>
+                            <th><a href="">本公司保額</a></th>
+                            <th><a href="">殘廢等級</a></th>
+                            <th><a href="">醫院代碼</a></th>	
+                            <th><a href="">住院天數</a></th>	
+                            <th><a href="">本公司預估賠款</a></th>	
+                            <th><a href="">申請金額</a></th>	
+                            <th><a href="">不給付金額</a></th>	
+                            <th><a href="">預估日期</a></th>	
+                            <th><a href="">理賠群組1</a></th>	
+                            <th><a href="">理賠群組2</a></th>	
+                            <th><a href="">建黨日期</a></th>	
+                        </tr>
+                        <!-- 新增險種資料按下後出現 -->
+                        <!-- <tr class="cssDataGridHeader" style="background-color:#bddde0 ;">
+                            <td style="width: 50px;">
+                              <input type="checkbox" name="" id="">
+                            </td>
+                            <td style="width: 100px;">
+                                <button class="btn-addlist">更新</button>
+                                <button class="btn-del">取消</button>
+                            </td>
+                            <td>
+                                I傷害險
+                            </td>
+                            <td>
+                                <input type="checkbox" name="" id="">
+                            </td>
+                            <td>
+                                <input class="mingo data_time hasDatepicker" name="ucdDCLOSE_NEXT" type="text" value="109/03/24" maxlength="10" size="10" id="ucdDCLOSE_NEXT">
+                            </td>
+                            <td>
+                                <textarea name="txtMemoObj" id="txtMemoObj" style="width:300px;"></textarea>
+                            </td>
+                            <td>
+                                <input name="" type="text" value="" maxlength="15" id="txtIissprint" onkeypress="">
+                            </td>
+                            <td>
+                                <input name="" type="text" value="" maxlength="15" id="txtIissprint" onkeypress="">
+                            </td>
+                            <td>
+                                <input name="" type="text" value="" maxlength="15" id="txtIissprint" onkeypress="">
+                            </td>
+                            <td>
+                                <input name="" type="text" value="" maxlength="15" id="txtIissprint" onkeypress="">
+                            </td>
+                            <td>
+                                <input name="" type="text" value="" maxlength="15" id="txtIissprint" onkeypress="">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:150px;">
+                                <option value=""></option>
+                                <option value="">GHO日額甲型</option>
+                                <option value="">GMO個人組合</option>
+                                <option value="">GDO重大疾病</option>
+                                <option value="">GCO初次罹癌</option>
+                            </select>
+                            <input name="" type="text" style="width: 50px;" value="" maxlength="5" id="txtIissprint" onkeypress="">
+                        </td>
+                            <td>
+                                <input name="" type="text" style="width: 50px;" value="" maxlength="5" id="txtIissprint" onkeypress="">
+                            </td>
+                            <td>
+                                <input name="" type="text" style="width: 50px;" value="" maxlength="5" id="txtIissprint" onkeypress="">
+                            </td>
+                            <td>
+                                <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:100px;">
+                                    <option value="">正常件</option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:300px; float: left;">
+                                    <option value="">其他</option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                                <textarea name="txtMemoObj" id="txtMemoObj" style="width:300px; float: left; margin-top: 5px;"></textarea>
+                            </td>
+                        </tr> -->
+                        <tr>
+                            <td><button class="btn-addlist" id="btnUpdate" onclick="window.open('CLM502001.html', 'newwindow', config='height=900,width=1000,toolbar=no');">更新</button></td>
+                            <td><button type="button" id="btnDelete" class="btn-del">刪除</button></td>
+                            <td id="lab_CLMM_CM_APPDTL_IINSTYPE">MR27505</td>
+                            <td id="Label1">團體醫療保險(實支實付型)住院前後門診費用附加條款<br>-住院前後門診費用</td>
+                            <td id="lab_CLMM_CM_APPDTL_ICLMINS">住院前後門診金實支實付(75)</td>
+                            <td id="lab_CLMM_CM_APPDTL_MSKT_AMT">500</td>
+                            <td id="lab_CLMM_CM_APPDTL_ICRPCLS"></td>
+                            <td id="lab_CLMM_CM_APPDTL_IHOSPITAL">長庚林小兒科診所</td>
+                            <td id="lab_CLMM_CM_APPDTL_IDAY">0</td>
+                            <td id="lab_CLMM_CM_APPDTL_MAPP">0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>109/10/13</td>
+                            <td>7505</td>
+                            <td>7505</td>
+                            <td>109/10/13</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                    </div>
+                    <!-- pills-2 end -->
+                    <div class="row-group tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3-tab">
+                        <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                <td class="tdDataField">
+                                    <h3 style="color: #ed4c6c;">理賠照會</h3>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr valign="bottom">
+                                <td nowrap="" align="left">
+                                    <button class="btn btn-secondary" id="dgbCLMM_CM_NOTIFY" onclick="window.open('CLM502005(CLM502000).html', 'newwindow', config='height=900,width=1000,toolbar=no');">新增理賠照會</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                <span id="" class="">0</span>
+                                <span id="" class="">筆</span>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">每頁</span>
+                                    <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                    <span id="" class="">筆</span>
+                                    <button class="btn btn-secondary">go</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                    <span id="" class="">1</span>
+                                    <span id="" class="">頁</span>&nbsp;
+                                </td>
+                                <td align="right">
+                                    <span id="" class="">目前第</span>
+                                <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                <span id="" class="">頁</span>
+                                <button class="btn btn-secondary">go</button>
+                                <button class="btn btn-secondary">匯出資料</button>
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="tblCssDataGrid">
+                        <tbody><tr class="cssDataGridHeader">
+                            <th style="width: 50px;">選取<a href=""></a></th>
+                            <th style="width: 100px;">列印<a href=""></a></th>
+                            <th><a href="">照會日期</a></th>
+                            <th><a href="">應回覆日期</a></th>
+                            <th><a href="">回覆日期</a></th>
+                            <th><a href="">回覆說明</a></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="lbnotifyview" type="checkbox" name="lbnotifyview" checked="checked">
+                            </td>
+                            <td><button class="btn-addlist" id="lbnotifyprint" >列印</button></td>
+                            <td id="lab_CLMM_CM_NOTIFY_VER_DNOTIFY"></td>
+                            <td id="lab_CLMM_CM_NOTIFY_VER_DSREPLY"></td>
+                            <td id="lab_CLMM_CM_NOTIFY_VER_DREPLY"></td>
+                            <td id="lab_CLMM_CM_NOTIFY_VER_NMEMO"></td>
+                        </tr>
+                    </tbody>
+                    </table>
+                    </div>
+                    <!-- pills-3 end -->
+                    <!-- pills-4 -->
+                    <div class="row-group tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-4-tab">
+                        <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                <td class="tdDataField">
+                                    <h3 style="color: #ed4c6c;">疾病原因</h3>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody><tr valign="bottom">
+                                <td nowrap="" align="left">
+                                    <button class="btn btn-secondary" id="dgbCLMM_CM_DISEASE" onclick="window.open('CLMQueryKDISEASE(CLM502000).html', 'newwindow', config='height=900,width=1000,toolbar=no');">新增疾病原因</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                <span id="" class="">0</span>
+                                <span id="" class="">筆</span>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">每頁</span>
+                                    <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                    <span id="" class="">筆</span>
+                                    <button class="btn btn-secondary">go</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                    <span id="" class="">1</span>
+                                    <span id="" class="">頁</span>&nbsp;
+                                </td>
+                                <td align="right">
+                                    <span id="" class="">目前第</span>
+                                <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                <span id="" class="">頁</span>
+                                <button class="btn btn-secondary">go</button>
+                                <button class="btn btn-secondary">匯出資料</button>
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody><tr class="cssDataGridHeader">
+                                <th style="width: 50px;">刪除<a href=""></a></th>
+                                <th><a href="">疾病代碼</a></th>
+                                <th><a href="">疾病說明</a></th>
+                                <th><a href="">是否為主出院疾病</a></th>
+                            </tr>
+                            <tr>
+                                <td><button type="button" class="btn-del">刪除</button></td>
+                                <td id="lab_CLMM_CM_DISEASE_KDISEASE"></td>
+                                <td id="labKDISEASEName"></td>
+                                <td id="chk_CLMM_CM_DISEASE_FMASTER"></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                    <!-- pills-4 end -->
+                    <!-- pills-5 -->
+                    <div class="row-group tab-pane fade" id="pills-5" role="tabpanel" aria-labelledby="pills-5-tab">
+                        <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                <td class="tdDataField">
+                                    <h3 style="color: #ed4c6c;">受益人</h3>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody><tr valign="bottom">
+                               
+                                <td nowrap="" align="left">
+                                    <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                <span id="" class="">0</span>
+                                <span id="" class="">筆</span>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">每頁</span>
+                                    <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                    <span id="" class="">筆</span>
+                                    <button class="btn btn-secondary">go</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                    <span id="" class="">1</span>
+                                    <span id="" class="">頁</span>&nbsp;
+                                </td>
+                                <td align="right">
+                                    <span id="" class="">目前第</span>
+                                <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                <span id="" class="">頁</span>
+                                <button class="btn btn-secondary">go</button>
+                                <button class="btn btn-secondary">匯出資料</button>
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody><tr class="cssDataGridHeader">
+                                <th><a href="">受益人姓名</a></th>
+                                <th><a href="">受益人ID</a></th>
+                                <th><a href="">與被保人關係說明</a></th>
+                                <th><a href="">給付方式</a></th>
+                                <th><a href="">給付比例/順位</a></th>
+                            </tr>
+                            <tr>
+                                <td id="lab_HASM_PN_BENE_NBENNAME"></td>
+                                <td id="lab_HASM_PN_BENE_IBENID"></td>
+                                <td id="lab_HASM_PN_BENE_NBENREL"></td>
+                                <td id="lab_HASM_PN_BENE_FBENMETHOD"></td>
+                                <td id="lab_HASM_PN_BENE_PBENRATE"></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                    <!-- pills-5 end -->
+                    <!-- pills-6 -->
+                    <div class="row-group tab-pane fade" id="pills-6" role="tabpanel" aria-labelledby="pills-6-tab">
+                        <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                <td class="tdDataField">
+                                    <h3 style="color: #ed4c6c;">附件</h3>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody><tr valign="bottom">
+                                <td nowrap="" align="left">
+                                    <button class="btn btn-secondary">新增附件</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                <span id="" class="">0</span>
+                                <span id="" class="">筆</span>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">每頁</span>
+                                    <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                    <span id="" class="">筆</span>
+                                    <button class="btn btn-secondary">go</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                    <span id="" class="">1</span>
+                                    <span id="" class="">頁</span>&nbsp;
+                                </td>
+                                <td align="right">
+                                    <span id="" class="">目前第</span>
+                                <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                <span id="" class="">頁</span>
+                                <button class="btn btn-secondary">go</button>
+                                <button class="btn btn-secondary">匯出資料</button>
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody><tr class="cssDataGridHeader">
+                                <th style="width: 50px;">編輯<a href=""></a></th>
+                                <th style="width: 50px;">刪除<a href=""></a></th>
+                                <th><a href="">文件類別</a></th>
+                                <th><a href="">附件檔案描述</a></th>
+                                <th><a href="">附件檔名</a></th>
+                            </tr>
+                           
+                            <tr>
+                                <td><button type="button" class="btn-editt">編輯</button></td>
+                                <td><button type="button" class="btn-del">刪除</button></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                             <!-- 新增險種資料按下後出現 -->
+                             <tr class="cssDataGridHeader" style="background-color:#bddde0 ;">
+                                <td style="width: 100px;">
+                                    <button class="btn-addlist">更新</button>
+                                  
+                                </td>
+                                <td style="width: 100px;">
+                                    <button class="btn-del">取消</button>
+                                </td>
+                                <td>
+                                    <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:150px;">
+                                        <option value="">001附件</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <textarea name="txtMemoObj" id="txtMemoObj" style="width:100%;"></textarea>
+                                </td>
+                                <td>
+                                    <button class="btn-addlist">上傳</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                    <!-- pills-6 end -->
+                    <!-- pills-7 -->
+                    <div class="row-group tab-pane fade" id="pills-7" role="tabpanel" aria-labelledby="pills-7-tab">
+                        <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                <td class="tdDataField">
+                                    <h3 style="color: #ed4c6c;">調查事項</h3>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody><tr valign="bottom">
+                                <td nowrap="" align="left">
+                                    <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                <span id="" class="">0</span>
+                                <span id="" class="">筆</span>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">每頁</span>
+                                    <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                    <span id="" class="">筆</span>
+                                    <button class="btn btn-secondary">go</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                    <span id="" class="">1</span>
+                                    <span id="" class="">頁</span>&nbsp;
+                                </td>
+                                <td align="right">
+                                    <span id="" class="">目前第</span>
+                                <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                <span id="" class="">頁</span>
+                                <button class="btn btn-secondary">go</button>
+                                <button class="btn btn-secondary">匯出資料</button>
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        <table class="rightScroll tblCssDataGrid">
+                            <tbody><tr class="cssDataGridHeader">
+                              
+                                <th style="width: 50px;"><a href=""></a></th>
+                                <th><a href="">賠案號碼</a></th>
+                                <th><a href="">調查序號</a></th>
+                                <th><a href="">交查日期</a></th>
+                                <th><a href="">交查類別</a></th>
+                                <th><a href="">指派否</a></th>
+                                <th><a href="">調查人員</a></th>
+                                <th><a href="">保單號碼</a></th>
+                                <th><a href="">被保人ID</a></th>
+                                <th><a href="">被保人名稱</a></th>
+                                <th><a href="">受理單位</a></th>
+                                <th><a href="">理賠人員</a></th>
+                                <th><a href="">進度</a></th>
+                                <th><a href="">結案否</a></th>
+                            </tr>
+                            <!-- 新增險種資料按下後出現 -->
+                            <!-- <tr class="cssDataGridHeader" style="background-color:#bddde0 ;">
+                                <td style="width: 50px;">
+                                <input type="checkbox" name="" id="">
+                                </td>
+                                <td style="width: 100px;">
+                                    <button class="btn-addlist">更新</button>
+                                    <button class="btn-del">取消</button>
+                                </td>
+                                <td>
+                                    I傷害險
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="" id="">
+                                </td>
+                                <td>
+                                    <input class="mingo data_time hasDatepicker" name="ucdDCLOSE_NEXT" type="text" value="109/03/24" maxlength="10" size="10" id="ucdDCLOSE_NEXT">
+                                </td>
+                                <td>
+                                    <textarea name="txtMemoObj" id="txtMemoObj" style="width:300px;"></textarea>
+                                </td>
+                                <td>
+                                    <input name="" type="text" value="" maxlength="15" id="txtIissprint" onkeypress="">
+                                </td>
+                                <td>
+                                    <input name="" type="text" value="" maxlength="15" id="txtIissprint" onkeypress="">
+                                </td>
+                                <td>
+                                    <input name="" type="text" value="" maxlength="15" id="txtIissprint" onkeypress="">
+                                </td>
+                                <td>
+                                    <input name="" type="text" value="" maxlength="15" id="txtIissprint" onkeypress="">
+                                </td>
+                                <td>
+                                    <input name="" type="text" value="" maxlength="15" id="txtIissprint" onkeypress="">
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:150px;">
+                                    <option value=""></option>
+                                    <option value="">GHO日額甲型</option>
+                                    <option value="">GMO個人組合</option>
+                                    <option value="">GDO重大疾病</option>
+                                    <option value="">GCO初次罹癌</option>
+                                </select>
+                                <input name="" type="text" style="width: 50px;" value="" maxlength="5" id="txtIissprint" onkeypress="">
+                            </td>
+                                <td>
+                                    <input name="" type="text" style="width: 50px;" value="" maxlength="5" id="txtIissprint" onkeypress="">
+                                </td>
+                                <td>
+                                    <input name="" type="text" style="width: 50px;" value="" maxlength="5" id="txtIissprint" onkeypress="">
+                                </td>
+                                <td>
+                                    <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:100px;">
+                                        <option value="">正常件</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:300px; float: left;">
+                                        <option value="">其他</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
+                                    <textarea name="txtMemoObj" id="txtMemoObj" style="width:300px; float: left; margin-top: 5px;"></textarea>
+                                </td>
+                            </tr> -->
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>疾病代碼</td>
+                                <td>疾病說明</td>
+                                <td>疾病說明</td>
+                                <td>疾病說明</td>
+                                <td>疾病說明</td>
+                                <td>疾病說明</td>
+                                <td>疾病說明</td>
+                                <td>疾病說明</td>
+                                <td>疾病說明</td>
+                                <td>疾病說明</td>
+                                <td>疾病說明</td>
+                                <td>疾病說明</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div><!-- pills-7 end -->
+                    <div class="row-group tab-pane fade" id="pills-8" role="tabpanel" aria-labelledby="pills-8-tab">
+                        審核意見
+                    </div><!-- pills-8 end -->
+                </div>
+
+<!------------------------------------------------- tab結束 -->
+			</div>
+			<!-- content end  -->
+		</div>
+	</section>
+	<!-- dialog -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+					<button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="foo">
+					<div id="example-table"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+</html>

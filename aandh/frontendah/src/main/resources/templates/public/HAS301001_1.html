@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" lang="zh-Hant-TW">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+    <title>華南產物保險-健康傷害險</title>
+    <!-- jQuery -->
+    <script src="../../shigen/plugin/jquery.min.js"></script>
+    <!-- jQuery UI -->
+    <link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+    <script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+    <!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+    <script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+    <!-- bootstrap -->
+    <script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+    <!-- table tabulator -->
+    <script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+    <!-- fontawsome -->
+    <script defer src="../../shigen/fonts/js/all.min.js"></script>
+    <link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+    <!--load all styles -->
+    <!-- Plug CSS樣式 -->
+    <link rel="stylesheet" href="../../shigen/css/type_plug.css">
+    <!-- 共用樣式 -->
+    <link rel="stylesheet" href="../../shigen/css/type.css">
+    <!-- 主題顏色切換 糖果世代 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+    <!-- 主題顏色切換 海神寶藍 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+    <!-- 主題顏色切換 法拉利紅 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+    <!-- 主題顏色切換 繽紛馬卡 -->
+    <link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+    <!-- 主題顏色切換 煙花季節 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+    <!-- 主題顏色切換 冬雪初現 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+    <link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+    <!-- 自訂JS樣式 -->
+    <script src="../../shigen/js/type.js"></script>
+    <script src="../../shigen/js/common.js"></script>
+    <script src="../../shigen/js/global.js"></script>
+    <!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+    <div class="ajax-aside-nav"></div>
+    <section>
+        <div class="ajax-section-main"></div>
+        <div class="container-fluid">
+            <div class="content">
+                <div class="bread-crumbs">
+                    <a href="">承保受理作業</a>
+                </div>
+                <div class="big_title title s1">HAS301001 健康傷害險承保受理作業</div>
+                <div class="row-group">
+                    <div class="row">
+                        <div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-secondary">修改</button>
+                            <button class="btn btn-secondary">清除</button>
+                            <button class="btn btn-secondary">查詢</button>
+                            <button class="btn btn-secondary">核保不過名單</button>
+                            <button class="btn btn-secondary">暫存資料</button>
+                            <button class="btn btn-secondary">復原資料</button>
+                            <button class="btn btn-secondary">離開</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="item_title title s2">查詢</div> -->
+                
+                <table class="tblDataArea" cellSpacing="0" cellPadding="0">
+                    <tr>
+                        <td class="tdDataCaption">保單類別</td>
+                        <td class="tdDataField"><select name="ddlIinsKind" onchange="__doPostBack('ddlIinsKind','')"
+                                language="javascript" id="ddlIinsKind" style="width:150px;">
+                                <option value=""></option>
+                                <option value="GH0">GH0&#160;日額甲型</option>
+                                <option value="GM0">GM0&#160;個人組合</option>
+                                <option value="GD0">GD0&#160;重大疾病</option>
+                                <option value="GC0">GC0&#160;初次罹癌</option>
+                                <option value="GI0">GI0&#160;癌症住院</option>
+                                <option value="MH0">MH0&#160;團體健康</option>
+                                <option selected="selected" value="MM0">MM0&#160;團體組合</option>
+                                <option value="MH1">MH1&#160;團體健康(甲型)</option>
+                                <option value="MM1">MM1&#160;團體組合(甲型)</option>
+                                <option value="DH0">DH0&#160;重大傷病</option>
+                                <option value="MR0">MR0&#160;團體住院醫療(實支實付型)</option>
+                                <option value="GC1">GC1&#160;團體癌症</option>
+                                <option value="GC2">GC2&#160;團體癌症身故</option>
+                                <option value="MH2">MH2&#160;住院日額醫療</option>
+                            </select></td>
+                        <td class="tdDataCaption">出單公司</td>
+                        <td class="tdDataField"><input name="" type="text" id="" style="width:30px;" /></td>
+                        <td class="tdDataCaption">大保單號</td>
+                        <td class="tdDataField"><input name="" type="text"  id="" style="width:120px;" /></td>
+                        <td class="tdDataCaption">保單號碼</td>
+                        <td class="tdDataField"><input name="" type="text" value=" " id="" style="width:120px;" /></td>
+                        <td class="tdDataCaption">要保號碼</td>
+                        <td class="tdDataField"><input name="" type="text" value=""  id="" style="width:120px;" /></td>
+                       
+                    </tr>
+                </table>
+                <div class="row-group">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="#" class="btn btn-primary">1:要保人</a>
+                            <a href="#" class="btn btn-primary">2:被保險人</a>
+                            <a href="#" class="btn btn-primary">3:保險內容</a>
+                            <a href="#" class="btn btn-primary">4:洽攬人</a>
+                            <a href="#" class="btn btn-primary">5:條款/共保</a>
+                            <a href="#" class="btn btn-primary">6:收據明細</a>
+                            <a href="#" class="btn btn-primary">7:附加檔案</a>
+                            <a href="#" class="btn btn-primary">8:核保照會</a>
+                            <a href="#" class="btn btn-primary">9:審核意見</a>
+                            <a href="#" class="btn btn-primary">10:公同行銷</a>
+                            <a href="#" class="btn btn-primary">11:董監事名冊</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-group">
+                    <div class="row">
+
+                    </div>
+                </div>
+                <!-- 抬頭 -->
+                
+                <table id="Table2" class="tblFunctionBar" cellSpacing="0" cellPadding="0">
+                    <tr vAlign="bottom">
+                        <td noWrap align="left">
+                            
+                            <button class="btn btn-secondary">新增項目</button>
+                        </td>
+                        <td>
+                            <a id="" class="">第一頁</a>
+                            <a id="" class="">上一頁</a>
+                            <a id="" class="">下一頁</a>
+                            <a id=""  class="">最後一頁</a>
+                        </td>
+                        <td>
+                            <span id="" class="">總共</span>
+                            <span id="" class="">0</span>
+                            <span id="" class="">筆</span>
+                        </td>
+                        <td>
+                            <span id="" class="">每頁</span>
+                            <input name="" type="text" id="" class="" style="width:32px;" />
+                            <span id="" class="">筆</span>
+                            <button class="btn btn-secondary">go</button>
+                            
+                        </td>
+                        <td>
+                            <span id="" class="">總共</span>
+                            <span id="" class="">1</span>
+                            <span id="" class="">頁</span>
+                        </td>
+                        <td>
+                            <span id="" class="">目前第</span>
+                            <input name="" type="text" id="" class=""  style="width:29px;" />
+                            <span id="" class="">頁</span>
+                            <button class="btn btn-secondary">go</button>
+                            <button class="btn btn-secondary">匯出資料</button>
+                        </td>
+                    </tr>
+                </table>
+                <table class="tblCssDataGrid">
+                    <tr class="cssDataGridHeader">
+                        <th style="width: 30px;"><a href=""></a></th>
+                        <th style="width: 30px;"><a href=""></a></th>
+                        <th><a href="">序號</a></th>
+                        <th><a href="">證號</a></th>
+                        <th><a href="">姓名</a></th>
+                        <th><a href="">職業代號</a></th>
+                        <th><a href="">職別</a></th>
+                        <th><a href="">職業名稱</a></th>
+                        <th><a href="">身份別</a></th>
+                        <th><a href="">主被保險人ID</a></th>
+                        <th><a href="">主約方案</a></th>
+                        <th><a href="">總保費</a></th>
+                        <th><a href="">生日</a></th>
+                    </tr>
+                </table>
+                <!-- 保險表格 -->
+                <table class="tblDataArea" cellSpacing="0" cellPadding="0">
+                    <tr>
+                        <td class="tdDataCaption">業績歸屬</td>
+                        <td class="tdDataField">
+                            <input name="" type="text" value=""id="" >
+                        </td>
+                        <td class="tdDataCaption">印單單位</td>
+                        <td class="tdDataField">
+                            <input name="" type="text" value="" id="" >
+                        </td>
+                        <td class="tdDataCaption">團件代號</td>
+                        <td class="tdDataField">
+                            <input name="" type="text" value=""  id="" >
+                        </td>
+                        <td class="tdDataCaption">
+                            <button class="btn btn-secondary">壽險公會</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">保險期間</td>
+                        <td class="tdDataField">
+                            <input name="" type="text" value="108/05/01" id="" >
+                           
+                            <button title="選擇日期" class="" >...</button>
+                            <input name="" id="" type="hidden" value="true">
+                            <span id="" errormessage="日期格式錯誤" style="color:Red;display:none;">日期格式錯誤</span>
+                            <span id="" errormessage="保險起期必須輸入" style="color:Red;display:none;"></span>
+                            <input style="width: 30px;" name="" type="text" value="00" id="" style="width:20px;">
+                            <font style="BACKGROUND-COLOR: #e0eef7" face="新細明體" color="#2c2c85">時至</font>
+                            <input name="" type="text" value="109/05/01" maxlength="10" size="10" id="">
+                           
+                            <button title="選擇日期" class="">...</button>
+                            <input name="" id="" type="hidden" value="true">
+                            <span id="" errormessage="日期格式錯誤" style="color:Red;display:none;">日期格式錯誤</span>
+                            <span id="" errormessage="保險迄期必須輸入"style="color:Red;display:none;"></span>
+                            <input style="width: 30px;"  name="" type="text" value="00" maxlength="2" id="" style="width:20px;">
+                            <font style="BACKGROUND-COLOR: #e0eef7" face="新細明體" color="#2c2c85">時&nbsp;&nbsp;&nbsp;投保天數
+                            </font>
+                            <input name="" type="text" id="" style="background-color:Transparent;border-width:0px;width:40px;">
+                            <font style="BACKGROUND-COLOR: #e0eef7" face="新細明體" color="#2c2c85">天</font>
+                        </td>
+                        <td class="tdDataCaption">保單計費方式</td>
+                        <td class="tdDataField">
+                            <select name=""  id="" style="width:150px;">
+                                <option value="1">0:依短期費率</option>
+                                <option value="2">1:按日數計算</option>
+                                <option value="3">2:按月數計算</option>
+                                <option value="4">5:按年計算</option>
+                            </select>
+                        </td>
+                        <td class="tdDataCaption">受理日期</td>
+                        <td class="tdDataField" colspan="3">
+                            <input name="" type="text" value="108/04/30" maxlength="10" size="10" id="" >
+                            
+                            <button title="選擇日期" class="cssUICommandButtonSmall" >...</button>
+                            <input name="" id="" type="hidden" value="true">
+                            <span id="" errormessage="日期格式錯誤" style="color:Red;display:none;">日期格式錯誤</span>
+                            <span id=""  style="color:Red;display:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+                <table class="tblDataArea" width="100%" align="center" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="tdDataCaption">經手人1</td>
+                            <td class="tdDataField" colspan="3">
+                                <input name="" type="text" value="000728" id="" style="width:60px;">
+                                <input name="" type="text" id="" style="background-color:Transparent;border-width:0px;width:80px;">
+                                <font style="BACKGROUND-COLOR: #e0eef7" face="新細明體" color="#2c2c85">
+                                    &nbsp;&nbsp;&nbsp;持分比率%</font>
+                                <input name="" type="text"  id="" style="width:50px;">
+                                <span id="" type="Currency" style="color:Red;visibility:hidden;">數字範圍是0~100</span>
+                            </td>
+                            <td class="tdDataCaption">
+                                <input name="" id="" type="button" value="持分" onclick=""> 經手人2</td>
+                            <td class="tdDataField" colspan="3">
+                                <input name="" type="text" id="" style="width:60px;">
+                                <input name="" type="text" id="" style="background-color:Transparent;border-width:0px;width:80px;">
+                                <font style="BACKGROUND-COLOR: #e0eef7" face="新細明體" color="#2c2c85">
+                                    &nbsp;&nbsp;&nbsp;持分比率%</font>
+                                <input name="" type="text" value="0" id="" style="width:50px;">
+                                <span id="" controltovalidate="" type="" style="color:Red;visibility:hidden;">數字範圍是0~100</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">經手人3</td>
+                            <td class="tdDataField" colspan="3">
+                                <input name="" type="text" maxlength="6" id="" style="width:60px;">
+                                <input name="" type="text" id=""style="background-color:Transparent;border-width:0px;width:80px;">
+                                <font style="BACKGROUND-COLOR: #e0eef7" face="新細明體" color="#2c2c85">
+                                    &nbsp;&nbsp;&nbsp;持分比率%</font>
+                                <input name="" type="text" value="0" id="" style="width:50px;">
+                                <span id="" type="" style="color:Red;visibility:hidden;">數字範圍是0~100</span>
+                            </td>
+                            <td class="tdDataCaption">經手人4</td>
+                            <td class="tdDataField" colspan="3">
+                                <input name="" type="text" value="0"  id="" style="width:60px;">
+                                <input name="" type="text" value="0" id="" style="background-color:Transparent;border-width:0px;width:80px;">
+                                <font style="BACKGROUND-COLOR: #e0eef7" face="新細明體" color="#2c2c85">
+                                    &nbsp;&nbsp;&nbsp;持分比率%</font>
+                                <input name="" type="text" value="0" id="" style="width:50px;">
+                                <span id="" type=""  style="color:Red;visibility:hidden;">數字範圍是0~100</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="tblDataArea" width="100%" align="center" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="tdDataCaption" width="150px">要保人ID</td>
+                            <td class="tdDataField">
+                                <select name="" id="" style="width:120px;">
+                                    <option value=""></option>
+                                    <option value="1">1&nbsp;身分證號</option>
+                                    <option selected="selected" value="2">2&nbsp;統一編號</option>
+                                    <option value="3">3&nbsp;護照編號</option>
+                                    <option value="4">4&nbsp;居留證號</option>
+                                    <option value="5">5&nbsp;客戶編號</option>
+
+                                </select>
+                                <input name="" type="text" value="92087956" id="" class="" >
+                                <input name="" type="text" value="1" id="" style="width:0px;">
+                                <input name="" type="text" value="2" id="" style="width:0px;">
+                                <input name="" type="text" value="3" id="" style="width:0px;">
+                            </td>
+                            <td class="tdDataCaption">
+                                <span id="lblnbank">代表人姓名</span></td>
+                            <td class="tdDataField">
+                                <input name="" type="text" value="＊＊坤" id="" style="width:100px;">
+                            </td>
+                            <td class="tdDataCaption">
+                                <span id="">要保單位</span></td>
+                            <td class="tdDataField">
+                                <input name="" type="text" value="＊＊銀行企業工會" id="">
+                            </td>
+                            <td class="tdDataCaption">生日</td>
+                            <td class="tdDataField">
+                                <input name="" type="text" maxlength="10" size="10" id="" >
+                                
+                                <button title="選擇日期" class="" >...</button><input
+                                    name="" id="" type="hidden" value="true">
+                                <span id="" errormessage="日期格式錯誤" style="color:Red;display:none;">日期格式錯誤</span>
+                                <span id="" style="color:Red;display:none;"></span>
+                                年齡
+                                <input name="" type="text" value="0" id="" style="background-color:Transparent;border-width:0px;width:15px;">歲
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">國籍(註冊地)</td>
+                            <td class="tdDataField">
+                                <select name="ddlcitcodM" id="ddlcitcodM" style="width:120px;">
+                                    <option selected="selected" value="1">1:本國</option>
+                                    <option value="2">2:外國</option>
+
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">職業/行業</td>
+                            <td class="tdDataField">
+                                <select name="" id="" style="width:120px;">
+                                    <option selected="selected" value="1">1:一般</option>
+                                    <option value="2">2:註一所列</option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">國籍代號及名稱</td>
+                            <td class="tdDataField" colspan="4">
+                                <select name="ddlcntcodM" id="ddlcntcodM">
+                                    <option value=""></option>
+                                    <option value="90">90&nbsp;&nbsp;無法區分國別 UNKNOWN</option>
+                                    <option value="AB">AB&nbsp;&nbsp;阿布哈茲 ABKHAZIA</option>
+                                    <option value="AD">AD&nbsp;&nbsp;安道爾 ANDORRA</option>
+                                    <option value="AE">AE&nbsp;&nbsp;阿拉伯聯合大公國 UNITED ARAB EMIRATES</option>
+                                    <option value="AF">AF&nbsp;&nbsp;阿富汗 AFGHANISTAN</option>
+                                    <option value="AG">AG&nbsp;&nbsp;安地卡及巴布達 ANTIGUA&amp;BARBUDA</option>
+                                    <option value="AI">AI&nbsp;&nbsp;英屬安圭拉 ANGUILLA</option>
+                                    <option value="AL">AL&nbsp;&nbsp;阿爾巴尼亞 ALBANIA</option>
+                                    <option value="AM">AM&nbsp;&nbsp;亞美尼亞 ARMENIA</option>
+                                    <option value="AN">AN&nbsp;&nbsp;荷屬安地列斯 NETHERLANDSANTILLES</option>
+                                    <option value="AO">AO&nbsp;&nbsp;安哥拉 ANGOLA</option>
+                                    <option value="AQ">AQ&nbsp;&nbsp;南極洲 ANTARCTICA</option>
+                                    <option value="AR">AR&nbsp;&nbsp;阿根廷 ARGENTINA</option>
+                                    <option value="AS">AS&nbsp;&nbsp;美屬薩摩亞 AMERICANSAMOA</option>
+                                    <option value="AT">AT&nbsp;&nbsp;奧地利 AUSTRIA</option>
+                                    <option value="AU">AU&nbsp;&nbsp;澳大利亞 AUSTRALIA</option>
+                                    <option value="AW">AW&nbsp;&nbsp;阿魯巴 ARUBA</option>
+                                    <option value="AX">AX&nbsp;&nbsp;奧蘭群島 ALAND ISLANDS</option>
+                                    <option value="AZ">AZ&nbsp;&nbsp;亞塞拜然 AZERBAIJAN</option>
+                                    <option value="BA">BA&nbsp;&nbsp;波士尼亞與赫塞哥維納 BOSNIAANDHERZEGOVINA</option>
+                                    <option value="BB">BB&nbsp;&nbsp;巴貝多 BARBADOS</option>
+                                    <option value="BD">BD&nbsp;&nbsp;孟加拉 BANGLADESH</option>
+                                    <option value="BE">BE&nbsp;&nbsp;比利時 BELGIUM</option>
+                                    <option value="BF">BF&nbsp;&nbsp;上伏塔(布吉納法索) BURKINAFASO</option>
+                                    <option value="BG">BG&nbsp;&nbsp;保加利亞 BULGARIA</option>
+                                    <option value="BH">BH&nbsp;&nbsp;巴林 BAHRAIN</option>
+                                    <option value="BI">BI&nbsp;&nbsp;蒲隆地 BURUNDI</option>
+                                    <option value="BJ">BJ&nbsp;&nbsp;貝南(達荷美) BENIN</option>
+                                    <option value="BL">BL&nbsp;&nbsp;聖巴瑟米 SAINT BARTHELEMY</option>
+                                    <option value="BM">BM&nbsp;&nbsp;百慕達 BERMUDA</option>
+                                    <option value="BN">BN&nbsp;&nbsp;汶萊 BRUNEI</option>
+                                    <option value="BO">BO&nbsp;&nbsp;玻利維亞 BOLIVIA</option>
+                                    <option value="BQ">BQ&nbsp;&nbsp;波奈、聖佑達修斯及沙巴 BONAIRE, SAINT EUSTATIUS AND SABA
+                                    </option>
+                                    <option value="BR">BR&nbsp;&nbsp;巴西 BRAZIL</option>
+                                    <option value="BS">BS&nbsp;&nbsp;巴哈馬 BAHAMAS</option>
+                                    <option value="BT">BT&nbsp;&nbsp;不丹 BHUTAN</option>
+                                    <option value="BV">BV&nbsp;&nbsp;波維特島 BOUVETISLAND</option>
+                                    <option value="BW">BW&nbsp;&nbsp;波扎那 BOTSWANA</option>
+                                    <option value="BY">BY&nbsp;&nbsp;白俄羅斯 BELARUS</option>
+                                    <option value="BZ">BZ&nbsp;&nbsp;貝里斯 BELIZE</option>
+                                    <option value="CA">CA&nbsp;&nbsp;加拿大 CANADA</option>
+                                    <option value="CC">CC&nbsp;&nbsp;可可斯群島 COCOS(KEELING)IS.</option>
+                                    <option value="CD">CD&nbsp;&nbsp;剛果民主共和國 DEMOCRATIC REPUBLIC OF THE CONGO</option>
+                                    <option value="CF">CF&nbsp;&nbsp;中非共和國 CENTRALAFRICANREPUBLIC</option>
+                                    <option value="CG">CG&nbsp;&nbsp;剛果 CONGOREP.</option>
+                                    <option value="CH">CH&nbsp;&nbsp;瑞士 SWITZERLAND</option>
+                                    <option value="CI">CI&nbsp;&nbsp;象牙海岸 COTED'IVOIRE</option>
+                                    <option value="CK">CK&nbsp;&nbsp;科克群島 COOKISLANDS</option>
+                                    <option value="CL">CL&nbsp;&nbsp;智利 CHILE</option>
+                                    <option value="CM">CM&nbsp;&nbsp;喀麥隆 CAMEROON</option>
+                                    <option value="CN">CN&nbsp;&nbsp;中國大陸 CHINA</option>
+                                    <option value="CO">CO&nbsp;&nbsp;哥倫比亞 COLOMBIA</option>
+                                    <option value="CR">CR&nbsp;&nbsp;哥斯大黎加 COSTARICA</option>
+                                    <option value="CS">CS&nbsp;&nbsp;海峽群島 CHANNEL ISLANDS</option>
+                                    <option value="CU">CU&nbsp;&nbsp;古巴 CUBA</option>
+                                    <option value="CUR">CUR&nbsp;古拉索 CURACAO</option>
+                                    <option value="CV">CV&nbsp;&nbsp;維德角 CAPE VERDE</option>
+                                    <option value="CW">CW&nbsp;&nbsp;庫拉索 CURACAO</option>
+                                    <option value="CX">CX&nbsp;&nbsp;聖誕島 CHRISTMASISLAND</option>
+                                    <option value="CY">CY&nbsp;&nbsp;塞普勒斯 CYPRUS</option>
+                                    <option value="CZ">CZ&nbsp;&nbsp;捷克 CZECHREPUBLIC</option>
+                                    <option value="DE">DE&nbsp;&nbsp;德國 GERMANY</option>
+                                    <option value="DJ">DJ&nbsp;&nbsp;吉布地 DJIBOUTI</option>
+                                    <option value="DK">DK&nbsp;&nbsp;丹麥 DENMARK</option>
+                                    <option value="DM">DM&nbsp;&nbsp;多米尼克 DOMINICA</option>
+                                    <option value="DO">DO&nbsp;&nbsp;多明尼加 DOMINICANREPUBLIC</option>
+                                    <option value="DZ">DZ&nbsp;&nbsp;阿爾及利亞 ALGERIA</option>
+                                    <option value="EC">EC&nbsp;&nbsp;厄瓜多 ECUADOR</option>
+                                    <option value="EE">EE&nbsp;&nbsp;愛沙尼亞 ESTONIA</option>
+                                    <option value="EG">EG&nbsp;&nbsp;埃及 EGYPT</option>
+                                    <option value="EH">EH&nbsp;&nbsp;西撒哈拉 WESTERNSAHARA</option>
+                                    <option value="ER">ER&nbsp;&nbsp;厄利垂亞 ERITREA</option>
+                                    <option value="ES">ES&nbsp;&nbsp;西班牙 SPAIN</option>
+                                    <option value="ET">ET&nbsp;&nbsp;衣索比亞 ETHIOPIA</option>
+                                    <option value="FI">FI&nbsp;&nbsp;芬蘭 FINLAND</option>
+                                    <option value="FJ">FJ&nbsp;&nbsp;斐濟 FIJI</option>
+                                    <option value="FK">FK&nbsp;&nbsp;福克蘭群島 FALKLANDISLANDS</option>
+                                    <option value="FM">FM&nbsp;&nbsp;密克羅尼西亞 MICRONESIA</option>
+                                    <option value="FO">FO&nbsp;&nbsp;法羅群島 FAROEISLANDS</option>
+                                    <option value="FR">FR&nbsp;&nbsp;法國 FRANCE</option>
+                                    <option value="GA">GA&nbsp;&nbsp;加彭 GABON</option>
+                                    <option value="GB">GB&nbsp;&nbsp;英國 UNITEDKINGDOM</option>
+                                    <option value="GD">GD&nbsp;&nbsp;格瑞那達 GRENADA</option>
+                                    <option value="GE">GE&nbsp;&nbsp;喬治亞 GEORGIA</option>
+                                    <option value="GF">GF&nbsp;&nbsp;法屬圭亞那 FRENCHGUIANA</option>
+                                    <option value="GG">GG&nbsp;&nbsp;格恩西島 GUERNSEY</option>
+                                    <option value="GH">GH&nbsp;&nbsp;迦納 GHANA</option>
+                                    <option value="GI">GI&nbsp;&nbsp;直布羅陀 GIBRALTAR</option>
+                                    <option value="GL">GL&nbsp;&nbsp;格陵蘭 GREENLAND</option>
+                                    <option value="GM">GM&nbsp;&nbsp;甘比亞 GAMBIA</option>
+                                    <option value="GN">GN&nbsp;&nbsp;幾內亞 GUINEA</option>
+                                    <option value="GP">GP&nbsp;&nbsp;瓜德魯普島 GUADELOUPE</option>
+                                    <option value="GQ">GQ&nbsp;&nbsp;赤道幾內亞 EQUATORIALGUINEA</option>
+                                    <option value="GR">GR&nbsp;&nbsp;希臘 GREECE</option>
+                                    <option value="GS">GS&nbsp;&nbsp;南喬治亞與南桑威奇群島 SGSSI</option>
+                                    <option value="GT">GT&nbsp;&nbsp;瓜地馬拉 GUATEMALA</option>
+                                    <option value="GU">GU&nbsp;&nbsp;關島 GUAM</option>
+                                    <option value="GW">GW&nbsp;&nbsp;幾內亞比索 GUINEA-BISSAU</option>
+                                    <option value="GY">GY&nbsp;&nbsp;蓋亞那 GUYANA</option>
+                                    <option value="HK">HK&nbsp;&nbsp;香港 HONGKONG</option>
+                                    <option value="HM">HM&nbsp;&nbsp;赫德及麥當勞群島 HEARDANDMcDonaldISLANDS</option>
+                                    <option value="HN">HN&nbsp;&nbsp;宏都拉斯 HONDURAS</option>
+                                    <option value="HR">HR&nbsp;&nbsp;克羅埃西亞 CROATIA</option>
+                                    <option value="HT">HT&nbsp;&nbsp;海地 HAITI</option>
+                                    <option value="HU">HU&nbsp;&nbsp;匈牙利 HUNGARY</option>
+                                    <option value="ID">ID&nbsp;&nbsp;印尼 INDONESIA</option>
+                                    <option value="IE">IE&nbsp;&nbsp;愛爾蘭 IRELAND</option>
+                                    <option value="IL">IL&nbsp;&nbsp;以色列 ISRAEL</option>
+                                    <option value="IM">IM&nbsp;&nbsp;曼島 ISLEOFMAN</option>
+                                    <option value="IN">IN&nbsp;&nbsp;印度 INDIA</option>
+                                    <option value="IO">IO&nbsp;&nbsp;英屬印度洋地區 BRITISHINDIANOCEANTERRITORY</option>
+                                    <option value="IQ">IQ&nbsp;&nbsp;伊拉克 IRAQ</option>
+                                    <option value="IR">IR&nbsp;&nbsp;伊朗 ISLAMIC REPUBLIC OF IRAN</option>
+                                    <option value="IS">IS&nbsp;&nbsp;冰島 ICELAND</option>
+                                    <option value="IT">IT&nbsp;&nbsp;義大利 ITALY</option>
+                                    <option value="JE">JE&nbsp;&nbsp;澤西島 JERSEY</option>
+                                    <option value="JM">JM&nbsp;&nbsp;牙買加 JAMAICA</option>
+                                    <option value="JO">JO&nbsp;&nbsp;約旦 JORDAN</option>
+                                    <option value="JP">JP&nbsp;&nbsp;日本 JAPAN</option>
+                                    <option value="KE">KE&nbsp;&nbsp;肯亞 KENYA</option>
+                                    <option value="KG">KG&nbsp;&nbsp;吉爾吉斯 KYRGYZSTAN</option>
+                                    <option value="KH">KH&nbsp;&nbsp;柬埔塞王國 CAMBODIA</option>
+                                    <option value="KI">KI&nbsp;&nbsp;吉里巴斯 KIRIBATI</option>
+                                    <option value="KM">KM&nbsp;&nbsp;葛摩 COMOROS</option>
+                                    <option value="KN">KN&nbsp;&nbsp;聖克里斯多福 SAINTKITTS&amp;NEVIS</option>
+                                    <option value="KOS">KOS&nbsp;科索沃共和國 Republic of Kosovo</option>
+                                    <option value="KP">KP&nbsp;&nbsp;北韓 DEMOCRATICPEOPLE'SREPUBLICOFKOREA</option>
+                                    <option value="KR">KR&nbsp;&nbsp;韓國 REPUBLIC OF KOREA</option>
+                                    <option value="KS">KS&nbsp;&nbsp;科索沃共和國 Republic of Kosovo</option>
+                                    <option value="KW">KW&nbsp;&nbsp;科威特 KUWAIT</option>
+                                    <option value="KY">KY&nbsp;&nbsp;開曼群島 CAYMANISLANDS</option>
+                                    <option value="KYR">KYR&nbsp;吉爾吉斯 KYRGYZSTAN</option>
+                                    <option value="KZ">KZ&nbsp;&nbsp;哈薩克 KAZAKHSTAN</option>
+                                    <option value="LA">LA&nbsp;&nbsp;寮國 LAO PEOPLE'S DEMOCRATIC REPUBLIC</option>
+                                    <option value="LB">LB&nbsp;&nbsp;黎巴嫩 LEBANON</option>
+                                    <option value="LC">LC&nbsp;&nbsp;聖露西亞 SAINTLUCIA</option>
+                                    <option value="LI">LI&nbsp;&nbsp;列支敦斯堡 LIECHTENSTEIN</option>
+                                    <option value="LK">LK&nbsp;&nbsp;斯里蘭卡 SRILANKA</option>
+                                    <option value="LR">LR&nbsp;&nbsp;賴比瑞亞 LIBERIA</option>
+                                    <option value="LS">LS&nbsp;&nbsp;賴索托 LESOTHO</option>
+                                    <option value="LT">LT&nbsp;&nbsp;立陶宛 LITHUANIA</option>
+                                    <option value="LU">LU&nbsp;&nbsp;盧森堡 LUXEMBOURG</option>
+                                    <option value="LV">LV&nbsp;&nbsp;拉脫維亞 LATVIA</option>
+                                    <option value="LY">LY&nbsp;&nbsp;利比亞 LIBYA</option>
+                                    <option value="MA">MA&nbsp;&nbsp;摩洛哥 MOROCCO</option>
+                                    <option value="MC">MC&nbsp;&nbsp;摩納哥 MONACO</option>
+                                    <option value="MD">MD&nbsp;&nbsp;摩爾多瓦 MOLDOVA</option>
+                                    <option value="ME">ME&nbsp;&nbsp;蒙特尼哥羅 MONTENEGRO</option>
+                                    <option value="MG">MG&nbsp;&nbsp;馬達加斯加 MADAGASCAR</option>
+                                    <option value="MH">MH&nbsp;&nbsp;馬紹爾群島 MARSHALLISLANDS</option>
+                                    <option value="MK">MK&nbsp;&nbsp;馬其頓 MACEDONIA</option>
+                                    <option value="ML">ML&nbsp;&nbsp;馬利 MALI</option>
+                                    <option value="MM">MM&nbsp;&nbsp;緬甸 MYANMAR</option>
+                                    <option value="MN">MN&nbsp;&nbsp;蒙古 MONGOLIA</option>
+                                    <option value="MO">MO&nbsp;&nbsp;澳門 MACAU</option>
+                                    <option value="MON">MON&nbsp;蒙特內哥羅 Montenegro</option>
+                                    <option value="MP">MP&nbsp;&nbsp;北馬里亞納群島 NORTHERN MARIANA ISLANDS</option>
+                                    <option value="MQ">MQ&nbsp;&nbsp;法屬馬丁尼克 MARTINIQUE</option>
+                                    <option value="MR">MR&nbsp;&nbsp;茅利塔尼亞 MAURITANIA</option>
+                                    <option value="MS">MS&nbsp;&nbsp;蒙瑟拉特島 MONTSERRAT</option>
+                                    <option value="MT">MT&nbsp;&nbsp;馬爾他 MALTA</option>
+                                    <option value="MU">MU&nbsp;&nbsp;模里西斯 MAURITIUS</option>
+                                    <option value="MV">MV&nbsp;&nbsp;馬爾地夫 MALDIVES</option>
+                                    <option value="MW">MW&nbsp;&nbsp;馬拉威 MALAWI</option>
+                                    <option value="MX">MX&nbsp;&nbsp;墨西哥 MEXICO</option>
+                                    <option value="MY">MY&nbsp;&nbsp;馬來西亞 MALAYSIA</option>
+                                    <option value="MZ">MZ&nbsp;&nbsp;莫三比克 MOZAMBIQUE</option>
+                                    <option value="NA">NA&nbsp;&nbsp;納米比亞 NAMIBIA</option>
+                                    <option value="NC">NC&nbsp;&nbsp;新喀里多尼亞 NEWCALEDONIA</option>
+                                    <option value="NE">NE&nbsp;&nbsp;尼日 NIGER</option>
+                                    <option value="NF">NF&nbsp;&nbsp;諾福克群島 NORFOLKISLAND</option>
+                                    <option value="NG">NG&nbsp;&nbsp;奈及利亞 NIGERIA</option>
+                                    <option value="NI">NI&nbsp;&nbsp;尼加拉瓜 NICARAGUA</option>
+                                    <option value="NL">NL&nbsp;&nbsp;荷蘭 NETHERLANDS</option>
+                                    <option value="NO">NO&nbsp;&nbsp;挪威 NORWAY</option>
+                                    <option value="NP">NP&nbsp;&nbsp;尼泊爾 NEPAL</option>
+                                    <option value="NR">NR&nbsp;&nbsp;諾魯 NAURU</option>
+                                    <option value="NU">NU&nbsp;&nbsp;紐威島 NIUE</option>
+                                    <option value="NY">NY&nbsp;&nbsp;北賽普勒斯土耳其共和國 TURKISH REPUBLIC of NORTHERN CYPRUS
+                                    </option>
+                                    <option value="NZ">NZ&nbsp;&nbsp;紐西蘭 NEWZEALAND</option>
+                                    <option value="OM">OM&nbsp;&nbsp;阿曼 OMAN</option>
+                                    <option value="PA">PA&nbsp;&nbsp;巴拿馬 PANAMA</option>
+                                    <option value="PE">PE&nbsp;&nbsp;秘魯 PERU</option>
+                                    <option value="PF">PF&nbsp;&nbsp;法屬玻里尼西亞 FRENCHPOLYNESIA</option>
+                                    <option value="PG">PG&nbsp;&nbsp;巴布亞新幾內亞 PAPUANEWGUINEA</option>
+                                    <option value="PH">PH&nbsp;&nbsp;菲律賓 PHILIPPINES</option>
+                                    <option value="PK">PK&nbsp;&nbsp;巴基斯坦 PAKISTAN</option>
+                                    <option value="PL">PL&nbsp;&nbsp;波蘭 POLAND</option>
+                                    <option value="PM">PM&nbsp;&nbsp;聖匹及密啟倫群島 SAINT PIERRE AND MIQUELON</option>
+                                    <option value="PN">PN&nbsp;&nbsp;皮特康島 PITCAIRN</option>
+                                    <option value="PR">PR&nbsp;&nbsp;波多黎各 PUERTORICO</option>
+                                    <option value="PS">PS&nbsp;&nbsp;巴勒斯坦 PALESTINE</option>
+                                    <option value="PT">PT&nbsp;&nbsp;葡萄牙 PORTUGAL</option>
+                                    <option value="PW">PW&nbsp;&nbsp;帛琉 PALAU</option>
+                                    <option value="PY">PY&nbsp;&nbsp;巴拉圭 PARAGUAY</option>
+                                    <option value="PZ">PZ&nbsp;&nbsp;巴拿馬運河區 PANAMACANALZONE</option>
+                                    <option value="QA">QA&nbsp;&nbsp;卡塔爾 (卡達) QATAR</option>
+                                    <option value="RE">RE&nbsp;&nbsp;留尼旺 REUNION</option>
+                                    <option value="RO">RO&nbsp;&nbsp;羅馬尼亞 ROMANIA</option>
+                                    <option value="RS">RS&nbsp;&nbsp;塞爾維亞共和國 SERBIA</option>
+                                    <option value="RU">RU&nbsp;&nbsp;俄羅斯聯邦 RUSSIANFEDERATION</option>
+                                    <option value="RW">RW&nbsp;&nbsp;盧安達 RWANDA</option>
+                                    <option value="SA">SA&nbsp;&nbsp;沙烏地阿拉伯 SAUDIARABIA</option>
+                                    <option value="SB">SB&nbsp;&nbsp;索羅門群島 SOLOMONISLANDS</option>
+                                    <option value="SBA">SBA&nbsp;聖巴泰勒米 SAINT BARTHELEMY</option>
+                                    <option value="SC">SC&nbsp;&nbsp;塞席爾 SEYCHELLES</option>
+                                    <option value="SD">SD&nbsp;&nbsp;蘇丹 SUDAN</option>
+                                    <option value="SE">SE&nbsp;&nbsp;瑞典 SWEDEN</option>
+                                    <option value="SER">SER&nbsp;塞爾維亞 SERBIA</option>
+                                    <option value="SG">SG&nbsp;&nbsp;新加坡 SINGAPORE</option>
+                                    <option value="SH">SH&nbsp;&nbsp;聖赫勒拿島 SAINTHELENA,ASCENSIONAND TRISTAN DA CUNHA
+                                    </option>
+                                    <option value="SI">SI&nbsp;&nbsp;斯洛維尼亞 SLOVENIA</option>
+                                    <option value="SIN">SIN&nbsp;荷屬聖馬丁 SINT MAARTEN</option>
+                                    <option value="SJ">SJ&nbsp;&nbsp;斯瓦巴及尖棉島 SVALBARD</option>
+                                    <option value="SK">SK&nbsp;&nbsp;斯洛伐克 SLOVAKIA</option>
+                                    <option value="SL">SL&nbsp;&nbsp;獅子山 SIERRALEONE</option>
+                                    <option value="SM">SM&nbsp;&nbsp;聖馬利諾 SANMARINO</option>
+                                    <option value="SMA">SMA&nbsp;法屬聖馬丁 SAINT MARTIN (FRENCH PART)</option>
+                                    <option value="SN">SN&nbsp;&nbsp;塞內加爾 SENEGAL</option>
+                                    <option value="SO">SO&nbsp;&nbsp;索馬利亞 SOMALIA</option>
+                                    <option value="SOU">SOU&nbsp;南蘇丹 SOUTH SUDAN</option>
+                                    <option value="SR">SR&nbsp;&nbsp;蘇利南 SURINAME</option>
+                                    <option value="SS">SS&nbsp;&nbsp;南蘇丹 SOUTH SUDAN</option>
+                                    <option value="ST">ST&nbsp;&nbsp;聖多美普林西比 SAO TOME&amp;PRINCIPE</option>
+                                    <option value="SV">SV&nbsp;&nbsp;薩爾瓦多 ELSALVADOR</option>
+                                    <option value="SX">SX&nbsp;&nbsp;荷屬聖馬丁 SINT MAARTEN (DUTCH PART)</option>
+                                    <option value="SY">SY&nbsp;&nbsp;敘利亞 SYRIA</option>
+                                    <option value="SZ">SZ&nbsp;&nbsp;史瓦濟蘭 SWAZILAND</option>
+                                    <option value="TC">TC&nbsp;&nbsp;土克斯及開科斯群島 TURKS AND CAICOSIS.</option>
+                                    <option value="TD">TD&nbsp;&nbsp;查德 CHAD</option>
+                                    <option value="TF">TF&nbsp;&nbsp;法屬南部屬地 FRENCHSOUTHERNTERRITORIES</option>
+                                    <option value="TG">TG&nbsp;&nbsp;多哥 TOGO</option>
+                                    <option value="TH">TH&nbsp;&nbsp;泰國 THAILAND</option>
+                                    <option value="TJ">TJ&nbsp;&nbsp;塔吉克 TAJIKISTAN</option>
+                                    <option value="TK">TK&nbsp;&nbsp;托克勞群島 TOKELAU</option>
+                                    <option value="TL">TL&nbsp;&nbsp;東帝汶 TIMOR-LESTE</option>
+                                    <option value="TM">TM&nbsp;&nbsp;土庫曼 TURKMENISTAN</option>
+                                    <option value="TN">TN&nbsp;&nbsp;突尼西亞 TUNISIA</option>
+                                    <option value="TO">TO&nbsp;&nbsp;東加 TONGA</option>
+                                    <option value="TR">TR&nbsp;&nbsp;土耳其 TURKEY</option>
+                                    <option value="TT">TT&nbsp;&nbsp;千里達-托貝哥 TRINIDADANDTOBAGO</option>
+                                    <option value="TV">TV&nbsp;&nbsp;吐瓦魯 TUVALU</option>
+                                    <option selected="selected" value="TW">TW&nbsp;&nbsp;中華民國 TAIWAN</option>
+                                    <option value="TZ">TZ&nbsp;&nbsp;坦尚尼亞 TANZANIA</option>
+                                    <option value="UA">UA&nbsp;&nbsp;烏克蘭 UKRAINE</option>
+                                    <option value="UG">UG&nbsp;&nbsp;烏干達 UGANDA</option>
+                                    <option value="UM">UM&nbsp;&nbsp;美屬邊疆群島 UNITEDSTATESMINOROUTLYING ISLANDS</option>
+                                    <option value="US">US&nbsp;&nbsp;美國 USA</option>
+                                    <option value="UY">UY&nbsp;&nbsp;烏拉圭 URUGUAY</option>
+                                    <option value="UZ">UZ&nbsp;&nbsp;烏玆別克 UZBEKISTAN</option>
+                                    <option value="VA">VA&nbsp;&nbsp;教廷 VATICAN CITY</option>
+                                    <option value="VC">VC&nbsp;&nbsp;聖文森 STVINCENT&amp;GRENADINES</option>
+                                    <option value="VE">VE&nbsp;&nbsp;委內瑞拉 VENEZUELA</option>
+                                    <option value="VG">VG&nbsp;&nbsp;英屬維爾京群島 VIRGIN ISLANDS(BRITISH)</option>
+                                    <option value="VI">VI&nbsp;&nbsp;美屬維爾京群島 VIRGIN ISLANDS(U.S.)</option>
+                                    <option value="VN">VN&nbsp;&nbsp;越南 VIET NAM</option>
+                                    <option value="VU">VU&nbsp;&nbsp;萬那杜 VANUATU</option>
+                                    <option value="WF">WF&nbsp;&nbsp;沃里斯及伏塔那島 WALLIS &amp; FUTUNA IS.</option>
+                                    <option value="WS">WS&nbsp;&nbsp;薩摩亞群島 SAMOA</option>
+                                    <option value="YE">YE&nbsp;&nbsp;葉門 YEMEN</option>
+                                    <option value="YT">YT&nbsp;&nbsp;美亞特 MAYOTTE</option>
+                                    <option value="ZA">ZA&nbsp;&nbsp;南非共和國 SOUTHAFRICA</option>
+                                    <option value="ZM">ZM&nbsp;&nbsp;尚比亞 ZAMBIA</option>
+                                    <option value="ZW">ZW&nbsp;&nbsp;辛巴威(羅德西亞) ZIMBABWE</option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">非透明公司型態</td>
+                            <td class="tdDataField">
+                                <select name="ddlAGNTMK" id="ddlAGNTMK" style="width:120px;">
+                                    <option selected="selected" value=""></option>
+                                    <option value="Y">Y:是</option>
+                                    <option value="N">N:否</option>
+
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">股權結構複雜</td>
+                            <td class="tdDataField">
+                                <select name="ddlBTemp20" id="ddlBTemp20" style="width:120px;">
+                                    <option selected="selected" value=""></option>
+                                    <option value="Y">Y:是</option>
+                                    <option value="N">N:否</option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">董監事註</td>
+                            <td class="tdDataField">
+                                <select name="ddlFbank" id="ddlFbank" style="width:120px;">
+                                    <option value="Y">Y:需輸入</option>
+                                    <option selected="selected" value="N">N:不需輸入</option>
+
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">身分別</td>
+                            <td class="tdDataField" colspan="4">
+                              <select name="" id="">
+                                    <option value="1">1:自然人本國籍</option>
+                                    <option value="2">2:自然人外國籍</option>
+                                    <option value="3">3:法人、非法人團體或機關</option>
+                                    <option value="7">7:自然人外國籍居留證號不符檢核邏輯</option>
+                                    <option value="8">8:自然人本國籍身分證號不符檢核邏輯</option>
+                                    <option value="9">9:法人、非法人團體或機關統一編號不符檢核邏輯</option>
+                                </select>
+                        </tr>
+
+                        <tr>
+                            <td class="tdDataCaption">聯絡地址</td>
+                            <td class="tdDataField" colspan="5">
+
+                                <span id="ucAsnd_lblZipQry">
+                                    <button title="選擇日期" class="">查詢</button>
+                                </span>
+                                <input name="ucAsnd:txtZip" type="text" value="800" maxlength="3" id="ucAsnd_txtZip"
+                                    onchange="GetAddressData(ucAsnd_txtZip, ucAsnd_txtAddr);" style="width:48px;">
+                                <input name="ucAsnd:txtAddr" type="text" value="請輸入地址" maxlength="80"
+                                    id="ucAsnd_txtAddr" style="width:350px;">
+
+                            </td>
+                            <td class="tdDataCaption">電子郵件</td>
+                            <td class="tdDataField">
+                                <input name="txtNinsMail" type="text" maxlength="40" id="txtNinsMail"
+                                    style="width:150px;"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="tdDataCaption">公司電話</td>
+                            <td class="tdDataField" colspan="3">
+                                (
+                                <input name="txtNinsOtep" type="text" value="07" maxlength="5" id="txtNinsOtep"
+                                    style="width:40px;">)-
+                                <input name="txtNinsOtel" type="text" value="＊＊＊＊544" maxlength="12" id="txtNinsOtel"
+                                    style="width:120px;">-
+                                <input name="txtNinsOtex" type="text" value="07" maxlength="5" id="txtNinsOtex"
+                                    style="width:40px;"></td>
+                            <td class="tdDataCaption">傳真</td>
+                            <td class="tdDataField" colspan="3">
+                                (
+                                <input name="txtNinsFap" type="text" maxlength="5" id="txtNinsFap"
+                                    style="width:40px;">)-
+                                <input name="txtNinsFax" type="text" maxlength="10" id="txtNinsFax"
+                                    style="width:120px;"></td>
+                        </tr>
+
+
+
+
+                        <tr>
+                            <td class="tdDataCaption">與被保險人關係</td>
+                            <td class="tdDataField">
+                                <select name="ddlAssakin" id="ddlAssakin" style="width:120px;">
+                                    <option value=""></option>
+                                    <option value="1">1&nbsp;本人</option>
+                                    <option value="2">2&nbsp;配偶</option>
+                                    <option value="3">3&nbsp;子女</option>
+                                    <option value="4">4&nbsp;父母</option>
+                                    <option selected="selected" value="5">5&nbsp;其他</option>
+
+                                </select>
+
+                            </td>
+                            <td class="tdDataCaption">業務申請單號</td>
+                            <td class="tdDataField">
+                                <input name="txtReqsno" type="text" value="00S060264" readonly="readonly" id="txtReqsno"
+                                    tabindex="-1" style="background-color:Transparent;border-width:0px;width:75px;">/
+                                <input name="txtREQNO" type="text" readonly="readonly" id="txtREQNO" tabindex="-1"
+                                    style="background-color:Transparent;border-width:0px;width:30px;">
+                            </td>
+                            <td class="tdDataCaption">收據列印日</td>
+                            <td class="tdDataField">
+                                <span id="lblDrevprint">108/08/08</span>
+                            </td>
+                            <td class="tdDataCaption">保單來源</td>
+                            <td class="tdDataField">
+                                <select name="ddlPOLRES" id="ddlPOLRES"style="width:120px;">
+                                    <option selected="selected" value=""> 內部出單</option>
+                                    <option value="A">A:通路</option>
+                                    <option value="E">E:E化</option>
+                                    <option value="T">T:電話行銷</option>
+                                    <option value="M">M:電話投保</option>
+                                    <option value="B">B:資料交換</option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">殘廢等級</td>
+                            <td class="tdDataField">
+                                <select name="ddlFCRIPPLE" id="ddlFCRIPPLE"style="width:120px;">
+                                    <option value=""></option>
+                                    <option value="0">0&nbsp;殘廢舊版</option>
+                                    <option value="1">1&nbsp;殘廢新版</option>
+                                    <option selected="selected" value="2">2&nbsp;殘廢新版2</option>
+
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">燒燙傷等級</td>
+                            <td class="tdDataField">
+                                <select name="ddlFCRIPPLE1" id="ddlFCRIPPLE1"style="width:120px;">
+                                    <option value=""></option>
+                                    <option value="0">0&nbsp;燒燙傷舊版</option>
+                                    <option selected="selected" value="1">1&nbsp;燒燙傷新版</option>
+
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">恐怖主義保額/保費</td>
+                            <td class="tdDataField" colspan="3">
+                                <input name="txtMTERR_AMT" type="text" value="474000000" readonly="readonly"
+                                    id="txtMTERR_AMT" tabindex="-1"
+                                    style="background-color:Transparent;border-width:0px;width:100px;">/
+                                <input name="txtMTERR_PRM" type="text" value="3555" readonly="readonly"
+                                    id="txtMTERR_PRM" tabindex="-1"
+                                    style="background-color:Transparent;border-width:0px;width:100px;">
+                                <span style="color:#2C2C85;"><input id="chkSetant" type="checkbox"
+                                        name="chkSetant"><label for="chkSetant">不送恐怖主義</label></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="tblDataArea" width="100%" align="center" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="tdDataCaption" width="150px;">通路別</td>
+                            <td class="tdDataField" style="WIDTH: 80px" colspan="3">
+                                <select name="ddlChannel:DropDownList1"
+                                    onchange="__doPostBack('ddlChannel$DropDownList1','')" language="javascript"
+                                    id="ddlChannel_DropDownList1" disabled="disabled">
+                                    <option value=""></option>
+                                    <option value="10">10&nbsp;業務員</option>
+                                    <option value="20">20&nbsp;代理人</option>
+                                    <option selected="selected" value="30">30&nbsp;經紀人</option>
+                                    <option value="40">40&nbsp;直接</option>
+                                    <option value="90">90&nbsp;其他</option>
+                                    <option value="TT">TT&nbsp;全部</option>
+                                    <option value="21">21&nbsp;代理人網路投保</option>
+                                    <option value="31">31&nbsp;經紀人網路投保</option>
+                                    <option value="41">41&nbsp;直接網路投保</option>
+
+                                </select>
+
+
+
+                            </td>
+                            <td class="tdDataCaption">專案代號</td>
+                            <td class="tdDataField" colspan="3">
+                                
+                                <select name="" id="">
+                                    <option value="CP03091">CP03091 華銀員工自費案(103)</option>
+                                    <option value="CP03131">CP03131 永豐餘集團公費件</option>
+                                    <option value="CP03171">CP03171 華產員工自費案(104)</option>
+                                    <option value="CP04063">CP04063 高雄市男子理髮職業工會</option>
+                                    <option value="CP04064">CP04064 高雄市家事服務業職業工會</option>
+                                    <option value="CP04210">CP04210 永豐餘集團公費案(105年)</option>
+                                    <option value="CP04212">CP04212 永豐餘集團公費案2(105年)</option>
+                                    <option value="CP04220">CP04220 屏東縣民俗技藝職業工會</option>
+                                    <option value="CP05019">CP05019 105年興華職業工會專案</option>
+                                    <option value="CP06015">CP06015 中華郵政珍愛88專案</option>
+                                    <option value="CP06017">CP06017 台一680專案</option>
+                                    <option value="CP06019">CP06019 台名福華團保專案</option>
+                                    <option value="CP07002">CP07002 台一2188</option>
+                                    <option value="CP07019">CP07019 法務部公務人員協會(自費團健)</option>
+                                    <option value="CP07022">CP07022 全國教育產業總工會</option>
+                                    <option value="CP99501">CP99501 永豐餘集團公費案(105年)</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">保源代號</td>
+                            <td class="tdDataField" colspan="3">
+                                <input name="txtIres" type="text" value="IA00339" maxlength="10" id="txtIres"
+                                    onblur="Check_Get_Ires('002333','txtIres','txtSrccod','txtIrecPesn','txtIrecPesn2','txtIofficer1','0','txtNrecPesn','txtNrecPesn2','txtTemp1');"
+                                    onchange="javascript:return txtIres_onChange();" onkeypress="_ToUpper(this);"
+                                    style="width:80px;">
+                                <input name="txtNres" type="text" value="台一保險經紀人" readonly="readonly" id="txtNres"
+                                    style="border-style:None;">
+                            </td>
+                            <td class="tdDataCaption">實駐代碼</td>
+                            <td class="tdDataField" colspan="3">
+                                ID:
+                                <input name="" type="text" maxlength="10" id=""style="width:100px;">
+                                名稱:
+                                <input name="txtTemp1" type="text" maxlength="20" id="txtTemp1" style="width:100px;">
+                            </td>
+                            <td class="tdDataCaption">影像編號</td>
+                            <td class="tdDataField">
+                                <input name="" type="text" maxlength="15" id="" style="width:120px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">推介人1</td>
+                            <td class="tdDataField" colspan="3">
+                                ID:
+                                <input name="" type="text" value="A221047926" maxlength="10" id=""style="width:100px;">
+                                姓名:
+                                <input name="" type="text" value="＊＊夏" maxlength="10" id=""style="width:100px;">
+                            </td>
+                            <td class="tdDataCaption">通路聯絡人</td>
+                            <td class="tdDataField" colspan="3">
+                                ID:
+                                <input name="" type="text" value="A221047926" maxlength="10" id="" style="width:100px;">
+                                姓名:
+                                <input name="" type="text" value="＊＊夏" maxlength="10" id="" style="width:100px;">
+                            </td>
+                            <td class="tdDataCaption">取資料</td>
+                            <td class="tdDataField">
+
+                                <input type="submit" name="" value="確認" id="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">推介人2</td>
+                            <td class="tdDataField" colspan="3">
+                                ID:
+                                <input name="" type="text" maxlength="10" id="" style="width:100px;">
+                                姓名:
+                                <input name="" type="text" maxlength="10" id="" style="width:100px;">
+                            </td>
+                            <td class="tdDataCaption">佣金率%</td>
+                            <td class="tdDataField">
+                                <input name="" type="text" value="22.00" readonly="readonly" id="" style="background-color:Transparent;border-width:0px;width:50px;">
+                            </td>
+                           
+                            <td class="tdDataCaption">是否折扣</td>
+                            <td class="tdDataField">
+                                <select name="" id=""style="width:120px;">
+                                    <option selected="selected" value="N">N:否</option>
+                                    <option value="Y">Y:是</option>
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">折扣率%</td>
+                            <td class="tdDataField">
+                                <input name="" type="text" value="0" id="" style="width:50px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">結算方式</td>
+                            <td class="tdDataField">
+                                <select name="" id=""style="width:120px;">
+                                    <option selected="selected" value="0">0:一般</option>
+                                    <option value="1">1:年</option>
+                                    <option value="2">2:半年</option>
+                                    <option value="3">3:季</option>
+                                    <option value="4">4:月</option>
+
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">繳費方式</td>
+                            <td class="tdDataField">
+                                <select name="" id="">
+                                    <option value=""></option>
+                                    <option value="0">0&nbsp;無</option>
+                                    <option value="1">1&nbsp;信用卡</option>
+                                    <option selected="selected" value="2">2&nbsp;現金</option>
+                                    <option value="3">3&nbsp;支票</option>
+                                    <option value="4">4&nbsp;其它</option>
+                                    <option value="5">5&nbsp;條碼</option>
+                                    <option value="6">6&nbsp;劃撥</option>
+                                    <option value="7">7&nbsp;信用卡分6期</option>
+                                    <option value="8">8&nbsp;個人專屬序號</option>
+                                    <option value="9">9&nbsp;ATM轉帳</option>
+                                    <option value="A">A&nbsp;銀行匯款</option>
+                                    <option value="B">B&nbsp;預收保費</option>
+
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">繳別</td>
+                            <td class="tdDataField">
+                                <select name="" id=""style="width:120px;">
+                                    <option selected="selected" value="1">1:年</option>
+                                    <option value="2">2:半年</option>
+                                    <option value="3">3:季</option>
+                                    <option value="4">4:月</option>
+                                    <option value="5">5:躉繳</option>
+
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">多期收據</td>
+                            <td class="tdDataField">
+                                <input id="" type="checkbox" name="">
+                            </td>
+                            <td class="tdDataCaption">繳費終日</td>
+                            <td class="tdDataField">
+                                <input name="" type="text" value="109/05/01" maxlength="10" size="10" id="">
+                                
+                                <button title="選擇日期" class="">...</button>
+                                <input name="" id="" type="hidden" value="true">
+                                <span id="" 
+                                    errormessage="日期格式錯誤" style="color:Red;display:none;">日期格式錯誤</span>
+                                    <span
+                                    id=""  errormessage="日期欄位必須填寫" display="None"style="color:Red;display:none;"></span>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="tblDataArea" width="100%" align="center" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="tdDataCaption">主保單號碼</td>
+                            <td class="tdDataField">
+                                <input name="" type="text" readonly="readonly" id="" style="background-color:Transparent;border-width:0px;width:100px;">
+                            </td>
+                            <td class="tdDataCaption">主保單保費</td>
+                            <td class="tdDataField">
+                                <input name="" type="text" value="0" id="" style="background-color:Transparent;border-width:0px;width:100px;">
+                            </td>
+                            <td class="tdDataCaption">本單總保費</td>
+                            <td class="tdDataField">
+                                <input name="" type="text" value="338232"id="" style="background-color:Transparent;border-width:0px;width:100px;">
+                            </td>
+                            <td class="tdDataCaption">保單類別</td>
+                            <td class="tdDataField">
+                                <select name="" id=""style="width:120px;">
+                                    <option value=""></option>
+                                    <option selected="selected" value="1">1&nbsp;一般件</option>
+                                    <option value="2">2&nbsp;圑體件</option>
+                                    <option value="3">3&nbsp;家庭件</option>
+
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">簽單日</td>
+                            <td class="tdDataField">
+                                <span id="">108/08/08</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">投保人數</td>
+                            <td class="tdDataField">
+                                <font style="BACKGROUND-COLOR: #e0eef7" face="新細明體" color="#2c2c85">&nbsp;</font>
+                                <input name="" type="text" value="414" id=""style="background-color:Transparent;border-width:0px;width:50px;">
+                                <font style="BACKGROUND-COLOR: #e0eef7" face="新細明體" color="#2c2c85">人&nbsp;</font>
+                                <span style="color:#2C2C85;">
+                                    <input id="" type="checkbox" name=""><label for="">不記名</label>
+                                </span>
+                            </td>
+                            <td class="tdDataCaption">保單性質</td>
+                            <td class="tdDataField">
+                                <select name="" id=""style="width:120px;">
+                                    <option selected="selected" value="1">1:一般保單</option>
+                                    <option value="2">2:電子保單</option>
+
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">調整總保費</td>
+                            <td class="tdDataField">
+                                <input name="" type="text" id="" style="width:100px;">
+                            </td>
+                            <td class="tdDataCaption">共保註記</td>
+                            <td class="tdDataField">
+                                <select name="" id="" style="width:120px;">
+                                    <option value="1">1&nbsp;再保分入</option>
+                                    <option value="2">2&nbsp;複本會簽</option>
+                                    <option value="3">3&nbsp;外共</option>
+                                    <option selected="selected" value="4">4&nbsp;非共保</option>
+                                    <option value="5">5&nbsp;前衛業務</option>
+
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">共保比例</td>
+                            <td class="tdDataField">
+                                <input name="" type="text" value="100" id="" style="width:100px;">%
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">職業代號版本</td>
+                            <td class="tdDataField">
+                                <input name="" type="text" maxlength="20" id=""
+                                    style="width:120px;">
+                            </td>
+                            <td class="tdDataCaption">行銷代號</td>
+                            <td class="tdDataField">
+                                <input name="" type="text" maxlength="10" id="" style="width:100px;">
+                            </td>
+                            <td class="tdDataCaption">可續保次數</td>
+                            <td class="tdDataField" colspan="3">
+                                <input name="txtAutotimes" type="text" value="0" maxlength="5" id="txtAutotimes"
+                                    style="width:60px;">
+                                <span id="Rangevalidator8" controltovalidate="txtAutotimes" errormessage="數字範圍是0~10000"
+                                    type="Currency" decimalchar="." groupchar="," digits="2"
+                                    evaluationfunction="RangeValidatorEvaluateIsValid" maximumvalue="10000"
+                                    minimumvalue="0" style="color:Red;visibility:hidden;">數字範圍是0~10000</span>
+                                <span style="color:#2C2C85;"><input id="chkAutomk" type="checkbox"
+                                        name="chkAutomk"><label for="chkAutomk">自動續保註記</label></span>
+                            </td>
+                            <td class="tdDataCaption">要保日</td>
+                            <td class="tdDataField">
+                                <input name="UcrocDrmk:txtDate" type="text" maxlength="10" size="10"
+                                    id="UcrocDrmk_txtDate"
+                                    onchange="javascript:this.value=ucRocDate_FormatDateText(this.value,true);">
+                                <div id="UcrocDrmk_divCalender"
+                                    style="display:none;behavior:url('/SCERP/ISNEControl/ucRocDate.htc');"
+                                    isrocdate="true"></div><button title="選擇日期" class="cssUICommandButtonSmall"
+                                    onclick="javascript:document.all.UcrocDrmk_divCalender.Open('UcrocDrmk_txtDate');">...</button><input
+                                    name="UcrocDrmk:txtDateIsRocDate" id="UcrocDrmk_txtDateIsRocDate" type="hidden"
+                                    value="true">
+                                <span id="UcrocDrmk_cvdDate" controltovalidate="UcrocDrmk_txtDate" errormessage="日期格式錯誤"
+                                    display="Dynamic" evaluationfunction="CustomValidatorEvaluateIsValid"
+                                    clientvalidationfunction="ucRocDate_ValidateRocYYYYsMMsDD"
+                                    style="color:Red;display:none;">日期格式錯誤</span><span
+                                    id="UcrocDrmk_RequiredFieldValidator1" controltovalidate="UcrocDrmk_txtDate"
+                                    errormessage="日期欄位必須填寫" display="None" enabled="False"
+                                    evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue=""
+                                    style="color:Red;display:none;"></span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">受理編號</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp12" type="text" maxlength="23" id="txtTemp12" style="width:120px;">
+                            </td>
+                            <td class="tdDataCaption">前續保號</td>
+                            <td class="tdDataField">
+                                <span id="lblIpreply">0007MM000020</span>
+                            </td>
+                            <td class="tdDataCaption">報價單號</td>
+                            <td class="tdDataField">
+                                <span id="lblIquo"></span></td>
+                            <td class="tdDataCaption">輸入人員</td>
+                            <td class="tdDataField">
+                                <span id="lblIcreate">012050</span></td>
+                            <td class="tdDataCaption">輸入日期</td>
+                            <td class="tdDataField">
+                                <span id="lblDcreate">108/05/07</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">團險人員<br>
+                                加(退)保<br>
+                                網路申報註記</td>
+                            <td class="tdDataField">
+                                <span style="color:#2C2C85;"><input id="chkB_temp2" type="checkbox"
+                                        name="chkB_temp2"></span>
+                            </td>
+                            <td class="tdDataCaption">大量人數處理方式</td>
+                            <td class="tdDataField">
+                                <select name="ddlIAGENT" id="ddlIAGENT" style="width: 150px;">
+                                    <option value="Y">Y:TBD方式</option>
+                                    <option selected="selected" value="N">N:一般</option>
+
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <table class="tblDataArea" width="100%" align="center" border="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="submit" name="btnQueryPlan" value="自定方案查詢"
+                                    onclick="if (typeof(Page_ClientValidate) == 'function') Page_ClientValidate(); "
+                                    language="javascript" id="btnQueryPlan"></td>
+                            <td class="tdDataCaption">行業別代號</td>
+                            <td class="tdDataField">
+                                <input type="submit" name="btnQueryIocpyC" value="查詢" id="btnQueryIocpyC">
+                                <input name="txtBussTyp" type="text" maxlength="10" id="txtBussTyp"
+                                    onkeypress="_ToUpper(this);" style="width:80px;"></td>
+                            <td class="tdDataCaption">行業別名稱</td>
+                            <td class="tdDataField">
+                                <input name="txtNbussKind" type="text" maxlength="20" id="txtNbussKind"
+                                    onkeypress="_ToUpper(this);" style="width:120px;">
+                            </td>
+                            <td class="tdDataCaption">營業處所</td>
+                            <td class="tdDataField">
+                                <input name="txtNbussAddr" type="text" id="txtNbussAddr" onkeypress="_ToUpper(this);"
+                                    style="width:300px;">
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+                <table class="tblDataArea" width="100%" align="center" border="0">
+                    <tbody><tr>
+                            <td class="tdDataCaption" width="9%" align="left">家庭年收入</td>
+                            <td class="tdDataField" width="91%" align="left">
+                                <input name="txtNrecrmk2" type="text" value="0" id="txtNrecrmk2" style="width:100px;">
+                            </td>
+                        </tr>
+                    
+
+                </tbody></table>
+
+                <table class="tblDataArea" width="100%" align="center" border="0">
+                    <tbody><tr>
+                            <td class="tdDataCaption" width="9%" align="left">經手人參考指標</td>
+                            <td class="tdDataField" width="91%" align="left">
+                                <input name="txtIofficerR1" type="text" value="000728" readonly="readonly" id="txtIofficerR1" style="width:100px;">
+                            </td>
+                        </tr>
+                    
+
+                </tbody>
+            </table>
+            </div>
+        </div>
+        <!-- content end  -->
+        </div>
+    </section>
+    <!-- dialog -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+                    <button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="foo">
+                    <div id="example-table"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+
+</html>

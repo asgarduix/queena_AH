@@ -1,0 +1,466 @@
+@charset "UTF-8";
+/* 首頁 */
+.feature-list h2 {
+  color: #4B9482;
+}
+.feature-list-container .item-feature:hover{
+  color: #4B9482;
+}
+/* login */
+.btn-login{
+  background-color: #4B9482;
+}
+/* 客製化主要結構 */
+main {
+  background: url("../images/theme/colorful_top_menu_bg.svg") bottom left #FFF6F1 no-repeat;
+  background-size: cover;
+}
+
+aside {
+  border-right-color: #d1d1d1;
+  background-color: #F3F5F8;
+}
+/* 全局查詢成功設定 */
+.findSucc{
+  display: block;
+  height: 1rem;
+  width: 90%;
+  float: left;
+  font-size: 1rem; 
+  color: red;
+  margin-bottom: 10px;
+}
+
+.checkbox_box input[type=checkbox]:not(old) + label, .checkbox_box input[type=radio]:not(old) + label {
+  background: url("../images/theme/candy_input_icon_checks.svg") no-repeat;
+  display: inline-block;
+  padding-left: 20px;
+  height: 21px;
+  cursor: pointer;
+  background-size: 21px 84px;
+  word-break: break-all;
+  font-size: 12px;
+  color: #005B86;
+}
+.tablespan{
+  display: block;
+  line-height:1.2rem;
+  color:#858585;
+}
+
+.textarea{
+  /* -webkit-writing-mode: horizontal-tb !important; */
+    text-rendering: auto;
+    color: -internal-light-dark-color(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-appearance: textarea;
+    background-color: -internal-light-dark-color(white, black);
+    -webkit-rtl-ordering: logical;
+    flex-direction: column;
+    resize: auto;
+    cursor: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    overflow: scroll;
+    box-sizing: border-box;
+    margin: 0em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: initial;
+    border-image: initial;
+    padding: 2px;
+}
+
+/* 全局table */
+.tableone{
+  width: 99%;
+  margin: 0 auto;
+  padding:3px;
+  border: 2px solid #4B9482;
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 2rem;
+  margin-bottom: 20px;
+  
+  
+  
+}
+.tableinput{
+    position: relative;
+    top: 0;
+    left:5px;
+    border: 1px solid #c5c5c5;
+    width:70% ;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 5px;
+    
+}
+
+
+
+.tabletd{
+  border:2px solid #4B9482;
+}
+
+.tabletdR{
+  border:2px solid #4B9482;
+  text-align: right;
+  padding-right: 7px;
+  background-color:  #EBFDFF;;
+}
+/* 全局輸入框：input跟外框文字顏色 */
+
+
+.col-border {
+  color: #005B86;
+}
+
+.input_border {
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 1px solid #c5c5c5;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+
+/* 全局輸入框：核取選項 checkbox 核取方塊 */
+.select_boxtop{
+  border: 1px solid #c5c5c5;
+  height: 2rem;
+  margin:5px;
+ 
+}
+
+.checkbox_box input[type=checkbox]:not(old) + label {
+  line-height: 22px;
+  background-position: -4px -42px;
+}
+
+.checkbox_box input[type=checkbox]:not(old):checked + label {
+  background-position: -4px -63px;
+}
+
+/* 全局輸入框：核取選項 radio 選項按鈕 */
+.checkbox_box input[type=radio]:not(old) + label {
+  line-height: 22px;
+  background-position: -4px -1px;
+}
+
+.checkbox_box input[type=radio]:not(old):checked + label {
+  background-position: -4px -22px;
+}
+
+
+
+/* 全局 button 預設值 */
+button {
+  background-color: #4B9482;
+  -webkit-box-shadow: 0px 0px 0px #bbbbbb;
+          box-shadow: 0px 0px 0px #bbbbbb;
+  height: 20px;
+  color: #fff;
+}
+
+.button, div.button {
+  color: #fff;
+  border: 1px solid #4B9482;
+}
+
+.button:hover {
+  background-color: #4c7c70;
+  color: #fff;
+}
+
+.btn, div.btn {
+  color: #fff;
+  border: 1px solid #4B9482;
+}
+
+
+.btn:hover {
+  background-color: #4c7c70;
+  color: #fff;
+}
+
+/* 全局 button 配色 */
+.bt_color_off, div.bt_color_off {
+  color: #999999;
+  border-color: #999999;
+  background-color: #fff;
+}
+
+.bt_color_off:hover {
+  background-color: #999999;
+  color: #fff;
+}
+
+.btn-disable {
+  background-color: #ccc;
+  color: #ddd;
+  border-color: #ccc;
+}
+
+.btn-disable:hover {
+  background-color: #ccc;
+  color: #ddd;
+}
+.btn-primary{
+  color: #fff;
+  border: 1px solid #4B9482;
+  background-color: #4B9482;
+}
+.btn-primary:hover{
+  background-color: rgb(66, 129, 114);
+  border: 1px solid #4B9482;
+}
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle{
+  background-color: rgb(66, 129, 114);
+  border: 1px solid #4B9482;
+}
+.btn-oneBig {
+  border: 1px solid #4B9482;
+  background-color: #F0FFF5;
+  color: #4B9482;
+  margin-top: 5px;
+  /* height: 26px; */  
+}
+
+.btn-oneBig:hover {
+  color: #555;
+  background-color: #fff;
+}
+
+.btn-secondary {
+  border: 1px solid #999999;
+  background-color: #ffffff;
+  color: #555;
+  /* height: 26px; */  
+}
+
+.btn-secondary:hover {
+  color: #555;
+  background-color: #fff;
+}
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle{
+  background-color: #f8f8f8;
+}
+.btn-colorful {
+  color: #ffffff;
+  background-color:#628179;
+  height: 2rem;
+  margin-bottom: 1rem;
+}
+
+.btn-colorful:hover{
+  color: #ffffff;
+  background-color:#4B9482
+}
+
+.btn-pinks{
+  color: #fff;
+  background-color: #F08181;
+}
+.btn-pinks:hover{
+  background-color: #DBB1B7;
+  
+}
+.btn-editt{
+  color: #fff;
+  background-color: #CFB84A;
+}
+.btn-editt:hover{
+  background-color: #907C20;
+  
+}
+.btn-del{
+  color: #fff;
+  background-color: #2A6E94;
+}
+.btn-del:hover{
+  background-color: #335364;
+  
+}
+.btn-update{
+  color: #fff;
+  background-color: #9293BB;
+}
+.btn-update:hover{
+  background-color: #70708C;
+}
+
+.btn-addlist{
+  background-color: #DE9E95;
+  color: #fff;
+}
+
+
+/* 登入 */
+.login-bg {
+  background: url("../images/theme/colorful_login_bg.png")no-repeat ;
+  background-size: cover;
+}
+.login-img {
+  background: url(../images/theme/login-colorful.png) #fff center center no-repeat;
+  background-size: cover;
+}
+
+/* 上方選單 */
+.main-box .top_item {
+  color: #494949;
+}
+
+.top_item .icon path {
+  fill: #494949;
+}
+
+/* 左側選單 */
+.nav-bt-box {
+  background-color: #D1D1D1;
+}
+
+/* .list_layer ul {
+  border-color: #4B9482;
+}
+
+.list_layer li div {
+  background-color: #4B9482;
+  border-top-color: #4B9482;
+}
+
+.list_layer li div:hover {
+  background-color: #4c7c70;
+  color: #fff;
+}
+.list_layer li li.active div {
+  background-color: #EDA9A2;
+}
+.list_layer li li div:hover {
+  background-color: #EDA9A2;
+  color: #333;
+}
+
+.list_layer li li li div {
+  background-color: #FCF4FF;
+} */
+
+/* 主要內容 */
+/* 麵包屑 */
+.bread-crumbs {
+  color: #666666;
+}
+
+.bread-crumbs a {
+  color: #666666;
+}
+
+/* 輸入框 */
+.content .input-title::before {
+  background-color: #EBFDFF;
+}
+
+/* 標題 */
+.content .item_title {
+  background-color: #4B9482;
+}
+
+/* Table 基本樣式調整 */
+.css_table {
+  border: 1px solid #4B9482;
+}
+
+.css_table th, .css_table td {
+  padding: 5px 10px 0px 10px;
+  border-top: 1px solid #4B9482;
+  border-bottom: 1px solid #4B9482;
+  font-size: 0.7rem;
+  line-height: 1.5rem;
+}
+
+.css_table th {
+  background-color: #EBFDFF;
+  color: #005B86;
+}
+
+.css_table tbody tr:nth-child(odd) td {
+  background-color: #fff;
+}
+
+.css_table tbody tr:nth-child(even) td {
+  background-color: #FFFBFB;
+}
+
+.css_table th a, .css_table td a {
+  color: #9D4545;
+}
+
+.css_table th a, .css_table td a:hover {
+  color: #E5ADB5;
+}
+
+/* CSS Table 凍結定位_左邊 */
+.freeze_left {
+  border: 1px solid #4B9482;
+  border-left: 2px solid #4B9482;
+  border-right: 2px solid #4B9482;
+}
+
+/* CSS Table icon變更 */
+.css_table .td_button svg,
+.css_table .td_button i,
+.css_table .td_button .checkbox_box {
+  color: #67a8bb;
+}
+
+.css_table .td_button svg:hover,
+.css_table .td_button i:hover {
+  color: #48646c;
+}
+
+.content .text-color {
+  color: #C00F30;
+}
+
+/* 收合顏色 */
+.collapse_title.light_pink {
+  background-color: #F2ABB5;
+}
+
+.collapse_title.pink {
+  background-color: #C6808A;
+}
+
+.collapse_title.d_pink {
+  background-color: #9D4545;
+}
+
+.collapse_title.purple {
+  background-color: #544490;
+}
+
+.collapse_title.blue {
+  background-color: #5D78A4;
+}
+
+.collapse_title.green {
+  background-color: #349A7E;
+}
+
+.collapse_title.orange {
+  background-color: #BD5E00;
+}
+
+.collapse_title.red {
+  background-color: #AB1A1A;
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" lang="zh-Hant-TW">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+	<title>華南產物保險-健康傷害險</title>
+	<!-- jQuery -->
+	<script src="../../shigen/plugin/jquery.min.js"></script>
+	<!-- jQuery UI -->
+	<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+	<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+	<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+	<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+	<!-- bootstrap -->
+	<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+	<!-- table tabulator -->
+	<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+	<!-- fontawsome -->
+	<script defer src="../../shigen/fonts/js/all.min.js"></script>
+	<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+	<!--load all styles -->
+	<!-- Plug CSS樣式 -->
+	<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+	<!-- 共用樣式 -->
+	<link rel="stylesheet" href="../../shigen/css/type.css">
+	<!-- 主題顏色切換 糖果世代 -->
+	<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+	<!-- 主題顏色切換 海神寶藍 -->
+	<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+	<!-- 主題顏色切換 法拉利紅 -->
+	<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+	<!-- 主題顏色切換 繽紛馬卡 -->
+	<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+	<!-- 主題顏色切換 煙花季節 -->
+	<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+	<!-- 主題顏色切換 冬雪初現 -->
+	<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+	<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+	<!-- 自訂JS樣式 -->
+	<script src="../../shigen/js/type.js"></script>
+	<script src="../../shigen/js/common.js"></script>
+	<script src="../../shigen/js/global.js"></script>
+	<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+	<div class="ajax-aside-nav"></div>
+	<section>
+		<div class="ajax-section-main"></div>
+		<div class="container-fluid">
+			<div class="content">
+				<div class="bread-crumbs">
+					<a href="">承保受理作業</a>
+				</div>
+				<div class="big_title title s1">HAS302000 健康傷害險批次列印作業-承保列印範圍</div>
+				<div class="row-group">
+					<div class="row">
+						<div class="col-12 text-left content_function_bar">
+
+							<button class="btn btn-oneBig">列印</button>
+							<button class="btn btn-oneBig">離開</button>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="item_title title s2">查詢</div> -->
+				<div class="row-group">
+					<div class="row">
+						<!-- 保單新增 -->
+						<table class="tblDataArea" id="Table1" width="95%" align="center" border="0">
+							<tbody>
+								<tr>
+									<td class="tdDataCaption">保單類別</td>
+									<td class="tdDataField">
+										<select name="ddlIinsKind" onchange="__doPostBack('ddlIinsKind','')"
+											language="javascript" id="ddlIinsKind" style="width:150px;">
+
+											<option value="1">1:一般保單</option>
+											<option value="GM0">2:最新保單(日結後)</option>
+											<option value="GD0">3:最低</option>
+											<option value="GC0">4:最新保單(日結前)</option>
+											<option value="GC0">5:核對(核保人員使用)</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td class="tdDataCaption">保單類別</td>
+									<td class="tdDataField">
+										<select name="ddlIinsKind" onchange="__doPostBack('ddlIinsKind','')"
+											language="javascript" id="ddlIinsKind" style="width:150px;">
+											<option value="A">A&nbsp;責任險</option>
+											<option value="I">I&nbsp;傷害險</option>
+											<option selected="selected" value="H">H&nbsp;健康險</option>
+
+										</select>
+
+										<select name="ddlIinsKind" onchange="__doPostBack('ddlIinsKind','')"
+											language="javascript" id="ddlIinsKind" style="width:150px;">
+											<option selected="selected" value="GH0">GH0&nbsp;日額甲型</option>
+											<option value="GM0">GM0&nbsp;個人組合</option>
+											<option value="GD0">GD0&nbsp;重大疾病</option>
+											<option value="GC0">GC0&nbsp;初次罹癌</option>
+											<option value="GI0">GI0&nbsp;癌症住院</option>
+											<option value="MH0">MH0&nbsp;團體健康</option>
+											<option value="MM0">MM0&nbsp;團體組合</option>
+											<option value="MH1">MH1&nbsp;團體健康(甲型)</option>
+											<option value="MM1">MM1&nbsp;團體組合(甲型)</option>
+											<option value="DH0">DH0&nbsp;重大傷病</option>
+											<option value="MR0">MR0&nbsp;團體住院醫療(實支實付型)</option>
+											<option value="GC1">GC1&nbsp;團體癌症</option>
+											<option value="GC2">GC2&nbsp;團體癌症身故</option>
+											<option value="MH2">MH2&nbsp;住院日額醫療</option>
+											<option value="GC3">GC3&nbsp;初次罹癌(台灣中油)</option>
+											<option value="GC4">GC4&nbsp;團體癌症(台灣中油)</option>
+											<option value="MH3">MH3&nbsp;團體住院醫療日額(台灣中油)</option>
+											<option value="MR1">MR1&nbsp;團體住院醫療限額(台灣中油)</option>
+											<option value="MR2">MR2&nbsp;團體醫療(實支實付型)</option>
+
+										</select>
+
+
+									</td>
+								</tr>
+								<tr>
+									<td class="tdDataCaption">列印類別</td>
+									<td class="tdDataField">
+										<select name="ddlIinsKind" onchange="__doPostBack('ddlIinsKind','')"
+											language="javascript" id="ddlIinsKind" style="width:150px;">
+											<option selected="selected" value="1">個人件保單</option>
+											<option value="2">團體保單</option>
+											<option value="4">承保範圍</option>
+											<option value="7">收據-新</option>
+											<option value="8">名冊</option>
+											<option value="10">共保特約條款</option>
+
+										</select></td>
+
+								<tr>
+									<td class="tdDataCaption">保單號碼</td>
+									<td class="tdDataField"><input name="txtPolicyBgn" type="text" maxlength="14"
+											readonly="readonly" id="txtPolicyBgn"
+											onchange="CopyObjValue(txtPolicyBgn,txtPolicyEnd);"
+											onkeypress="_ToUpper(this);" style="width:120px;">~
+										<input name="txtPolicyEnd" type="text" maxlength="14" readonly="readonly"
+											id="txtPolicyEnd" onkeypress="_ToUpper(this);" style="width:120px;"></td>
+								</tr>
+								<tr>
+									<td class="tdDataCaption">輸入日期</td>
+									<td class="tdDataField">
+										
+											<input class="mingo data_time" name="" type="text" style="width:20%;" maxlength="10" size="10" id="UcRocDbgn" >
+                            <!-- <button title="選擇日期" class="" >...</button> -->
+                            <input name="" id="" type="hidden" value="true">
+                            <span id="UcRocDbgn_txtDate" style="color:Red;display:none;">日期格式錯誤</span>
+                            <span id="" style="color:Red;display:none;"></span>
+                            ~
+                            <input class="mingo data_time" name=""  style="width: 20%;" type="text" maxlength="10" size="10" id="UcRocDend">
+                            <!-- <button title="選擇日期" class="" >...</button> -->
+                            <input name="" id="" type="hidden" value="true">
+                            <span id="UcRocDend_txtDate" style="color:Red;display:none;">日期格式錯誤</span>
+                            <span id="" style="color:Red;display:none;"></span>
+										
+									</td>
+								</tr>
+								<tr>
+									<td class="tdDataCaption">輸入人員</td>
+									<td class="tdDataField">
+										<input name="txtIcreate" type="text" maxlength="10" readonly="readonly"
+											id="txtIcreate" style="width:120px;"></td>
+								</tr>
+								<tr>
+									<td class="tdDataCaption">起保日期</td>
+									<td class="tdDataField">
+										<input class="mingo data_time" name="" type="text" style="width:20%;" maxlength="10" size="10" id="UcRocDbgn" >
+                            <!-- <button title="選擇日期" class="" >...</button> -->
+                            <input name="" id="" type="hidden" value="true">
+                            <span id="UcRocDbgn_txtDate" style="color:Red;display:none;">日期格式錯誤</span>
+                            <span id="" style="color:Red;display:none;"></span>
+                            ~
+                            <input class="mingo data_time" name=""  style="width: 20%;" type="text" maxlength="10" size="10" id="UcRocDend">
+                            <!-- <button title="選擇日期" class="" >...</button> -->
+                            <input name="" id="" type="hidden" value="true">
+                            <span id="UcRocDend_txtDate" style="color:Red;display:none;">日期格式錯誤</span>
+                            <span id="" style="color:Red;display:none;"></span>
+									</td>
+								</tr>
+								<tr>
+									<td class="tdDataCaption">團代號</td>
+									<td class="tdDataField">
+										<input name="txtGroupBgn" type="text" maxlength="6" readonly="readonly"
+											id="txtGroupBgn" style="width:120px;">~
+										<input name="txtGroupEnd" type="text" maxlength="6" readonly="readonly"
+											id="txtGroupEnd" style="width:120px;"></td>
+								</tr>
+
+
+								<tr>
+									<td class="tdDataCaption">已列印是否重複列印</td>
+									<td class="tdDataField">
+										<select name="ddlRePrt" id="ddlRePrt" disabled="disabled" style="width: 100px;">
+											<option selected="selected" value="Y">Y 是</option>
+											<option value="N">N 否</option>
+
+										</select>
+									</td>
+								</tr>
+
+
+
+								<tr>
+									<td class="tdDataCaption">列印件數</td>
+									<td class="tdDataField">
+										<font style="BACKGROUND-COLOR: #e0eef7" face="新細明體" color="#2c2c85">保單正本</font>
+										<input name="txtQcnt1" type="text" value="1" maxlength="2" readonly="readonly"
+											id="txtQcnt1" style="width:50px;">
+										<font style="BACKGROUND-COLOR: #e0eef7" face="新細明體" color="#2c2c85">副本</font>
+										<input name="txtQcnt2" type="text" value="0" maxlength="2" readonly="readonly"
+											id="txtQcnt2" style="width:50px;">
+										<font style="BACKGROUND-COLOR: #e0eef7" face="新細明體" color="#2c2c85">承保範圍/收據件數
+										</font>
+										<input name="txtQcnt3" type="text" value="1" maxlength="2" readonly="readonly"
+											id="txtQcnt3" style="width:50px;">
+									</td>
+								</tr>
+								
+								
+
+							</tbody>
+						</table>
+
+
+
+
+
+
+
+
+
+
+
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+		<!-- content end  -->
+		</div>
+	</section>
+	<!-- dialog -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+					<button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="foo">
+					<div id="example-table"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+
+</html>

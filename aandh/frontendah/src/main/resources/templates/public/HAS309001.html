@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" lang="zh-Hant-TW">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+    <title>華南產物保險-健康傷害險</title>
+    <!-- jQuery -->
+    <script src="../../shigen/plugin/jquery.min.js"></script>
+    <!-- jQuery UI -->
+    <link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+    <script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+    <!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+    <script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+    <!-- bootstrap -->
+    <script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+    <!-- table tabulator -->
+    <script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+    <!-- fontawsome -->
+    <script defer src="../../shigen/fonts/js/all.min.js"></script>
+    <link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+    <!--load all styles -->
+    <!-- Plug CSS樣式 -->
+    <link rel="stylesheet" href="../../shigen/css/type_plug.css">
+    <!-- 共用樣式 -->
+    <link rel="stylesheet" href="../../shigen/css/type.css">
+    <!-- 主題顏色切換 糖果世代 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+    <!-- 主題顏色切換 海神寶藍 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+    <!-- 主題顏色切換 法拉利紅 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+    <!-- 主題顏色切換 繽紛馬卡 -->
+    <link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+    <!-- 主題顏色切換 煙花季節 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+    <!-- 主題顏色切換 冬雪初現 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+    <link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+    <!-- 自訂JS樣式 -->
+    <script src="../../shigen/js/type.js"></script>
+    <script src="../../shigen/js/common.js"></script>
+    <script src="../../shigen/js/global.js"></script>
+    <!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+    <div class="ajax-aside-nav"></div>
+    <section>
+        <div class="ajax-section-main"></div>
+        <div class="container-fluid">
+            <div class="content">
+                <div class="bread-crumbs">
+                    <a href="">承保受理作業</a>
+                </div>
+                <div class="big_title title s1">HAS309001 健康險保單資料轉出</div>
+                <!-- 0810對aspx發現title有誤 續保到期通知單格式轉出 -->
+                <div class="row-group">
+                    <div class="row">
+                        <div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-oneBig">查詢</button>
+                            <button class="btn btn-oneBig">清除</button>
+                            <button class="btn btn-oneBig">離開</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="item_title title s2">查詢</div> -->
+
+
+                <div class="row-group">
+                    <div class="row">
+
+                    </div>
+                </div>
+                <!-- 抬頭 -->
+                <!-- <div class="item_title title s2">董監事名冊</div> -->
+                <table class="tblDataArea tblInquireArea" width="95%" align="center">
+                    <tbody>
+                        <tr>
+                            <td class="tdDataCaption" >保單到期年月</td>
+                            <td class="tdDataField">
+                                <input name="TxtYEAR1" type="text" maxlength="3" id="TxtYEAR1" style="width:10%;">
+                                <font color="#005B86" face="新細明體">年（YYY）</font>
+                                <input name="TxtMOUTH1" type="text" maxlength="2" id="TxtMOUTH1" style="width:10%;">
+                                <font color="#005B86" face="新細明體">月*~（MM）</font>
+                                <input name="TxtYEAR2" type="text" maxlength="3" id="TxtYEAR2" style="width:10%;">
+                                <font color="#005B86" face="新細明體">年(YYY)</font>
+                                <input name="TxtMOUTH2" type="text" maxlength="2" id="TxtMOUTH2" style="width:10%;">
+                                <font color="#005B86" face="新細明體">月*</font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">匯出格式</td>
+                            <td class="tdDataField">
+                                <select name="ddlFormat" id="ddlFormat" style="width: 23%;">
+                                    <option selected="selected" value="1">1.續保單格式(廠商)</option>
+                                    <option value="2">2.續保通知書格式(廠商)</option>
+                                    <option value="3">3.不續保通知書格式(廠商)</option>
+                                    <option value="4">4.繳費單格式(華南)</option>
+                                    <option value="5">5.團險續保單格式(廠商)</option>
+                                    <option value="8">8.團體健康險自費件</option>
+
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">匯出條件</td>
+                            <td class="tdDataField">
+                                <select name="ddlCondition" id="ddlCondition" style="width:23%;">
+                                    <option selected="selected" value="1">1.一般續保</option>
+                                    <option value="2">2.自動續保</option>
+                                    <option value="3">3.全部</option>
+                                </select>
+                                <font color="#005B86" face="新細明體">(只針對續保通知書及不續保通知書有效)</font>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">繳費單篩選條件</td>
+                            <td class="tdDataField">
+                                <select name="ddlPayType" id="ddlPayType" style="width:23%">
+                                    <option selected="selected" value="1">1.非信用卡件</option>
+                                    <option value="2">2.信用卡件</option>
+                                    <option value="3">3.全部</option>
+                                </select>
+                                <font color="#005B86" face="新細明體">(只針對繳費單有效)</font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">險別</td>
+                            <td class="tdDataField">
+                                <select name="ddlQIinscls"onchange=""id="ddlQIinscls" style="width:23%;">
+                                    <option value=""></option>
+                                    <option value="A">A&nbsp;責任險</option>
+                                    <option value="I">I&nbsp;傷害險</option>
+                                    <option selected="selected" value="H">H&nbsp;健康險</option>
+
+                                </select>
+
+                                &nbsp;*</td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">保單類別</td>
+                            <td class="tdDataField">
+                                <select name="ddliinskind" id="ddliinskind" style="width:23%;">
+                                    <option selected="selected" value=""></option>
+                                    <option value="GH0">GH0&nbsp;日額甲型</option>
+                                    <option value="GM0">GM0&nbsp;個人組合</option>
+                                    <option value="GD0">GD0&nbsp;重大疾病</option>
+                                    <option value="GC0">GC0&nbsp;初次罹癌</option>
+                                    <option value="GI0">GI0&nbsp;癌症住院</option>
+                                    <option value="MH0">MH0&nbsp;團體健康</option>
+                                    <option value="MM0">MM0&nbsp;團體組合</option>
+                                    <option value="MH1">MH1&nbsp;團體健康(甲型)</option>
+                                    <option value="MM1">MM1&nbsp;團體組合(甲型)</option>
+                                    <option value="DH0">DH0&nbsp;重大傷病</option>
+                                    <option value="MR0">MR0&nbsp;團體住院醫療(實支實付型)</option>
+                                    <option value="GC1">GC1&nbsp;團體癌症</option>
+                                    <option value="GC2">GC2&nbsp;團體癌症身故</option>
+                                    <option value="MH2">MH2&nbsp;住院日額醫療</option>
+                                    <option value="GC3">GC3&nbsp;初次罹癌(台灣中油)</option>
+                                    <option value="GC4">GC4&nbsp;團體癌症(台灣中油)</option>
+                                    <option value="MH3">MH3&nbsp;團體住院醫療日額(台灣中油)</option>
+                                    <option value="MR1">MR1&nbsp;團體住院醫療限額(台灣中油)</option>
+                                    <option value="MR2">MR2&nbsp;團體醫療(實支實付型)</option>
+
+                                </select>
+
+
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">分公司代號</td>
+                            <td class="tdDataField">
+                                <font face="新細明體">
+                                    <select name="ddlArea" id="ddlArea" style="width: 23%;">
+                                        <option value=""></option>
+                                        <option selected="selected" value="00">00 總公司</option>
+                                        <option value="01">01 台　南</option>
+                                        <option value="02">02 高　雄</option>
+                                        <option value="03">03 台　中</option>
+                                        <option value="05">05 桃　園</option>
+                                        <option value="06">06 台　北</option>
+                                        <option value="07">07 新　竹</option>
+                                        <option value="08">08 員　林</option>
+                                        <option value="09">09 OIU </option>
+
+                                    </select></font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption" >經手人</td>
+                            <td class="tdDataField">
+                                <input name="Txtofficername1" type="text" style="width: 23%;" id="Txtofficername1">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">保源代號</td>
+                            <td class="tdDataField">
+                                <input name="TxtIRES1" type="text" style="width: 23%;" id="TxtIRES1">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">專案代號</td>
+                            <td class="tdDataField" >
+                                <input name="TxtIPROJECT1" type="text" style="width: 23%;" id="TxtIPROJECT1">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption" >保單號碼</td>
+                            <td class="tdDataField" >
+                                <input name="TxtIPOLICY1" type="text" style="width: 23%;" id="TxtIPOLICY1" onchange="CopyObjValue(TxtIPOLICY1,TxtIPOLICY2);"
+                                    onkeypress="_ToUpper(this);">~
+                                <input name="TxtIPOLICY2" type="text" style="width: 23%;" id="TxtIPOLICY2" onkeypress="_ToUpper(this);">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <!-- content end  -->
+        </div>
+    </section>
+    <!-- dialog -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+                    <button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="foo">
+                    <div id="example-table"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+
+</html>

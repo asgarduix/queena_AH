@@ -1,0 +1,139 @@
+#格式中注意加入空白，{key}: 100，例:port: 9000
+#放到junction?
+jwt:
+   secret: 866ea38006e4aacc6410936ea2394591f2fdcec3
+environments:
+   project:
+      name: frontendah
+   dev:
+      url: localhost
+      name: Developer Setup
+   prod:
+      url: localhost
+      name: My Cool App
+ldap:
+  urls: ldap://192.168.5.209:389/
+  base:
+    dn: ou=Users_Java,dc=asgard,dc=test,dc=com
+  factory: com.sun.jndi.ldap.LdapCtxFactory
+server: 
+   port: 10122
+spring:
+   profiles: 
+      active: dev
+#      active: uat
+   output:
+      ansi:
+         enabled: ALWAYS
+   thymeleaf:
+      cache: false
+      prefix: classpath:/templates/
+      suffix: .html
+      encoding: UTF-8
+      servlet:
+        content-type: text/html
+      mode: HTML5
+   resources:
+      static-locations: classpath:/static,classpath:/templates
+   api:
+      domain: 
+         log: localhost:9011
+         callrest: localhost:9010
+         rainwarning: localhost:10001
+         waterwarning: localhost:10031
+         systembatch: localhost:10071
+         frontend: localhost:10122
+         backendweb: localhost:10122
+         systemconfig: localhost:10141
+         informixapi: localhost:10125
+   datasource:
+      url: jdbc:postgresql://192.168.51.10:5432/postgres?autoReconnect=true&amp;maxReconnects=36000&amp;initialTimeout=3&amp;characterEncoding=UTF-8
+#      url: jdbc:postgresql://127.0.0.1:5432/postgres?autoReconnect=true&amp;maxReconnects=36000&amp;initialTimeout=3&amp;characterEncoding=UTF-8
+#      url: jdbc:informix-sqli://192.168.220.129:4537/sysmaster:informixserver=shme2
+      username: postgres
+#      username: vbtest
+      #password: P@ssw0rd
+      password: postgres
+#      password: vbtest
+      driver-class-name: org.postgresql.Driver
+#      driver-class-name: com.informix.jdbc.IfxDriver
+#      platform: mysql
+   security:
+      user: 
+         password: test
+   quartz:
+      job-store-type: memory
+#      jdbc:
+#        initialize-schema: always #this will create schema to db, quartz have sql script
+#reference offical
+      properties:
+         org:
+            quartz:
+               scheduler:
+                  instanceName: Scheduler
+               threadPool:
+                  threadCount: 10
+               jobStore:
+                  class: org.quartz.simpl.RAMJobStore
+logging:
+   pattern:
+#      console: "\u001b[0;31m xxxx \u001b[m %n" #使用顏色碼 
+#      console: '%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){cyan} %-5level-%clr([%t]){cyan} %m %n' #自訂log4j pattern
+      console: '%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level-[%t] %m%n' #自訂log4j pattern
+   file: ../../springboot_log-dev.log
+   level:
+      com:
+         asi: DEBUG
+         #asi: INFO
+      org:
+         springframework: DEBUG
+mailServer:
+   username: asiopenkm@gmail.com
+   password: '!@#456QWErty'
+   host: smtp.gmail.com
+   port: 587
+   auth: 'true'
+   starttlsEnable: 'true'
+path:
+   url: static/shigen/images/uploadFile/
+   
+---
+spring:
+   profiles: dev4Localhost_db_postgresql
+   api:
+      domain: 
+         log: localhost:9011
+         callrest: localhost:9010
+         rainwarning: localhost:10001
+         waterwarning: localhost:10031
+         systembatch: localhost:10071
+         frontend: localhost:10121
+         backendweb: localhost:10122
+         systemconfig: localhost:10141
+   datasource:
+      url: jdbc:postgresql://192.168.51.10:5432/postgres?autoReconnect=true&amp;maxReconnects=36000&amp;initialTimeout=3&amp;characterEncoding=UTF-8
+      #url: jdbc:postgresql://127.0.0.1:5432/sysgrant?autoReconnect=true&amp;maxReconnects=36000&amp;initialTimeout=3&amp;characterEncoding=UTF-8
+      username: postgres
+      #password: P@ssw0rd
+      password: postgres
+      driver-class-name: org.postgresql.Driver
+#      platform: mysql
+---
+spring:
+   profiles: prod
+   api:
+      domain: 
+         log: localhost:9011
+         callrest: localhost:9010
+         rainwarning: localhost:10001
+         waterwarning: localhost:10031
+         systembatch: localhost:10071
+         warningweb: localhost:10121
+         backendweb: localhost:10122
+         systemconfig: localhost:10141
+   datasource:
+      url: jdbc:oracle:thin:@//192.168.5.205:1521/XE
+      username: WWU_APP
+      password: P@ssw0rd
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+#      platform: mysql

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" lang="zh-Hant-TW">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+<title>華南產物保險-健康傷害險</title>
+<!-- jQuery -->
+<script src="../../shigen/plugin/jquery.min.js"></script>
+<!-- jQuery UI -->
+<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+<!-- bootstrap -->
+<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+<!-- table tabulator -->
+<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+<!-- fontawsome -->
+<script defer src="../../shigen/fonts/js/all.min.js"></script>
+<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+<!--load all styles -->
+<!-- Plug CSS樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+<!-- 共用樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type.css">
+<!-- 主題顏色切換 糖果世代 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+<!-- 主題顏色切換 海神寶藍 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+<!-- 主題顏色切換 法拉利紅 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+<!-- 主題顏色切換 繽紛馬卡 -->
+<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+<!-- 主題顏色切換 煙花季節 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+<!-- 主題顏色切換 冬雪初現 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+<!-- 自訂JS樣式 -->
+<script src="../../shigen/js/type.js"></script>
+<script src="../../shigen/js/common.js"></script>
+<script src="../../shigen/js/global.js"></script>
+<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+<div class="ajax-aside-nav"></div>
+<section>
+    <div class="ajax-section-main"></div>
+    <div class="container-fluid">
+        <div class="content">
+            <div class="bread-crumbs">
+                <a href="">專案代號設定維護</a>
+            </div>
+            <div class="big_title title s1">HAS108000 專案代號設定維護</div>
+            <div class="row-group">
+                <div class="row">
+                    <div class="col-12 text-left content_function_bar">
+                        <button class="btn btn-oneBig">新增</button>
+                        <button class="btn btn-oneBig">查詢</button>
+                        <button class="btn btn-oneBig">清除</button>
+                        <button class="btn btn-oneBig">離開</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="item_title title s2">查詢</div> -->
+            <div class="row-group">
+                <div class="row">
+					<table id="" class="tblDataArea" border="0" width="95%" align="center">
+                        <tbody>
+                            <tr>
+                                <td class="tdDatapass">險別代號
+								</td>
+								<td class="tdDatapass">
+									<select name="ddlQiinscls:DropDownList1" onchange="__doPostBack('ddlQiinscls$DropDownList1','')" language="javascript" id="ddlQiinscls_DropDownList1">
+										<option value=""></option>
+										<option value="A">A&#160;責任險</option>
+										<option value="I">I&#160;傷害險</option>
+										<option selected="selected" value="H">H&#160;健康險</option>
+									
+									</select>
+								</td>
+								<td class="tdDatapass">保單類別
+								</td>
+								<td class="tdDatapass">
+									<select name="ddlQiinskind:DropDownList1" id="ddlQiinskind_DropDownList1">
+										<option selected="selected" value=""></option>
+										<option value="GH0">GH0&#160;日額甲型</option>
+										<option value="GM0">GM0&#160;個人組合</option>
+										<option value="GD0">GD0&#160;重大疾病</option>
+										<option value="GC0">GC0&#160;初次罹癌</option>
+										<option value="GI0">GI0&#160;癌症住院</option>
+										<option value="MH0">MH0&#160;團體健康</option>
+										<option value="MM0">MM0&#160;團體組合</option>
+										<option value="MH1">MH1&#160;團體健康(甲型)</option>
+										<option value="MM1">MM1&#160;團體組合(甲型)</option>
+										<option value="DH0">DH0&#160;重大傷病</option>
+										<option value="MR0">MR0&#160;團體住院醫療(實支實付型)</option>
+										<option value="GC1">GC1&#160;團體癌症</option>
+										<option value="GC2">GC2&#160;團體癌症身故</option>
+										<option value="MH2">MH2&#160;住院日額醫療</option>
+										<option value="GC3">GC3&#160;初次罹癌(台灣中油)</option>
+										<option value="GC4">GC4&#160;團體癌症(台灣中油)</option>
+										<option value="MH3">MH3&#160;團體住院醫療日額(台灣中油)</option>
+										<option value="MR1">MR1&#160;團體住院醫療限額(台灣中油)</option>
+										<option value="MR2">MR2&#160;團體醫療(實支實付型)</option>
+									
+									</select>
+                                </td>
+                                <td class="tdDatapass">
+                                    專案代號
+                                </td>
+                                <td class="tdDatapass">
+                                    <input name="txtQueryIproject" type="text" maxlength="10" id="txtQueryIproject" />
+                                </td>
+                                <td class="tdDatapass">
+                                    專案狀態
+                                </td>
+                                <td class="tdDatapass">
+                                    <select name="ddlQueryFstatus" id="ddlQueryFstatus">
+                                        <option selected="selected" value="Y">Y 有效</option>
+                                        <option value="N">N 停用</option>
+                                    
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- 保單新增 -->
+                    <table class="tblDataArea" border="0" width="95%" align="center">
+                        <tbody>
+                            
+                            <tr>
+                                <td class="tdDataCaption">
+									險別代號
+                                </td>
+                                <td class="tdDataField">
+									<select name="ddlQiinscls:DropDownList1" onchange="__doPostBack('ddlQiinscls$DropDownList1','')" language="javascript" id="ddlQiinscls_DropDownList1">
+										<option value=""></option>
+										<option value="A">A&#160;責任險</option>
+										<option value="I">I&#160;傷害險</option>
+										<option selected="selected" value="H">H&#160;健康險</option>
+									</select>
+								</td>
+								<td class="tdDataCaption">
+									保單類別
+                                </td>
+                                <td class="tdDataField">
+									<select name="ddlQiinskind:DropDownList1" id="ddlQiinskind_DropDownList1">
+										<option selected="selected" value=""></option>
+										<option value="GH0">GH0&#160;日額甲型</option>
+										<option value="GM0">GM0&#160;個人組合</option>
+										<option value="GD0">GD0&#160;重大疾病</option>
+										<option value="GC0">GC0&#160;初次罹癌</option>
+										<option value="GI0">GI0&#160;癌症住院</option>
+										<option value="MH0">MH0&#160;團體健康</option>
+										<option value="MM0">MM0&#160;團體組合</option>
+										<option value="MH1">MH1&#160;團體健康(甲型)</option>
+										<option value="MM1">MM1&#160;團體組合(甲型)</option>
+										<option value="DH0">DH0&#160;重大傷病</option>
+										<option value="MR0">MR0&#160;團體住院醫療(實支實付型)</option>
+										<option value="GC1">GC1&#160;團體癌症</option>
+										<option value="GC2">GC2&#160;團體癌症身故</option>
+										<option value="MH2">MH2&#160;住院日額醫療</option>
+										<option value="GC3">GC3&#160;初次罹癌(台灣中油)</option>
+										<option value="GC4">GC4&#160;團體癌症(台灣中油)</option>
+										<option value="MH3">MH3&#160;團體住院醫療日額(台灣中油)</option>
+										<option value="MR1">MR1&#160;團體住院醫療限額(台灣中油)</option>
+										<option value="MR2">MR2&#160;團體醫療(實支實付型)</option>
+									
+									</select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption">
+									公司險種代號
+                            	</td>
+								<td class="tdDataField">
+									<?XML:NAMESPACE PREFIX="CBNS" />
+									<?IMPORT NAMESPACE="CBNS" IMPLEMENTATION="/ISNE3rdPartyWeb/combobox.htc" />
+									<select>
+									<CBNS:ComboBox id="UcComboIins1_cbIins" name="UcComboIins1:cbIins" AutoValidate="true" ParentFormID="Form1" ResourcesDirectory="/ISNE3rdPartyWeb/" ErrorMessage="無此險種" value="" size="25">
+										<option value=""></option>
+										<option value="8011001|61.00">8011001 - 日額甲型_住院日額</option>
+										<option value="8011002|61.00">8011002 - 日額甲型_加護病房</option>
+										<option value="8011003|61.00">8011003 - 日額甲型_燒燙傷病房</option>
+										<option value="8011004|61.00">8011004 - 日額甲型_住院看護</option>
+										<option value="8011005|61.00">8011005 - 日額甲型_急診醫療</option>
+										<option value="8011010|61.00">8011010 - 日額甲型_住院手術</option>
+										<option value="8021001|61.00">8021001 - 重大疾病</option>
+										<option value="8031001|61.00">8031001 - 重大疾病特定傷病(甲)</option>
+										<option value="8041001|61.00">8041001 - 重大疾病特定傷病(乙)</option>
+										<option value="8051001|0">8051001 - 初次罹癌_一般癌症</option>
+										<option value="8051002|0">8051002 - 初次罹癌_原位癌</option>
+										<option value="8061001|0">8061001 - 癌症住院費用(日額型)</option>
+										<option value="8071001|61.00">8071001 - 重大疾病(甲型)</option>
+										<option value="8081001|61.00">8081001 - 重大疾病(甲型)暨特定傷病(甲型)</option>
+										<option value="8091001|61.00">8091001 - 重大疾病(甲型)暨特定傷病(乙型)</option>
+										<option value="8101001|65.90">8101001 - 重大疾病(乙型)輕度</option>
+										<option value="8101002|65.90">8101002 - 重大疾病(乙型)重度及未採分級</option>
+										<option value="9011001|72.00">9011001 - 團體健康_住院日額</option>
+										<option value="9011002|72.00">9011002 - 團體健康_加護病房</option>
+										<option value="9011003|72.00">9011003 - 團體健康_燒燙傷病房</option>
+										<option value="9011004|72.00">9011004 - 團體健康_住院看護</option>
+										<option value="9011005|72.00">9011005 - 團體健康_急診醫療</option>
+										<option value="9011006|72.00">9011006 - 團體重大疾病附加條款</option>
+										<option value="9011007|72.00">9011007 - 團體初次罹癌附加條款_一般癌症</option>
+										<option value="9011008|72.00">9011008 - 團體初次罹癌附加條款_原位癌</option>
+										<option value="9011009|72.00">9011009 - 團體癌症住院(日額型)</option>
+										<option value="9011010|72.00">9011010 - 團體健康_住院手術</option>
+										<option value="9011011|72.00">9011011 - 團體重大疾病附加條款(甲型)</option>
+										<option value="9011012|72.00">9011012 - 團體骨折未住院附加條款</option>
+										<option value="9011013|72.00">9011013 - 團體重大疾病附加條款(乙型)輕度</option>
+										<option value="9011014|72.00">9011014 - 團體重大疾病附加條款(乙型)重度及未採分級</option>
+										<option value="9011015|72.00">9011015 - 團體健康_住院前後門診費用</option>
+										<option value="9011016|72.00">9011016 - 團體初次罹癌附加條款_一般癌症(等待期60日)</option>
+										<option value="9011017|72.00">9011017 - 團體初次罹癌附加條款_原位癌(等待期60日)</option>
+										<option value="9011018|72.00">9011018 - 團體重大疾病附加條款(甲型)(等待期六十日)</option>
+										<option value="9011019|72.00">9011019 - 團體急診費用保險給付附加條款(等待期30日)</option>
+										<option value="9011020|72.00">9011020 - 團體急診費用保險給付附加條款(等待期60日)</option>
+										<option value="9011080|0">9011080 - 團體保險被保險人異動加退保方式批註條款</option>
+										<option value="9011081|0">9011081 - 團體保險被保險人異動通知批註條款</option>
+										<option value="9021006|72.00">9021006 - 團體重大疾病附加條款</option>
+										<option value="9021007|72.00">9021007 - 團體初次罹癌附加條款_一般癌症</option>
+										<option value="9021008|72.00">9021008 - 團體初次罹癌附加條款_原位癌</option>
+										<option value="9021009|72.00">9021009 - 團體癌症住院(日額型)</option>
+										<option value="9021010|72.00">9021010 - 團體重大疾病附加條款(甲型)</option>
+										<option value="9021011|72.00">9021011 - 團體重大疾病附加條款(乙型)輕度</option>
+										<option value="9021012|72.00">9021012 - 團體重大疾病附加條款(乙型)重度及未採分級</option>
+										<option value="9021016|72.00">9021016 - 團體初次罹癌附加條款_一般癌症(等待期60日)</option>
+										<option value="9021017|72.00">9021017 - 團體初次罹癌附加條款_原位癌(等待期60日)</option>
+										<option value="9021018|72.00">9021018 - 團體重大疾病附加條款(甲型)(等待期六十日)</option>
+										<option value="9021019|72.00">9021019 - 團體急診費用保險給付附加條款(等待期30日)</option>
+										<option value="9021020|72.00">9021020 - 團體急診費用保險給付附加條款(等待期60日)</option>
+										<option value="9022001|72.00">9022001 - 團體健康(甲型)_住院日額</option>
+										<option value="9022002|72.00">9022002 - 團體健康(甲型)_加護病房</option>
+										<option value="9022003|72.00">9022003 - 團體健康(甲型)_燒燙傷病房</option>
+										<option value="9022004|72.00">9022004 - 團體健康(甲型)_住院看護</option>
+										<option value="9022005|72.00">9022005 - 團體健康(甲型)_急診醫療</option>
+										<option value="9022006|72.00">9022006 - 團體重大疾病附加條款(免等待期)</option>
+										<option value="9022007|72.00">9022007 - 團體初次罹癌附加條款(免等待期)_一般癌症</option>
+										<option value="9022008|72.00">9022008 - 團體初次罹癌附加條款(免等待期)_原位癌</option>
+										<option value="9022009|72.00">9022009 - 團體癌症住院(日額型)(免等待期)</option>
+										<option value="9022010|72.00">9022010 - 團體健康(甲型)_住院手術</option>
+										<option value="9022011|72.00">9022011 - 團體重大疾病附加條款(甲型)(免等待期)</option>
+										<option value="9022012|72.00">9022012 - 團體骨折未住院加條款</option>
+										<option value="9022013|72.00">9022013 - 團體重大疾病附加條款(乙型)(免等待期)輕度</option>
+										<option value="9022014|72.00">9022014 - 團體重大疾病附加條款(乙型)(免等待期)重度及未採分級</option>
+										<option value="9022015|72.00">9022015 - 團體健康(甲型)_住院前後門診費用</option>
+										<option value="DH01001|61.00">DH01001 - 重大傷病</option>
+										<option value="DH01043|0">DH01043 - 自動續約附加條款</option>
+										<option value="GC11001|72.00">GC11001 - 癌症住院醫療保險金(等待期30日)</option>
+										<option value="GC11002|72.00">GC11002 - 癌症住院醫療保險金(等待期60日)</option>
+										<option value="GC11003|72.00">GC11003 - 癌症療養保險金(等待期30日)</option>
+										<option value="GC11004|72.00">GC11004 - 癌症療養保險金(等待期60日)</option>
+										<option value="GC11005|72.00">GC11005 - 癌症手術費用保險金(原位癌等待期30日)</option>
+										<option value="GC11006|72.00">GC11006 - 癌症手術費用保險金(非原位癌等待期30日)</option>
+										<option value="GC11007|72.00">GC11007 - 癌症手術費用保險金(原位癌等待期60日)</option>
+										<option value="GC11008|72.00">GC11008 - 癌症手術費用保險金(非原位癌等待期60日)</option>
+										<option value="GC11009|72.00">GC11009 - 癌症門診暨治療保險金附加條款_癌症門診醫療(等待期30日)</option>
+										<option value="GC11010|72.00">GC11010 - 癌症門診暨治療保險金附加條款_癌症門診醫療(等待期60日)</option>
+										<option value="GC11011|72.00">GC11011 - 癌症門診暨治療保險金附加條款_癌症放射線治療(等待期30日)</option>
+										<option value="GC11012|72.00">GC11012 - 癌症門診暨治療保險金附加條款_癌症放射線治療(等待期60日)</option>
+										<option value="GC11013|72.00">GC11013 - 癌症門診暨治療保險金附加條款_癌症化學治療(等待期30日)</option>
+										<option value="GC11014|72.00">GC11014 - 癌症門診暨治療保險金附加條款_癌症化學治療(等待期60日)</option>
+										<option value="GC11015|72.00">GC11015 - 癌症外科手術費用保險金附加條款(原位癌等待期30日)</option>
+										<option value="GC11016|72.00">GC11016 - 癌症外科手術費用保險金附加條款(非原位癌等待期30日)</option>
+										<option value="GC11017|72.00">GC11017 - 癌症外科手術費用保險金附加條款(原位癌等待期60日)</option>
+										<option value="GC11018|72.00">GC11018 - 癌症外科手術費用保險金附加條款(非原位癌等待期60日)</option>
+										<option value="GC21001|72.00">GC21001 - 癌症身故保險金(等待期30日)</option>
+										<option value="GC21002|72.00">GC21002 - 癌症身故保險金(等待期60日)</option>
+										<option value="GC21003|72.00">GC21003 - 癌症身故保險金(等待期90日)</option>
+										<option value="GC31001|69.90">GC31001 - 團體一年期定期初次罹癌</option>
+										<option value="GC41001|69.90">GC41001 - 癌症住院醫療保險金</option>
+										<option value="GC41002|69.90">GC41002 - 癌症出院療養保險金</option>
+										<option value="GC41003|69.90">GC41003 - 癌症治療保險金</option>
+										<option value="GC41004|69.90">GC41004 - 癌症住院手術保險金</option>
+										<option value="MH21001|72.00">MH21001 - 團體住院日額醫療_住院日額</option>
+										<option value="MH21002|72.00">MH21002 - 團體住院日額醫療_骨折未住院</option>
+										<option value="MH21003|72.00">MH21003 - 團體住院日額醫療_住院前後門診費用</option>
+										<option value="MH21004|72.00">MH21004 - 團體住院日額醫療_加護病房</option>
+										<option value="MH21005|72.00">MH21005 - 團體住院日額醫療_燒燙傷病房</option>
+										<option value="MH21006|72.00">MH21006 - 團體住院日額醫療_住院手術費用</option>
+										<option value="MH21007|72.00">MH21007 - 團體住院日額醫療_加護病房(甲型)</option>
+										<option value="MH21008|72.00">MH21008 - 團體住院日額醫療_燒燙傷病房(甲型)</option>
+										<option value="MH21009|72.00">MH21009 - 團體住院日額醫療_普通手術保險金</option>
+										<option value="MH21010|72.00">MH21010 - 團體住院日額醫療_特定手術保險金</option>
+										<option value="MH21019|72.00">MH21019 - 團體急診費用保險給付附加條款(等待期30日)</option>
+										<option value="MH21020|72.00">MH21020 - 團體急診費用保險給付附加條款(等待期60日)</option>
+										<option value="MH31001|69.90">MH31001 - 團體住院醫療日額健康保險_住院醫療日額</option>
+										<option value="MH31002|69.90">MH31002 - 團體住院醫療日額健康保險_加護病房日額</option>
+										<option value="MH31003|69.90">MH31003 - 團體住院醫療日額健康保險_出國住院醫療日額</option>
+										<option value="MH31004|69.90">MH31004 - 團體住院醫療日額健康保險_出院療養日額</option>
+										<option value="MH31005|69.90">MH31005 - 團體住院醫療日額健康保險_住院門診費用</option>
+										<option value="MH31006|69.90">MH31006 - 團體住院醫療日額健康保險_救護車費用</option>
+										<option value="MH31007|69.90">MH31007 - 團體住院醫療日額健康保險_手術費用</option>
+										<option value="MH31008|72.00">MH31008 - 團體門診手術</option>
+										<option value="MH31009|72.00">MH31009 - 團體留院觀察</option>
+										<option value="MR01001|72.00">MR01001 - 團體住院醫療(實支實付型)_病房與膳食費用</option>
+										<option value="MR01002|72.00">MR01002 - 團體住院醫療(實支實付型)_醫療雜費</option>
+										<option value="MR01003|72.00">MR01003 - 團體住院醫療(實支實付型)_醫師診查與會診費</option>
+										<option value="MR01004|72.00">MR01004 - 團體住院醫療(實支實付型)_外科手術費用</option>
+										<option value="MR01005|72.00">MR01005 - 團體住院醫療(實支實付型)_加護病房</option>
+										<option value="MR01006|72.00">MR01006 - 團體住院醫療(實支實付型)_住院前後一週門診</option>
+										<option value="MR01007|72.00">MR01007 - 團體住院醫療(實支實付型)_外科手術住院醫療增額補償</option>
+										<option value="MR01008|72.00">MR01008 - 團體住院醫療(實支實付型)_傷害急診治療</option>
+										<option value="MR01009|72.00">MR01009 - 團體住院醫療(實支實付型)_重大手術</option>
+										<option value="MR01010|72.00">MR01010 - 住院慰問保險金附加條款</option>
+										<option value="MR01011|72.00">MR01011 - 團體住院醫療(實支實付型)_住院日額</option>
+										<option value="MR01012|72.00">MR01012 - 團體住院醫療保險(實支實付型)-住院醫療保險金事後選擇實支實付</option>
+										<option value="MR01013|72.00">MR01013 - 團體住院醫療保險(實支實付型)-住院醫療保險金事後選擇住院日額</option>
+										<option value="MR01014|72.00">MR01014 - 團體住院醫療保險(實支實付型)住院醫療保險金事後選擇附加條款</option>
+										<option value="MR01015|72.00">MR01015 - 團體住院醫療保險(實支實付型)住院醫療保險金事後選擇附加條款(甲型)</option>
+										<option value="MR01016|72.00">MR01016 - 團體住院醫療保險(實支實付型)-住院醫療保險金事後選擇(甲型)住院日額</option>
+										<option value="MR02016|72.00">MR02016 - 團體住院醫療保險(實支實付型)-住院醫療保險金事後選擇(甲型)住院日額</option>
+										<option value="MR03016|72.00">MR03016 - 團體住院醫療保險(實支實付型)-住院醫療保險金事後選擇(甲型)住院日額</option>
+										<option value="MR16501|69.90">MR16501 - 團體住院醫療限額</option>
+										<option value="MR27501|69.90">MR27501 - 團體醫療保險(實支實付型)-病房費用</option>
+										<option value="MR27502|69.90">MR27502 - 團體醫療保險(實支實付型)-醫療費用</option>
+										<option value="MR27503|69.90">MR27503 - 團體醫療保險(實支實付型)-住院手術費用</option>
+										<option value="MR27504|69.90">MR27504 - 團體醫療保險(實支實付型)-住院醫療日額</option>
+										<option value="MR27505|69.90">MR27505 - 住院前後門診費用</option>
+										<option value="MR27506|69.90">MR27506 - 意外傷害急診費用</option>
+									</CBNS:ComboBox>
+								</select>
+									</UC1:UCCOMBOCMNINS><input type="submit" name="BtnQuery" value="查詢" id="BtnQuery" />
+								</td>
+								<td class="tdDataCaption">
+									保發險種代號
+								</td>
+								<td class="tdDataField">
+									<input name="txtIDEVINS" type="text" readonly="readonly" id="txtIDEVINS" />
+								</td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption">
+									險種說明(中文)
+								</td>
+								<td class="tdDataField">
+									<input name="txtNINS_C" type="text" readonly="readonly" id="txtNINS_C" />
+								</td>
+								<td class="tdDataCaption">
+									險種簡稱
+								</td>
+								<td class="tdDataField">
+									<input name="txtNINS_A" type="text" readonly="readonly" id="txtNINS_A" />
+								</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    
+                    <!-- div空間 -->
+                    <div claㄦss="divspace"></div>
+
+
+                    <!-- 頁籤開始 -->
+                    <div class="container-fluid">
+                    <div class="row-group">
+                        <ul class="row nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item"><a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1"
+                                    role="tab" aria-controls="pills-1" aria-selected="true">承保職級設定</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" id="pills-2-tab" data-toggle="pill" href="#pills-2"
+                                    role="tab" aria-controls="pills-2" aria-selected="false">承保年齡設定</a>
+                            </li>	
+                        </ul>
+                    </div>
+                    </div>
+
+                     <!-- tab-content star  -->
+                     <div class="container-fluid">
+                        <div class="tab-content" id="pills-tabContent">
+
+                            <!-- 1 star -->
+                            <div class="row-group tab-pane fade show active" id="pills-1" role="tabpanel"
+								aria-labelledby="pills-1-tab">
+								<span id="Label5">[承保迄止額度為0時,表示此職級皆為拒保][保額單位(1:元,2:單位)]</span>
+								<table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+									<tbody>
+										<tr valign="bottom">
+										<td nowrap="" >
+											<button class="btn btn-secondary">新增項目</button>
+										</td>
+										<td nowrap="">
+											<a id="" class="">第一頁</a>
+											<a id="" class="">上一頁</a>
+											<a id="" class="">下一頁</a>
+											<a id="" class="">最後一頁</a>
+										</td>
+										<td nowrap="" >
+										<span id="" class="">總共</span>
+										<span id="" class="">0</span>
+										<span id="" class="">筆</span>&nbsp;
+										</td>
+										<td nowrap="">
+											<span id="" class="">每頁</span>
+											<input name="" id="" class="" style="width:32px;">
+											<span id="" class="">筆</span>
+											<button class="btn btn-secondary">go</button>
+										</td>
+										<td nowrap="">
+											<span id="" class="">總共</span>
+											<span id="" class="">1</span>
+											<span id="" class="">頁</span>&nbsp;
+										</td>
+										<td >
+										<span id="" class="">目前第</span>
+										<input name="" type="text" value="1" id="" class="">
+										<span id="" class="">頁</span>
+										<button class="btn btn-secondary">go</button>
+										<button class="btn btn-secondary">匯出資料</button>
+										</td>
+										</tr>
+										</tbody>
+									</table>
+                                
+                
+                
+                                    <table class="tblCssDataGrid">
+                                        <tbody><tr class="cssDataGridHeader">
+                                            <th style="width: 50px;"><a href=""></a></th>
+                                            <th style="width: 50px;"><a href=""></a></th>
+                                            <th><a href="">生效起始日</a></th>
+                                            <th><a href="">職業等級</a></th>
+                                            <th><a href="">承保起始額度</a></th>
+                                            <th><a href="">承保迄止額度</a></th>
+                                            <th><a href="">單位別</a></th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <!-- <button type="button" class="btn-editt">選取</button> -->
+                                            </td>
+                                            <td>
+                                                <!-- <button type="button" class="btn-addlist">複製</button> -->
+                                            </td>
+                                            
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            
+                                        </tr>
+                                        
+                                        
+                                        
+                                        
+                                    </tbody>
+                                </table>
+                    
+                            </div>
+                            <!-- 1 end -->
+
+                            <!-- 2 star -->
+                            <div class="row-group tab-pane fade show" id="pills-2" role="tabpanel"
+                            aria-labelledby="pills-2-tab">
+                            <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+								<tbody>
+									<tr valign="bottom">
+									<td nowrap="" >
+										<button class="btn btn-secondary">新增項目</button>
+									</td>
+									<td nowrap="">
+										<a id="" class="">第一頁</a>
+										<a id="" class="">上一頁</a>
+										<a id="" class="">下一頁</a>
+										<a id="" class="">最後一頁</a>
+									</td>
+									<td nowrap="" >
+									<span id="" class="">總共</span>
+									<span id="" class="">0</span>
+									<span id="" class="">筆</span>&nbsp;
+									</td>
+									<td nowrap="">
+										<span id="" class="">每頁</span>
+										<input name="" id="" class="" style="width:32px;">
+										<span id="" class="">筆</span>
+										<button class="btn btn-secondary">go</button>
+									</td>
+									<td nowrap="">
+										<span id="" class="">總共</span>
+										<span id="" class="">1</span>
+										<span id="" class="">頁</span>&nbsp;
+									</td>
+									<td >
+									<span id="" class="">目前第</span>
+									<input name="" type="text" value="1" id="" class="">
+									<span id="" class="">頁</span>
+									<button class="btn btn-secondary">go</button>
+									<button class="btn btn-secondary">匯出資料</button>
+									</td>
+									</tr>
+									</tbody>
+								</table>
+							
+			
+			
+								<table class="tblCssDataGrid">
+									<tbody><tr class="cssDataGridHeader">
+										<th style="width: 50px;"><a href=""></a></th>
+										<th style="width: 50px;"><a href=""></a></th>
+										<th><a href="">生效起始日</a></th>
+										<th><a href="">性別</a></th>
+										<th><a href="">起保年齡(歲)</a></th>
+										<th><a href="">迄保年齡(歲)</a></th>
+										<th><a href="">調整天數</a></th>
+									</tr>
+									<tr>
+										<td>
+											<!-- <button type="button" class="btn-editt">選取</button> -->
+										</td>
+										<td>
+											<!-- <button type="button" class="btn-addlist">複製</button> -->
+										</td>
+										
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										
+									</tr>
+									
+									
+									
+									
+								</tbody>
+							</table>
+                
+                        </div>
+                            <!-- 2 end -->
+
+                        </div>
+                    </div>
+                        <!-- tab-content end  -->
+
+
+               </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <!-- content end  -->
+    </div>
+</section>
+<!-- dialog -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+                <button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="foo">
+                <div id="example-table"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+
+</html>

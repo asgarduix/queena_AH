@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" lang="zh-Hant-TW">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+	<title>華南產物保險-健康傷害險</title>
+	<!-- jQuery -->
+	<script src="../../shigen/plugin/jquery.min.js"></script>
+	<!-- jQuery UI -->
+	<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+	<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+	<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+	<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+	<!-- bootstrap -->
+	<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+	<!-- table tabulator -->
+	<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+	<!-- fontawsome -->
+	<script defer src="../../shigen/fonts/js/all.min.js"></script>
+	<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+	<!--load all styles -->
+	<!-- Plug CSS樣式 -->
+	<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+	<!-- 共用樣式 -->
+	<link rel="stylesheet" href="../../shigen/css/type.css">
+	<!-- 主題顏色切換 糖果世代 -->
+	<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+	<!-- 主題顏色切換 海神寶藍 -->
+	<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+	<!-- 主題顏色切換 法拉利紅 -->
+	<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+	<!-- 主題顏色切換 繽紛馬卡 -->
+	<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+	<!-- 主題顏色切換 煙花季節 -->
+	<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+	<!-- 主題顏色切換 冬雪初現 -->
+	<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+	<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+	<!-- 自訂JS樣式 -->
+	<script src="../../shigen/js/type.js"></script>
+	<script src="../../shigen/js/common.js"></script>
+	<script src="../../shigen/js/global.js"></script>
+	<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+	<script>
+		// 		$('#myModal').on('show.bs.modal', function (e) {
+		// 			alert('hello2');
+		// 		});
+		$(document).ready(function () {
+
+			$('#radio01_1').prop('checked', true);
+			$('.radio_row3').addClass('row_hide');
+			$('#radio01_1').click(function () {
+				$(this).prop('checked', true);
+				$('.radio_row1').removeClass('row_hide');
+				$('.radio_row2').removeClass('row_hide');
+				$('.radio_row3').addClass('row_hide');
+				$('.radio_row4').removeClass('row_hide');
+			});
+			$('#radio01_2').click(function () {
+				$(this).prop('checked', true);
+				$('.radio_row1').removeClass('row_hide');
+				$('.radio_row2').removeClass('row_hide');
+				$('.radio_row3').addClass('row_hide');
+				// $('.radio_row4').addClass('row_hide');
+
+			});
+			$('#radio01_3').click(function () {
+				$(this).prop('checked', true);
+				$('.radio_row1').addClass('row_hide');
+				$('.radio_row2').addClass('row_hide');
+				$('.radio_row3').removeClass('row_hide');
+			});
+			// updateTotalPrice();
+		});
+	</script>
+</head>
+
+<body>
+	<div class="ajax-aside-nav"></div>
+	<section>
+		<div class="ajax-section-main"></div>
+		<div class="container-fluid">
+			<div class="content">
+				<div class="bread-crumbs">
+					<a href="">批改申請</a>
+					&gt; 批改申請
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="big_title title s1"> HAS301001 健康傷害險承保受理作業</div>
+					</div>
+					<div class="row-group">
+						<div class="row">
+							<div class="col-12 text-center content_function_bar">
+								<button class="btn btn-secondary">修改</button>
+								<button class="btn btn-secondary">清除</button>
+								<button class="btn btn-secondary">查詢</button>
+								<button class="btn btn-secondary">核保不過名單</button>
+								<button class="btn btn-secondary">暫存資料</button>
+								<button class="btn btn-secondary">復原資料</button>
+								<button class="btn btn-secondary">離開</button>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="item_title title s2">查詢</div> -->
+					<table class="tblDataArea" cellSpacing="0" cellPadding="0">
+						<tr>
+							<td class="tdDataCaption">保單類別</td>
+							<td class="tdDataField"><select name="ddlIinsKind" onchange="__doPostBack('ddlIinsKind','')"
+									language="javascript" id="ddlIinsKind" style="width:150px;">
+									<option value=""></option>
+									<option value="GH0">GH0&#160;日額甲型</option>
+									<option value="GM0">GM0&#160;個人組合</option>
+									<option value="GD0">GD0&#160;重大疾病</option>
+									<option value="GC0">GC0&#160;初次罹癌</option>
+									<option value="GI0">GI0&#160;癌症住院</option>
+									<option value="MH0">MH0&#160;團體健康</option>
+									<option selected="selected" value="MM0">MM0&#160;團體組合</option>
+									<option value="MH1">MH1&#160;團體健康(甲型)</option>
+									<option value="MM1">MM1&#160;團體組合(甲型)</option>
+									<option value="DH0">DH0&#160;重大傷病</option>
+									<option value="MR0">MR0&#160;團體住院醫療(實支實付型)</option>
+									<option value="GC1">GC1&#160;團體癌症</option>
+									<option value="GC2">GC2&#160;團體癌症身故</option>
+									<option value="MH2">MH2&#160;住院日額醫療</option>
+								</select></td>
+							<td class="tdDataCaption">出單公司</td>
+							<td class="tdDataField"><input name="txtIissBrch" type="text" value="00" id="txtIissBrch"
+									disabled="disabled" onKeyPress="_ToUpper(this);" style="width:30px;" /></td>
+							<td class="tdDataCaption">大保單號</td>
+							<td class="tdDataField"><input name="txtI1relply" type="text" maxlength="15"
+									id="txtI1relply" onKeyPress="_ToUpper(this);" style="width:120px;" /></td>
+							<td class="tdDataCaption">保單號碼</td>
+							<td class="tdDataField"><input name="txtIpolicy" type="text" value=" " maxlength="15"
+									id="txtIpolicy" onKeyPress="_ToUpper(this);" style="width:120px;" /></td>
+							<td class="tdDataCaption">要保號碼</td>
+							<td class="tdDataField"><input name="txtIreq" type="text" value="0008MM0X000018"
+									maxlength="15" id="txtIreq" onKeyPress="_ToUpper(this);" style="width:120px;" />
+							</td>
+							<!-- <td><span id="lblMsg" style="color:#FF3300;"></span></td> -->
+						</tr>
+					</table>
+
+
+					<div class="row-group">
+						<div class="row">
+							<div class="col-12">
+								<a href="#" class="btn btn-primary">1:要保人</a>
+								<a href="#" class="btn btn-primary">2:被保險人</a>
+								<a href="#" class="btn btn-primary">3:保險內容</a>
+								<a href="#" class="btn btn-primary">4:洽攬人</a>
+								<a href="#" class="btn btn-primary">5:條款/共保</a>
+								<a href="#" class="btn btn-primary">6:收據明細</a>
+								<a href="#" class="btn btn-primary">7:附加檔案</a>
+								<a href="#" class="btn btn-primary">8:核保照會</a>
+								<a href="#" class="btn btn-primary">9:審核意見</a>
+								<a href="#" class="btn btn-primary">10:公同行銷</a>
+								<a href="#" class="btn btn-primary">11:董監事名冊</a>
+							</div>
+						</div>
+					</div>
+
+		<table class="tblDataArea" cellSpacing="0" cellPadding="0">
+			<tr>
+
+				<textarea class="textarea" name="" rows="20" id=""style="width:100%; padding-left:20px;">標的物已被列入黑名單
+登入者 審核層級為:4
+本 HASP300000 審核層級為:4 級
+					
+許瑛玿列入黑名單 體況不佳，建單關懷(右側乳癌惡性腫瘤)
+鄭靖蓮列入黑名單 出險異常，中醫自費，擬設名單。
+高雄-李宜樵
+林秀枝列入黑名單 因疑似問題醫師製作假病歷,調查局提供名單進行部份清查動作
+蔡?志列入黑名單 體況不佳，建單關懷(肝癌，大腸癌併肝轉移)
+此保單使用者審核層級大於本RuleCheck審核層級，因此不需做核保審核!!!(請確認)
+被保險人有理賠紀錄
+	
+A130212948 張聿智責任險理賠0件傷害險理賠0件健康險理賠1件
+E120287982 黃俊傑責任險理賠0件傷害險理賠0件健康險理賠1件
+E221174066 柯毓文責任險理賠0件傷害險理賠0件健康險理賠1件
+E221581730 歐陽汎怡責任險理賠0件傷害險理賠0件健康險理賠1件
+E121337847 林福慶責任險理賠2件傷害險理賠0件健康險理賠2件
+E221510115 黃瓊萩責任險理賠1件傷害險理賠0件健康險理賠2件
+S220928534 李賢美責任險理賠0件傷害險理賠0件健康險理賠1件
+E121935772 江家安責任險理賠0件傷害險理賠0件健康險理賠1件
+E124260852 李向責任險理賠0件傷害險理賠0件健康險理賠1件
+E220906733 陳淑琴責任險理賠1件傷害險理賠0件健康險理賠0件
+T121824436 陳雲瑞責任險理賠0件傷害險理賠0件健康險理賠1件
+E221056125 盧惠香責任險理賠0件傷害險理賠0件健康險理賠1件
+E221109103 陳吟桂責任險理賠0件傷害險理賠0件健康險理賠1件
+D220539562 許瑛玿責任險理賠0件傷害險理賠0件健康險理賠21件
+N222657516 陳淑芬責任險理賠0件傷害險理賠0件健康險理賠1件
+S125848477 丁紹元責任險理賠0件傷害險理賠0件健康險理賠1件
+R122115354 曾琳祺責任險理賠1件傷害險理賠0件健康險理賠0件
+S120526225 蔡國輝責任險理賠0件傷害險理賠0件健康險理賠1件
+S223028746 鄭靖蓮責任險理賠5件傷害險理賠0件健康險理賠3件
+S220742301 劉珮琪責任險理賠0件傷害險理賠0件健康險理賠1件
+S120270559 蔡?志責任險理賠0件傷害險理賠0件健康險理賠6件
+此保單須作審核，是否要送審?
+被保險人檢核錯誤歷史紀錄
+登入者 審核層級為:4
+本 HASP300008 審核層級為:4 級
+	
+鄭靖蓮於要保號0206I00X002316有檢核錯誤
+鄭靖蓮於保單號 有不承保紀錄
+鄭靖蓮於保單號 有不承保紀錄
+此保單使用者審核層級大於本RuleCheck審核層級，因此不需做核保審核!!!(請確認)
+被保險人檢核特殊件註記
+	
+陳美伶專案或自定方案為特殊件
+吳陳月嫌專案或自定方案為特殊件
+吳永河專案或自定方案為特殊件
+方武吉專案或自定方案為特殊件
+劉素吉專案或自定方案為特殊件
+此保單須作審核，是否要送審?
+被保險人檢核保費是否為零
+	
+王世耀保費為零,(查無此專案符合之險種明細設定)
+陳彥中保費為零,(查無此專案符合之險種明細設定)
+何宥璇保費為零,(查無此專案符合之險種明細設定)
+吳惠珠保費為零,(查無此專案符合之險種明細設定)
+此保單須作審核，是否要送審?
+</textarea>
+
+
+
+
+
+			</tr>
+		</table>
+				</div>
+				<!-- content end  -->
+			</div>
+	</section>
+	<!-- dialog -->
+	<!-- Modal -->
+
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script>
+
+</html>

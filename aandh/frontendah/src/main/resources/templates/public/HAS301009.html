@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" lang="zh-Hant-TW">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+<title>華南產物保險-健康傷害險</title>
+<!-- jQuery -->
+<script src="../../shigen/plugin/jquery.min.js"></script>
+<!-- jQuery UI -->
+<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+<!-- bootstrap -->
+<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+<!-- table tabulator -->
+<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+<!-- fontawsome -->
+<script defer src="../../shigen/fonts/js/all.min.js"></script>
+<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+<!--load all styles -->
+<!-- Plug CSS樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+<!-- 共用樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type.css">
+<!-- 主題顏色切換 糖果世代 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+<!-- 主題顏色切換 海神寶藍 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+<!-- 主題顏色切換 法拉利紅 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+<!-- 主題顏色切換 繽紛馬卡 -->
+<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+<!-- 主題顏色切換 煙花季節 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+<!-- 主題顏色切換 冬雪初現 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+<!-- 自訂JS樣式 -->
+<script src="../../shigen/js/type.js"></script>
+<script src="../../shigen/js/common.js"></script>
+<script src="../../shigen/js/global.js"></script>
+<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+	
+	
+		
+		<div class="container-fluid">
+			<div class="content">
+				<div class="bread-crumbs">
+					<a href="">承保受理作業</a>
+				</div>
+                <div class="big_title title s1">HAS301009-健康傷害險新增主約作業</div>
+                <div class="row-group">
+					<div class="row">
+						<div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-oneBig">新增</button>
+                            <button class="btn btn-oneBig">刪除</button>
+                            <button class="btn btn-oneBig">清除</button>
+                            <button class="btn btn-oneBig">離開</button>
+						</div>
+					</div>
+				</div>
+
+                <table>
+                    <h3 style="color: #ed4c6c;">自訂方案主約設定</h3>
+                </table>
+                
+                <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                        <td class="tdDataCaption">方案代號</td>
+                        <td class="tdDataField">
+                            <input name="txtIplan" type="text" value="" maxlength="15" id="txtIplan" onkeypress="" >
+                        </td>
+                        <td class="tdDataCaption">方案名稱</td>
+                        <td class="tdDataField">
+                            <input name="txtNplan" type="text" value="" maxlength="15" id="txtNplan" onkeypress="" >
+                        </td>
+                        <td class="tdDataCaption">列印名稱</td>
+                        <td class="tdDataField">
+                            <input name="txtNprtCont" type="text" value="" maxlength="15" id="txtNprtCont" onkeypress="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">保費分攤指示</td>
+                        <td class="tdDataField">
+                            <select name="ddlfshared" onchange="__doPostBack('ddlfshared','')" language="javascript" id="ddlfshared" style="width:150px;">
+                                <option value=""></option>
+                                <option value="GH0">0:依短期費率</option>
+                                <option value="GM0">1:按日數計算</option>
+                                <option value="GD0">2:按月數計算</option>
+                                <option value="GC0">5:按年計算</option>
+                            </select>
+                        </td>
+                        <td class="tdDataCaption">分攤定額/比例</td>
+                        <td class="tdDataField" colspan="3">
+                            <input name="txtqshared" type="text" value="" maxlength="" id="txtqshared" onkeypress="" >
+                        </td> 
+                    </tr>
+                    <tr>
+                      <td class="tdDataCaption">備註</td>
+                      <td class="tdDataField" colspan="5">
+                        <textarea class="textarea" name="txtFlowNote" rows="20" readonly="readonly" id="txtMemo" style=" margin: 0px; height:50px;">
+                            
+                            </textarea>
+                      </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="height: 30px;"></div>
+
+            <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr>
+                    <td class="tdDataField">
+                        <h3 style="color: #ed4c6c;">險種設定</h3>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+
+				<table id="Table2" class="tblFunctionBar" cellSpacing="0" cellPadding="0">
+                    
+                        
+                    
+					<tr vAlign="bottom">
+						<td noWrap align="left">
+							<button class="btn btn-secondary">新增險種資料</button>
+						</td>
+						<td noWrap align="left">
+							<a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+							<a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+							<a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+							<a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="" class="">總共</span>
+						<span id="" class="">0</span>
+						<span id="" class="">筆</span>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="" class="">每頁</span>
+							<input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;" />
+							<span id="" class="">筆</span>
+							<button class="btn btn-secondary">go</button>
+						</td>
+						<td noWrap align="left">
+							<span id="" class="">總共</span>
+							<span id="" class="">1</span>
+							<span id="" class="">頁</span>&nbsp;
+						</td>
+						<td align="right">
+							<span id="" class="">目前第</span>
+						<input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;" />
+						<span id="" class="">頁</span>
+						<button class="btn btn-secondary">go</button>
+						<button class="btn btn-secondary">匯出資料</button>
+						
+						</td>
+					</tr>
+				</table>
+				<table class="rightScroll tblCssDataGrid">
+					<tr class="cssDataGridHeader">
+                        <th style="width: 50px;"><a href="" ></a></th>
+                        <th style="width: 50px;"><a href="" ></a></th>
+						<th><a href="" >險別</a></th>
+                        <th><a href="">保單類別</a></th>
+                        <th><a href="">險種</a></th>
+                        <th><a href="">承保額度</a></th>
+                        <th><a href="">保額計算方式</a></th>
+                        <th><a href="">最高承保限額</a></th>	
+                        <th><a href="">最低承保限額</a></th>	
+                        <th><a href="">薪資倍數</a></th>	
+                        <th><a href="">保額單位</a></th>	
+                        <th><a href="">限數天數</a></th>	
+                        <th><a href="">單位</a></th>	
+                    </tr>
+                    
+                 <!-- 需隱藏，按下新增險種資料按鈕才會出現 -->
+                <tr style="background-color: #E5E5E5;"> 
+                    <td style="width: 50px;">
+                        <button type="button" class="btn-update" >更新</button> 
+                    </td>
+                    <td>
+                        <button type="button" class="btn-del" >取消</button>  
+                    </td>
+                    <td>
+                        <select name="" id="" style="width: 100px; background-color: #fff;" >
+                            <option value="1">H健康險</option>
+                            <option value="2">A 責任險</option>
+                            <option value="3">I 傷害險</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="" id="" style="width: 250px; background-color: #fff;" >
+                            <option value="1">MH3 團體住院醫療日額(台灣中油)</option>
+                           
+                        </select>
+                    </td>
+                    <td>
+                        <select name="" id="" style="width: 250px; background-color: #fff;" >
+                            <option value="1"></option>
+
+                        </select>
+                    </td>
+                    <td>
+                        <input name="" type="text"  id="" class="" style="width:100px;" />
+                    </td>
+                    <td>
+                        <select name="" id="" style="width: 150px; background-color: #fff;" >
+                            <option value="1">1:固定保額</option>
+                            <option value="GD0">2:變動保額</option>
+                            <option value="GC0">3:薪資倍數</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input name="" type="text"  id="" class="" style="width:100px;" />
+                    </td>
+                    <td>
+                        <input name="" type="text"  id="" class="" style="width:100px;" />
+                    </td>
+                    <td>
+                        <input name="" type="text"  id="" class="" style="width:100px;" />
+                    </td>
+                    <td>
+                        <select name="" id="" style="width: 100px; background-color: #fff;">
+                            <option value="1">1:元</option>
+                            <option value="GD0">2:元/日</option>
+                            <option value="GC0">3:元/次</option>
+                            <option value="GC0">4:單位</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input name="" type="text"  id="" class="" style="width:100px;" />
+                    </td>
+                    <td>
+                        <select name="" id="" style="width: 100px; background-color: #fff;" >
+                            <option value="GM0">1:元</option>
+                            <option value="GD0">2:日</option>
+                            <option value="GD0">3:次</option>
+                            <option value="GD0">4:最高</option>
+                            <option value="GC0">5:限額</option>
+                            <option value="GC0">6:其他</option>
+                        </select>
+                    </td>
+                </tr>
+                </table>
+                
+                <div style="height: 30px;"></div>
+
+                <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                        <td class="tdDataField" style="width: 150px;">
+                            <h3 style="color: #ed4c6c;">承保條件設定</h3>
+                        </td>
+                        <td> 
+                            <button id="btnDefault" class="btn btn-secondary">新增預設</button>
+                            保費
+                            <input id="txtDefaultMprem" type="text">
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="Table2" class="tblFunctionBar" cellSpacing="0" cellPadding="0">
+                <tr vAlign="bottom">
+                    <td noWrap align="left">
+                        <button class="btn btn-secondary">新增條件資料</button>
+                    </td>
+                    <td noWrap align="left">
+                        <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                        <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                        <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                        <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                    </td>
+                    <td noWrap align="left">
+                        <span id="" class="">總共</span>
+                    <span id="" class="">0</span>
+                    <span id="" class="">筆</span>&nbsp;
+                    </td>
+                    <td noWrap align="left">
+                        <span id="" class="">每頁</span>
+                        <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;" />
+                        <span id="" class="">筆</span>
+                        <button class="btn btn-secondary">go</button>
+                    </td>
+                    <td noWrap align="left">
+                        <span id="" class="">總共</span>
+                        <span id="" class="">1</span>
+                        <span id="" class="">頁</span>&nbsp;
+                    </td>
+                    <td align="right">
+                        <span id="" class="">目前第</span>
+                    <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;" />
+                    <span id="" class="">頁</span>
+                    <button class="btn btn-secondary">go</button>
+                    <button class="btn btn-secondary">匯出資料</button>
+                    
+                    </td>
+                </tr>
+            </table>
+            <table class="tblCssDataGrid">
+                <tr class="cssDataGridHeader">
+                    <th style="width: 50px;"><a href="" ></a></th>
+                    <th style="width: 50px;"><a href="" ></a></th>
+                    <th><a href="" >功能</a></th>
+                    <th><a href="">序號</a></th>
+                    <th><a href="">起始年齡(年)</a></th>
+                    <th><a href="">調整天數(天)</a></th>
+                    <th><a href="">截止年齡(年)</a></th>
+                    <th><a href="">調整天數(天)</a></th>
+                    <th><a href="">身份別</a></th>	
+                    <th><a href="">性別</a></th>	
+                    <th><a href="">職業等級起</a></th>	
+                    <th><a href="">職業等級迄</a></th>	
+                    <th><a href="">新/續保</a></th>	
+                    <th><a href="">特殊件註記</a></th>	
+                    <th><a href="">保費</a></th>	
+                    <th><a href="">未分配保費</a></th>	
+                    <th><a href="">功能</a></th>	
+                </tr>
+                <tr>
+                    <th style="width: 50px;">
+                        
+                    </th>
+                    <th style="width: 50px;">
+                        <button type="button" class="btn-editt" >編輯</button>   
+                    </th>
+                    
+                    <td>
+                        <button type="button" class="btn-pinks">複製</button>
+                    </td>
+                    <td>001</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>75</td>
+                    <td>365</td>
+                    <td>9.全部</td>
+                    <td>3.全部</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>3.全部</td>
+                    <td>N否</td>
+                    <td>1,000</td>
+                    <td>1000</td>
+                    <td>
+                        <button id="btnBoard" class="btn btn-Chick" onclick="window.open('HAS301010.html', 'newwindow', config='height=900,width=1000,toolbar=no');">保費明細</button>
+                    </td>
+                    
+                </tr>
+                <!-- 需隱藏，按下新增險種資料按鈕才會出現 -->
+                <tr style="background-color: #E5E5E5;"> 
+                    <th style="width: 50px;">
+                        <button type="button" class="btn-update" >更新</button> 
+                    </th>
+                    <th>
+                        <button type="button" class="btn-del" >取消</button>  
+                    </th>
+                    
+                    <td style="width: 50px;">
+                        <button type="button" class="btn-pinks">複製</button>
+                    </td>
+                    <td>001</td>
+                    <td>
+                        <input name="" type="text"  id="" class="" style="width:50px;" />
+                    </td>
+                    <td>
+                        <input name="" type="text"  id="" class="" style="width:50px;" />
+                    </td>
+                    <td>
+                        <input name="" type="text"  id="" class="" style="width:50px;" />
+                    </td>
+                    <td>
+                        <input name="" type="text"  id="" class="" style="width:50px;" />
+                    </td>
+                    <td>
+                        <select name="" id="" style="width: 70px; background-color: #fff;" >
+                            <option value="1">9:全部</option>
+                            <option value="GH0">0:</option>
+                            <option value="GM0">1:</option>
+                            <option value="GD0">2:</option>
+                            <option value="GC0">5:</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="" id="" style="width: 70px; background-color: #fff;">
+                            <option value="1">9:全部</option>
+                            <option value="GH0">0:</option>
+                            <option value="GM0">1:</option>
+                            <option value="GD0">2:</option>
+                            <option value="GC0">5:</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="" id="" style="width: 70px; background-color: #fff;">
+                            <option value="1">9:全部</option>
+                            <option value="GH0">0:</option>
+                            <option value="GM0">1:</option>
+                            <option value="GD0">2:</option>
+                            <option value="GC0">5:</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="" id="" style="width: 70px; background-color: #fff;">
+                            <option value="1">9:全部</option>
+                            <option value="GH0">0:</option>
+                            <option value="GM0">1:</option>
+                            <option value="GD0">2:</option>
+                            <option value="GC0">5:</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="" id="" style="width: 70px; background-color: #fff;" >
+                            <option value="1">9:全部</option>
+                            <option value="GH0">0:</option>
+                            <option value="GM0">1:</option>
+                            <option value="GD0">2:</option>
+                            <option value="GC0">5:</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="" id="" style="width: 70px; background-color: #fff;">
+                            <option value="2">Y:是</option>
+                            <option value="1">N:否</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" style="width:70px;" >
+                    </td>
+                    <td>1000</td>
+                    <td>  <button id="btnBoard" class="btn btn-Chick" onclick="window.open('HAS301010.html', 'newwindow', config='height=900,width=1000,toolbar=no');">保費明細</button></td>
+                    
+                </tr>
+            </table>
+
+                
+                
+
+				
+			</div>
+			<!-- content end  -->
+		</div>
+	
+	<!-- dialog -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+					<button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="foo">
+					<div id="example-table"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+</html>

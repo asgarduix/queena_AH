@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" lang="zh-Hant-TW">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+<title>華南產物保險-健康傷害險</title>
+<!-- jQuery -->
+<script src="../../shigen/plugin/jquery.min.js"></script>
+<!-- jQuery UI -->
+<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+<!-- bootstrap -->
+<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+<!-- table tabulator -->
+<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+<!-- fontawsome -->
+<script defer src="../../shigen/fonts/js/all.min.js"></script>
+<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+<!--load all styles -->
+<!-- Plug CSS樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+<!-- 共用樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type.css">
+<!-- 主題顏色切換 糖果世代 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+<!-- 主題顏色切換 海神寶藍 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+<!-- 主題顏色切換 法拉利紅 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+<!-- 主題顏色切換 繽紛馬卡 -->
+<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+<!-- 主題顏色切換 煙花季節 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+<!-- 主題顏色切換 冬雪初現 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+<!-- 自訂JS樣式 -->
+<script src="../../shigen/js/type.js"></script>
+<script src="../../shigen/js/common.js"></script>
+<script src="../../shigen/js/global.js"></script>
+<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+	<!-- <div class="ajax-aside-nav"></div> -->
+	<!-- <section> -->
+		<!-- <div class="ajax-section-main"></div> -->
+		<!-- <div class="container-fluid"> -->
+			<div class="content">
+                <div class="big_title title s1">查詢結果</div>
+				<div class="row-group">
+					<div class="row">
+						<div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-oneBig">確定</button>
+                            <button class="btn btn-oneBig">離開</button>
+						</div>
+					</div>
+                </div>
+                <div style="height: 20px;;"></div>
+                <table class="tblDataArea" width="100%" align="center" border="0">
+                    <tbody>
+                        <tr>
+                        <td class="tdDataCaption">支付對象代碼</td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataCaption">分號</td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataCaption">預賠日</td>
+                        <td class="tdDataField">
+                                <input class="mingo data_time hasDatepicker" name="UcRocDplyBgn" type="text" value="108/05/01" maxlength="10" size="10" id="UcRocDplyBgn" onchange="javascript:this.value=ucRocDate_FormatDateText(this.value,true);" onblur="GetNextYearDply(UcRocDplyBgn_txtDate,UcRocDplyEnd_txtDate,ddlIinsKind);">
+                        </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">中文名稱</td>
+                            <td class="tdDataField" colspan="6">
+                                <input name="txtTemp14" type="text" id="txtTemp14" style="width: 100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">郵遞區號<button title="" class="">查詢</button></td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" id="txtTemp14" style="width: 100%;">
+                            </td>
+                            <td class="tdDataCaption">聯絡地址</td>
+                            <td class="tdDataField" colspan="3">
+                                <input name="txtTemp14" type="text" id="txtTemp14" style="width: 100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">聯絡人</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" id="txtTemp14" style="width: 100%;">
+                            </td>
+                            <td class="tdDataCaption">聯絡電話</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" id="txtTemp14" style="width: 100%;">
+                            </td>
+                            <td class="tdDataCaption">聯絡人手機</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" id="txtTemp14" style="width: 100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">傳真號碼</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" id="txtTemp14" style="width: 100%;">
+                            </td>
+                            <td class="tdDataCaption">電子郵件</td>
+                            <td class="tdDataField" colspan="3">
+                                <input name="txtTemp14" type="text" id="txtTemp14" style="width: 100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                賠付類別
+                            </td>
+                            <td class="tdDataField">
+                                <select name="ddlArea" id="ddlArea" style="width: 150px;">
+                                    <option value=""></option>
+                                    <option selected="selected" value="00">1賠款</option>
+                                    <option value="01">2沖轉費用</option>
+                                    <option value="02">3理賠費用</option>
+                                    <option value="03">4公證費用</option>
+                                    <option value="05">5暫收款</option>
+                                    <option value="06">6代墊同業</option>
+                                    <option value="07">7延滯息</option>
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">
+                                付款方式
+                            </td>
+                            <td class="tdDataField">
+                                <select name="ddlArea" id="ddlArea" style="width: 150px;">
+                                    <option value=""></option>
+                                    <option selected="selected" value="00">H支票</option>
+                                    <option value="01">R電匯</option>
+                                    <option value="02">Q電匯</option>
+                                    <option value="03">E攤回</option>
+                                    <option value="05">A抵繳保費</option>
+                                    <option value="06">B應負抵繳</option>
+                                    <option value="07">O其他</option>
+                                    <option value="07">X代扣稅款</option>
+                                    <option value="07">T暫付</option>
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">
+                                對象類別
+                            </td>
+                            <td class="tdDataField">
+                                <select name="ddlArea" id="ddlArea" style="width: 150px;">
+                                    <option value="01">1法人</option>
+                                    <option selected="selected" value="00">2自然人</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                原幣別
+                            </td>
+                            <td class="tdDataField">
+                                <select name="ddlArea" id="ddlArea" style="width: 150px;">
+                                    <option value="">NTD</option>
+                                    <option selected="selected" value="00"></option>
+                                    <option value="01"></option>
+                                    <option value="02"></option>
+                                    <option value="03"></option>
+                                    <option value="05"></option>
+                                    <option value="06"></option>
+                                    <option value="07"></option>
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">
+                                匯率
+                            </td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                            <td class="tdDataCaption">
+                                發票日期
+                            </td>
+                            <td class="tdDataField">
+                                    <input class="mingo data_time hasDatepicker" name="UcRocDplyBgn" type="text" value="108/05/01" maxlength="10" size="10" id="UcRocDplyBgn" onchange="javascript:this.value=ucRocDate_FormatDateText(this.value,true);" onblur="GetNextYearDply(UcRocDplyBgn_txtDate,UcRocDplyEnd_txtDate,ddlIinsKind);">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                原幣金額
+                            </td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                            <td class="tdDataCaption">
+                                台幣金額
+                            </td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                            <td class="tdDataCaption">
+                                代扣稅款
+                            </td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                行庫國別
+                            </td>
+                            <td class="tdDataField">
+                                <select name="ddlArea" id="ddlArea" style="width: 150px;">
+                                    <option value="">1TAIWAN</option>
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">
+                                行庫代號
+                            </td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                            <td class="tdDataCaption">
+                                行庫帳號
+                            </td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                是否郵寄支票＿舊版
+                            </td>
+                            <td class="tdDataField" colspan="7">
+                                <input id="chkTranObj" type="checkbox" name="chkTranObj" checked="checked">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                快速賠款
+                            </td>
+                            <td class="tdDataField">
+                                <select name="ddlArea" id="ddlArea" style="width: 150px;">
+                                    <option value="">1一般件</option>
+                                    <option value="">2急件</option>
+                                    <option value="">3快速付款</option>
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">
+                                匯費吸收註
+                            </td>
+                            <td class="tdDataField" colspan="3">
+                                
+                                    <span class="tdDataCaption" style="border-style:None;">
+                                    <input id="RadioButton1" type="radio" name="select" value="" checked="checked">
+                                        <label for="RadioButton1">是</label>
+                                    </span>
+                                    <span class="tdDataCaption" style="border-style:None;">
+                                        <input id="RadioButton1" type="radio" name="select" value="" checked="checked">
+                                            <label for="RadioButton1">否</label>
+                                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                備註
+                            </td>
+                            <td class="tdDataField" colspan="5">
+                                <textarea name="txtMemoObj" id="txtMemoObj" style="width:100%;"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                下支票請通知_舊版
+                            </td>
+                            <td class="tdDataField" colspan="5">
+                                <input name="txtTemp14" type="text" id="txtTemp14" style="width: 100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                取消禁背支票註記
+                            </td>
+                            <td class="tdDataField" colspan="5">
+                                    <span class="tdDataCaption" style="border-style:None;">
+                                    <input id="RadioButton1" type="radio" name="select" value="" checked="checked">
+                                        <label for="RadioButton1">是</label>
+                                    </span>
+                                    <span class="tdDataCaption" style="border-style:None;">
+                                        <input id="RadioButton1" type="radio" name="select" value="" checked="checked">
+                                            <label for="RadioButton1">否</label>
+                                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption" rowspan="12">
+                                下支票請通知
+                            </td>
+                            <td class="tdDataField" colspan="5">
+                                <span class="tdDataCaption" style="border-style:None;">
+                                    <input id="RadioButton1" type="radio" name="select" value="" checked="checked">
+                                        <label for="RadioButton1">親領(僅限到總公司財務部)</label>
+                                    </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataField" colspan="5">
+                                收件人<input name="txtIest" type="text" maxlength="14" id="txtIest" style="width:160px;">(必填)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataField" colspan="5">
+                                <span class="tdDataCaption" style="border-style:None;">
+                                    <input id="RadioButton1" type="radio" name="select" value="" checked="checked">
+                                        <label for="RadioButton1">轉交下列人員</label>
+                                    </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataField" colspan="5">
+                                單位<input name="txtIest" type="text" maxlength="14" id="txtIest" style="width:160px;">(必填)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataField" colspan="5">
+                                華南保險人員<input name="txtIest" type="text" maxlength="14" id="txtIest" style="width:160px;">(必填)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataField" colspan="5">
+                                聯絡電話<input name="txtIest" type="text" maxlength="14" id="txtIest" style="width:160px;">(必填)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataField" colspan="5">
+                                <span class="tdDataCaption" style="border-style:None;">
+                                    <input id="RadioButton1" type="radio" name="select" value="" checked="checked">
+                                        <label for="RadioButton1">郵寄</label>
+                                    </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataField" colspan="5">
+                                郵遞區號<input name="txtIest" type="text" maxlength="14" id="txtIest" style="width:160px;">(必填)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataField" colspan="5">
+                                地址<input name="txtIest" type="text" maxlength="14" id="txtIest" style="width:160px;">(必填)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataField" colspan="5">
+                                收件人<input name="txtIest" type="text" maxlength="14" id="txtIest" style="width:160px;">(必填)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataField" colspan="5">
+                                聯絡電話<input name="txtIest" type="text" maxlength="14" id="txtIest" style="width:160px;">(必填)
+                                <input id="chkTranObj" type="checkbox" name="chkTranObj" checked="checked">保戶未提供
+                            </td>
+                        </tr>
+                </tbody>
+                </table>
+
+
+				
+
+				
+			</div>
+			<!-- content end  -->
+		<!-- </div> -->
+	<!-- </section> -->
+	<!-- dialog -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+					<button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="foo">
+					<div id="example-table"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+</html>

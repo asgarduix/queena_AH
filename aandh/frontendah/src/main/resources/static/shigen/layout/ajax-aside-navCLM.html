@@ -1,0 +1,169 @@
+<aside>
+	<div class="flexbox fjc" id="_menu_side_up">
+		<a href="index.html" class="nav-logo"></a>
+	</div>
+	<div class="scroll-box">
+		<div class="hide-box">
+			<div class="scroll-hidden">
+				<nav id="_menu_side">
+					<ul class="list_layer">
+						<li class="nav_box">
+							<a href="CLM500000.html" class="nav_first">
+								<i class="fas fa-plus-square"></i>
+								<span>CLM500000<br><span class="text s4">接件及查詢作業</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="CLM500001.html" class="nav_first">
+								<i class="fas fa-print"></i>
+								<span>CLM500001<br><span class="text s4">接件登錄-批次列印</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="CLM501000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>CLM501000<br><span class="text s4">新增賠案作業</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="CLM502000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>CLM502000<br><span class="text s4">受理預估作業</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="CLM502010.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>CLM502010<br><span class="text s4">批次案袋列印</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="CLM506000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>CLM506000<br><span class="text s4">預估調整作業</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="CLM507000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>CLM507000<br><span class="text s4">計畫書作業</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="CLM508000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>CLM508000<br><span class="text s4">賠案進度查詢</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="CLM509000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>CLM509000<br><span class="text s4">文號設定作業</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="CLM509005.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>CLM509005<br><span class="text s4">文號日結作業</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="CLM510000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>CLM510000<br><span class="text s4">暫收暫付作業</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="CLM511000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>CLM511000<br><span class="text s4">追償管理</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="CLM512000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>CLM512000<br><span class="text s4">歸檔日作業</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="CLM516000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>CLM516000<br><span class="text s4">支付資料維護</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="CLM517000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>CLM517000<br><span class="text s4">放行作業</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="CLM518000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>CLM518000<br><span class="text s4">解除契約作業</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="CLM519000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>CLM519000<br><span class="text s4">理賠賠付作業</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="HAS157000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>HAS157000<br><span class="text s4">未收保費理賠控制</span></span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="nav-bt-box">
+		<div class="nav-bt-left"></div>
+		<div class="nav-bt-right off"></div>
+	</div>
+</aside>
+<script>
+	$(document).ready(function () {
+
+
+		/* 無限層選單：列表收合 */
+		$(".list_layer .nav_box .nav_first").click(function () {
+			// $(this).next().slideUp();
+			var o = $(this);
+			var s = o.next().attr("style");
+
+			// f-else作開關
+			if (checkIsNullSpace(s) == true) {
+				o.next().attr("style", "display: block;");
+			} else {
+				o.next().removeAttr("style");
+			}
+		});
+
+
+		/* 左側選單：關閉*/
+		$(".nav-bt-left").click(function () {
+			$("aside").animate({ left: "-200px" }, 500);
+			$("section").animate({ paddingLeft: "20px", }, 500);
+			$(this).hide();
+			$(".nav-bt-right").show();
+			$(".main-box").removeClass("mbnoshow");
+			$(".content").removeClass("mbnoshow");
+		});
+
+
+		/* 左側選單：開啟*/
+		$(".nav-bt-right").click(function () {
+			$("aside").animate({ left: "0" }, 500);
+			$("section").animate({ paddingLeft: "220px", }, 500);
+			$(this).hide();
+			$(".nav-bt-left").show();
+			$(".main-box").addClass("mbnoshow");
+			$(".content").addClass("mbnoshow");
+		});
+
+	});
+</script>

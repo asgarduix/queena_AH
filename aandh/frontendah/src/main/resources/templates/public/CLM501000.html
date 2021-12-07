@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" lang="zh-Hant-TW">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+<title>華南產物保險-健康傷害險</title>
+<!-- jQuery -->
+<script src="../../shigen/plugin/jquery.min.js"></script>
+<!-- jQuery UI -->
+<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+<!-- bootstrap -->
+<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+<!-- table tabulator -->
+<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+<!-- fontawsome -->
+<script defer src="../../shigen/fonts/js/all.min.js"></script>
+<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+<!--load all styles -->
+<!-- Plug CSS樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+<!-- 共用樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type.css">
+<!-- 主題顏色切換 糖果世代 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+<!-- 主題顏色切換 海神寶藍 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+<!-- 主題顏色切換 法拉利紅 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+<!-- 主題顏色切換 繽紛馬卡 -->
+<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+<!-- 主題顏色切換 煙花季節 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+<!-- 主題顏色切換 冬雪初現 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+<!-- 自訂JS樣式 -->
+<script src="../../shigen/js/type.js"></script>
+<script src="../../shigen/js/common.js"></script>
+<script src="../../shigen/js/global.js"></script>
+<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+	<div class="ajax-aside-navCLM"></div>
+	<section>
+		<div class="ajax-section-main"></div>
+		<div class="container-fluid">
+			<div class="content">
+				<div class="bread-crumbs">
+					<a href="">理賠作業</a>
+				</div>
+                <div class="big_title title s1">CLM501000-新增賠案作業</div>
+                <div class="row-group">
+					<div class="row">
+						<div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-oneBig">查詢</button>
+                            <button class="btn btn-oneBig">清除</button>
+                            <button class="btn btn-oneBig">離開</button>
+						</div>
+					</div>
+                </div>
+                <!-- 查詢成功 -->
+                <div class="container-fluid">
+                    <span class="findSucc">查詢成功！</span>
+                </div>
+
+                <table class="tblDataArea tblInquireArea" cellspacing="0" cellpadding="0" width="100%">
+                    <tbody>
+                        <tr>
+                        <td class="tdDataCaption">理賠中心</td>
+                        <td class="tdDataField">
+                            <select name="ddlCenter" language="javascript" id="ddlCenter" style="width:150px;">
+                                <option value="">全部</option>
+                                <option value="">台北總公司</option>
+                                <option value="">台中分公司</option>
+                                <option value="">北縣分公司</option>
+                                <option value="">高雄分公司</option>
+                                <option value="">台南分公司</option>
+                                <option value="">桃園分公司</option>
+                                <option value="">新竹分公司</option>
+                                <option value="">員林分公司</option>
+                            </select>
+                        </td>
+                        <td class="tdDataCaption">接件號</td>
+                        <td class="tdDataField">
+                            <input name="txtIISSBRCH" type="text" value="00" id="txtICASE">
+                        </td>
+                        <td class="tdDataCaption">保單號</td>
+                        <td class="tdDataField">
+                            <input name="txtIPOLICY" type="text" value="00" id="txtIPOLICY">
+                        </td>
+                        <td class="tdDataCaption">事故人姓名</td>
+                        <td class="tdDataField">
+                            <input name="txtNISSUE" type="text" maxlength="40" id="txtNISSUE">
+                        </td>
+                        <td class="tdDataCaption">事故人ID</td>
+                        <td class="tdDataField">
+                            <input name="txtIISSUE" type="text" maxlength="40" id="txtIISSUE">
+                        </td>
+                        <td class="tdDataCaption">理賠人員</td>
+                        <td class="tdDataField">
+                            <input name="txtIEMPLOYEE" type="text" maxlength="40" id="txtIEMPLOYEE">
+                        </td>
+                        </tr>
+  
+                    </tbody>
+                    </table>
+
+            <div style="height: 20px;"></div>
+
+                <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                        <td class="tdDataField">
+                            <h3 style="color: #ed4c6c;">接件資料</h3>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- 新ui 開始 -->
+                <!-- 新增欄位開始 -->
+                <table class="tblDataYellow" width="100%" align="center" border="0" style="background-color:#e2cba6; ">
+					<tbody>
+                    <tr style="background-color:#e2cba6; ">
+                        <td class="tdDataScroleft">編輯</td>
+                        <td class="tdDataRight">
+                            <button id="linkSelect" class="btn btn-Chick">瀏覽附件</button>
+                            <button id="linkICLAIM" class="btn btn-Chick">新增賠案</button>
+                        </td>
+                        <td class="tdDataScroleft">退件</td>
+                        <td class="tdDataRight">
+                            <button id="linkUpdate" class="btn btn-Chick">確定</button>
+                            <button id="linkCancel" class="btn btn-Chick">取消</button>
+                        </td>
+                        <td class="tdDataScroleft">賠案號碼</td>
+                        <td class="tdDataRight">
+                            <input name="" type="text" value="更新" maxlength="15" id="" onkeypress="">
+                        </td>
+                        <td class="tdDataScroleft">接件中心</td>
+                        <td class="tdDataRight" colspan="3">
+                            <input name="" type="text" value="00" maxlength="15" id="" onkeypress="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataScroleft">接件號</td>
+                        <td class="tdDataRight">
+                            <input name="" type="text" value="05099A0015" maxlength="15" id="" onkeypress="">
+                        </td>
+                       
+                        <td class="tdDataScroleft">列印</td>
+                        <td class="tdDataRight">
+                            <button id="btnPremInsert" class="btn btn-Chick">歷史資料列印</button>
+                        </td>
+                        <td class="tdDataScroleft">接件日</td>
+                        <td class="tdDataRight" colspan="5">
+                            <input name="" type="text" value="099/01/28" maxlength="15" id="" onkeypress="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataScroleft">退件原因</td>
+                        <td class="tdDataRight">
+                            <textarea name="txtMemoObj" id="txtMemoObj" style="width:100%; float: left; margin-top: 5px; height: 20px;"></textarea>
+                        </td>
+                        <td class="tdDataScroleft">出險日期</td>
+                        <td class="tdDataRight">
+                            <input name="" type="text" value="098/11/08" maxlength="15" id="" onkeypress="">-
+                            <input name="" type="text" value="0時" maxlength="15" id="" onkeypress="">
+                        </td>
+                        <td class="tdDataScroleft">事故說明</td>
+                        <td class="tdDataRight">
+                            <input name="" type="text" value="爬山滑倒" maxlength="15" id="" onkeypress="">
+                        </td>
+                        <td class="tdDataScroleft">保單號碼</td>
+                        <td class="tdDataRight" colspan="3">
+                            <input name="" type="text" value="0597J000130" maxlength="15" id="" onkeypress="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataScroleft">事故人ID</td>
+                        <td class="tdDataRight">
+                            <input name="" type="text" value="L220338347" maxlength="15" id="" onkeypress="">
+                        </td>
+                       
+                        <td class="tdDataScroleft">姓名</td>
+                        <td class="tdDataRight">
+                            <input name="" type="text" value="XX妃" maxlength="15" id="" onkeypress="">
+                        </td>
+                        <td class="tdDataScroleft">電話</td>
+                        <td class="tdDataRight">
+                            <input name="" type="text" value="****696361" maxlength="15" id="" onkeypress="">
+                        </td>
+                        <td class="tdDataScroleft">接件人員</td>
+                        <td class="tdDataRight" colspan="3">
+                            <input name="" type="text" value="王憶紅" maxlength="15" id="" onkeypress="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataScroleft">接件公司</td>
+                        <td class="tdDataRight">
+                            <input name="" type="text" value="05" maxlength="15" id="" onkeypress="">
+                        </td>
+                        <td class="tdDataScroleft">賠案號碼</td>
+                        <td class="tdDataRight">
+                            <input name="" type="text" value="1234567890" maxlength="15" id="" onkeypress="">
+                        </td>
+                        <td class="tdDataScroleft">理賠人員</td>
+                        <td class="tdDataRight">
+                            <input name="" type="text" value="張政達" maxlength="15" id="" onkeypress="">
+                        </td>
+                        <td class="tdDataScroleft">接件狀態</td>
+                        <td class="tdDataRight">
+                            <input name="" type="text" value="正常件" maxlength="15" id="" onkeypress="">
+                        </td>
+                        <td class="tdDataScroleft">接件狀態說明</td>
+                        <td class="tdDataRight">
+                            <textarea name="txtMemoObj" id="txtMemoObj" style="width:100%; float: left; margin-top: 5px; height: 20px;"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+                <table class="tblDataYellow" width="100%" align="center" border="0">
+					<tbody>
+                    <tr style="background-color:#e2cba6; ">
+                        <td class="tdDataScroleft">編輯</td>
+                        <td class="tdDataRight">
+                            <button id="linkSelect" class="btn btn-Chick">瀏覽附件</button>
+                            <button id="linkICLAIM" class="btn btn-Chick">新增賠案</button>
+                        </td>
+                        <td class="tdDataScroleft">退件</td>
+                        <td class="tdDataRight">
+                           退件
+                        </td>
+                        <td class="tdDataScroleft">賠案號碼</td>
+                        <td class="tdDataRight">
+                            更新
+                        </td>
+                        <td class="tdDataScroleft">接件中心</td>
+                        <td class="tdDataRight" colspan="3">
+                            00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataScroleft">接件號</td>
+                        <td class="tdDataRight">
+                            05099A0015
+                        </td>
+                       
+                        <td class="tdDataScroleft">列印</td>
+                        <td class="tdDataRight">
+                            <button id="btnPremInsert" class="btn btn-Chick">歷史資料列印</button>
+                        </td>
+                        <td class="tdDataScroleft">接件日</td>
+                        <td class="tdDataRight" colspan="5">
+                            099/01/28
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataScroleft">退件原因</td>
+                        <td class="tdDataRight">
+                            審查資料未齊全
+                        </td>
+                        <td class="tdDataScroleft">出險日期</td>
+                        <td class="tdDataRight">
+                            098/11/08-0時
+                        </td>
+                        <td class="tdDataScroleft">事故說明</td>
+                        <td class="tdDataRight">
+                            爬山滑倒
+                        </td>
+                        <td class="tdDataScroleft">保單號碼</td>
+                        <td class="tdDataRight" colspan="3">
+                            0597J000130
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataScroleft">事故人ID</td>
+                        <td class="tdDataRight">
+                            L220338347
+                        </td>
+                       
+                        <td class="tdDataScroleft">姓名</td>
+                        <td class="tdDataRight">
+                            XX妃
+                        </td>
+                        <td class="tdDataScroleft">電話</td>
+                        <td class="tdDataRight">
+                            ****696361
+                        </td>
+                        <td class="tdDataScroleft">接件人員</td>
+                        <td class="tdDataRight" colspan="3">
+                            王憶紅
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataScroleft">接件公司</td>
+                        <td class="tdDataRight">
+                            05
+                        </td>
+                        <td class="tdDataScroleft">賠案號碼</td>
+                        <td class="tdDataRight">
+                            1234567890
+                        </td>
+                        <td class="tdDataScroleft">理賠人員</td>
+                        <td class="tdDataRight">
+                            張政達
+                        </td>
+                        <td class="tdDataScroleft">接件狀態</td>
+                        <td class="tdDataRight">
+                            正常件
+                        </td>
+                        <td class="tdDataScroleft">接件狀態說明</td>
+                        <td class="tdDataRight">
+                           處理中，等待資料備齊
+                    </tr>
+                </tbody>
+                </table>
+                <table class="tblDataYellow" width="100%" align="center" border="0">
+					<tbody>
+                    <tr style="background-color:#e2cba6; ">
+                        <td class="tdDataScroleft">編輯</td>
+                        <td class="tdDataRight">
+                            <button id="linkSelect" class="btn btn-Chick">瀏覽附件</button>
+                            <button id="linkICLAIM" class="btn btn-Chick">新增賠案</button>
+                        </td>
+                        <td class="tdDataScroleft">退件</td>
+                        <td class="tdDataRight">
+                            <button id="linkUpdate" class="btn btn-Chick">確定</button>
+                            <button id="linkCancel" class="btn btn-Chick">取消</button>
+                        </td>
+                        <td class="tdDataScroleft">賠案號碼</td>
+                        <td class="tdDataRight">
+                            更新
+                        </td>
+                        <td class="tdDataScroleft">接件中心</td>
+                        <td class="tdDataRight" colspan="3">
+                            00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataScroleft">接件號</td>
+                        <td class="tdDataRight">
+                            05099A0015
+                        </td>
+                       
+                        <td class="tdDataScroleft">列印</td>
+                        <td class="tdDataRight">
+                            <button id="btnPremInsert" class="btn btn-Chick">歷史資料列印</button>
+                        </td>
+                        <td class="tdDataScroleft">接件日</td>
+                        <td class="tdDataRight" colspan="5">
+                            099/01/28
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataScroleft">退件原因</td>
+                        <td class="tdDataRight">
+                            審查資料未齊全
+                        </td>
+                        <td class="tdDataScroleft">出險日期</td>
+                        <td class="tdDataRight">
+                            098/11/08-0時
+                        </td>
+                        <td class="tdDataScroleft">事故說明</td>
+                        <td class="tdDataRight">
+                            爬山滑倒
+                        </td>
+                        <td class="tdDataScroleft">保單號碼</td>
+                        <td class="tdDataRight" colspan="3">
+                            0597J000130
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataScroleft">事故人ID</td>
+                        <td class="tdDataRight">
+                            L220338347
+                        </td>
+                       
+                        <td class="tdDataScroleft">姓名</td>
+                        <td class="tdDataRight">
+                            XX妃
+                        </td>
+                        <td class="tdDataScroleft">電話</td>
+                        <td class="tdDataRight">
+                            ****696361
+                        </td>
+                        <td class="tdDataScroleft">接件人員</td>
+                        <td class="tdDataRight" colspan="3">
+                            王憶紅
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataScroleft">接件公司</td>
+                        <td class="tdDataRight">
+                            05
+                        </td>
+                        <td class="tdDataScroleft">賠案號碼</td>
+                        <td class="tdDataRight">
+                            1234567890
+                        </td>
+                        <td class="tdDataScroleft">理賠人員</td>
+                        <td class="tdDataRight">
+                            張政達
+                        </td>
+                        <td class="tdDataScroleft">接件狀態</td>
+                        <td class="tdDataRight">
+                            正常件
+                        </td>
+                        <td class="tdDataScroleft">接件狀態說明</td>
+                        <td class="tdDataRight">
+                           處理中，等待資料備齊
+                    </tr>
+                </tbody>
+                </table>
+                <!-- 新增欄位結束 -->
+                <!-- 新ui 結束 -->
+				<table id="Table2" class="tblFunctionBar" cellSpacing="0" cellPadding="0">
+					<tr vAlign="bottom">
+						<!-- <td noWrap align="left">
+							<button class="btn btn-secondary">新增險種資料</button>
+						</td> -->
+						<td noWrap align="left">
+							<a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+							<a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+							<a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+							<a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="" class="">總共</span>
+						<span id="" class="">0</span>
+						<span id="" class="">筆</span>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="" class="">每頁</span>
+							<input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;" />
+							<span id="" class="">筆</span>
+							<button class="btn btn-secondary">go</button>
+						</td>
+						<td noWrap align="left">
+							<span id="" class="">總共</span>
+							<span id="" class="">1</span>
+							<span id="" class="">頁</span>&nbsp;
+						</td>
+						<td align="right">
+							<span id="" class="">目前第</span>
+						<input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;" />
+						<span id="" class="">頁</span>
+						<button class="btn btn-secondary">go</button>
+						<button class="btn btn-secondary">匯出資料</button>
+						
+						</td>
+					</tr>
+				</table>
+				<table class="rightScroll tblCssDataGrid">
+					<tr class="cssDataGridHeader">
+                        <th style="width: 50px;"><a href="" ></a></th>
+						<th style="width: 100px;"><a href="" ></a></th>
+						<th><a href="" >退件</a></th>
+                        <th><a href="">賠案號碼</a></th>
+                        <th><a href="">接件中心</a></th>
+                        <th><a href="">接件號</a></th>
+                        <th><a href=""></a></th>
+                        <th><a href="">接件日</a></th>	
+                        <th><a href="">退件原因</a></th>	
+                        <th><a href="">出險日期</a></th>	
+                        <th><a href="">事故說明</a></th>	
+                        <th><a href="">保單號碼</a></th>	
+                        <th><a href="">事故人ID</a></th>	
+                        <th><a href="">姓名</a></th>	
+                        <th><a href="">電話</a></th>	
+                        <th><a href="">接件人員</a></th>	
+                        <th><a href="">接件公司</a></th>	
+                        <th><a href="">賠案號碼</a></th>	
+                        <th><a href="">理賠人員</a></th>	
+                        <th><a href="">接件狀態</a></th>	
+                        <th><a href="">接件狀態說明</a></th>	
+                    </tr>
+                    <!-- 新增險種資料按下後出現 -->
+                    <!-- <tr class="cssDataGridHeader" style="background-color:#bddde0 ;">
+                        <td style="width: 50px;">
+                          <input type="checkbox" name="" id="">
+                        </td>
+                        <td style="width: 100px;">
+                            <button class="btn-addlist">更新</button>
+                            <button class="btn-del">取消</button>
+                        </td>
+                        <td>
+                            I傷害險
+                        </td>
+                        <td>
+                            <input type="checkbox" name="" id="">
+                        </td>
+                        <td>
+                            <input class="mingo data_time hasDatepicker" name="ucdDCLOSE_NEXT" type="text" value="109/03/24" maxlength="10" size="10" id="ucdDCLOSE_NEXT">
+                        </td>
+                        <td>
+                            <textarea name="txtMemoObj" id="txtMemoObj" style="width:300px;"></textarea>
+                        </td>
+                        <td>
+                            <input name="" type="text" value="" maxlength="15" id="txtIissprint" onkeypress="">
+                        </td>
+                        <td>
+                            <input name="" type="text" value="" maxlength="15" id="txtIissprint" onkeypress="">
+                        </td>
+                        <td>
+                            <input name="" type="text" value="" maxlength="15" id="txtIissprint" onkeypress="">
+                        </td>
+                        <td>
+                            <input name="" type="text" value="" maxlength="15" id="txtIissprint" onkeypress="">
+                        </td>
+                        <td>
+                            <input name="" type="text" value="" maxlength="15" id="txtIissprint" onkeypress="">
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:150px;">
+                            <option value=""></option>
+                            <option value="">GHO日額甲型</option>
+                            <option value="">GMO個人組合</option>
+                            <option value="">GDO重大疾病</option>
+                            <option value="">GCO初次罹癌</option>
+                        </select>
+                        <input name="" type="text" style="width: 50px;" value="" maxlength="5" id="txtIissprint" onkeypress="">
+                    </td>
+                        <td>
+                            <input name="" type="text" style="width: 50px;" value="" maxlength="5" id="txtIissprint" onkeypress="">
+                        </td>
+                        <td>
+                            <input name="" type="text" style="width: 50px;" value="" maxlength="5" id="txtIissprint" onkeypress="">
+                        </td>
+                        <td>
+                            <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:100px;">
+                                <option value="">正常件</option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:300px; float: left;">
+                                <option value="">其他</option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                            <textarea name="txtMemoObj" id="txtMemoObj" style="width:300px; float: left; margin-top: 5px;"></textarea>
+                        </td>
+                    </tr> -->
+                    <tr>
+                        <td><button id="linkSelect" class="btn btn-Chick">瀏覽附件</button></td>
+                        <td><button id="linkICLAIM" class="btn btn-Chick">新增賠案</button></td>
+                        <td id="linkEdit">
+                            <button id="linkUpdate" class="btn btn-Chick">確定</button>
+                            <button id="linkCancel" class="btn btn-Chick">取消</button>
+                        </td>
+                        <td>更新</td>
+                        <td>00</td>
+                        <td>05099A0015</td>
+                        <td><button id="btnPremInsert" class="btn btn-Chick">歷史資料列印</button></td>
+                        <td>099/01/28</td>
+                        <td></td>
+                        <td>098/11/08-0時</td>
+                        <td>爬山滑倒</td>
+                        <td>0597J000130</td>
+                        <td>L220338347</td>
+                        <td>XX妃</td>
+                        <td>****696361</td>
+                        <td>王憶紅</td>
+                        <td>05</td>
+                        <td></td>
+                        <td>張政達</td>
+                        <td>正常件</td>
+                        <td><textarea name="txtMemoObj" id="txtMemoObj" style="width:300px; float: left; margin-top: 5px;"></textarea></td>
+
+                    </tr>
+                    <tr>
+                        <td><button id="btnPremInsert" class="btn btn-Chick">瀏覽附件</button></td>
+                        <td><button id="btnPremInsert" class="btn btn-Chick">新增賠案</button></td>
+                        <td>退件</td>
+                        <td>更新</td>
+                        <td>00</td>
+                        <td>05099A0015</td>
+                        <td><button id="btnPremInsert" class="btn btn-Chick">歷史資料列印</button></td>
+                        <td>099/01/28</td>
+                        <td></td>
+                        <td>098/11/08-0時</td>
+                        <td>爬山滑倒</td>
+                        <td>0597J000130</td>
+                        <td>L220338347</td>
+                        <td>XX妃</td>
+                        <td>****696361</td>
+                        <td>王憶紅</td>
+                        <td>05</td>
+                        <td></td>
+                        <td>張政達</td>
+                        <td>正常件</td>
+                        <td><textarea name="txtMemoObj" id="txtMemoObj" style="width:300px; float: left; margin-top: 5px;"></textarea></td>
+
+                    </tr>
+                    <tr>
+                        <td><button id="btnPremInsert" class="btn btn-Chick">瀏覽附件</button></td>
+                        <td><button id="btnPremInsert" class="btn btn-Chick">新增賠案</button></td>
+                        <td>退件</td>
+                        <td>更新</td>
+                        <td>00</td>
+                        <td>05099A0015</td>
+                        <td><button id="btnPremInsert" class="btn btn-Chick">歷史資料列印</button></td>
+                        <td>099/01/28</td>
+                        <td></td>
+                        <td>098/11/08-0時</td>
+                        <td>爬山滑倒</td>
+                        <td>0597J000130</td>
+                        <td>L220338347</td>
+                        <td>XX妃</td>
+                        <td>****696361</td>
+                        <td>王憶紅</td>
+                        <td>05</td>
+                        <td></td>
+                        <td>張政達</td>
+                        <td>正常件</td>
+                        <td><textarea name="txtMemoObj" id="txtMemoObj" style="width:300px; float: left; margin-top: 5px;"></textarea></td>
+
+                    </tr>
+                </table>
+
+                <!-- 受理文件欄位 -->
+                <table class="tblDataArea" width="100%" align="center" border="0">
+                    <tbody>
+                        <tr>
+                        <td class="tdDataCaption" colspan="4" style="text-align: center;">受理文件</td>
+                        </tr>
+                        <tr>
+                        <td class="tdDataCaption">受理文件</td>
+                        <td class="tdDataCaption" style="text-align: center;">正本</td>
+                        <td class="tdDataCaption" style="text-align: center;">副本</td>
+                        <td class="tdDataCaption" style="text-align: center;">影本</td>
+                        </tr>
+                    <tr>
+                        <td class="tdDataCaption">保險金申請書</td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">診斷證明書</td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">死亡證明書</td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">醫療收據</td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">殘廢診斷書</td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">受益人身份證影本</td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">除戶戶籍謄本</td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">戶口名簿影本</td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">受益人存摺影本</td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">班機取消/延遲證明</td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">行李遺失證明</td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">住宿及旅行費用收據正本</td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">其他證明文件</td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                        <td class="tdDataField">
+                            <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14">
+                        </td>
+                    </tr>
+                 
+                </tbody>
+            </table>
+                
+                <div style="height: 30px;"></div>
+                <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                        <td class="tdDataField">
+                            <h3 style="color: #ed4c6c;">附件</h3>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+				<table id="Table2" class="tblFunctionBar" cellSpacing="0" cellPadding="0">
+					<tr vAlign="bottom">
+						<td noWrap align="left">
+							<a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+							<a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+							<a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+							<a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="" class="">總共</span>
+						<span id="" class="">0</span>
+						<span id="" class="">筆</span>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="" class="">每頁</span>
+							<input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;" />
+							<span id="" class="">筆</span>
+							<button class="btn btn-secondary">go</button>
+						</td>
+						<td noWrap align="left">
+							<span id="" class="">總共</span>
+							<span id="" class="">1</span>
+							<span id="" class="">頁</span>&nbsp;
+						</td>
+						<td align="right">
+							<span id="" class="">目前第</span>
+						<input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;" />
+						<span id="" class="">頁</span>
+						<button class="btn btn-secondary">go</button>
+						<button class="btn btn-secondary">匯出資料</button>
+						
+						</td>
+					</tr>
+				</table>
+				<table class="tblCssDataGrid">
+					<tr class="cssDataGridHeader">
+                        <th style="width: 50px;"><a href="" ></a></th>
+						<th style="width: 50px;"><a href="" ></a></th>
+						<th><a href="" >文件類別</a></th>
+                        <th><a href="">附件檔案描述</a></th>
+                        <th><a href="">附件檔名</a></th>
+                    </tr>
+                    <tr>
+                        <td style="width: 50px;">
+                           <button class="btn-editt">編輯</button>
+                        </td>
+                        <td style="width: 50px;">
+                            <button class="btn-del">刪除</button>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+
+
+			</div>
+			<!-- content end  -->
+		</div>
+	</section>
+	<!-- dialog -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+					<button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="foo">
+					<div id="example-table"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+</html>

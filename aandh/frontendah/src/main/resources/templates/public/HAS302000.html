@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" lang="zh-Hant-TW">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+	<title>華南產物保險-健康傷害險</title>
+	<!-- jQuery -->
+	<script src="../../shigen/plugin/jquery.min.js"></script>
+	<!-- jQuery UI -->
+	<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+	<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+	<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+	<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+	<!-- bootstrap -->
+	<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+	<!-- table tabulator -->
+	<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+	<!-- fontawsome -->
+	<script defer src="../../shigen/fonts/js/all.min.js"></script>
+	<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+	<!--load all styles -->
+	<!-- Plug CSS樣式 -->
+	<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+	<!-- 共用樣式 -->
+	<link rel="stylesheet" href="../../shigen/css/type.css">
+	<!-- 主題顏色切換 糖果世代 -->
+	<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+	<!-- 主題顏色切換 海神寶藍 -->
+	<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+	<!-- 主題顏色切換 法拉利紅 -->
+	<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+	<!-- 主題顏色切換 繽紛馬卡 -->
+	<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+	<!-- 主題顏色切換 煙花季節 -->
+	<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+	<!-- 主題顏色切換 冬雪初現 -->
+	<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+	<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+	<!-- 自訂JS樣式 -->
+	<script src="../../shigen/js/type.js"></script>
+	<script src="../../shigen/js/common.js"></script>
+	<script src="../../shigen/js/global.js"></script>
+	<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+	<div class="ajax-aside-nav"></div>
+	<section>
+		<div class="ajax-section-main"></div>
+		<div class="container-fluid">
+			<div class="content">
+				<div class="bread-crumbs">
+					<a href="">承保受理作業</a>
+				</div>
+				<div class="big_title title s1">HAS302000 健康傷害險批次列印作業</div>
+				<div class="row-group">
+					<div class="row">
+						<div class="col-12 text-left content_function_bar">
+
+							<button class="btn btn-oneBig">列印</button>
+							<button class="btn btn-oneBig">離開</button>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="item_title title s2">查詢</div> -->
+				<div class="row-group">
+					<div class="row">
+						<!-- 保單新增 -->
+						<table class="tblDataArea" id="Table1" width="95%" align="center" border="0">
+							<tbody>
+								<tr>
+									<td class="tdDataCaption">保單類別</td>
+									<td class="tdDataField">
+										<select name="ddlRptType" onchange="__doPostBack('ddlRptType','')"
+											language="javascript" id="ddlRptType" style="width:150px;">
+
+											<option value="1">1:一般保單</option>
+											<option value="GM0">2:最新保單(日結後)</option>
+											<option value="GD0">3:單底</option>
+											<option value="GC0">4:最新保單(日結前)</option>
+											<option value="GC0">5:核對(核保人員使用)</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td class="tdDataCaption">保單類別</td>
+									<td class="tdDataField">
+										<select name="ddliinscls" onchange="__doPostBack('ddliinscls','')"
+											language="javascript" id="ddliinscls" style="width:150px;">
+											<option value="A">A&nbsp;責任險</option>
+											<option value="I">I&nbsp;傷害險</option>
+											<option selected="selected" value="H">H&nbsp;健康險</option>
+
+										</select>
+
+										<select name="ddliinskind" onchange="__doPostBack('ddliinskind','')"
+											language="javascript" id="ddliinskind" style="width:150px;">
+											<option selected="selected" value="GH0">GH0&nbsp;日額甲型</option>
+											<option value="GM0">GM0&nbsp;個人組合</option>
+											<option value="GD0">GD0&nbsp;重大疾病</option>
+											<option value="GC0">GC0&nbsp;初次罹癌</option>
+											<option value="GI0">GI0&nbsp;癌症住院</option>
+											<option value="MH0">MH0&nbsp;團體健康</option>
+											<option value="MM0">MM0&nbsp;團體組合</option>
+											<option value="MH1">MH1&nbsp;團體健康(甲型)</option>
+											<option value="MM1">MM1&nbsp;團體組合(甲型)</option>
+											<option value="DH0">DH0&nbsp;重大傷病</option>
+											<option value="MR0">MR0&nbsp;團體住院醫療(實支實付型)</option>
+											<option value="GC1">GC1&nbsp;團體癌症</option>
+											<option value="GC2">GC2&nbsp;團體癌症身故</option>
+											<option value="MH2">MH2&nbsp;住院日額醫療</option>
+											<option value="GC3">GC3&nbsp;初次罹癌(台灣中油)</option>
+											<option value="GC4">GC4&nbsp;團體癌症(台灣中油)</option>
+											<option value="MH3">MH3&nbsp;團體住院醫療日額(台灣中油)</option>
+											<option value="MR1">MR1&nbsp;團體住院醫療限額(台灣中油)</option>
+											<option value="MR2">MR2&nbsp;團體醫療(實支實付型)</option>
+
+										</select>
+
+
+									</td>
+								</tr>
+								<tr>
+									<td class="tdDataCaption">列印類別</td>
+									<td class="tdDataField">
+										<select class="select_edit" name="ddlFormType" onchange="__doPostBack('ddlFormType','')"
+											language="javascript" id="ddlFormType" style="width:150px;">
+											<option selected="selected" value="1">個人件保單</option>
+											<option value="2">團體保單</option>
+											<option value="4">承保範圍</option>
+											<option value="7">收據-新</option>
+											<option value="8">名冊</option>
+											<option value="10">共保特約條款</option>
+
+										</select></td>
+								</tr>
+								<!--2010/08/13 ADD BY BOBO -START -->
+								<!-- <asp:panel id="panPrintType" Runat="server" Visible="false"> -->
+									<TR>
+										<TD class="tdDataCaption">收據版本</TD>
+										<TD class="tdDataField">
+											<select id="ddlPrintType" runat="server">
+												<option Value="1" Selected="True">新版</option>
+												<option Value="2">舊版(加註)</option>
+											</select></TD>
+									</TR>
+								<!-- </asp:panel> -->
+								<!--2010/08/13 ADD BY BOBO -END -->
+								<tr>
+									
+									<td class="tdDataCaption">保單號碼</td>
+									<td class="tdDataField"><input id="txtPolicyBgn" Runat="server" Width="120px" MaxLength="14">~
+										<input id="txtPolicyEnd" Runat="server" Width="120px" MaxLength="14"></td>
+								</tr>
+								<tr>
+									<td class="tdDataCaption">輸入日期</td>
+									<td class="tdDataField">
+										
+										<input class="mingo data_time" name="" type="text" value="109/03/24" maxlength="10" size="10"
+											readonly="readonly" id="ucDcreateBgn" onchange="javascript:this.value=ucRocDate_FormatDateText(this.value,true);">
+										<div id="ucDcreateBgn_divCalender" style="display:none;" isrocdate="true"></div>
+										<input name="" id="" type="hidden" value="true">
+										<span id="" controltovalidate="" errormessage="日期格式錯誤" display=""
+											evaluationfunction=""
+											clientvalidationfunction="ucRocDate_ValidateRocYYYYsMMsDD"
+											style="color:Red;display:none;">日期格式錯誤</span>
+										<span id="" controltovalidate="" errormessage="日期欄位必須填寫" display="None"
+											enabled="False" evaluationfunction="" initialvalue=""
+											style="color:Red;display:none;"></span>
+										<font face="新細明體">~
+											<input class="mingo data_time" name="ucDcreateEnd" type="text" value="109/03/24"
+												maxlength="10" size="10" id="ucDcreateEnd" onchange="javascript:this.value=ucRocDate_FormatDateText(this.value,true);">
+											<div id="ucDcreateEnd_divCalender"
+												style="display:none;behavior:url('/SCERP/ISNEControl/ucRocDate.htc');"
+												isrocdate="true"></div>
+												<input
+												name="" id=""
+												type="hidden" value="true">
+											<span id="ucDcreateEnd_cvdDate" controltovalidate="ucDcreateEnd_txtDate"
+												errormessage="日期格式錯誤" display="Dynamic"
+												evaluationfunction=""
+												clientvalidationfunction="ucRocDate_ValidateRocYYYYsMMsDD"
+												style="color:Red;display:none;">日期格式錯誤</span><span
+												id=""
+												controltovalidate="ucDcreateEnd_txtDate" errormessage="日期欄位必須填寫"
+												display="None" enabled="False"
+												evaluationfunction="RequiredFieldValidatorEvaluateIsValid"
+												initialvalue="" style="color:Red;display:none;"></span>
+										</font>
+									</td>
+								</tr>
+								<tr>
+									<td class="tdDataCaption">輸入人員</td>
+									<td class="tdDataField">
+										<input id="txtIcreate" Runat="server" MaxLength="10" Width="120px"></td>
+								</tr>
+								<tr>
+									<td class="tdDataCaption">起保日期</td>
+									<td class="tdDataField">
+										<input class="mingo data_time" id="ucDplyBgn" runat="server" IsRocDate="true">
+										<div id="ucDcreateBgn_divCalender" style="display:none;" isrocdate="true"></div>
+										<input name="" id="" type="hidden" value="true">
+										<span id="" controltovalidate="" errormessage="日期格式錯誤" display="" evaluationfunction="" clientvalidationfunction="ucRocDate_ValidateRocYYYYsMMsDD" style="color:Red;display:none;">日期格式錯誤</span>
+										<span id="" controltovalidate="" errormessage="日期欄位必須填寫" display="None" enabled="False" evaluationfunction="" initialvalue="" style="color:Red;display:none;"></span>
+										<font face="新細明體">~
+											<input class="mingo data_time" id="ucDplyEnd" runat="server" IsRocDate="true" onchange="javascript:this.value=ucRocDate_FormatDateText(this.value,true);">
+											<div id="ucDcreateEnd_divCalender" style="display:none;behavior:url('/SCERP/ISNEControl/ucRocDate.htc');" isrocdate="true"></div>
+												<input name="" id="" type="hidden" value="true">
+											<span id="ucDcreateEnd_cvdDate" controltovalidate="ucDcreateEnd_txtDate" errormessage="日期格式錯誤" display="Dynamic" evaluationfunction="" clientvalidationfunction="ucRocDate_ValidateRocYYYYsMMsDD" style="color:Red;display:none;">日期格式錯誤</span><span id="" controltovalidate="ucDcreateEnd_txtDate" errormessage="日期欄位必須填寫" display="None" enabled="False" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;"></span>
+										</font>
+									</td>
+								</tr>
+								<tr>
+									<td class="tdDataCaption">團代號</td>
+									<td class="tdDataField">
+										<input id="txtGroupBgn" Runat="server" MaxLength="6" style="width:120px;">~
+										<input id="txtGroupEnd" Runat="server" MaxLength="6" style="width:120px;"></td>
+								</tr>
+								<tr>
+									<td class="tdDataCaption">已列印是否重複列印</td>
+									<td class="tdDataField">
+										<select id="ddlRePrt" runat="server">
+											<option selected="selected" value="Y">Y 是</option>
+											<option value="N">N 否</option>
+
+										</select>
+									</td>
+								</tr>
+									 <TR class="select_edit5">
+										<TD class="tdDataCaption">身故受益人</TD>
+										<TD class="tdDataField">
+											<input id="rdo_1_1" type="radio" name="rdo_1" value="1"  checked="checked">
+											<label for="rdo_1_1">顯示</label>
+											<input id="rdo_1_2" type="radio" name="rdo_1" value="2">
+											<label for="rdo_1_2">不顯示</label>
+									</TR>
+									<TR class="select_edit5">
+										<TD class="tdDataCaption">保費顯示</TD>
+										<TD class="tdDataField">
+											<input id="rdo_2_1" type="radio" name="rdo_2" value="1"  checked="checked">
+											<label for="rdo_2_1">顯示</label>
+											<input id="rdo_2_2" type="radio" name="rdo_2" value="2">
+											<label for="rdo_2_2">不顯示</label>
+										</TD>
+									</TR>
+									<TR class="select_edit5">
+										<TD class="tdDataCaption">依部門別跳頁</TD>
+										<TD class="tdDataField">
+											<input id="rdo_3_1" type="radio" name="rdo_3" value="1"  checked="checked">
+											<label for="rdo_3_1">顯示</label>
+											<input id="rdo_3_2" type="radio" name="rdo_3" value="2">
+											<label for="rdo_3_2">不顯示</label>
+										</TD>
+									</TR>
+									<TR class="select_edit5">
+										<TD class="tdDataCaption">輸入類別</TD>
+										<TD class="tdDataField">
+											<input id="rdo_5_1" type="radio" name="rdo_5" value="1"  checked="checked">
+											<label for="rdo_5_1">PDF</label>
+											<input id="rdo_5_2" type="radio" name="rdo_5" value="2">
+											<label for="rdo_5_2">EXCEL</label>
+										</TD>
+									</TR>
+									<TR class="select_edit5">
+										<TD class="tdDataCaption">是否隱藏被保險人ID</TD>
+										<TD class="tdDataField">
+											<input id="rdo_6_1" type="radio" name="rdo_6" value="1"  checked="checked">
+											<label for="rdo_6_1">隱藏</label>
+											<input id="rdo_6_2" type="radio" name="rdo_6" value="2">
+											<label for="rdo_6_2">不隱藏</label>
+										</TD>
+									</TR>
+									
+									<!-- <asp:panel id="PanHideBirth" Runat="server" Visible="False"> -->
+									<TR class="select_edit5">
+										<TD class="tdDataCaption">是否隱藏被保險人出生年月日</TD>
+										<TD class="tdDataField">
+											<input id="rdo_7_1" type="radio" name="rdo_7" value="1"  checked="checked">
+											<label for="rdo_7_1">隱藏</label>
+											<input id="rdo_7_2" type="radio" name="rdo_7" value="2">
+											<label for="rdo_7_2">不隱藏</label>
+										</TD>
+									</TR>
+									<!-- </asp:Panel> -->
+									<TR class="select_edit5">
+										<TD class="tdDataCaption">列印順序</TD>
+										<TD class="tdDataField">
+											<input id="rdo_4_1" type="radio" name="rdo_4" value="1"  checked="checked">
+											<label for="rdo_4_1">序號</label>
+											<input id="rdo_4_2" type="radio" name="rdo_4" value="2">
+											<label for="rdo_4_2">員工編號</label>
+											<input id="rdo_4_3" type="radio" name="rdo_4" value="3">
+											<label for="rdo_4_3">部門別+序號</label>
+											<input id="rdo_4_4" type="radio" name="rdo_4" value="4">
+											<label for="rdo_4_4">部門別+員工編號</label>
+											<input id="rdo_4_5" type="radio" name="rdo_4" value="5">
+											<label for="rdo_4_5">生效日</label>
+											<input id="rdo_4_6" type="radio" name="rdo_4" value="6">
+											<label for="rdo_4_6">身分證字號</label>
+											<input id="rdo_4_7" type="radio" name="rdo_4" value="7">
+											<label for="rdo_4_7">部門別+姓名</label>
+									</TR>
+								<!-- </asp:panel> -->
+
+								<!-- <asp:panel id="PanHideEpolicy" Runat="server" Visible="False"> -->
+									<!-- <TR>
+										<TD class="tdDataCaption">是否含電子保單</TD>
+										<TD class="tdDataField">
+											<input id="rdo_8_1" type="radio" name="rdo_8" value="1">
+											<label for="rdo_8_1">不含</label>
+											<input id="rdo_8_2" type="radio" name="rdo_8" value="2">
+											<label for="rdo_8_2">含</label>
+									</TR> -->
+								<!-- </asp:Panel> -->
+								<tr>
+									<td class="tdDataCaption">列印件數</td>
+									<td class="tdDataField">
+										<font style="BACKGROUND-COLOR: #e0eef7" face="新細明體" color="#005B86">保單正本</font>
+										<input name="txtQcnt1" type="text" value="1" maxlength="2"
+											id="txtQcnt1" style="width:50px;">
+										<font style="BACKGROUND-COLOR: #e0eef7" face="新細明體" color="#005B86">副本</font>
+										<input name="txtQcnt2" type="text" value="0" maxlength="2"
+											id="txtQcnt2" style="width:50px;">
+										<font style="BACKGROUND-COLOR: #e0eef7" face="新細明體" color="#005B86">承保範圍/收據件數
+										</font>
+										<input name="txtQcnt3" type="text" value="1" maxlength="2"
+											id="txtQcnt3" style="width:50px;">
+									</td>
+								</tr>
+								<tr class="select_edit1">
+									<td class="tdDataCaption">
+										<input id="ChkAD" type="checkbox" name="ChkAD" checked="checked"
+											onclick="__doPostBack('ChkAD','')" language="javascript"><label
+											for="ChkAD">是否補發</label></td>
+									<td class="tdDataField">授權帳號
+										<input name="txtUserID" type="text" id="txtUserID">密碼
+										<input name="txtPassWord" type="password" id="txtPassWord">請輸入登入電腦的帳號密碼</td>
+								</tr>
+								<tr class="select_edit1">
+									<td class="tdDataCaption">補發原因</td>
+									<td class="tdDataField">
+										<textarea name="txtNReason" id="txtNReason"
+											style="height:72px;width:496px;"></textarea></td>
+								</tr>
+								<tr class="select_edit1">
+									<td class="tdDataCaption">保單/洽攬人失效</td>
+									<td class="tdDataField">
+										<textarea name="MMEO" id="MMEO"
+											style="color:#FF3300;height:72px;width:496px;"></textarea></td>
+								</tr>
+
+							</tbody>
+						</table>
+
+
+
+
+
+
+
+
+
+
+
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+		<!-- content end  -->
+		</div>
+	</section>
+	<!-- dialog -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+					<button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="foo">
+					<div id="example-table"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('.select_edit5').hide();
+		$("select.select_edit").change(function () {
+			// var str = "";
+			var select = $("#ddlFormType").val() + "";
+			if(select == "1"){
+				$('.select_edit1').show();
+				$('.select_edit5').hide();
+			}else if(select == "2"){
+				$('.select_edit1').show();
+				$('.select_edit5').hide();
+			}else if(select == "4"){
+				$('.select_edit1, .select_edit5').hide();
+			}else if(select == "7"){
+				$('.select_edit1').show();
+				$('.select_edit5').hide();
+			}else if(select == "8"){
+				$('.select_edit1').hide();
+				$('.select_edit5').show();
+			}else if(select == "10"){
+				$('.select_edit1, .select_edit5').hide();
+			}
+		});
+			// .change();
+	</script>
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" lang="zh-Hant-TW">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+    <title>華南產物保險-健康傷害險</title>
+    <!-- jQuery -->
+    <script src="../../shigen/plugin/jquery.min.js"></script>
+    <!-- jQuery UI -->
+    <link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+    <script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+    <!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+    <script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+    <!-- bootstrap -->
+    <script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+    <!-- table tabulator -->
+    <script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+    <!-- fontawsome -->
+    <script defer src="../../shigen/fonts/js/all.min.js"></script>
+    <link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+    <!--load all styles -->
+    <!-- Plug CSS樣式 -->
+    <link rel="stylesheet" href="../../shigen/css/type_plug.css">
+    <!-- 共用樣式 -->
+    <link rel="stylesheet" href="../../shigen/css/type.css">
+    <!-- 主題顏色切換 糖果世代 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+    <!-- 主題顏色切換 海神寶藍 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+    <!-- 主題顏色切換 法拉利紅 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+    <!-- 主題顏色切換 繽紛馬卡 -->
+    <link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+    <!-- 主題顏色切換 煙花季節 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+    <!-- 主題顏色切換 冬雪初現 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+    <link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+    <!-- 自訂JS樣式 -->
+    <script src="../../shigen/js/type.js"></script>
+    <script src="../../shigen/js/common.js"></script>
+    <script src="../../shigen/js/global.js"></script>
+    <!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+    <div class="ajax-aside-nav"></div>
+    <section>
+        <div class="ajax-section-main"></div>
+        <div class="container-fluid">
+            <div class="content">
+                <div class="bread-crumbs">
+                    <a href="">承保受理作業</a>
+                </div>
+                <div class="big_title title s1">HAS302005 健康險保單資料轉出</div>
+                <div class="row-group">
+                    <div class="row">
+                        <div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-oneBig">查詢</button>
+                            <button class="btn btn-oneBig">清除</button>
+                            <button class="btn btn-oneBig">離開</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="item_title title s2">查詢</div> -->
+                <div class="row-group">
+                    <div class="row">
+                        <!-- 保單新增 -->
+                        <table class="tblDataArea" width="95%" align="center">
+                            <tbody>
+                                <tr>
+                                    <td class="tdDataCaption" style="HEIGHT: 27px">審核日期</td>
+                                    <td class="tdDataField" style="HEIGHT: 27px"><input name="ucDplyissu_Bgn:txtDate"
+                                            type="text" maxlength="10" size="10" id="ucDplyissu_Bgn_txtDate"
+                                            onchange="javascript:this.value=ucRocDate_FormatDateText(this.value,true);">
+                                        <div id="ucDplyissu_Bgn_divCalender"
+                                            style="display:none;behavior:url('/SCERP/ISNEControl/ucRocDate.htc');"
+                                            isrocdate="true"></div><button title="選擇日期" class="cssUICommandButtonSmall"
+                                            onclick="javascript:document.all.ucDplyissu_Bgn_divCalender.Open('ucDplyissu_Bgn_txtDate');">...</button><input
+                                            name="ucDplyissu_Bgn:txtDateIsRocDate" id="ucDplyissu_Bgn_txtDateIsRocDate"
+                                            type="hidden" value="true">
+                                        <span id="ucDplyissu_Bgn_cvdDate" controltovalidate="ucDplyissu_Bgn_txtDate"
+                                            errormessage="日期格式錯誤" display="Dynamic"
+                                            evaluationfunction="CustomValidatorEvaluateIsValid"
+                                            clientvalidationfunction="ucRocDate_ValidateRocYYYYsMMsDD"
+                                            style="color:Red;display:none;">日期格式錯誤</span><span
+                                            id="ucDplyissu_Bgn_RequiredFieldValidator1"
+                                            controltovalidate="ucDplyissu_Bgn_txtDate" errormessage="日期欄位必須填寫"
+                                            display="None" enabled="False"
+                                            evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue=""
+                                            style="color:Red;display:none;"></span>
+                                        ~<input name="ucDplyissu_End:txtDate" type="text" value="109/03/24"
+                                            maxlength="10" size="10" id="ucDplyissu_End_txtDate"
+                                            onchange="javascript:this.value=ucRocDate_FormatDateText(this.value,true);">
+                                        <div id="ucDplyissu_End_divCalender"
+                                            style="display:none;behavior:url('/SCERP/ISNEControl/ucRocDate.htc');"
+                                            isrocdate="true"></div><button title="選擇日期" class="cssUICommandButtonSmall"
+                                            onclick="javascript:document.all.ucDplyissu_End_divCalender.Open('ucDplyissu_End_txtDate');">...</button><input
+                                            name="ucDplyissu_End:txtDateIsRocDate" id="ucDplyissu_End_txtDateIsRocDate"
+                                            type="hidden" value="true">
+                                        <span id="ucDplyissu_End_cvdDate" controltovalidate="ucDplyissu_End_txtDate"
+                                            errormessage="日期格式錯誤" display="Dynamic"
+                                            evaluationfunction="CustomValidatorEvaluateIsValid"
+                                            clientvalidationfunction="ucRocDate_ValidateRocYYYYsMMsDD"
+                                            style="color:Red;display:none;">日期格式錯誤</span><span
+                                            id="ucDplyissu_End_RequiredFieldValidator1"
+                                            controltovalidate="ucDplyissu_End_txtDate" errormessage="日期欄位必須填寫"
+                                            display="None" enabled="False"
+                                            evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue=""
+                                            style="color:Red;display:none;"></span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption" style="HEIGHT: 27px">保單號</td>
+                                    <td class="tdDataField" style="HEIGHT: 27px"><input name="txtIPOLICY1" type="text"
+                                            id="txtIPOLICY1" onchange="CopyObjValue(txtIPOLICY1,txtIPOLICY2);">~<input
+                                            name="txtIPOLICY2" type="text" id="txtIPOLICY2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption" style="HEIGHT: 27px">地區</td>
+                                    <td class="tdDataField" style="HEIGHT: 27px">
+                                        <select name="ddlArea" id="ddlArea" style="width: 150px;">
+                                            <option selected="selected" value="00">00 總公司</option>
+                                            <option value="01">01 台　南</option>
+                                            <option value="02">02 高　雄</option>
+                                            <option value="03">03 台　中</option>
+                                            <option value="05">05 桃　園</option>
+                                            <option value="06">06 台　北</option>
+                                            <option value="07">07 新　竹</option>
+                                            <option value="08">08 員　林</option>
+                                            <option value="09">09 OIU </option>
+
+                                        </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span style="font-size:10pt;font-weight:bold;"><input id="chkPrint"
+                                                type="checkbox" name="chkPrint"><label
+                                                for="chkPrint">補發</label></span><span
+                                            style="font-size:10pt;font-weight:bold;"><input id="chkPrint1"
+                                                type="checkbox" name="chkPrint1"><label
+                                                for="chkPrint1">無補發註記</label></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption" style="HEIGHT: 27px">保單類別</td>
+                                    <td class="tdDataField">
+                                        
+                                                
+                                                    <input id="chkIINSKIND_0" type="checkbox"
+                                                            name="chkIINSKIND:0"><label
+                                                            for="chkIINSKIND_0">308旅行綜合保險</label>
+                                                    <input id="chkIINSKIND_1" type="checkbox"
+                                                            name="chkIINSKIND:1"><label
+                                                            for="chkIINSKIND_1">J00個人及其家庭成員責任保險</label>
+                                                   <input id="chkIINSKIND_2" type="checkbox"
+                                                            name="chkIINSKIND:2"><label
+                                                            for="chkIINSKIND_2">DH0重大傷病健康保險</label>
+                                                
+                                                    <input id="chkIINSKIND_3" type="checkbox"
+                                                            name="chkIINSKIND:3"><label
+                                                            for="chkIINSKIND_3">GH0住院醫療保險(日額甲型)</label>
+                                                            <div style="height: 8px; width: 100%;"></div>
+                                                    <input id="chkIINSKIND_4" type="checkbox"
+                                                            name="chkIINSKIND:4"><label
+                                                            for="chkIINSKIND_4">GM0個人組合商品</label>
+                                                    <input id="chkIINSKIND_5" type="checkbox"
+                                                            name="chkIINSKIND:5"><label
+                                                            for="chkIINSKIND_5">G00個人傷害保險標準型</label>
+                                              
+                                                    <input id="chkIINSKIND_6" type="checkbox"
+                                                            name="chkIINSKIND:6"><label
+                                                            for="chkIINSKIND_6">H00團體傷害保險標準型</label>
+                                                    <input id="chkIINSKIND_7" type="checkbox"
+                                                            name="chkIINSKIND:7"><label
+                                                            for="chkIINSKIND_7">I00個人傷害保險(甲型)</label>
+                                               
+                                       
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption" style="HEIGHT: 27px">專案代號</td>
+                                    <td class="tdDataField"><input name="txtIPROJECT" type="text" id="txtIPROJECT">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption" style="HEIGHT: 27px">轉出類別</td>
+                                    <td class="tdDataField" style="HEIGHT: 27px">
+                                        
+                                                
+                                        <input id="rblQryType_0" type="radio" name="rblQryType"
+                                                    value="1" checked="checked"><label
+                                                    for="rblQryType_0">日結前保單</label>
+                                        <input id="rblQryType_1" type="radio" name="rblQryType"
+                                                    value="2"><label for="rblQryType_1">最新保單</label>
+                                                
+                                         
+                                    </td>
+                                </tr> 
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <!-- content end  -->
+        </div>
+    </section>
+    <!-- dialog -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+                    <button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="foo">
+                    <div id="example-table"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+
+</html>

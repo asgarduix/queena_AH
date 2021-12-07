@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" lang="zh-Hant-TW">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+<title>華南產物保險-健康傷害險</title>
+<!-- jQuery -->
+<script src="../../shigen/plugin/jquery.min.js"></script>
+<!-- jQuery UI -->
+<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+<!-- bootstrap -->
+<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+<!-- table tabulator -->
+<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+<!-- fontawsome -->
+<script defer src="../../shigen/fonts/js/all.min.js"></script>
+<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+<!--load all styles -->
+<!-- Plug CSS樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+<!-- 共用樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type.css">
+<!-- 主題顏色切換 糖果世代 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+<!-- 主題顏色切換 海神寶藍 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+<!-- 主題顏色切換 法拉利紅 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+<!-- 主題顏色切換 繽紛馬卡 -->
+<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+<!-- 主題顏色切換 煙花季節 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+<!-- 主題顏色切換 冬雪初現 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+<!-- 自訂JS樣式 -->
+<script src="../../shigen/js/type.js"></script>
+<script src="../../shigen/js/common.js"></script>
+<script src="../../shigen/js/global.js"></script>
+<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+	<div class="ajax-aside-nav"></div>
+	<section>
+		<div class="ajax-section-main"></div>
+		<div class="container-fluid">
+			<div class="content">
+				<div class="bread-crumbs">
+					<a href="">承保受理作業</a>
+				</div>
+                <div class="big_title title s1">HAS301001 健康傷害險承保受理作業</div>
+                <div class="row-group">
+					<div class="row">
+						<div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-secondary">修改</button>
+                            <button class="btn btn-secondary">清除</button>
+                            <button class="btn btn-secondary">查詢</button>
+                            <button class="btn btn-secondary">核保不過名單</button>
+                            <button class="btn btn-secondary">暫存資料</button>
+                            <button class="btn btn-secondary">復原資料</button>
+                            <button class="btn btn-secondary">離開</button>
+						</div>
+					</div>
+				</div>
+                <!-- <div class="item_title title s2">查詢</div> -->
+                <table class="tblDataArea" cellSpacing="0" cellPadding="0">
+                    <tr>
+                        <td class="tdDataCaption">保單類別</td>
+                        <td class="tdDataField"><select name="ddlIinsKind" onchange="__doPostBack('ddlIinsKind','')" language="javascript" id="ddlIinsKind" style="width:150px;">
+                                <option value=""></option>
+                                <option value="GH0">GH0&#160;日額甲型</option>
+                                <option value="GM0">GM0&#160;個人組合</option>
+                                <option value="GD0">GD0&#160;重大疾病</option>
+                                <option value="GC0">GC0&#160;初次罹癌</option>
+                                <option value="GI0">GI0&#160;癌症住院</option>
+                                <option value="MH0">MH0&#160;團體健康</option>
+                                <option selected="selected" value="MM0">MM0&#160;團體組合</option>
+                                <option value="MH1">MH1&#160;團體健康(甲型)</option>
+                                <option value="MM1">MM1&#160;團體組合(甲型)</option>
+                                <option value="DH0">DH0&#160;重大傷病</option>
+                                <option value="MR0">MR0&#160;團體住院醫療(實支實付型)</option>
+                                <option value="GC1">GC1&#160;團體癌症</option>
+                                <option value="GC2">GC2&#160;團體癌症身故</option>
+                                <option value="MH2">MH2&#160;住院日額醫療</option>
+                            </select></td>
+                        <td class="tdDataCaption">出單公司</td>
+                        <td class="tdDataField"><input name="txtIissBrch" type="text" value="00" id="txtIissBrch" disabled="disabled" onKeyPress="_ToUpper(this);" style="width:30px;" /></td>
+                        <td class="tdDataCaption">大保單號</td>
+                        <td class="tdDataField"><input name="txtI1relply" type="text" maxlength="15" id="txtI1relply" onKeyPress="_ToUpper(this);" style="width:120px;" /></td>
+                        <td class="tdDataCaption">保單號碼</td>
+                        <td class="tdDataField"><input name="txtIpolicy" type="text" value=" " maxlength="15" id="txtIpolicy" onKeyPress="_ToUpper(this);" style="width:120px;" /></td>
+                        <td class="tdDataCaption">要保號碼</td>
+                        <td class="tdDataField"><input name="txtIreq" type="text" value="0008MM0X000018" maxlength="15" id="txtIreq" onKeyPress="_ToUpper(this);" style="width:120px;" /></td>
+                        <!-- <td><span id="lblMsg" style="color:#FF3300;"></span></td> -->
+                    </tr>
+                </table>
+				<div class="row-group">
+					<div class="row">
+                        <div class="col-12">
+                            <a href="#" class="btn btn-primary">1:要保人</a>
+                            <a href="#" class="btn btn-primary">2:被保險人</a>
+                            <a href="#" class="btn btn-primary">3:保險內容</a>
+                            <a href="#" class="btn btn-primary">4:洽攬人</a>
+                            <a href="#" class="btn btn-primary">5:條款/共保</a>
+                            <a href="#" class="btn btn-primary">6:收據明細</a>
+                            <a href="#" class="btn btn-primary">7:附加檔案</a>
+                            <a href="#" class="btn btn-primary">8:核保照會</a>
+                            <a href="#" class="btn btn-primary">9:審核意見</a>
+                            <a href="#" class="btn btn-primary">10:公同行銷</a>
+                            <a href="#" class="btn btn-primary">11:董監事名冊</a>
+                        </div>
+                    </div>
+				</div>
+				<div class="row-group">
+					<div class="row">
+						
+					</div>
+				</div>
+				<!-- 抬頭 -->
+				<!-- <div class="item_title title s2">董監事名冊</div> -->
+				<table id="Table2" class="tblFunctionBar" cellSpacing="0" cellPadding="0">
+					<tr vAlign="bottom">
+						<td noWrap align="left">
+							<!-- <input type="submit" name="dgdbanSUPERVISOR_LIST:btnNewItem" value="新增董監事名單" id="dgdbanSUPERVISOR_LIST_btnNewItem" accesskey="I" tabindex="-1" class="cssUICommandButtonSmall" />&nbsp; -->
+							<button class="btn btn-secondary">新增項目</button>
+						</td>
+						<td noWrap align="left">
+							<a id="dgdbanSUPERVISOR_LIST_btnFirstPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">第一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnPrevPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">上一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnNextPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">下一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnLastPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">最後一頁</a>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblTotalCaption" class="cssDataGridBannerLabel">總共</span>
+						<span id="dgdbanSUPERVISOR_LIST_lblTotalCount" class="cssDataGridBannerLabel">0</span>
+						<span id="dgdbanSUPERVISOR_LIST_lblTotalCaptionEnd" class="cssDataGridBannerLabel">筆</span>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaption" class="cssDataGridBannerLabel">每頁</span>
+							<input name="dgdbanSUPERVISOR_LIST:txtPageSize" type="text" value="8" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtPageSize" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnPageSize','');return false;}" style="width:32px;" />
+							<span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaptionEnd" class="cssDataGridBannerLabel">筆</span>
+							<button class="btn btn-secondary">go</button>
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnPageSize" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnPageSize','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='設定每頁筆數' src='/SCERP/images/go.gif'></a>&nbsp; -->
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblPageCountCaption" class="cssDataGridBannerLabel">總共</span>
+							<span id="dgdbanSUPERVISOR_LIST_lblTotalPage" class="cssDataGridBannerLabel">1</span>
+							<span id="dgdbanSUPERVISOR_LIST_lblPageCountCaptionEnd" class="cssDataGridBannerLabel">頁</span>&nbsp;
+						</td>
+						<td align="right">
+							<span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaption" class="cssDataGridBannerLabel">目前第</span>
+						<input name="dgdbanSUPERVISOR_LIST:txtGotoPage" type="text" value="1" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtGotoPage" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnGotoPage','');return false;}" style="width:29px;" />
+						<span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaptionEnd" class="cssDataGridBannerLabel">頁</span>
+						<button class="btn btn-secondary">go</button>
+						<button class="btn btn-secondary">匯出資料</button>
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnGotoPage" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnGotoPage','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='翻頁' src='/SCERP/images/go.gif'></a> -->
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnExport" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnExport','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='匯出資料' src='/SCERP/images/Excel.gif'></a>&nbsp; -->
+						</td>
+					</tr>
+				</table>
+				<table class="tblCssDataGrid">
+					<tr class="cssDataGridHeader">
+						<th><a href="javascript:__doPostBack('dgdSUPERVISOR_LIST$_ctl2$_ctl0','')" >照會日期</a></th>
+						<th><a href="javascript:__doPostBack('dgdSUPERVISOR_LIST$_ctl2$_ctl1','')" >回覆期限</a></th>
+						<th><a href="javascript:__doPostBack('dgdSUPERVISOR_LIST$_ctl2$_ctl2','')">回覆日期</a></th>
+						
+					</tr>
+					<tr>
+						<td>a</td>
+						<td>b</td>
+						<td>c</td>
+						
+					</tr>
+					<tr>
+						<td>a</td>
+						<td>b</td>
+						<td>c</td>
+						
+					</tr>
+					<tr>
+						<td>a</td>
+						<td>b</td>
+						<td>c</td>
+						
+					</tr>
+					<tr>
+						<td>a</td>
+						<td>b</td>
+						<td>c</td>
+						
+					</tr>
+				</table>
+				
+				<div id="example-tabl"></div>
+				
+				<table id="Table2" class="tblFunctionBar" cellSpacing="0" cellPadding="0">
+					<tr vAlign="bottom">
+						<td noWrap align="left">
+							<!-- <input type="submit" name="dgdbanSUPERVISOR_LIST:btnNewItem" value="新增董監事名單" id="dgdbanSUPERVISOR_LIST_btnNewItem" accesskey="I" tabindex="-1" class="cssUICommandButtonSmall" />&nbsp; -->
+							<button class="btn btn-secondary">新增項目</button>
+						</td>
+						<td noWrap align="left">
+							<a id="dgdbanSUPERVISOR_LIST_btnFirstPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">第一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnPrevPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">上一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnNextPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">下一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnLastPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">最後一頁</a>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblTotalCaption" class="cssDataGridBannerLabel">總共</span>
+						<span id="dgdbanSUPERVISOR_LIST_lblTotalCount" class="cssDataGridBannerLabel">0</span>
+						<span id="dgdbanSUPERVISOR_LIST_lblTotalCaptionEnd" class="cssDataGridBannerLabel">筆</span>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaption" class="cssDataGridBannerLabel">每頁</span>
+							<input name="dgdbanSUPERVISOR_LIST:txtPageSize" type="text" value="8" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtPageSize" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnPageSize','');return false;}" style="width:32px;" />
+							<span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaptionEnd" class="cssDataGridBannerLabel">筆</span>
+							<button class="btn btn-secondary">go</button>
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnPageSize" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnPageSize','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='設定每頁筆數' src='/SCERP/images/go.gif'></a>&nbsp; -->
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblPageCountCaption" class="cssDataGridBannerLabel">總共</span>
+							<span id="dgdbanSUPERVISOR_LIST_lblTotalPage" class="cssDataGridBannerLabel">1</span>
+							<span id="dgdbanSUPERVISOR_LIST_lblPageCountCaptionEnd" class="cssDataGridBannerLabel">頁</span>&nbsp;
+						</td>
+						<td align="right">
+							<span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaption" class="cssDataGridBannerLabel">目前第</span>
+						<input name="dgdbanSUPERVISOR_LIST:txtGotoPage" type="text" value="1" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtGotoPage" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnGotoPage','');return false;}" style="width:29px;" />
+						<span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaptionEnd" class="cssDataGridBannerLabel">頁</span>
+						<button class="btn btn-secondary">go</button>
+						<button class="btn btn-secondary">匯出資料</button>
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnGotoPage" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnGotoPage','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='翻頁' src='/SCERP/images/go.gif'></a> -->
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnExport" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnExport','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='匯出資料' src='/SCERP/images/Excel.gif'></a>&nbsp; -->
+						</td>
+						<td align="right">
+							<input name="txtIpolicy" type="text" value=" " maxlength="15" id="txtIpolicy" onkeypress="_ToUpper(this);" style="width:100px;">
+							<button class="btn btn-secondary">新增批次</button>
+						</td>
+					</tr>
+				</table>
+				<table class="tblCssDataGrid">
+					<tr class="cssDataGridHeader">
+						<th><a href="#">被保險人序號</a></th>
+						<th><a href="#" >照會代碼</a></th>
+						<th><a href="#">照會內容</a></th>
+						<th><a href="#">處理狀況</a></th>
+						
+					</tr>
+					<tr>
+						<td>a</td>
+						<td>b</td>
+						<td>C</td>
+						<td>D</td>
+					</tr>
+					
+					
+					
+				</table>
+				<div style="height: 5px;"></div>
+				<table class="tblDataArea" width="100%" align="center" border="0">
+					<tbody><tr>
+						<td class="tdDataField" colspan="6"><font face="新細明體" color="#2c2c85">核保決定</font></td>
+					</tr>
+					<tr>
+						<td class="tdDataCaption">核保碼</td>
+						<td class="tdDataField" colspan="3">
+							<select name="ddlFunderWriting" onchange="__doPostBack('ddlFunderWriting','')" language="javascript" id="ddlFunderWriting">
+							<option selected="selected" value=""></option>
+							<option value="A">A&nbsp;核保通過</option>
+							<option value="C">C&nbsp;核保通過(加費)</option>
+							<option value="D">D&nbsp;拒保</option>
+							<option value="P">P&nbsp;延期(團傷用)</option>
+							<option value="N">N&nbsp;逾期未繳費</option>
+							<option value="M">M&nbsp;逾期未體檢</option>
+							<option value="I">I&nbsp;要保資料未補齊</option>
+							<option value="R">R&nbsp;不同意削減及更改內容</option>
+							<option value="T">T&nbsp;客戶主動取消</option>
+							<option value="Z">Z&nbsp;個案融通件</option>
+
+							</select>
+							<input id="chkB_NRMK3" type="checkbox" name="chkB_NRMK3" onclick="CleanFunderWriting('chkB_NRMK3','ddlFunderWriting');"><label for="chkB_NRMK3">清除核保碼後不審核</label>
+						</td>
+						<td class="tdDataCaption">產生臨分再保多期帳</td>
+						<td class="tdDataField">
+							<input id="chkTemp13" type="checkbox" name="chkTemp13">
+						</td>
+					</tr>
+					<tr>
+						<td class="tdDataCaption">未承保原因類別(身心障礙使用)</td>
+					
+						<td class="tdDataField">
+							<select name="ddlBtemp18" id="ddlBtemp18">
+							<option selected="selected" value=""></option>
+							<option value="1">1:體況因數</option>
+							<option value="2">2:非體況因數</option>
+                            </select>
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="tdDataCaption">非體況因數(身心障礙使用)</td>
+							<td class="tdDataField" colspan="3">
+								<select name="ddlBtemp19" id="ddlBtemp19">
+								<option selected="selected" value=""></option>
+								<option value="X01">X01&nbsp;財務核保(例如醫療保單投保金額達上限)</option>
+								<option value="X02">X02&nbsp;道德風險</option>
+								<option value="X03">X03&nbsp;法令規定</option>
+								<option value="X04">X04&nbsp;核保程序未完成交(包含保險公司或客戶主動停止核保程序)</option>
+								<option value="X05">X05&nbsp;核保程序完成，但客戶未接受</option>
+								<option value="X99">X99&nbsp;其他</option>
+
+								</select>
+								<input name="lblBTemp19" type="text" id="lblBTemp19" disabled="disabled" style="width:100px;">
+								<td></td>
+						        <td></td>
+						    </td>
+					</tr>
+					<tr>
+						<td class="tdDataCaption">臨分註記</td>
+						<td class="tdDataField">
+							<!--?XML:NAMESPACE PREFIX="CBNS" /-->
+							<!--?IMPORT NAMESPACE="CBNS" IMPLEMENTATION="/ISNE3rdPartyWeb/combobox.htc" /-->
+							<cbns:combobox id="cboffac" name="cboffac" parentformid="Form1" resourcesdirectory="/ISNE3rdPartyWeb/" size="10" value="N">
+							<option value="N">N:不需臨分</option>
+							<option value="Y">Y:需臨分</option>
+							</cbns:combobox>
+						</td>
+						<td class="tdDataCaption">不續保註記</td>
+						<td class="tdDataField">
+							<select style="width: 150px;" name="" id="">
+							<option value="Y">Y:是</option>
+							<option selected="selected" value="N">N:否</option>
+
+							</select>
+						</td>
+						<td class="tdDataCaption">合約再保註記</td>
+						<td class="tdDataField">
+							<select  style="width: 150px;" name="" id="">
+							<option selected="selected" value="Y">Y:是</option>
+							<option value="N">N:否</option>
+
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tdDataCaption">審核註記</td>
+						<td class="tdDataField">
+							<span id="lblFaudit">Y:通過</span>
+						</td>
+						<td class="tdDataCaption">審核人員</td>
+						<td class="tdDataField">
+							<span id="lblIaudit">012050</span>
+						</td>
+						<td class="tdDataCaption">審核日期</td>
+						<td class="tdDataField">
+							<span id="lblDaudit"></span>
+							
+						</td>
+					</tr>
+					<tr>
+						<td class="tdDataCaption">再保審核註記</td>
+						<td class="tdDataField">
+							<span id="lblFriaud">Y:通過</span>
+						</td>
+						<td class="tdDataCaption">再保審核人員</td>
+						<td class="tdDataField">
+							<span id="lblIriaud"></span>
+						</td>
+						<td class="tdDataCaption">再保審核日期</td>
+						<td class="tdDataField">
+							<span id="lblDriaud"></span>
+							
+						</td>
+					</tr>
+					<tr>
+						<td class="tdDataCaption">核保意見</td>
+						<td class="tdDataField" colspan="5">
+							<textarea name="txtIMemo1" rows="3" id="txtIMemo1" style="width:100%;"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td class="tdDataCaption">顯著風險</td>
+						<td class="tdDataField">
+							<span id="txtIBIG_BR">Y:通過</span>
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="tdDataCaption">險種風險等級</td>
+						<td class="tdDataField">
+							<span id="lblRisdrg"></span>
+						</td>
+						<td class="tdDataCaption">風險分數</td>
+						<td class="tdDataField">
+							<span id="lblRistot">0</span>
+						</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="tdDataCaption">黑名單-恐佈主義暨制裁</td>
+						<td class="tdDataField">
+							<span id="lblBlterr">N</span>
+						</td>
+						<td class="tdDataCaption">黑名單-政治人物</td>
+						<td class="tdDataField">
+							<span id="lblBlpoli"></span>
+						</td>
+						<td class="tdDataCaption">黑名單-金控函轉名單</td>
+						<td class="tdDataField">
+							<span id="lblBlgrup">N</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="tdDataCaption">風險分數分類</td>
+						<td class="tdDataField" colspan="4">
+							<span id="Label26" style="color:#3399FF;">是否為高額保費</span>
+							<span id="lblDGRHPM" style="color:#FF0066;">0</span>
+							<span id="Label27" style="color:#3399FF;">交易管道</span>
+							<span id="lblDRGCHN" style="color:#FF0066;">0</span>
+							<span id="Label28" style="color:#3399FF;">職/行業</span>
+							<span id="lblDGRJOB" style="color:#FF0066;">0</span>
+							<span id="Label29" style="color:#3399FF;">公司型態</span>
+							<span id="lblDGRCMP" style="color:#FF0066;">0</span>
+							<span id="Label30" style="color:#3399FF;">股權結構</span>
+							<span id="lblDGRSTK" style="color:#FF0066;">0</span>
+							<span id="Label31" style="color:#3399FF;">國籍</span>
+							<span id="lblGRGNAT" style="color:#FF0066;">0</span>
+							<span id="Label32" style="color:#3399FF;">是否高風險國家</span>
+							<span id="lblBLCONT" style="color:#FF0066;"></span>
+						</td>
+						<td></td>
+					</tr>
+				</tbody></table>
+				
+				<table id="Table2" class="tblFunctionBar" cellSpacing="0" cellPadding="0">
+					<tr vAlign="bottom">
+						<td noWrap align="left">
+							<!-- <input type="submit" name="dgdbanSUPERVISOR_LIST:btnNewItem" value="新增董監事名單" id="dgdbanSUPERVISOR_LIST_btnNewItem" accesskey="I" tabindex="-1" class="cssUICommandButtonSmall" />&nbsp; -->
+							<button class="btn btn-secondary">新增加點加費</button>
+						</td>
+						<td noWrap align="left">
+							<a id="dgdbanSUPERVISOR_LIST_btnFirstPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">第一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnPrevPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">上一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnNextPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">下一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnLastPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">最後一頁</a>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblTotalCaption" class="cssDataGridBannerLabel">總共</span>
+						<span id="dgdbanSUPERVISOR_LIST_lblTotalCount" class="cssDataGridBannerLabel">0</span>
+						<span id="dgdbanSUPERVISOR_LIST_lblTotalCaptionEnd" class="cssDataGridBannerLabel">筆</span>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaption" class="cssDataGridBannerLabel">每頁</span>
+							<input name="dgdbanSUPERVISOR_LIST:txtPageSize" type="text" value="8" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtPageSize" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnPageSize','');return false;}" style="width:32px;" />
+							<span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaptionEnd" class="cssDataGridBannerLabel">筆</span>
+							<button class="btn btn-secondary">go</button>
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnPageSize" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnPageSize','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='設定每頁筆數' src='/SCERP/images/go.gif'></a>&nbsp; -->
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblPageCountCaption" class="cssDataGridBannerLabel">總共</span>
+							<span id="dgdbanSUPERVISOR_LIST_lblTotalPage" class="cssDataGridBannerLabel">1</span>
+							<span id="dgdbanSUPERVISOR_LIST_lblPageCountCaptionEnd" class="cssDataGridBannerLabel">頁</span>&nbsp;
+						</td>
+						<td align="right">
+							<span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaption" class="cssDataGridBannerLabel">目前第</span>
+						<input name="dgdbanSUPERVISOR_LIST:txtGotoPage" type="text" value="1" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtGotoPage" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnGotoPage','');return false;}" style="width:29px;" />
+						<span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaptionEnd" class="cssDataGridBannerLabel">頁</span>
+						<button class="btn btn-secondary">go</button>
+						<button class="btn btn-secondary">匯出資料</button>
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnGotoPage" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnGotoPage','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='翻頁' src='/SCERP/images/go.gif'></a> -->
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnExport" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnExport','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='匯出資料' src='/SCERP/images/Excel.gif'></a>&nbsp; -->
+						</td>
+					</tr>
+				</table>
+				<table class="tblCssDataGrid">
+					<tr class="cssDataGridHeader">
+						<th><a href="#">被保險人</a></th>
+						<th><a href="#" >加點係數</a></th>
+						<th><a href="#">加費乘數</a></th>
+						<th><a href="#">加費保費</a></th>
+						
+					</tr>	
+				</table>
+				<table class="tblDataArea">
+				<tr>
+					<td class="tdDataCaption">身分證字號</td>
+					<td class="tdDataField">
+						<input style="width: 150px;"  name="" type="text" value=" " style="width:100px;"></td>
+					<td class="tdDataField">
+						<select style="width: 150px;" name="" id="">
+						<option selected="selected" value="未回覆"></option>
+						<option value="A">未回覆</option>
+						<option value="B">已回覆</option>
+						</select>
+					</td>
+					<td class="tdDataField">
+						<button class="btn btn-secondary">更改</button>
+					</td>
+					
+				</tr>
+			    </table>
+				
+				<table id="Table2" class="tblFunctionBar" cellSpacing="0" cellPadding="0">
+					<tr vAlign="bottom">
+						<td noWrap align="left">
+							<!-- <input type="submit" name="dgdbanSUPERVISOR_LIST:btnNewItem" value="新增董監事名單" id="dgdbanSUPERVISOR_LIST_btnNewItem" accesskey="I" tabindex="-1" class="cssUICommandButtonSmall" />&nbsp; -->
+							<button class="btn btn-secondary">新增項目</button>
+						</td>
+						<td noWrap align="left">
+							<a id="dgdbanSUPERVISOR_LIST_btnFirstPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">第一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnPrevPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">上一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnNextPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">下一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnLastPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">最後一頁</a>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblTotalCaption" class="cssDataGridBannerLabel">總共</span>
+						<span id="dgdbanSUPERVISOR_LIST_lblTotalCount" class="cssDataGridBannerLabel">0</span>
+						<span id="dgdbanSUPERVISOR_LIST_lblTotalCaptionEnd" class="cssDataGridBannerLabel">筆</span>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaption" class="cssDataGridBannerLabel">每頁</span>
+							<input name="dgdbanSUPERVISOR_LIST:txtPageSize" type="text" value="8" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtPageSize" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnPageSize','');return false;}" style="width:32px;" />
+							<span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaptionEnd" class="cssDataGridBannerLabel">筆</span>
+							<button class="btn btn-secondary">go</button>
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnPageSize" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnPageSize','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='設定每頁筆數' src='/SCERP/images/go.gif'></a>&nbsp; -->
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblPageCountCaption" class="cssDataGridBannerLabel">總共</span>
+							<span id="dgdbanSUPERVISOR_LIST_lblTotalPage" class="cssDataGridBannerLabel">1</span>
+							<span id="dgdbanSUPERVISOR_LIST_lblPageCountCaptionEnd" class="cssDataGridBannerLabel">頁</span>&nbsp;
+						</td>
+						<td align="right">
+							<span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaption" class="cssDataGridBannerLabel">目前第</span>
+						<input name="dgdbanSUPERVISOR_LIST:txtGotoPage" type="text" value="1" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtGotoPage" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnGotoPage','');return false;}" style="width:29px;" />
+						<span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaptionEnd" class="cssDataGridBannerLabel">頁</span>
+						<button class="btn btn-secondary">go</button>
+						<button class="btn btn-secondary">匯出資料</button>
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnGotoPage" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnGotoPage','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='翻頁' src='/SCERP/images/go.gif'></a> -->
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnExport" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnExport','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='匯出資料' src='/SCERP/images/Excel.gif'></a>&nbsp; -->
+						</td>
+					</tr>
+				</table>
+				<table class="tblCssDataGrid">
+					<tr class="cssDataGridHeader">
+						<th><a href="" ></a></th>
+						<th><a href="" >被保險人</a></th>
+						<th><a href="">內容</a></th>	
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						
+					</tr>	
+				</table>
+				
+				<table id="Table2" class="tblFunctionBar" cellSpacing="0" cellPadding="0">
+					<tr vAlign="bottom">
+						<td noWrap align="left">
+							<!-- <input type="submit" name="dgdbanSUPERVISOR_LIST:btnNewItem" value="新增董監事名單" id="dgdbanSUPERVISOR_LIST_btnNewItem" accesskey="I" tabindex="-1" class="cssUICommandButtonSmall" />&nbsp; -->
+							<button class="btn btn-secondary">新增項目</button>
+						</td>
+						<td noWrap align="left">
+							<a id="dgdbanSUPERVISOR_LIST_btnFirstPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">第一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnPrevPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">上一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnNextPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">下一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnLastPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">最後一頁</a>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblTotalCaption" class="cssDataGridBannerLabel">總共</span>
+						<span id="dgdbanSUPERVISOR_LIST_lblTotalCount" class="cssDataGridBannerLabel">0</span>
+						<span id="dgdbanSUPERVISOR_LIST_lblTotalCaptionEnd" class="cssDataGridBannerLabel">筆</span>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaption" class="cssDataGridBannerLabel">每頁</span>
+							<input name="dgdbanSUPERVISOR_LIST:txtPageSize" type="text" value="8" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtPageSize" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnPageSize','');return false;}" style="width:32px;" />
+							<span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaptionEnd" class="cssDataGridBannerLabel">筆</span>
+							<button class="btn btn-secondary">go</button>
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnPageSize" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnPageSize','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='設定每頁筆數' src='/SCERP/images/go.gif'></a>&nbsp; -->
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblPageCountCaption" class="cssDataGridBannerLabel">總共</span>
+							<span id="dgdbanSUPERVISOR_LIST_lblTotalPage" class="cssDataGridBannerLabel">1</span>
+							<span id="dgdbanSUPERVISOR_LIST_lblPageCountCaptionEnd" class="cssDataGridBannerLabel">頁</span>&nbsp;
+						</td>
+						<td align="right">
+							<span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaption" class="cssDataGridBannerLabel">目前第</span>
+						<input name="dgdbanSUPERVISOR_LIST:txtGotoPage" type="text" value="1" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtGotoPage" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnGotoPage','');return false;}" style="width:29px;" />
+						<span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaptionEnd" class="cssDataGridBannerLabel">頁</span>
+						<button class="btn btn-secondary">go</button>
+						<button class="btn btn-secondary">匯出資料</button>
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnGotoPage" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnGotoPage','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='翻頁' src='/SCERP/images/go.gif'></a> -->
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnExport" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnExport','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='匯出資料' src='/SCERP/images/Excel.gif'></a>&nbsp; -->
+						</td>
+					</tr>
+				</table>
+				<table class="tblCssDataGrid">
+					<tr class="cssDataGridHeader">
+						<th style="width:100px;"><a href="" ></a></th>
+						<th style="width:0px;"><a href="" ></a></th>
+						<th><a href="" >被保險人</a></th>
+						<th><a href="">內部通報內容</a></th>
+						
+					</tr>
+					<tr>
+						<td>
+							<button type="button" class="btn-editt">編輯</button>
+						</td>
+						<td>
+							<button class="btn-del">刪除</button>
+						</td>
+						<td>D220539562</td>
+						<td>被保險人許瑛玿為黑名單人員</td>
+						
+					</tr>
+					<tr>
+						<td>
+							<button type="button" class="btn-editt">編輯</button>
+						</td>
+						<td>
+							<button class="btn-del">刪除</button>
+						</td>
+						<td>S223028746</td>
+						<td>被保險人許瑛玿為黑名單人員</td>
+						
+					</tr>
+					<tr>
+						<td>
+							<button type="button" class="btn-editt">編輯</button>
+						</td>
+						<td>
+							<button class="btn-del">刪除</button>
+						</td>
+						<td>S220292155</td>
+						<td>被保險人許瑛玿為黑名單人員</td>
+						
+					</tr>
+					<tr>
+						<td>
+							<button type="button" class="btn-editt">編輯</button>
+						</td>
+						<td>
+							<button class="btn-del">刪除</button>
+						</td>
+						<td>S120270559</td>
+						<td>被保險人許瑛玿為黑名單人員</td>
+						
+					</tr>
+				</table>
+				</div>
+			</div>
+			<!-- content end  -->
+		</div>
+	</section>
+	<!-- dialog -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+					<button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="foo">
+					<div id="example-table"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+</html>

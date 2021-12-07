@@ -1,0 +1,98 @@
+<aside>
+	<div class="flexbox fjc" id="_menu_side_up">
+		<a href="index.html" class="nav-logo"></a>
+	</div>
+	<div class="scroll-box">
+		<div class="hide-box">
+			<div class="scroll-hidden">
+				<nav id="_menu_side">
+					<ul class="list_layer">
+						<li class="nav_box">
+							<a href="HAS401000.html" class="nav_first">
+								<i class="fas fa-plus-square"></i>
+								<span>HAS401000<br><span class="text s4">批改作業(查詢)</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS401001.html" class="nav_first">
+								<i class="fas fa-folder-plus"></i>
+								<span>HAS401001<br><span class="text s4">批單受理作業</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS402000.html" class="nav_first">
+								<i class="fas fa-print"></i>
+								<span>HAS402000<br><span class="text s4">批次列印作業</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS402001.html" class="nav_first">
+								<i class="fas fa-file-invoice-dollar"></i>
+								<span>HAS402001<br><span class="text s4">批單收據列印作業</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS403000.html" class="nav_first">
+								<i class="fas fa-briefcase"></i>
+								<span>HAS403000<br><span class="text s4">批單日結作業</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS413000.html" class="nav_first">
+								<i class="fas fa-user-tag"></i>
+								<span>HAS413000<br><span class="text s4">特殊資料轉換</span></span>
+							</a>
+						</li>
+						
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="nav-bt-box">
+		<div class="nav-bt-left"></div>
+		<div class="nav-bt-right off"></div>
+	</div>
+</aside>
+<script>
+	$(document).ready(function () {
+
+
+		/* 無限層選單：列表收合 */
+		$(".list_layer .nav_box .nav_first").click(function () {
+			// $(this).next().slideUp();
+			var o = $(this);
+			var s = o.next().attr("style");
+
+			// f-else作開關
+			if (checkIsNullSpace(s) == true) {
+				o.next().attr("style", "display: block;");
+			} else {
+				o.next().removeAttr("style");
+			}
+		});
+
+
+		/* 左側選單：關閉*/
+		$(".nav-bt-left").click(function () {
+			$("aside").animate({ left: "-200px" }, 500);
+			$("section").animate({ paddingLeft: "20px", }, 500);
+			$(this).hide();
+			$(".nav-bt-right").show();
+			$(".main-box").removeClass("mbnoshow");
+			$(".content").removeClass("mbnoshow");
+		});
+
+
+		/* 左側選單：開啟*/
+		$(".nav-bt-right").click(function () {
+			$("aside").animate({ left: "0" }, 500);
+			$("section").animate({ paddingLeft: "220px", }, 500);
+			$(this).hide();
+			$(".nav-bt-left").show();
+			$(".main-box").addClass("mbnoshow");
+			$(".content").addClass("mbnoshow");
+		});
+
+	});
+</script>

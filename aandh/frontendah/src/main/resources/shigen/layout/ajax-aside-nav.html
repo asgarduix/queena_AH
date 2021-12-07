@@ -1,0 +1,165 @@
+<aside>
+	<div class="flexbox fjc" id="_menu_side_up">
+		<a href="index.html" class="nav-logo"></a>
+	</div>
+	<div class="scroll-box">
+		<div class="hide-box">
+			<div class="scroll-hidden">
+				<nav id="_menu_side">
+					<ul class="list_layer">
+						<li class="nav_box">
+							<a href="HAS300000.html" class="nav_first">
+								<i class="fas fa-plus-square"></i>
+								<span>HAS300000<br>
+									<span class="text s4">自動核保</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS300005.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>HAS300005<br>
+									<span class="text s4">收件通報(個件)</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS300006.html" class="nav_first">
+								<i class="fas fa-address-book"></i>
+								<span>HAS300006<br>
+									<span class="text s4">收件通報(團件)</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS301000.html" class="nav_first">
+								<i class="far fa-calendar-plus"></i>
+								<span>HAS301000<br>
+									<span class="text s4">承保作業(查詢)</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS301001.html" class="nav_first">
+								<i class="fas fa-calendar-check"></i>
+								<span>HAS301001<br>
+									<span class="text s4">承保受理作業</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS301008.html" class="nav_first">
+								<i class="far fa-hand-pointer"></i>
+								<span>HAS301008<br>
+									<span class="text s4">自訂方案作業</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS302000.html" class="nav_first">
+								<i class="fas fa-print"></i>
+								<span>HAS302000<br>
+									<span class="text s4">批次列印作業</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS302005.html" class="nav_first">
+								<i class="fas fa-dice-d20"></i>
+								<span>HAS302005<br>
+									<span class="text s4">保單資料轉出</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS302006.html" class="nav_first">
+								<i class="fas fa-print"></i>
+								<span>HAS302006<br><span class="text s4">保卡列印</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS302009.html" class="nav_first">
+								<i class="far fa-calendar-alt"></i>
+								<span>HAS302009<br><span class="text s4">核保照會日報表</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS302011.html" class="nav_first">
+								<i class="fas fa-briefcase"></i>
+								<span>HAS302011<br><span class="text s4">案件進度表-總表</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS303000.html" class="nav_first">
+								<i class="fas fa-search-dollar"></i>
+								<span>HAS303000<br><span class="text s4">日結作業</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS308000.html" class="nav_first">
+								<i class="fas fa-exclamation-circle"></i>
+								<span>HAS308000<br><span class="text s4">續保通知明細處理</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS309001.html" class="nav_first">
+								<i class="fas fa-dice-d6"></i>
+								<span>HAS309001<br><span class="text s4">續保到期通知單</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS312000.html" class="nav_first">
+							<i class="far fa-calendar-check"></i>
+							<span>HAS312000<br><span class="text s4">保批單日報表</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="HAS310000.html" class="nav_first">
+								<i class="far fa-file-alt"></i>
+								<span>HAS310000<br><span class="text s4">續保狀態查詢</span></span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="nav-bt-box">
+		<div class="nav-bt-left"></div>
+		<div class="nav-bt-right off"></div>
+	</div>
+</aside>
+<script>
+	$(document).ready(function () {
+
+
+		/* 無限層選單：列表收合 */
+		$(".list_layer .nav_box .nav_first").click(function () {
+			// $(this).next().slideUp();
+			var o = $(this);
+			var s = o.next().attr("style");
+
+			// f-else作開關
+			if (checkIsNullSpace(s) == true) {
+				o.next().attr("style", "display: block;");
+			} else {
+				o.next().removeAttr("style");
+			}
+		});
+
+
+		/* 左側選單：關閉*/
+		$(".nav-bt-left").click(function () {
+			$("aside").animate({ left: "-200px" }, 500);
+			$("section").animate({ paddingLeft: "20px", }, 500);
+			$(this).hide();
+			$(".nav-bt-right").show();
+			$(".main-box").removeClass("mbnoshow");
+			$(".content").removeClass("mbnoshow");
+		});
+
+
+		/* 左側選單：開啟*/
+		$(".nav-bt-right").click(function () {
+			$("aside").animate({ left: "0" }, 500);
+			$("section").animate({ paddingLeft: "220px", }, 500);
+			$(this).hide();
+			$(".nav-bt-left").show();
+			$(".main-box").addClass("mbnoshow");
+			$(".content").addClass("mbnoshow");
+		});
+
+	});
+</script>

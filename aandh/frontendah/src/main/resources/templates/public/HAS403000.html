@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" lang="zh-Hant-TW">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+    <title>華南產物保險-健康傷害險</title>
+    <!-- jQuery -->
+    <script src="../../shigen/plugin/jquery.min.js"></script>
+    <!-- jQuery UI -->
+    <link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+    <script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+    <!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+    <script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+    <!-- bootstrap -->
+    <script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+    <!-- table tabulator -->
+    <script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+    <!-- fontawsome -->
+    <script defer src="../../shigen/fonts/js/all.min.js"></script>
+    <link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+    <!--load all styles -->
+    <!-- Plug CSS樣式 -->
+    <link rel="stylesheet" href="../../shigen/css/type_plug.css">
+    <!-- 共用樣式 -->
+    <link rel="stylesheet" href="../../shigen/css/type.css">
+    <!-- 主題顏色切換 糖果世代 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+    <!-- 主題顏色切換 海神寶藍 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+    <!-- 主題顏色切換 法拉利紅 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+    <!-- 主題顏色切換 繽紛馬卡 -->
+    <link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+    <!-- 主題顏色切換 煙花季節 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+    <!-- 主題顏色切換 冬雪初現 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+    <link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+    <!-- 自訂JS樣式 -->
+    <script src="../../shigen/js/type.js"></script>
+    <script src="../../shigen/js/common.js"></script>
+    <script src="../../shigen/js/global.js"></script>
+    <!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+    <div class="ajax-aside-navfour"></div>
+    <section>
+        <div class="ajax-section-main"></div>
+        <div class="container-fluid">
+            <div class="content">
+                <div class="bread-crumbs">
+                    <a href="">批改受理作業</a> 
+                </div>
+                <div class="big_title title s1">HAS403000-健康傷害險批單日結作業</div>
+                <div class="row-group">
+                    <div class="row">
+                        <div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-oneBig" onClick="window.open('browsepage.html', 'newwindow', config='height=900,width=1000,toolbar=no');">單筆日結</button>
+                            <button class="btn btn-oneBig">最後日結</button>
+                            <button class="btn btn-oneBig">尚未日結明細查詢</button>
+                            <button class="btn btn-oneBig">瀏覽</button>
+                            <button class="btn btn-oneBig">清除</button>
+                            <button class="btn btn-oneBig">離開</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="item_title title s2">查詢</div> -->
+                <table class="tblDataArea tblInquireArea" width="95%" align="center">
+                    <tbody><tr>
+                        <td class="tdDataCaption">險別</td>
+                        <td class="tdDataField">
+                            <select name="ddliinscls" id="ddliinscls">
+                                <option value=""></option>
+                                <option value="A">A&nbsp;責任險</option>
+                                <option value="I">I&nbsp;傷害險</option>
+                                <option selected="selected" value="H">H&nbsp;健康險</option>
+                            </select>
+
+
+                        </td>
+                        <td class="tdDataCaption">分公司代號</td>
+                        <td class="tdDataField">
+                            <input name="txtIISSBRCH" type="text" value="00" id="txtIISSBRCH" style="width: 30%;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">簽單日期</td>
+                        <td class="tdDataField">
+                            <input class="mingo data_time" name="ucdDCLOSE_NEXT" type="text" value="109/03/24" maxlength="10" size="10" id="ucdDCLOSE_NEXT" onchange="javascript:this.value=ucRocDate_FormatDateText(this.value,true);">
+                            <div id="ucdDCLOSE_NEXT_divCalender" style="display:none;behavior:url('/SCERP/ISNEControl/ucRocDate.htc');" isrocdate="true"></div><input name="ucdDCLOSE_NEXT:txtDateIsRocDate" id="ucdDCLOSE_NEXT_txtDateIsRocDate" type="hidden" value="true">
+                            <span id="ucdDCLOSE_NEXT_cvdDate" controltovalidate="ucdDCLOSE_NEXT_txtDate" errormessage="日期格式錯誤" display="Dynamic" evaluationfunction="CustomValidatorEvaluateIsValid" clientvalidationfunction="ucRocDate_ValidateRocYYYYsMMsDD" style="color:Red;display:none;">日期格式錯誤</span><span id="ucdDCLOSE_NEXT_RequiredFieldValidator1" controltovalidate="ucdDCLOSE_NEXT_txtDate" errormessage="日期欄位必須填寫" display="None" enabled="False" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;"></span>
+
+                        </td>
+                        <td class="tdDataCaption">批單號碼</td>
+                        <td class="tdDataField"><input name="txtIENDORS" type="text" maxlength="40" id="txtIENDORS" style="width:127px;">
+                            <font face="新細明體" color="#005B86">[單筆日結請輸入]</font>
+                            <input id="chkSpecial" type="checkbox" name="chkSpecial"style="width:30px;">
+                            <label for="chkSpecial"><font face="新細明體" color="#005B86">結負項批單日</font></label></td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">日結結果查詢</td>
+                        <td class="tdDataField" colspan="3">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">日結日期</td>
+                        <td class="tdDataField" colspan="3">
+                            <input class="mingo data_time" name="ucdDCLOSEbgn" type="text" style="width: 20%;" maxlength="10" size="10" id="ucdDCLOSEbgn" onchange="javascript:this.value=ucRocDate_FormatDateText(this.value,true);">
+                            <div id="ucdDCLOSEbgn_divCalender" style="display:none;behavior:url('/SCERP/ISNEControl/ucRocDate.htc');" isrocdate="true"></div><input name="ucdDCLOSEbgn:txtDateIsRocDate" id="ucdDCLOSEbgn_txtDateIsRocDate" type="hidden" value="true">
+                            <span id="ucdDCLOSEbgn_cvdDate" controltovalidate="ucdDCLOSEbgn_txtDate" errormessage="日期格式錯誤" display="Dynamic" evaluationfunction="CustomValidatorEvaluateIsValid" clientvalidationfunction="ucRocDate_ValidateRocYYYYsMMsDD" style="color:Red;display:none;">日期格式錯誤</span>
+                            <span id="ucdDCLOSEbgn_RequiredFieldValidator1" controltovalidate="ucdDCLOSEbgn_txtDate" errormessage="日期欄位必須填寫" display="None" enabled="False" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;"></span>
+                            &nbsp;～
+                            <input class="mingo data_time" name="ucdDCLOSEend" type="text" style="width: 20%;" maxlength="10" size="10" id="ucdDCLOSEend" onchange="javascript:this.value=ucRocDate_FormatDateText(this.value,true);">
+                            <div id="ucdDCLOSEend_divCalender" style="display:none;behavior:url('/SCERP/ISNEControl/ucRocDate.htc');" isrocdate="true"></div><input name="ucdDCLOSEend:txtDateIsRocDate" id="ucdDCLOSEend_txtDateIsRocDate" type="hidden" value="true">
+                            <span id="ucdDCLOSEend_cvdDate" controltovalidate="ucdDCLOSEend_txtDate" errormessage="日期格式錯誤" display="Dynamic" evaluationfunction="CustomValidatorEvaluateIsValid" clientvalidationfunction="ucRocDate_ValidateRocYYYYsMMsDD" style="color:Red;display:none;">日期格式錯誤</span><span id="ucdDCLOSEend_RequiredFieldValidator1" controltovalidate="ucdDCLOSEend_txtDate" errormessage="日期欄位必須填寫" display="None" enabled="False" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;"></span>
+
+                            <button id="btnQuery" class="btn btn-Chick">日結結果查詢</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="row-group">
+				<ul class="row nav nav-pills" id="pills-tab" role="tablist">
+					<li class="nav-item"><a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1"
+                            role="tab" aria-controls="pills-1" aria-selected="true">1:成功明細</a>
+                    </li>
+					<li class="nav-item"><a class="nav-link" id="pills-2-tab" data-toggle="pill" href="#pills-2"
+                            role="tab" aria-controls="pills-2" aria-selected="false">2:不成功明細</a>
+                    </li>	
+				</ul>
+            </div>
+            <!-- tab-content star  -->
+            <div class="tab-content" id="pills-tabContent">
+
+                <!-- 1 star -->
+                <div class="row-group tab-pane fade show active" id="pills-1" role="tabpanel"
+					aria-labelledby="pills-1-tab">
+					<table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+						<tbody><tr valign="bottom">
+							<td nowrap="" align="left">
+								
+								<!-- <button class="btn btn-secondary">新增項目</button> -->
+							</td>
+							<td nowrap="" align="left">
+								<a id="dgdbanSUPERVISOR_LIST_btnFirstPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">第一頁</a>&nbsp;
+								<a id="dgdbanSUPERVISOR_LIST_btnPrevPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">上一頁</a>&nbsp;
+								<a id="dgdbanSUPERVISOR_LIST_btnNextPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">下一頁</a>&nbsp;
+								<a id="dgdbanSUPERVISOR_LIST_btnLastPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">最後一頁</a>&nbsp;
+							</td>
+							<td nowrap="" align="left">
+								<span id="dgdbanSUPERVISOR_LIST_lblTotalCaption" class="cssDataGridBannerLabel">總共</span>
+								<span id="dgdbanSUPERVISOR_LIST_lblTotalCount" class="cssDataGridBannerLabel">0</span>
+								<span id="dgdbanSUPERVISOR_LIST_lblTotalCaptionEnd" class="cssDataGridBannerLabel">筆</span>&nbsp;
+							</td>
+							<td nowrap="" align="left">
+								<span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaption" class="cssDataGridBannerLabel">每頁</span>
+								<input name="dgdbanSUPERVISOR_LIST:txtPageSize" type="text" value="8" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtPageSize" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnPageSize','');return false;}" style="width:32px;">
+								<span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaptionEnd" class="cssDataGridBannerLabel">筆</span>
+								<button class="btn btn-secondary">go</button>
+								<!-- <a id="dgdbanSUPERVISOR_LIST_btnPageSize" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnPageSize','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='設定每頁筆數' src='/SCERP/images/go.gif'></a>&nbsp; -->
+							</td>
+							<td nowrap="" align="left">
+								<span id="dgdbanSUPERVISOR_LIST_lblPageCountCaption" class="cssDataGridBannerLabel">總共</span>
+								<span id="dgdbanSUPERVISOR_LIST_lblTotalPage" class="cssDataGridBannerLabel">1</span>
+								<span id="dgdbanSUPERVISOR_LIST_lblPageCountCaptionEnd" class="cssDataGridBannerLabel">頁</span>&nbsp;
+							</td>
+							<td align="right">
+								<span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaption" class="cssDataGridBannerLabel">目前第</span>
+								<input name="dgdbanSUPERVISOR_LIST:txtGotoPage" type="text" value="1" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtGotoPage" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnGotoPage','');return false;}" style="width:29px;">
+								<span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaptionEnd" class="cssDataGridBannerLabel">頁</span>
+								<button class="btn btn-secondary">go</button>
+								<button class="btn btn-secondary">匯出資料</button>
+								
+							</td>
+						</tr>
+                    </tbody>
+                </table>
+
+                <table class="tblCssDataGrid">
+                    <tbody>
+                       
+                        </tr>
+                        <tr class="cssDataGridHeader">
+                            
+                            <th><a href="">日結日期</a></th>
+                            <th><a href="">序號</a></th>
+                            <th><a href="">批單號</a></th>
+                            <th><a href="">訊息說明</a></th>
+                            <th><a href="">日結人員</a></th>
+                            <th><a href="">最後</a></th>
+                            
+                            
+                            
+                        </tr>
+                        <tr>
+                           
+                            <td>109/03/12</td>
+                            <td>1</td>
+                            <td>0209ITY00004</td>
+                            <td>日結成功，保費-1628元</td>
+                            <td>051012</td>
+                            <td></td>
+                            
+                        </tr>
+                        <tr>
+                          
+                            <td>109/03/12</td>
+                            <td>1</td>
+                            <td>0509EE000015</td>
+                            <td>日結成功，保費390元</td>
+                            <td>080756</td>
+                            <td></td>
+                            
+                        </tr>
+                        <tr>
+                           
+                            <td>109/03/12</td>
+                            <td>1</td>
+                            <td>0609EE000012</td>
+                            <td>日結成功，保費-1192元</td>
+                            <td>000992</td>
+                            <td></td>
+                            
+                        </tr>
+                        <tr>
+                          
+                            <td>109/03/12</td>
+                            <td>2</td>
+                            <td>0009he000917</td>
+                            <td>日結成功，保費-521元</td>
+                            <td>000544</td>
+                            <td></td>
+                           
+                        </tr>
+                        <tr>
+                           
+                            <td>109/03/12</td>
+                            <td>2</td>
+                            <td>0509HE000128</td>
+                            <td>日結成功，保費-953元</td>
+                            <td>080756</td>
+                            <td></td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+		   
+                </div>
+                <!-- 1 end -->
+
+                <!-- 2 star -->
+                <div class="row-group tab-pane fade show" id="pills-2" role="tabpanel"
+					aria-labelledby="pills-2-tab">
+					<table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+						<tbody><tr valign="bottom">
+							<td nowrap="" align="left">
+								
+								<!-- <button class="btn btn-secondary">新增項目</button> -->
+							</td>
+							<td nowrap="" align="left">
+								<a id="dgdbanSUPERVISOR_LIST_btnFirstPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">第一頁</a>&nbsp;
+								<a id="dgdbanSUPERVISOR_LIST_btnPrevPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">上一頁</a>&nbsp;
+								<a id="dgdbanSUPERVISOR_LIST_btnNextPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">下一頁</a>&nbsp;
+								<a id="dgdbanSUPERVISOR_LIST_btnLastPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">最後一頁</a>&nbsp;
+							</td>
+							<td nowrap="" align="left">
+								<span id="dgdbanSUPERVISOR_LIST_lblTotalCaption" class="cssDataGridBannerLabel">總共</span>
+								<span id="dgdbanSUPERVISOR_LIST_lblTotalCount" class="cssDataGridBannerLabel">0</span>
+								<span id="dgdbanSUPERVISOR_LIST_lblTotalCaptionEnd" class="cssDataGridBannerLabel">筆</span>&nbsp;
+							</td>
+							<td nowrap="" align="left">
+								<span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaption" class="cssDataGridBannerLabel">每頁</span>
+								<input name="dgdbanSUPERVISOR_LIST:txtPageSize" type="text" value="8" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtPageSize" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnPageSize','');return false;}" style="width:32px;">
+								<span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaptionEnd" class="cssDataGridBannerLabel">筆</span>
+								<button class="btn btn-secondary">go</button>
+								
+							</td>
+							<td nowrap="" align="left">
+								<span id="dgdbanSUPERVISOR_LIST_lblPageCountCaption" class="cssDataGridBannerLabel">總共</span>
+								<span id="dgdbanSUPERVISOR_LIST_lblTotalPage" class="cssDataGridBannerLabel">1</span>
+								<span id="dgdbanSUPERVISOR_LIST_lblPageCountCaptionEnd" class="cssDataGridBannerLabel">頁</span>&nbsp;
+							</td>
+							<td align="right">
+								<span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaption" class="cssDataGridBannerLabel">目前第</span>
+								<input name="dgdbanSUPERVISOR_LIST:txtGotoPage" type="text" value="1" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtGotoPage" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnGotoPage','');return false;}" style="width:29px;">
+								<span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaptionEnd" class="cssDataGridBannerLabel">頁</span>
+								<button class="btn btn-secondary">go</button>
+								<button class="btn btn-secondary">匯出資料</button>
+								
+							</td>
+						</tr>
+                    </tbody>
+                </table>
+
+                <table class="tblCssDataGrid">
+                    <tbody>
+                       
+                        </tr>
+                        <tr class="cssDataGridHeader">
+                            
+                            <th><a href="">日結日期</a></th>
+                            <th><a href="">批單號</a></th>
+                            <th><a href="">序號</a></th>
+                            <th><a href="">主被保人名稱</a></th>
+                            <th><a href="">簽單日期</a></th>
+                            <th><a href="">經辦代號<a></th>
+                            <th><a href="">保費<a></th>
+                            <th style="width: 400px;"><a href="">訊息說明<a></th>  
+                            <th><a href="">日結人員</a></th>  
+                        </tr>
+                        <tr>
+                            <td>109/05/27</td>
+                            <td>0007JX000028</td>
+                            <td>716</td>
+                            <td>陳先生</td>
+                            <td>107/06/01</td>
+                            <td>005711</td>
+                            <td>0</td>
+                            <td>無法以唯一索引“UK_PUBM_PE_MAIN"在物件‘dbo.pubm_pe_main'中插入重複的索引鍵資料列。重複的索引值是(0006J00000261)。陳述式已經結束。</td>
+                            <td></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>109/05/27</td>
+                            <td>0007JX000028</td>
+                            <td>716</td>
+                            <td>陳先生</td>
+                            <td>107/06/01</td>
+                            <td>005711</td>
+                            <td>0</td>
+                            <td>無法以唯一索引“UK_PUBM_PE_MAIN"在物件‘dbo.pubm_pe_main'中插入重複的索引鍵資料列。重複的索引值是(0006J00000261)。陳述式已經結束。</td>
+                            <td></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>109/05/27</td>
+                            <td>0007JX000028</td>
+                            <td>716</td>
+                            <td>陳先生</td>
+                            <td>107/06/01</td>
+                            <td>005711</td>
+                            <td>0</td>
+                            <td>無法以唯一索引“UK_PUBM_PE_MAIN"在物件‘dbo.pubm_pe_main'中插入重複的索引鍵資料列。重複的索引值是(0006J00000261)。陳述式已經結束。</td>
+                            <td></td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+		   
+                </div>
+                <!-- 2 end -->
+
+            </div>
+            <!-- tab-content end  -->
+                    
+            </div>
+        </div>
+        <!-- content end  -->
+        </div>
+    </section>
+    <!-- dialog -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+                    <button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="foo">
+                    <div id="example-table"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+
+</html>

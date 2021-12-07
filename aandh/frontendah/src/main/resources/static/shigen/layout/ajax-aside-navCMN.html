@@ -1,0 +1,74 @@
+<aside>
+	<div class="flexbox fjc" id="_menu_side_up">
+		<a href="index.html" class="nav-logo"></a>
+	</div>
+	<div class="scroll-box">
+		<div class="hide-box">
+			<div class="scroll-hidden">
+				<nav id="_menu_side">
+					<ul class="list_layer">
+						<li class="nav_box">
+							<a href="CMN305000.html" class="nav_first">
+								<i class="fas fa-plus-square"></i>
+								<span>CMN305000<br><span class="text s4">保險條款維護</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="CMN306000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>CMN306000<br><span class="text s4">保險條款對照保單類別維護</span></span>
+							</a>
+						</li>
+						
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="nav-bt-box">
+		<div class="nav-bt-left"></div>
+		<div class="nav-bt-right off"></div>
+	</div>
+</aside>
+<script>
+	$(document).ready(function () {
+
+
+		/* 無限層選單：列表收合 */
+		$(".list_layer .nav_box .nav_first").click(function () {
+			// $(this).next().slideUp();
+			var o = $(this);
+			var s = o.next().attr("style");
+
+			// f-else作開關
+			if (checkIsNullSpace(s) == true) {
+				o.next().attr("style", "display: block;");
+			} else {
+				o.next().removeAttr("style");
+			}
+		});
+
+
+		/* 左側選單：關閉*/
+		$(".nav-bt-left").click(function () {
+			$("aside").animate({ left: "-200px" }, 500);
+			$("section").animate({ paddingLeft: "20px", }, 500);
+			$(this).hide();
+			$(".nav-bt-right").show();
+			$(".main-box").removeClass("mbnoshow");
+			$(".content").removeClass("mbnoshow");
+		});
+
+
+		/* 左側選單：開啟*/
+		$(".nav-bt-right").click(function () {
+			$("aside").animate({ left: "0" }, 500);
+			$("section").animate({ paddingLeft: "220px", }, 500);
+			$(this).hide();
+			$(".nav-bt-left").show();
+			$(".main-box").addClass("mbnoshow");
+			$(".content").addClass("mbnoshow");
+		});
+
+	});
+</script>

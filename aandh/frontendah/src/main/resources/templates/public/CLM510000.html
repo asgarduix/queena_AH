@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" lang="zh-Hant-TW">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+<title>華南產物保險-健康傷害險</title>
+<!-- jQuery -->
+<script src="../../shigen/plugin/jquery.min.js"></script>
+<!-- jQuery UI -->
+<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+<!-- bootstrap -->
+<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+<!-- table tabulator -->
+<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+<!-- fontawsome -->
+<script defer src="../../shigen/fonts/js/all.min.js"></script>
+<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+<!--load all styles -->
+<!-- Plug CSS樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+<!-- 共用樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type.css">
+<!-- 主題顏色切換 糖果世代 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+<!-- 主題顏色切換 海神寶藍 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+<!-- 主題顏色切換 法拉利紅 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+<!-- 主題顏色切換 繽紛馬卡 -->
+<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+<!-- 主題顏色切換 煙花季節 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+<!-- 主題顏色切換 冬雪初現 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+<!-- 自訂JS樣式 -->
+<script src="../../shigen/js/type.js"></script>
+<script src="../../shigen/js/common.js"></script>
+<script src="../../shigen/js/global.js"></script>
+<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+	<div class="ajax-aside-navCLM"></div>
+	<section>
+		<div class="ajax-section-main"></div>
+		<div class="container-fluid">
+			<div class="content">
+				<div class="bread-crumbs">
+					<a href="">理賠作業</a>
+				</div>
+                <div class="big_title title s1">CLM510000-暫收暫付作業</div>
+                <div class="row-group">
+					<div class="row">
+						<div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-oneBig">查詢</button>
+                            <button class="btn btn-oneBig">清除</button>
+                            <button class="btn btn-oneBig">轉出</button>
+                            <button class="btn btn-oneBig">離開</button>
+						</div>
+					</div>
+				</div>
+                
+                <table class="tblDataArea tblInquireArea" cellspacing="0" cellpadding="0" width="100%">
+                    <tbody>
+                        <tr>
+                        <td class="tdDataCaption">賠案號</td>
+                        <td class="tdDataField">
+                            <input name="txtCLAINO" style="width: 80%;" type="text" value="00" id="txtCLAINO">    
+                        </td>
+                        <td class="tdDataCaption">賠案序號</td>
+                        <td class="tdDataField">
+                            <input name="txtCLAINO_SEQ" style="width: 80%;" type="text" value="00" id="txtCLAINO_SEQ">    
+                        </td>
+                        <td class="tdDataCaption">賠案代號</td>
+                        <td class="tdDataField">
+                            <input name="txtCUSTID" style="width: 80%;" type="text" value="00" id="txtCUSTID">    
+                        </td>
+                        <td class="tdDataCaption">賠付名稱</td>
+                        <td class="tdDataField">
+                            <input name="txtCUSTNA" style="width: 80%;" type="text" value="00" id="txtCUSTNA">    
+                        </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">收款人代號</td>
+                            <td class="tdDataField">
+                                <input name="txtEMPLNO" style="width: 80%;" type="text" value="00" id="txtEMPLNO">    
+                            </td>
+                            <td class="tdDataCaption">收款人名稱</td>
+                            <td class="tdDataField">
+                                <input name="txtEMNAME" style="width: 80%;" type="text" value="00" id="txtEMNAME">    
+                            </td>
+                            <td class="tdDataCaption">建檔案日</td>
+                            <td class="tdDataField">
+                                <input class="mingo data_time" name="" type="text" style="width: 44%;" maxlength="10" size="10" id="UcRocDbgn" >
+                                <!-- <button title="選擇日期" class="" >...</button> -->
+                                <input name="" id="" type="hidden" value="true">
+                                <span id="UcRocDbgn_txtDate" style="color:Red;display:none;">日期格式錯誤</span>
+                                <span id="" style="color:Red;display:none;"></span>
+                                ~
+                                <input class="mingo data_time" name=""  style="width: 44%;" type="text" maxlength="10" size="10" id="UcRocDend">
+                                <!-- <button title="選擇日期" class="" >...</button> -->
+                                <input name="" id="" type="hidden" value="true">
+                                <span id="UcRocDend_txtDate" style="color:Red;display:none;">日期格式錯誤</span>
+                                <span id="" style="color:Red;display:none;"></span>  
+                            </td>
+                            <td class="tdDataCaption">是否轉出</td>
+                            <td class="tdDataField">
+                                <select name="ddlISTRANSFER" id="ddlISTRANSFER" style="width: 150px;">
+                                    <option selected="selected" value="">是</option>
+                                    <option value="GH0">否</option>
+
+                                </select> 
+                            </td>
+                            </tr>
+                    </tbody>
+                    </table>              
+                <div style="height: 20px;"></div>
+                <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                        <td class="tdDataField">
+                            <h3 style="color: #ed4c6c;">暫付</h3>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+				<table id="Table2" class="tblFunctionBar" cellSpacing="0" cellPadding="0">
+					<tr vAlign="bottom">
+						<td noWrap align="left">
+                            <button class="btn btn-secondary" id="dgbCLMM_CM_SUSPREPAY">新增暫付</button>
+							<a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+							<a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+							<a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+							<a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="" class="">總共</span>
+						<span id="" class="">0</span>
+						<span id="" class="">筆</span>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="" class="">每頁</span>
+							<input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;" />
+							<span id="" class="">筆</span>
+							<button class="btn btn-secondary">go</button>
+						</td>
+						<td noWrap align="left">
+							<span id="" class="">總共</span>
+							<span id="" class="">1</span>
+							<span id="" class="">頁</span>&nbsp;
+						</td>
+						<td align="right">
+							<span id="" class="">目前第</span>
+						<input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;" />
+						<span id="" class="">頁</span>
+						<button class="btn btn-secondary">go</button>
+						<button class="btn btn-secondary">匯出資料</button>
+						
+						</td>
+					</tr>
+				</table>
+				<table class="tblCssDataGrid">
+					<tr class="cssDataGridHeader">
+						<th><a href="" ></a></th>
+                        <th><a href=""></a></th>
+                        <th><a href="">轉出</a></th>
+                        <th><a href=""></a></th>
+                        
+
+                    </tr>
+                    <tr>
+                        <td style="width: 50px;">
+                            <button type="button" id="linkEdit" class="btn-editt">編輯</button>
+                        </td>
+                        <td><button type="button" class="btn-del" id="linkDelete">刪除</button></td>
+                        <td>
+                            <input id="chkTranObj" type="checkbox" name="chkTranObj" checked="checked">
+                        </td>
+                        <td>
+                            <table class="tblDataArea" width="100%" align="center" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="tdDataCaption">賠案號碼</td>
+                                        <td class="tdDataField">
+                                            <input name="lab_CLMM_CM_SUSPREPAY_CLAINO" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_CLAINO" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">賠案序號</td>
+                                        <td class="tdDataField">
+                                            <input name="lab_CLMM_CM_SUSPREPAY_CLAINO_SEQ" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_CLAINO_SEQ" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">賠付代號</td>
+                                        <td class="tdDataField">
+                                            <input name="lab_CLMM_CM_SUSPREPAY_CUSTID" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_CUSTID" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">幣別</td>
+                                        <td class="tdDataField">
+                                            <input name="lab_CLMM_CM_SUSPREPAY_CURNCY" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_CURNCY" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">原幣金額</td>
+                                        <td class="tdDataField">
+                                            <input name="lab_CLMM_CM_SUSPREPAY_MSETTLE" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_MSETTLE" style="width:100px;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdDataCaption">被保險人</td>
+                                        <td class="tdDataField">
+                                            <input name="lab_CLMM_CM_SUSPREPAY_NAMEI" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_NAMEI" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption"></td>
+                                        <td class="tdDataField">
+                                           
+                                        </td>
+                                        <td class="tdDataCaption">賠付名稱</td>
+                                        <td class="tdDataField">
+                                            <input name="lab_CLMM_CM_SUSPREPAY_CUSTNA" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_CUSTNA" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">兌換率</td>
+                                        <td class="tdDataField">
+                                            <input name="lab_CLMM_CM_SUSPREPAY_EXRATE" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_EXRATE" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">金額</td>
+                                        <td class="tdDataField">
+                                            <input name="lab_CLMM_CM_SUSPREPAY_PPCLMA" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_PPCLMA" style="width:100px;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdDataCaption">支付方式</td>
+                                        <td class="tdDataField">
+                                            <input name="lab_CLMM_CM_SUSPREPAY_RECTYP" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_RECTYP" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">分行代號</td>
+                                        <td class="tdDataField">
+                                           
+                                        </td>
+                                        <td class="tdDataCaption">分行名稱</td>
+                                        <td class="tdDataField">
+                                            <input name="lab_CLMM_CM_SUSPREPAY_CODNO1" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_CODNO1" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">用途說明</td>
+                                        <td class="tdDataField">
+                                            <input name="lab_CLMM_CM_SUSPREPAY_REMARK" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_REMARK" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">帳號</td>
+                                        <td class="tdDataField">
+                                            <input name="lab_CLMM_CM_SUSPREPAY_CODNO2" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_CODNO2" style="width:100px;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdDataCaption">是否已轉出</td>
+                                        <td class="tdDataField">
+                                            <input name="lab_CLMM_CM_SUSPREPAY_ISTRANSFER" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_ISTRANSFER" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">轉出日</td>
+                                        <td class="tdDataField">
+                                            <input name="lab_CLMM_CM_SUSPREPAY_DTRANSFER" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_DTRANSFER" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">轉出人員</td>
+                                        <td class="tdDataField">
+                                            <input name="lab_CLMM_CM_SUSPREPAY_ITRANSFER" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_ITRANSFER" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">批號</td>
+                                        <td class="tdDataField">
+                                            <input name="Label7" type="text" value="" id="Label7" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">帳號</td>
+                                        <td class="tdDataField">
+                                            <input name="" type="text" value="" id="" style="width:100px;">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        
+                    </tr>
+                    <!-- 新增欄位 -->
+                    <tr style="background-color:#bddde0 ;">
+                        <td style="width: 50px;">
+                            <button class="btn-addlist" id="linkUpdate">更新</button>
+                        </td>
+                        <td><button type="button" class="btn-del" id="linkCancel">取消</button></td>
+                        <td>
+                            <button type="button" class="btn-editt" id="lbGetData">取得資料</button>
+                        </td>
+                        <td>
+                            <table class="tblDataArea" width="100%" align="center" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="tdDataCaption">賠案號碼</td>
+                                        <td class="tdDataField">
+                                            <input name="txt_CLMM_CM_SUSPREPAY_CLAINO" type="text" value="" id="txttxt_CLMM_CM_SUSPREPAY_CLAINOIreq" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">賠案序號</td>
+                                        <td class="tdDataField">
+                                            <input name="txt_CLMM_CM_SUSPREPAY_CLAINO_SEQ" type="text" value="" id="txt_CLMM_CM_SUSPREPAY_CLAINO_SEQ" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">賠付代號</td>
+                                        <td class="tdDataField">
+                                            <input name="txt_CLMM_CM_SUSPREPAY_CUSTID" type="text" value="" id="txt_CLMM_CM_SUSPREPAY_CUSTID" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">幣別</td>
+                                        <td class="tdDataField">
+                                            <input name="txt_CLMM_CM_SUSPREPAY_CURNCY" type="text" value="" id="txt_CLMM_CM_SUSPREPAY_CURNCY" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">原幣金額</td>
+                                        <td class="tdDataField">
+                                            <input name="txt_CLMM_CM_SUSPREPAY_MSETTLE" type="text" value="" id="txt_CLMM_CM_SUSPREPAY_MSETTLE" style="width:100px;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdDataCaption">被保險人</td>
+                                        <td class="tdDataField">
+                                            <input name="txt_CLMM_CM_SUSPREPAY_NAMEI" type="text" value="" id="txt_CLMM_CM_SUSPREPAY_NAMEI" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption"></td>
+                                        <td class="tdDataField">
+                                           
+                                        </td>
+                                        <td class="tdDataCaption">賠付名稱</td>
+                                        <td class="tdDataField">
+                                            <input name="txt_CLMM_CM_SUSPREPAY_CUSTNA" type="text" value="" id="txt_CLMM_CM_SUSPREPAY_CUSTNA" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">兌換率</td>
+                                        <td class="tdDataField">
+                                            <input name="txt_CLMM_CM_SUSPREPAY_EXRATE" type="text" value="" id="txt_CLMM_CM_SUSPREPAY_EXRATE" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">金額</td>
+                                        <td class="tdDataField">
+                                            <input name="txt_CLMM_CM_SUSPREPAY_PPCLMA" type="text" value="" id="txt_CLMM_CM_SUSPREPAY_PPCLMA" style="width:100px;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdDataCaption">支付方式</td>
+                                        <td class="tdDataField">
+                                            <input name="ddl_CLMM_CM_SUSPREPAY_RECTYP" type="text" value="" id="ddl_CLMM_CM_SUSPREPAY_RECTYP" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">分行代號</td>
+                                        <td class="tdDataField">
+                                            <input name="txt_CLMM_CM_SUSPREPAY_CODNO1" type="text" value="" id="txt_CLMM_CM_SUSPREPAY_CODNO1" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">分行名稱</td>
+                                        <td class="tdDataField">
+                                            <input name="txt_CLMM_CM_SUSPREPAY_BKNAME" type="text" value="" id="txt_CLMM_CM_SUSPREPAY_BKNAME" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">用途說明</td>
+                                        <td class="tdDataField">
+                                            <input name="txt_CLMM_CM_SUSPREPAY_REMARK" type="text" value="" id="txt_CLMM_CM_SUSPREPAY_REMARK" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">帳號</td>
+                                        <td class="tdDataField">
+                                            <input name="txt_CLMM_CM_SUSPREPAY_CODNO2" type="text" value="" id="txt_CLMM_CM_SUSPREPAY_CODNO2" style="width:100px;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdDataCaption">是否已轉出</td>
+                                        <td class="tdDataField">
+                                            <input name="Label1" type="text" value="" id="Label1" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">轉出日</td>
+                                        <td class="tdDataField">
+                                            <input name="Label2" type="text" value="" id="Label2" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">轉出人員</td>
+                                        <td class="tdDataField">
+                                            <input name="Label3" type="text" value="" id="Label3" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">批號</td>
+                                        <td class="tdDataField">
+                                            <input name="Label8" type="text" value="" id="Label8" style="width:100px;">
+                                        </td>
+                                        <td class="tdDataCaption">帳號</td>
+                                        <td class="tdDataField">
+                                            <input name="txtIreq" type="text" value="" id="txtIreq" style="width:100px;">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        
+                    </tr>
+                </table>
+                <div style="height: 20px;"></div>
+                <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                        <td class="tdDataField">
+                            <h3 style="color: #ed4c6c;">暫收</h3>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+				<table id="Table2" class="tblFunctionBar" cellSpacing="0" cellPadding="0">
+					<tr vAlign="bottom">
+                        
+						<td noWrap align="left">
+                            <button class="btn btn-secondary" id="dgbCLMM_CM_SUSPREPAY1">新增暫收</button>
+							<a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+							<a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+							<a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+							<a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="" class="">總共</span>
+						<span id="" class="">0</span>
+						<span id="" class="">筆</span>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="" class="">每頁</span>
+							<input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;" />
+							<span id="" class="">筆</span>
+							<button class="btn btn-secondary">go</button>
+						</td>
+						<td noWrap align="left">
+							<span id="" class="">總共</span>
+							<span id="" class="">1</span>
+							<span id="" class="">頁</span>&nbsp;
+						</td>
+						<td align="right">
+							<span id="" class="">目前第</span>
+						<input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;" />
+						<span id="" class="">頁</span>
+						<button class="btn btn-secondary">go</button>
+						<button class="btn btn-secondary">匯出資料</button>
+						
+						</td>
+					</tr>
+				</table>
+				<table class="tblCssDataGrid">
+					<tr class="cssDataGridHeader">
+                        <th style="width: 50px;">編輯<a href="" ></a></th>
+						<th><a href="" >刪除</a></th>
+                        <th><a href="">轉出</a></th>
+                        <th><a href=""></a></th>
+                        <th><a href=""></a></th>
+                    </tr>
+                </tr>
+                <tr>
+                    <td style="width: 50px;">
+                        <button type="button" class="btn-editt" id="linkEdit1">編輯</button>
+                    </td>
+                    <td><button type="button" class="btn-del" id="linkDelete1">刪除</button></td>
+                    <td>
+                        <input id="chkTranObj" type="checkbox" name="chkTranObj" checked="checked">
+                    </td>
+                    <td>
+                        <table class="tblDataArea" width="100%" align="center" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="tdDataCaption">賠案號碼</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_CLAINO" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_CLAINO" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">賠案序號</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_CLAINO_SEQ" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_CLAINO_SEQ" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">收款人代號</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_EMPLNO" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_EMPLNO" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">幣別</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_CURNCY" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_CURNCY" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">原幣金額</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_MSETTLE" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_MSETTLE" style="width:100px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">被保險人</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_NAMEI" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_NAMEI" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption"></td>
+                                    <td class="tdDataField">
+                                       
+                                    </td>
+                                    <td class="tdDataCaption">收款人名稱</td>
+                                    <td class="tdDataField">
+                                        <input name="lab_CLMM_CM_SUSPREPAY_EMNAME" type="text" value="" id="lab_CLMM_CM_SUSPREPAY_EMNAME" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">兌換率</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_EXRATE" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_EXRATE" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">金額</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_PPCLMA" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_PPCLMA" style="width:100px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">來源說明</td>
+                                    <td class="tdDataField">
+                                        <select name="lab__NEW_CLMM_CM_SUSPREPAY_REMARK" id="lab__NEW_CLMM_CM_SUSPREPAY_REMARK" style="width:120px;">
+                                            <option selected="selected" value=""></option>
+                                            <option value="1">同業往來</option>
+                                            <option value="2">殘值</option>
+                                            <option value="3">其他</option>
+                                            <option value="4">保戶</option>
+                                            <option value="4">第三人</option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">銀行代號</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_CODNO1" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_CODNO1" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">分行名稱</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_BKNAME" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_BKNAME" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">票據到期日</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_MATDAT" type="text" maxlength="10" size="10" class="mingo data_time hasDatepicker" id="lab__NEW_CLMM_CM_SUSPREPAY_MATDAT">
+                                    </td>
+                                    <td class="tdDataCaption">發票人帳號</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_ACCTNO" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_ACCTNO" style="width:100px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">憑證註</td>
+                                    <td class="tdDataField">
+                                        <select name="lab__NEW_CLMM_CM_SUSPREPAY_RECTYP" id="lab__NEW_CLMM_CM_SUSPREPAY_RECTYP" style="width:120px;">
+                                            <option selected="selected" value=""></option>
+                                            <option value="1">1匯款</option>
+                                            <option value="2">2支票</option>
+                                            <option value="3">3現金</option>
+                                            <option value="4">4劃撥單</option>
+                                            <option value="5">5匯款同業往來</option>
+                                            <option value="6">6信用卡</option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">票號</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_CODNO2" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_CODNO2" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">交換地區</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_EXAREA" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_EXAREA" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">總行代號</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_HDBKCD" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_HDBKCD" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">分行代號</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_BRBKCD" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_BRBKCD" style="width:100px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">是否已轉出</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_ISTRANSFER" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_ISTRANSFER" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">轉出日</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_DTRANSFER" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_DTRANSFER" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">轉出人員</td>
+                                    <td class="tdDataField">
+                                        <input name="lab__NEW_CLMM_CM_SUSPREPAY_ITRANSFER" type="text" value="" id="lab__NEW_CLMM_CM_SUSPREPAY_ITRANSFER" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">批號</td>
+                                    <td class="tdDataField" colspan="3">
+                                        <input name="Label9" type="text" value="" id="Label9" style="width:100px;">
+                                    </td>
+                                   
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    
+                </tr>
+                <!-- 新增欄位 -->
+                <tr style="background-color:#bddde0 ;">
+                    <td style="width: 50px;">
+                        <button class="btn-addlist" id="linkUpdate1">更新</button>
+                    </td>
+                    <td><button type="button" class="btn-del" id="linkCancel1">取消</button></td>
+                    <td>
+                        <button type="button" class="btn-editt" id="lbGetData1">取得資料</button>
+                    </td>
+                    <td>
+                        <table class="tblDataArea" width="100%" align="center" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="tdDataCaption">賠案號碼</td>
+                                    <td class="tdDataField">
+                                        <input name="txt__NEW_CLMM_CM_SUSPREPAY_CLAINO" type="text" value="" id="txt__NEW_CLMM_CM_SUSPREPAY_CLAINO" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">賠案序號</td>
+                                    <td class="tdDataField">
+                                        <input name="txt__NEW_CLMM_CM_SUSPREPAY_CLAINO_SEQ" type="text" value="" id="txt__NEW_CLMM_CM_SUSPREPAY_CLAINO_SEQ" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">收款人代號</td>
+                                    <td class="tdDataField">
+                                        <input name="txt_CLMM_CM_SUSPREPAY_EMPLNO" type="text" value="" id="txt_CLMM_CM_SUSPREPAY_EMPLNO" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">幣別</td>
+                                    <td class="tdDataField">
+                                        <input name="txt__NEW_CLMM_CM_SUSPREPAY_CURNCY" type="text" value="" id="txt__NEW_CLMM_CM_SUSPREPAY_CURNCY" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">原幣金額</td>
+                                    <td class="tdDataField">
+                                        <input name="txt__NEW_CLMM_CM_SUSPREPAY_MSETTLE" type="text" value="" id="txt__NEW_CLMM_CM_SUSPREPAY_MSETTLE" style="width:100px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">被保險人</td>
+                                    <td class="tdDataField">
+                                        <input name="txt__NEW_CLMM_CM_SUSPREPAY_NAMEI" type="text" value="" id="txt__NEW_CLMM_CM_SUSPREPAY_NAMEI" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption"></td>
+                                    <td class="tdDataField">
+                                       
+                                    </td>
+                                    <td class="tdDataCaption">收款人名稱</td>
+                                    <td class="tdDataField">
+                                        <input name="txt_CLMM_CM_SUSPREPAY_EMNAME" type="text" value="" id="txt_CLMM_CM_SUSPREPAY_EMNAME" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">兌換率</td>
+                                    <td class="tdDataField">
+                                        <input name="txt__NEW_CLMM_CM_SUSPREPAY_EXRATE" type="text" value="" id="txt__NEW_CLMM_CM_SUSPREPAY_EXRATE" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">金額</td>
+                                    <td class="tdDataField">
+                                        <input name="txt__NEW_CLMM_CM_SUSPREPAY_PPCLMA" type="text" value="" id="txt__NEW_CLMM_CM_SUSPREPAY_PPCLMA" style="width:100px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">來源說明</td>
+                                    <td class="tdDataField">
+                                        <select name="ddl__NEW_CLMM_CM_SUSPREPAY_REMARK" id="ddl__NEW_CLMM_CM_SUSPREPAY_REMARK" style="width:120px;">
+                                            <option selected="selected" value=""></option>
+                                            <option value="1">同業往來</option>
+                                            <option value="2">殘值</option>
+                                            <option value="3">其他</option>
+                                            <option value="4">保戶</option>
+                                            <option value="4">第三人</option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">銀行代號</td>
+                                    <td class="tdDataField">
+                                        <input name="txt__NEW_CLMM_CM_SUSPREPAY_CODNO1" type="text" value="" id="txt__NEW_CLMM_CM_SUSPREPAY_CODNO1" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">分行名稱</td>
+                                    <td class="tdDataField">
+                                        <input name="txt__NEW_CLMM_CM_SUSPREPAY_BKNAME" type="text" value="" id="txt__NEW_CLMM_CM_SUSPREPAY_BKNAME" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">票據到期日</td>
+                                    <td class="tdDataField">
+                                        <input name="txt__NEW_CLMM_CM_SUSPREPAY_MATDAT" type="text" maxlength="10" size="10" class="mingo data_time hasDatepicker" id="txt__NEW_CLMM_CM_SUSPREPAY_MATDAT">
+                                    </td>
+                                    <td class="tdDataCaption">發票人帳號</td>
+                                    <td class="tdDataField">
+                                        <input name="txt__NEW_CLMM_CM_SUSPREPAY_ACCTNO" type="text" value="" id="txt__NEW_CLMM_CM_SUSPREPAY_ACCTNO" style="width:100px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">憑證註</td>
+                                    <td class="tdDataField">
+                                        <select name="ddl__NEW_CLMM_CM_SUSPREPAY_RECTYP" id="ddl__NEW_CLMM_CM_SUSPREPAY_RECTYP" style="width:120px;">
+                                            <option selected="selected" value=""></option>
+                                            <option value="1">1匯款</option>
+                                            <option value="2">2支票</option>
+                                            <option value="3">3現金</option>
+                                            <option value="4">4劃撥單</option>
+                                            <option value="5">5匯款同業往來</option>
+                                            <option value="6">6信用卡</option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">票號</td>
+                                    <td class="tdDataField">
+                                        <input name="txt__NEW_CLMM_CM_SUSPREPAY_CODNO2" type="text" value="" id="txt__NEW_CLMM_CM_SUSPREPAY_CODNO2" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">交換地區</td>
+                                    <td class="tdDataField">
+                                        <input name="txt__NEW_CLMM_CM_SUSPREPAY_EXAREA" type="text" value="" id="txt__NEW_CLMM_CM_SUSPREPAY_EXAREA" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">總行代號</td>
+                                    <td class="tdDataField">
+                                        <input name="txt__NEW_CLMM_CM_SUSPREPAY_HDBKCD" type="text" value="" id="txt__NEW_CLMM_CM_SUSPREPAY_HDBKCD" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">分行代號</td>
+                                    <td class="tdDataField">
+                                        <input name="txt__NEW_CLMM_CM_SUSPREPAY_BRBKCD" type="text" value="" id="txt__NEW_CLMM_CM_SUSPREPAY_BRBKCD" style="width:100px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">是否已轉出</td>
+                                    <td class="tdDataField">
+                                        <input name="Label4" type="text" value="" id="Label4" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">轉出日</td>
+                                    <td class="tdDataField">
+                                        <input name="Label5" type="text" value="" id="Label5" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">轉出人員</td>
+                                    <td class="tdDataField">
+                                        <input name="Label6" type="text" value="" id="Label6" style="width:100px;">
+                                    </td>
+                                    <td class="tdDataCaption">批號</td>
+                                    <td class="tdDataField" colspan="3">
+                                        <input name="Label10" type="text" value="" id="Label10" style="width:100px;">
+                                    </td>
+                                   
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    
+                </tr>
+                </table>
+
+			</div>
+			<!-- content end  -->
+		</div>
+	</section>
+	<!-- dialog -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+					<button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="foo">
+					<div id="example-table"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+</html>

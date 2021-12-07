@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" lang="zh-Hant-TW">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+<title>華南產物保險-健康傷害險</title>
+<!-- jQuery -->
+<script src="../../shigen/plugin/jquery.min.js"></script>
+<!-- jQuery UI -->
+<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+<!-- bootstrap -->
+<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+<!-- table tabulator -->
+<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+<!-- fontawsome -->
+<script defer src="../../shigen/fonts/js/all.min.js"></script>
+<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+<!--load all styles -->
+<!-- Plug CSS樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+<!-- 共用樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type.css">
+<!-- 主題顏色切換 糖果世代 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+<!-- 主題顏色切換 海神寶藍 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+<!-- 主題顏色切換 法拉利紅 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+<!-- 主題顏色切換 繽紛馬卡 -->
+<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+<!-- 主題顏色切換 煙花季節 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+<!-- 主題顏色切換 冬雪初現 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+<!-- 自訂JS樣式 -->
+<script src="../../shigen/js/type.js"></script>
+<script src="../../shigen/js/common.js"></script>
+<script src="../../shigen/js/global.js"></script>
+<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+	<div class="ajax-aside-nav"></div>
+	<section>
+		<div class="ajax-section-main"></div>
+		<div class="container-fluid">
+			<div class="content">
+				<div class="bread-crumbs">
+					<a href="">承保受理作業</a>
+				</div>
+                <div class="big_title title s1">HAS301001 健康傷害險承保受理作業</div>
+                <div class="row-group">
+					<div class="row">
+						<div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-secondary">修改</button>
+                            <button class="btn btn-secondary">清除</button>
+                            <button class="btn btn-secondary">查詢</button>
+                            <button class="btn btn-secondary">核保不過名單</button>
+                            <button class="btn btn-secondary">暫存資料</button>
+                            <button class="btn btn-secondary">復原資料</button>
+                            <button class="btn btn-secondary">離開</button>
+						</div>
+					</div>
+				</div>
+                <!-- <div class="item_title title s2">查詢</div> -->
+                <table class="tblDataArea" cellSpacing="0" cellPadding="0">
+                    <tr>
+                        <td class="tdDataCaption">保單類別</td>
+                        <td class="tdDataField"><select name="ddlIinsKind" onchange="__doPostBack('ddlIinsKind','')" language="javascript" id="ddlIinsKind" style="width:150px;">
+                                <option value=""></option>
+                                <option value="GH0">GH0&#160;日額甲型</option>
+                                <option value="GM0">GM0&#160;個人組合</option>
+                                <option value="GD0">GD0&#160;重大疾病</option>
+                                <option value="GC0">GC0&#160;初次罹癌</option>
+                                <option value="GI0">GI0&#160;癌症住院</option>
+                                <option value="MH0">MH0&#160;團體健康</option>
+                                <option selected="selected" value="MM0">MM0&#160;團體組合</option>
+                                <option value="MH1">MH1&#160;團體健康(甲型)</option>
+                                <option value="MM1">MM1&#160;團體組合(甲型)</option>
+                                <option value="DH0">DH0&#160;重大傷病</option>
+                                <option value="MR0">MR0&#160;團體住院醫療(實支實付型)</option>
+                                <option value="GC1">GC1&#160;團體癌症</option>
+                                <option value="GC2">GC2&#160;團體癌症身故</option>
+                                <option value="MH2">MH2&#160;住院日額醫療</option>
+                            </select></td>
+                        <td class="tdDataCaption">出單公司</td>
+                        <td class="tdDataField"><input name="txtIissBrch" type="text" value="00" id="txtIissBrch" disabled="disabled" onKeyPress="_ToUpper(this);" style="width:30px;" /></td>
+                        <td class="tdDataCaption">大保單號</td>
+                        <td class="tdDataField"><input name="txtI1relply" type="text" maxlength="15" id="txtI1relply" onKeyPress="_ToUpper(this);" style="width:120px;" /></td>
+                        <td class="tdDataCaption">保單號碼</td>
+                        <td class="tdDataField"><input name="txtIpolicy" type="text" value=" " maxlength="15" id="txtIpolicy" onKeyPress="_ToUpper(this);" style="width:120px;" /></td>
+                        <td class="tdDataCaption">要保號碼</td>
+                        <td class="tdDataField"><input name="txtIreq" type="text" value="0008MM0X000018" maxlength="15" id="txtIreq" onKeyPress="_ToUpper(this);" style="width:120px;" /></td>
+                        <!-- <td><span id="lblMsg" style="color:#FF3300;"></span></td> -->
+                    </tr>
+                </table>
+				<div class="row-group">
+					<div class="row">
+                        <div class="col-12">
+                            <a href="#" class="btn btn-primary">1:要保人</a>
+                            <a href="#" class="btn btn-primary">2:被保險人</a>
+                            <a href="#" class="btn btn-primary">3:保險內容</a>
+                            <a href="#" class="btn btn-primary">4:洽攬人</a>
+                            <a href="#" class="btn btn-primary">5:條款/共保</a>
+                            <a href="#" class="btn btn-primary">6:收據明細</a>
+                            <a href="#" class="btn btn-primary">7:附加檔案</a>
+                            <a href="#" class="btn btn-primary">8:核保照會</a>
+                            <a href="#" class="btn btn-primary">9:審核意見</a>
+                            <a href="#" class="btn btn-primary">10:公同行銷</a>
+                            <a href="#" class="btn btn-primary">11:董監事名冊</a>
+                        </div>
+                    </div>
+				</div>
+				<div class="row-group">
+					<div class="row">
+						<div class="col-2">
+							<button class="btn btn-secondary">條款查詢</button>
+						</div>
+					</div>
+				</div>
+				<!-- 抬頭 -->
+				<!-- <div class="item_title title s2">董監事名冊</div> -->
+				<table id="Table2" class="tblFunctionBar" cellSpacing="0" cellPadding="0">
+					<tr vAlign="bottom">
+						<td noWrap align="left">
+							<!-- <input type="submit" name="dgdbanSUPERVISOR_LIST:btnNewItem" value="新增董監事名單" id="dgdbanSUPERVISOR_LIST_btnNewItem" accesskey="I" tabindex="-1" class="cssUICommandButtonSmall" />&nbsp; -->
+                            <button class="btn btn-secondary">洽攬人資料</button>
+                            <button class="btn btn-secondary">新增項目</button>
+						</td>
+						<td noWrap align="left">
+							<a id="dgdbanSUPERVISOR_LIST_btnFirstPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">第一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnPrevPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">上一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnNextPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">下一頁</a>&nbsp;
+							<a id="dgdbanSUPERVISOR_LIST_btnLastPage" disabled="disabled" tabindex="-1" class="cssDataGridBannerButton">最後一頁</a>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblTotalCaption" class="cssDataGridBannerLabel">總共</span>
+						<span id="dgdbanSUPERVISOR_LIST_lblTotalCount" class="cssDataGridBannerLabel">0</span>
+						<span id="dgdbanSUPERVISOR_LIST_lblTotalCaptionEnd" class="cssDataGridBannerLabel">筆</span>&nbsp;
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaption" class="cssDataGridBannerLabel">每頁</span>
+							<input name="dgdbanSUPERVISOR_LIST:txtPageSize" type="text" value="8" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtPageSize" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnPageSize','');return false;}" style="width:32px;" />
+							<span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaptionEnd" class="cssDataGridBannerLabel">筆</span>
+							<button class="btn btn-secondary">go</button>
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnPageSize" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnPageSize','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='設定每頁筆數' src='/SCERP/images/go.gif'></a>&nbsp; -->
+						</td>
+						<td noWrap align="left">
+							<span id="dgdbanSUPERVISOR_LIST_lblPageCountCaption" class="cssDataGridBannerLabel">總共</span>
+							<span id="dgdbanSUPERVISOR_LIST_lblTotalPage" class="cssDataGridBannerLabel">1</span>
+							<span id="dgdbanSUPERVISOR_LIST_lblPageCountCaptionEnd" class="cssDataGridBannerLabel">頁</span>&nbsp;
+						</td>
+						<td align="right">
+							<span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaption" class="cssDataGridBannerLabel">目前第</span>
+						<input name="dgdbanSUPERVISOR_LIST:txtGotoPage" type="text" value="1" maxlength="4" id="dgdbanSUPERVISOR_LIST_txtGotoPage" class="cssDataGridBannerTextBox" onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnGotoPage','');return false;}" style="width:29px;" />
+						<span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaptionEnd" class="cssDataGridBannerLabel">頁</span>
+						<button class="btn btn-secondary">go</button>
+						<button class="btn btn-secondary">匯出資料</button>
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnGotoPage" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnGotoPage','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='翻頁' src='/SCERP/images/go.gif'></a> -->
+						<!-- <a id="dgdbanSUPERVISOR_LIST_btnExport" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnExport','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='匯出資料' src='/SCERP/images/Excel.gif'></a>&nbsp; -->
+						</td>
+					</tr>
+				</table>
+
+				
+
+
+				<table class="tblCssDataGrid">
+					<tr class="cssDataGridHeader">
+                        <th style="width:50px"><a href="" ></a></th>
+                        <th style="width:50px"><a href="" ></a></th>
+                        <th><a href="" >洽攬人種類</a></th>
+						<th><a href="" >洽攬人代號</a></th>
+                        <th><a href="">洽攬人名稱</a></th>
+                        <th><a href="">佣一/佣二</a></th>
+                        <th><a href="" >佣金率％</a></th>
+                        <th><a href="">佣金</a></th>
+                        <th><a href="">29險種代號</a></th>
+						
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+                        <td>1保經代</td>
+                        <td>831A</td>
+                        <td>台一保險鏡人股份有限公司</td>
+                        <td>Ａ佣一</td>
+						<td>22</td>
+                        <td>74,411</td>
+                        <td></td>
+					</tr>
+				</table>
+				
+				</div>
+			</div>
+			<!-- content end  -->
+		</div>
+	</section>
+	<!-- dialog -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+					<button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="foo">
+					<div id="example-table"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+</html>

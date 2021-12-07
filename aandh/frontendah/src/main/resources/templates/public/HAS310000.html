@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" lang="zh-Hant-TW">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+    <title>華南產物保險-健康傷害險</title>
+    <!-- jQuery -->
+    <script src="../../shigen/plugin/jquery.min.js"></script>
+    <!-- jQuery UI -->
+    <link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+    <script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+    <!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+    <script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+    <!-- bootstrap -->
+    <script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+    <!-- table tabulator -->
+    <script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+    <!-- fontawsome -->
+    <script defer src="../../shigen/fonts/js/all.min.js"></script>
+    <link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+    <!--load all styles -->
+    <!-- Plug CSS樣式 -->
+    <link rel="stylesheet" href="../../shigen/css/type_plug.css">
+    <!-- 共用樣式 -->
+    <link rel="stylesheet" href="../../shigen/css/type.css">
+    <!-- 主題顏色切換 糖果世代 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+    <!-- 主題顏色切換 海神寶藍 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+    <!-- 主題顏色切換 法拉利紅 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+    <!-- 主題顏色切換 繽紛馬卡 -->
+    <link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+    <!-- 主題顏色切換 煙花季節 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+    <!-- 主題顏色切換 冬雪初現 -->
+    <!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+    <link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+    <!-- 自訂JS樣式 -->
+    <script src="../../shigen/js/type.js"></script>
+    <script src="../../shigen/js/common.js"></script>
+    <script src="../../shigen/js/global.js"></script>
+    <!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+    <div class="ajax-aside-nav"></div>
+    <section>
+        <div class="ajax-section-main"></div>
+        <div class="container-fluid">
+            <div class="content">
+                <div class="bread-crumbs">
+                    <a href="">承保受理作業</a>
+                </div>
+                <div class="big_title title s1">HAS310000 續保狀態查詢</div>
+                <div class="row-group">
+                    <div class="row">
+                        <div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-oneBig">修改</button>
+                            <button class="btn btn-oneBig">清除</button>
+                            <button class="btn btn-oneBig">離開</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="item_title title s2">查詢</div> -->
+                
+                <!-- 抬頭 -->
+                <!-- <div class="item_title title s2">董監事名冊</div> -->
+                <table class="tblDataArea tblInquireArea" id="Table1" width="100%" align="center" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="tdDataCaption">出單單位</td>
+                            <td class="tdDataField">
+                                <input name="" type="text" id="" style="width:150px;">
+                            </td>
+                            <td class="tdDataCaption">業績歸屬</td>
+                            <td class="tdDataField">
+                                <input name="" type="text" id="" style="width:150px;">
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="tdDataCaption">險別代號</td>
+                        <td class="tdDataField">
+                            <select name="ddlQIinscls" onchange=""  id="ddlQIinscls" style="width: 150px;">
+                            <option value=""></option>
+                            <option value="A">A&nbsp;責任險</option>
+                            <option value="I">I&nbsp;傷害險</option>
+                            <option value="H">H&nbsp;健康險</option>
+
+                            </select></td>
+                        <td class="tdDataCaption">保單類別</td>
+                        <td class="tdDataField">
+                            <select name="ddlQIinskind" id="ddlQIinskind" style="width:170px;">
+                        <option value=""></option>
+                        <option value="H00">H00&nbsp;團體傷害保險標準型</option>
+                        <option value="G00">G00&nbsp;個人傷害保險標準型</option>
+                        <option value="C00">C00&nbsp;火災保險暨附加傷害險</option>
+                        <option value="D00">D00&nbsp;僱主險附加傷害險</option>
+                        <option value="B00">B00&nbsp;車險營業用</option>
+                        <option value="K00">K00&nbsp;借貸團體傷害險</option>
+                        <option value="HR0">HR0&nbsp;微型團傷</option>
+                        <option value="GR0">GR0&nbsp;微型個傷</option>
+                        <option value="TA1">TA1&nbsp;旅行平安保險(標準型)</option>
+                        <option value="TA2">TA2&nbsp;旅行平安保險(海外多倍型)</option>
+                        <option value="I00">I00&nbsp;個人傷害保險(甲型)</option>
+                        <option value="M00">M00&nbsp;團體傷害保險(身故型)</option>
+                        <option value="M01">M01&nbsp;團體傷害保險(雲林縣虎尾鎮鎮民保險)</option>
+                        <option value="HV0">HV0&nbsp;志工團傷</option>
+                        <option value="MTA">MTA&nbsp;登山綜合保險</option>
+                        <option value="N00">N00&nbsp;工地工程人員團體傷害保險</option>
+
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">保單續保年月</td>
+                        <td class="tdDataField">
+                                <input name="txtQDPLY_END_YYY" type="text" id="txtQDPLY_END_YYY" style="width:64px;">年&nbsp;
+                                <input name="txtQDPLY_END_MM" type="text" id="txtQDPLY_END_MM" style="width:56px;">
+                                月~
+                                <input name="txtQDPLY_END_YYY" type="text" id="txtQDPLY_END_YYY" style="width:64px;">年&nbsp;
+                                <input name="txtQDPLY_END_MM" type="text" id="txtQDPLY_END_MM" style="width:56px;">
+                                月</td>
+                        <td class="tdDataCaption">續保狀態</td>
+                        <td class="tdDataField" colspan="4">
+                            <select name="ddlQINXTPLY" id="ddlQINXTPLY" style="width: 150px;">
+                            <option value="0">全部</option>
+                            <option value="1">已續保</option>
+                            <option value="2">未續保</option>
+
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">經手人</td>
+                        <td class="tdDataField">
+                            <input name="txtQIOFFICER_START" type="text" id="txtQIOFFICER_START" style="width:129px;">～
+                            <input name="txtQIOFFICER_END" type="text" id="txtQIOFFICER_END" style="width:126px;"></td>
+                        <td class="tdDataCaption">保源代號</td>
+                        <td class="tdDataField"><input name="txtIRES_START" type="text" id="txtIRES_START" style="width:129px;">～
+                            <input name="txtIRES_END" type="text" id="txtIRES_END" style="width:126px;"></td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">保單號碼</td>
+                        <td class="tdDataField">
+                            <input name="txtQIPOLICY_START" type="text" id="txtQIPOLICY_START" style="width:128px;">～
+                            <input name="txtQIPOLICY_END" type="text" id="txtQIPOLICY_END" style="width:127px;"></td>
+                        <td class="tdDataCaption">專案代號</td>
+                        <td class="tdDataField"><input name="txtIproject_START" type="text" id="txtIproject_START" style="width:129px;">～
+                            <input name="txtIproject_END" type="text" id="txtIproject_END" style="width:126px;"></td>
+                    </tr>
+                    <tr>
+                        <td class="tdDataCaption">續保類型</td>
+                        <td class="tdDataField" colspan="3">
+                            <select name="ddlAUTOTYPE" id="ddlAUTOTYPE" style="width: 150px;">
+                            <option selected="selected" value="1">1. 一般續保</option>
+                            <option value="2">2. 自動續保</option>
+                            <option value="3">3. 全部</option>
+
+                            </select>
+                             </td>
+                   
+                </tbody>
+            </table>
+               
+
+                <div id="example-tabl"></div>
+                <table id="Table2" class="tblFunctionBar" cellSpacing="0" cellPadding="0">
+                    <tr vAlign="bottom">
+                        <td noWrap align="left">
+                        </td>
+                        <td noWrap align="left">
+                            <a id="dgdbanSUPERVISOR_LIST_btnFirstPage" disabled="disabled" tabindex="-1"
+                                class="cssDataGridBannerButton">第一頁</a>&nbsp;
+                            <a id="dgdbanSUPERVISOR_LIST_btnPrevPage" disabled="disabled" tabindex="-1"
+                                class="cssDataGridBannerButton">上一頁</a>&nbsp;
+                            <a id="dgdbanSUPERVISOR_LIST_btnNextPage" disabled="disabled" tabindex="-1"
+                                class="cssDataGridBannerButton">下一頁</a>&nbsp;
+                            <a id="dgdbanSUPERVISOR_LIST_btnLastPage" disabled="disabled" tabindex="-1"
+                                class="cssDataGridBannerButton">最後一頁</a>&nbsp;
+                        </td>
+                        <td noWrap align="left">
+                            <span id="dgdbanSUPERVISOR_LIST_lblTotalCaption" class="cssDataGridBannerLabel">總共</span>
+                            <span id="dgdbanSUPERVISOR_LIST_lblTotalCount" class="cssDataGridBannerLabel">0</span>
+                            <span id="dgdbanSUPERVISOR_LIST_lblTotalCaptionEnd"
+                                class="cssDataGridBannerLabel">筆</span>&nbsp;
+                        </td>
+                        <td noWrap align="left">
+                            <span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaption" class="cssDataGridBannerLabel">每頁</span>
+                            <input name="dgdbanSUPERVISOR_LIST:txtPageSize" type="text" value="8" maxlength="4"
+                                id="dgdbanSUPERVISOR_LIST_txtPageSize" class="cssDataGridBannerTextBox"
+                                onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnPageSize','');return false;}"
+                                style="width:32px;" />
+                            <span id="dgdbanSUPERVISOR_LIST_lblPageSizeCaptionEnd"
+                                class="cssDataGridBannerLabel">筆</span>
+                            <button class="btn btn-secondary">go</button>
+                            <!-- <a id="dgdbanSUPERVISOR_LIST_btnPageSize" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnPageSize','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='設定每頁筆數' src='/SCERP/images/go.gif'></a>&nbsp; -->
+                        </td>
+                        <td noWrap align="left">
+                            <span id="dgdbanSUPERVISOR_LIST_lblPageCountCaption"
+                                class="cssDataGridBannerLabel">總共</span>
+                            <span id="dgdbanSUPERVISOR_LIST_lblTotalPage" class="cssDataGridBannerLabel">1</span>
+                            <span id="dgdbanSUPERVISOR_LIST_lblPageCountCaptionEnd"
+                                class="cssDataGridBannerLabel">頁</span>&nbsp;
+                        </td>
+                        <td align="right">
+                            <span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaption"
+                                class="cssDataGridBannerLabel">目前第</span>
+                            <input name="dgdbanSUPERVISOR_LIST:txtGotoPage" type="text" value="1" maxlength="4"
+                                id="dgdbanSUPERVISOR_LIST_txtGotoPage" class="cssDataGridBannerTextBox"
+                                onkeypress="if(window.event.keyCode==13){__doPostBack('dgdbanSUPERVISOR_LIST:btnGotoPage','');return false;}"
+                                style="width:29px;" />
+                            <span id="dgdbanSUPERVISOR_LIST_lblGoToPageCaptionEnd"
+                                class="cssDataGridBannerLabel">頁</span>
+                            <button class="btn btn-secondary">go</button>
+                            <button class="btn btn-secondary">匯出資料</button>
+                            <!-- <a id="dgdbanSUPERVISOR_LIST_btnGotoPage" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnGotoPage','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='翻頁' src='/SCERP/images/go.gif'></a> -->
+                            <!-- <a id="dgdbanSUPERVISOR_LIST_btnExport" tabindex="-1" class="cssDataGridBannerButton" href="javascript:__doPostBack('dgdbanSUPERVISOR_LIST$btnExport','')"><IMG  align=absmiddle hspace='0' vspace='0' border='0' alt='匯出資料' src='/SCERP/images/Excel.gif'></a>&nbsp; -->
+                        </td>
+                    </tr>
+                </table>
+                <table class="tblCssDataGrid">
+                    <tr class="cssDataGridHeader">
+                        
+                        <th><a href="">續保狀態</a></th>
+                        <th><a href="">出單單位</a></th>
+                        <th><a href="">保單類別</a></th>
+                        <th><a href="">保單號碼</a></th>
+                        <th><a href="">續保號碼</a></th>
+                        <th><a href="">被保險人</a></th>
+                        <th><a href="">被保人ID</a></th>
+                        <th><a href="">保源代號</a></th>
+                        <th><a href="">實註代碼</a></th>
+                        <th><a href="">業績歸屬</a></th>
+                        <th><a href="">經辦人</a></th>
+                        <th><a href="">經辦人姓名</a></th>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+        <!-- content end  -->
+        </div>
+    </section>
+    <!-- dialog -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+                    <button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="foo">
+                    <div id="example-table"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+
+</html>

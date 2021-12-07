@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" lang="zh-Hant-TW">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+<title>華南產物保險-健康傷害險</title>
+<!-- jQuery -->
+<script src="../../shigen/plugin/jquery.min.js"></script>
+<!-- jQuery UI -->
+<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+<!-- bootstrap -->
+<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+<!-- table tabulator -->
+<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+<!-- fontawsome -->
+<script defer src="../../shigen/fonts/js/all.min.js"></script>
+<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+<!--load all styles -->
+<!-- Plug CSS樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+<!-- 共用樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type.css">
+<!-- 主題顏色切換 糖果世代 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+<!-- 主題顏色切換 海神寶藍 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+<!-- 主題顏色切換 法拉利紅 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+<!-- 主題顏色切換 繽紛馬卡 -->
+<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+<!-- 主題顏色切換 煙花季節 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+<!-- 主題顏色切換 冬雪初現 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+<!-- 自訂JS樣式 -->
+<script src="../../shigen/js/type.js"></script>
+<script src="../../shigen/js/common.js"></script>
+<script src="../../shigen/js/global.js"></script>
+<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+<div class="ajax-aside-nav"></div>
+<section>
+    <div class="ajax-section-main"></div>
+    <div class="container-fluid">
+        <div class="content">
+            <div class="bread-crumbs">
+                <a href="">承保受理作業</a>
+            </div>
+            <div class="big_title title s1">HAS301000 健康傷害險承保受理作業</div>
+            <div class="row-group">
+                <div class="row">
+                    <div class="col-12 text-left content_function_bar">
+                        <button class="btn btn-oneBig" onclick="javascript:location.href='HAS301001.html'">新增</button>
+                        <button class="btn btn-oneBig">查詢</button>
+                        <button class="btn btn-oneBig">清除</button>
+                        <button class="btn btn-oneBig">離開</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="item_title title s2">查詢</div> -->
+            <div class="row-group">
+                <div class="row">
+                    <!-- 保單新增 -->
+                    <table class="tblDataArea" border="0" width="95%" align="center">
+                        <tbody>
+                            <tr>
+                                <td class="tdDataField" colspan="2" align="left">
+                                    <a href="HAS301001.html" target="_ blank">
+                                    <button class="btn btn-Chick" id="btnPolicyIns">保單新增</button>
+                                </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption"><span class="tdDataCaption"
+                                        style="border-style:None;">
+                                        <input id="RadioButton1" type="radio"
+                                            name="select" value="" checked="checked">
+                                            <label
+                                            for="RadioButton1">一般新增</label>
+                                        </span>
+                                </td>
+                                <td class="tdDataField"><font color="#2c2c85" face="新細明體">險別</font>
+                                    <select name="" style="width: 120px;"
+                                        onchange="" language="javascript" id="ddlIinscls">
+                                        <option value=""></option>
+                                        <option value="A">A&nbsp;責任險</option>
+                                        <option value="I">I&nbsp;傷害險</option>
+                                        <option selected="selected" value="H">H&nbsp;健康險</option>
+
+                                    </select>
+
+                                    &nbsp; <font  color="#2c2c85" face="新細明體">
+                                        保單類別</font>
+                                    <select name="" id="ddlIinskind" style="width: 20%;">
+                                        <option selected="selected" value=""></option>
+                                        <option value="GH0">GH0&nbsp;日額甲型</option>
+                                        <option value="GM0">GM0&nbsp;個人組合</option>
+                                        <option value="GD0">GD0&nbsp;重大疾病</option>
+                                        <option value="GC0">GC0&nbsp;初次罹癌</option>
+                                        <option value="GI0">GI0&nbsp;癌症住院</option>
+                                        <option value="MH0">MH0&nbsp;團體健康</option>
+                                        <option value="MM0">MM0&nbsp;團體組合</option>
+                                        <option value="MH1">MH1&nbsp;團體健康(甲型)</option>
+                                        <option value="MM1">MM1&nbsp;團體組合(甲型)</option>
+                                        <option value="DH0">DH0&nbsp;重大傷病</option>
+                                        <option value="MR0">MR0&nbsp;團體住院醫療(實支實付型)</option>
+                                        <option value="GC1">GC1&nbsp;團體癌症</option>
+                                        <option value="GC2">GC2&nbsp;團體癌症身故</option>
+                                        <option value="MH2">MH2&nbsp;住院日額醫療</option>
+
+                                    </select>
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption"><span class="tdDataCaption"
+                                        style="border-style:None;">
+                                        <input id="Radiobutton2" type="radio" name="select" value="">
+                                        <label for="">報價轉入</label>
+                                        </span>
+                            </td>
+                            <td class="tdDataField">
+                                <font color="#2c2c85" face="新細明體"> 報價單號</font>
+                                    <input name="txtIest" type="text" maxlength="14" id="txtIest" style="width:160px;">
+                            </td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption"><span class="tdDataCaption"
+                                        style="border-style:None;">
+                                        <input id="Radiobutton3" type="radio"
+                                            name="select" value="">
+                                            <label>續保轉入</label>
+                                        </span>
+                            </td>
+                                <td class="tdDataField">
+                                    <font color="#2c2c85" face="新細明體">續保保單號碼</font>
+                                    <input name="" id="txtLastPly" type="text" maxlength="14">
+                                    
+                                    <span style="color:#2C2C85;"><input id="chkTranObj" type="checkbox"
+                                            name="chkTranObj" checked="checked">
+                                            <label>轉入被保險人資料</label>
+                                        </span>
+                            </td>
+                            </tr>
+                            <tr>
+                                <td class="tdDataCaption"><span class="tdDataCaption"
+                                        style="border-style:None;">
+                                        <input id="Radiobutton4" type="radio" name="select" value="Radiobutton4">
+                                        <label for="Radiobutton4">複製轉入</label>
+                                </span>
+                            </td>
+                                <td class="tdDataField">
+                                    <font color="#2c2c85" face="新細明體">複製保單號碼</font>
+                                    <input name="" type="text" maxlength="14" id="txtCopyPly">
+                                        
+                                    <span style="color:#2C2C85;"><input id="chkCopyObj" type="checkbox"
+                                            name="chkCopyObj" checked="checked">
+                                            <label for="chkCopyObj">轉入被保險人資料</label>
+                                    </span>
+                            </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table id="Table1" class="tblDataArea tblInquireArea" border="0" width="95%" align="center">
+                        <tbody>
+                            <tr>
+                                <td class="tdDatapass">由暫存編號復原
+                                    <input name="txtTempID" type="text" id="txtTempID" style="width: 20%;">
+                                    <button title="選擇日期" id="Button1">確定</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- div空間 -->
+                    <div class="divspace"></div>
+
+
+                    <!-- 頁籤開始 -->
+                    <div class="container-fluid">
+                    <div class="row-group" id="Tabstrip2">
+                        <ul class="row nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item"><a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1"
+                                    role="tab" aria-controls="pills-1" aria-selected="true">保單查詢</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" id="pills-2-tab" data-toggle="pill" href="#pills-2"
+                                    role="tab" aria-controls="pills-2" aria-selected="false">自動續保查詢</a>
+                            </li>	
+                        </ul>
+                    </div>
+                    </div>
+
+                     <!-- tab-content star  -->
+                     <div class="container-fluid">
+                        <div class="tab-content" id="pills-tabContent">
+
+                            <!-- 1 star -->
+                            <div class="row-group tab-pane fade show active" id="pills-1" role="tabpanel"
+                                aria-labelledby="pills-1-tab">
+                                <table id="Table2" class="tblDataArea tblInquireArea" width="95%%" align="center">
+
+                                    <tbody>
+                                    <tr>
+                                    <td class="tdDataField" colspan="8" align="left">
+                                        <button id="btnPolicyQuery" class="btn btn-Chick">保單查詢</button>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <td class="tdDataCaption">險別</td>
+                                        <td class="tdDataField">
+                                        <select style="width: 150px;" name="" id="ddlQueryCls" onchange="" id="">
+                                            
+                                            <option value="A">A&nbsp;責任險</option>
+                                            <option value="I">I&nbsp;傷害險</option>
+                                            <option selected="selected" value="H">H&nbsp;健康險
+                                            </option>
+                
+                                        </select>
+                
+                                    </td>
+                                    <td class="tdDataCaption">保單類別</td>
+                                    <td class="tdDataField" colspan="5">
+                                        <select name="" id="ddlQueryKind" style="width: 30%;">
+                                            <option value=""></option>
+                                            <option value="GH0">GH0&nbsp;日額甲型</option>
+                                            <option value="GM0">GM0&nbsp;個人組合</option>
+                                            <option value="GD0">GD0&nbsp;重大疾病</option>
+                                            <option value="GC0">GC0&nbsp;初次罹癌</option>
+                                            <option value="GI0">GI0&nbsp;癌症住院</option>
+                                            <option value="MH0">MH0&nbsp;團體健康</option>
+                                            <option selected="selected" value="MM0">
+                                                                        MM0&nbsp;團體組合</option>
+                                            <option value="MH1">MH1&nbsp;團體健康(甲型)</option>
+                                            <option value="MM1">MM1&nbsp;團體組合(甲型)</option>
+                                            <option value="DH0">DH0&nbsp;重大傷病</option>
+                                            <option value="MR0">MR0&nbsp;團體住院醫療(實支實付型)</option>
+                                            <option value="GC1">GC1&nbsp;團體癌症</option>
+                                            <option value="GC2">GC2&nbsp;團體癌症身故</option>
+                                            <option value="MH2">MH2&nbsp;住院日額醫療</option>
+                
+                                            </select>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td class="tdDataCaption">出單單位</td>
+                                        <td class="tdDataField">
+                                            <input name="" type="text" value="00"
+                                            id="txtQueryIissbrch">
+                                        </td>
+                                        <td class="tdDataCaption">
+                                            經手人代號
+                                        </td>
+                                        <td class="tdDataField">
+                                            <input name="" type="text" id="txtQueryIofficer">
+                                        </td>
+                                            <td class="tdDataCaption">業務來源</td>
+                                            <td class="tdDataField" colspan="3">
+                                            <input name="" type="text" id="txtQueryIres" style="width:50%;">
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td class="tdDataCaption">要保號碼</td>
+                                        <td class="tdDataField">
+                                            <input name="txtQueryIreq" type="text"
+                                            value="0008MM0X000018" maxlength="14"
+                                            id="txtQueryIreq">
+                                        </td>
+                                        <td class="tdDataCaption">保單號碼</td>
+                                        <td class="tdDataField">
+                                        <input name="" type="text" maxlength="14" id="txtQueryIpolicy" 
+                                            ></td>
+                                        <td class="tdDataCaption">專案代號</td>
+                                        <td class="tdDataField">
+                                            <input name="" type="text" maxlength="14" id="txtQueryIproject">
+                                        </td>
+                                        <td class="tdDataCaption">收費序號</td>
+                                        <td class="tdDataField">
+                                            <input name="" type="text" maxlength="20"
+                                            id="txtQueryPaysno" ></td>
+                                        </tr>
+                                        <tr>
+                                        <td class="tdDataCaption">要保人姓名</td>
+                                        <td class="tdDataField">
+                                        <input name="" type="text" id="txtQueryNins">
+                                        </td>
+                                        <td class="tdDataCaption">要保人ID</td>
+                                        <td class="tdDataField">
+                                            <input name="" type="text" maxlength="10" id="txtQueryIins"></td>
+                                        <td class="tdDataCaption">被保險人姓名</td>
+                                        <td class="tdDataField">
+                                            <input name="" type="text" id="txtQueryNissu" >
+                                        </td>
+                                        <td class="tdDataCaption">被保險人ID</td>
+                                        <td class="tdDataField">
+                                            <input name="" type="text" maxlength="10"
+                                            id="txtQueryIissu">
+                                        </td>
+                                        </tr>
+                                        <tr>
+                        <td class="tdDataCaption">輸入人員</td>
+                        <td class="tdDataField">
+                            <input name="" type="text" id="txtQueryIentry"></td>
+                        <td class="tdDataCaption">輸入日期</td>
+                        <td class="tdDataField">
+                            <input class="mingo data_time" name="" type="text" maxlength="10" size="10" id="UcrocDentry">
+                            <!-- <button title="選擇日期" onclick="">...</button> -->
+                            <input name="" id="UcrocDentry_txtDateIsRocDate" type="hidden" value="true">
+                            <span id="UcrocDentry_cvdDate"style="color:Red;display:none;">日期格式錯誤</span>
+                            
+                        </td>
+                        <td class="tdDataCaption">簽單日期</td>
+                        <td class="tdDataField" colspan="3">
+                            <input class="mingo data_time" name="" type="text" style="width: 40%;" maxlength="10" size="10" id="UcRocDbgn" >
+                            <!-- <button title="選擇日期" class="" >...</button> -->
+                            <input name="" id="" type="hidden" value="true">
+                            <span id="UcRocDbgn_txtDate" style="color:Red;display:none;">日期格式錯誤</span>
+                            <span id="" style="color:Red;display:none;"></span>
+                            ~
+                            <input class="mingo data_time" name=""  style="width: 40%;" type="text" maxlength="10" size="10" id="UcRocDend">
+                            <!-- <button title="選擇日期" class="" >...</button> -->
+                            <input name="" id="" type="hidden" value="true">
+                            <span id="UcRocDend_txtDate" style="color:Red;display:none;">日期格式錯誤</span>
+                            <span id="" style="color:Red;display:none;"></span>
+                        </td>
+                    </tr>
+                </tbody>       
+                
+                            </table>
+                
+                
+                        
+                    
+                            </div>
+                            <!-- 1 end -->
+
+                            <!-- 2 star -->
+                            <div class="row-group tab-pane fade show" id="pills-2" role="tabpanel"
+                            aria-labelledby="pills-2-tab">
+                            <table id="Table5" class="tblDataArea tblInquireArea" width="95%" align="center">
+
+                                <tbody>
+                                <tr>
+                                    <td class="tdDataCaption">出單單位</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="00"id="txtQueryPIISSBRCH" style="width: 30%;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">
+                                        經手人ID
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" id="txtQueryPIOFFICER"
+                                        style="width:30%;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">保源代號</td>
+                                     <td class="tdDataField" colspan="3">
+                                      <input name="" type="text" id="txtQueryPIRES" style="width:30%;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">查詢期間</td>
+                                    <td class="tdDataField">
+                                        <input id="rbQueryPDPLY_BGN" type="radio" name="rblQryType" style="width: 2%;" value="1" checked="checked"><label for="rbQueryPDPLY_BGN">起保日</label>
+                                        <input id="rbQueryPDCREATE" type="radio" name="rblQryType" style="width:2%;" value="2"><label for="rbQueryPDCREATE">建檔日</label>  
+                                        <input class="mingo data_time" name="Ucd_date:txtDate" style="width:15%;" type="text" value="109/03/24" maxlength="10" size="10" id="UcrQueryPBGN" onchange="javascript:this.value=ucRocDate_FormatDateText(this.value,true);">
+                                        <div id="Ucd_date_divCalender" style="display:none;behavior:url('/SCERP/ISNEControl/ucRocDate.htc');" isrocdate="true"></div>
+                                        <!-- <button title="選擇日期" class="cssUICommandButtonSmall" onclick="javascript:document.all.Ucd_date_divCalender.Open('Ucd_date_txtDate');">...</button> -->
+                                        <input name="Ucd_date:txtDateIsRocDate" id="Ucd_date_txtDateIsRocDate" type="hidden" value="true">
+                                        <span id="Ucd_date_cvdDate" controltovalidate="Ucd_date_txtDate" errormessage="日期格式錯誤" display="Dynamic" evaluationfunction="CustomValidatorEvaluateIsValid" clientvalidationfunction="ucRocDate_ValidateRocYYYYsMMsDD" style="color:Red;display:none;">日期格式錯誤</span><span id="Ucd_date_RequiredFieldValidator1" controltovalidate="Ucd_date_txtDate" errormessage="日期欄位必須填寫" display="None" enabled="False" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;"></span>
+                                        <font face="新細明體">~
+                                            <input class="mingo data_time" name="UcRocDate1:txtDate" style="width:15%;"  type="text" value="109/03/24" maxlength="10" size="10" id="UcrQueryPEND" onchange="javascript:this.value=ucRocDate_FormatDateText(this.value,true);">
+                                            <div id="UcRocDate1_divCalender" style="display:none;behavior:url('/SCERP/ISNEControl/ucRocDate.htc');" isrocdate="true"></div>
+                                            <!-- <button title="選擇日期" class="cssUICommandButtonSmall" onclick="javascript:document.all.UcRocDate1_divCalender.Open('UcRocDate1_txtDate');">...</button> -->
+                                            <input name="UcRocDate1:txtDateIsRocDate" id="UcRocDate1_txtDateIsRocDate" type="hidden" value="true">
+                                            <span id="UcRocDate1_cvdDate" controltovalidate="UcRocDate1_txtDate" errormessage="日期格式錯誤" display="Dynamic" evaluationfunction="CustomValidatorEvaluateIsValid" clientvalidationfunction="ucRocDate_ValidateRocYYYYsMMsDD" style="color:Red;display:none;">日期格式錯誤</span><span id="UcRocDate1_RequiredFieldValidator1" controltovalidate="UcRocDate1_txtDate" errormessage="日期欄位必須填寫" display="None" enabled="False" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color:Red;display:none;"></span>
+                                        </font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">核保明細</td>
+                                    <td class="tdDataField">
+                                        <input id="rbQueryPFcheckY" type="radio" style="width: 2%;" name="rblQryType" value="1" checked="checked"><label for="rblQryType_0">核保通過</label>
+                                        <input id="rbQueryPFcheckN" type="radio" style="width: 2%;" name="rblQryType" value="2"><label for="rblQryType_1">核保未通過</label>  
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">列印格式</td>
+                                    <td class="tdDataField">
+                                        <input id="rbQueryPPDF" type="radio" style="width: 2%;" name="rblQryType" value="1" checked="checked"><label for="rblQryType_0">PDF</label>
+                                        <input id="rbQueryPEXCEL" type="radio" style="width: 2%;" name="rblQryType" value="2"><label for="rblQryType_1">Excel</label>
+                                        <button id="btnAutoPrint" title="選擇日期" class="">列印</button>
+                                    </td>
+                                </tr>
+            </tbody>       
+
+                        </table>
+
+
+                   
+                
+                        </div>
+                            <!-- 2 end -->
+
+                        </div>
+                    </div>
+                        <!-- tab-content end  -->
+                        <!-- 查詢table -->
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr valign="bottom">
+                                <td nowrap="" >
+                                    <!-- <button class="btn btn-secondary">新增項目</button> -->
+                                </td>
+                                <td nowrap="">
+                                    <a id="" class="">第一頁</a>
+                                    <a id="" class="">上一頁</a>
+                                    <a id="" class="">下一頁</a>
+                                    <a id="" class="">最後一頁</a>
+                                </td>
+                                <td nowrap="" >
+                                <span id="" class="">總共</span>
+                                <span id="" class="">0</span>
+                                <span id="" class="">筆</span>&nbsp;
+                                </td>
+                                <td nowrap="">
+                                    <span id="" class="">每頁</span>
+                                    <input name="" id="" class="" style="width:32px;">
+                                    <span id="" class="">筆</span>
+                                    <button class="btn btn-secondary">go</button>
+                                </td>
+                                <td nowrap="">
+                                    <span id="" class="">總共</span>
+                                    <span id="" class="">1</span>
+                                    <span id="" class="">頁</span>&nbsp;
+                                </td>
+                                <td >
+                                <span id="" class="">目前第</span>
+                                <input name="" type="text" value="1" id="" class="">
+                                <span id="" class="">頁</span>
+                                <button class="btn btn-secondary">go</button>
+                                <button class="btn btn-secondary">匯出資料</button>
+                                </td>
+                                </tr>
+                                </tbody>
+                            </table>
+    
+    
+                                    <table id="dgdbanMain" class="tblCssDataGrid">
+                                        <tbody><tr class="cssDataGridHeader">
+                                            <th style="width: 50px;"><a href=""></a></th>
+                                            
+                                            <th><a href="">保單類別</a></th>
+                                            <th><a href="">要保號碼</a></th>
+                                            <th><a href="">保單號碼</a></th>
+                                            <th><a href="">專案代號</a></th>
+                                            <th><a href="">保險起期</a></th>
+                                            <th><a href="">保險迄期</a></th>
+                                            <th><a href="">保費</a></th>
+                                            <th><a href="">要保人姓名</a></th>
+                                            <th><a href="">主被保險人姓名</a></th>
+                                            <th><a href="">經手人</a></th>
+                                            <th><a href="">核保碼</a></th>
+                                            <th><a href="">收據列印日</a></th>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="HAS301001.html" target="_blank">
+                                                <button type="button" class="btn-editt">選取</button>
+                                                </a>
+                                            </td>
+                                            
+                                            <td>MMO團體組合</td>
+                                            <td>0008MMOX000018</td>
+                                            <td></td>
+                                            <td>CP6017</td>
+                                            <td>2019-05-01</td>
+                                            <td>2020-05-01</td>
+                                            <td>363,516</td>
+                                            <td>**銀行企業公會</td>
+                                            <td>＊＊威</td>
+                                            <td>00728</td>
+                                            <td></td>
+                                            <td>2019-08-08</td>
+                                            
+                                        </tr>
+                                        
+                                        
+                                        
+                                        
+                                    </tbody>
+                                </table>
+
+               </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <!-- content end  -->
+    </div>
+</section>
+<!-- dialog -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+                <button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="foo">
+                <div id="example-table"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+
+</html>
