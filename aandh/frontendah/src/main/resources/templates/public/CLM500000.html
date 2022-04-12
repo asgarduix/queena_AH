@@ -203,7 +203,6 @@
                         <td class="tdDataRight" colspan="3">
                             <textarea name="txt_CLMM_CM_CLAIM_NACDRESN" rows="1" id="txt_CLMM_CM_CLAIM_NACDRESN" style="width:100%;"></textarea>
                         </td>
-                       
                         <td class="tdDataScroleft">保單號碼</td>
                         <td class="tdDataRight">
                             <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
@@ -275,8 +274,61 @@
                     </tr>
                 </tbody>
                 </table>
-                 <!-- 刪欄位table -->
-                 <table class="tblDataYellow" width="100%" align="center" border="0">
+                <table class="tblCssDataGrid">
+					<tbody>
+                    <tr class="cssDataGridHeader">
+                        <th style="width: 20px;"><input id="chkNOCLAIMCLOSE" type="checkbox" name="chkNOCLAIMCLOSE" checked="checked"></th>
+                        <th style="width: 100px;"><a href="">編輯</a></th>
+						<th><a href="">接件號</a></th>
+                        <th><a href="">列印資料</a></th>
+                        <th><a href="">註銷否</a></th>
+                        <th><a href="">事故說明</a></th>
+                        <th><a href="">保單號碼</a></th>
+                        <th><a href="">事故人ID</a></th>
+                        <th><a href="">姓名</a></th>	
+                        <th><a href="">電話</a></th>	
+                        <th><a href="">接件日</a></th>	
+                        <th><a href="">接件人員</a></th>	
+                        <th><a href="">接件公司</a></th>	
+                        <th><a href="">賠案號碼</a></th>	
+                        <th><a href="">退件</a></th>	
+                        <th><a href="">理賠人員</a></th>	
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="chkNOCLAIMCLOSE" type="checkbox" name="chkNOCLAIMCLOSE" checked="checked">
+                        </td>
+                        <td>
+                            <button class="btn-addlist" id="btnUpdate">更新</button>
+                            <button class="btn-del">取消</button>
+                            <button class="btn-del">編輯</button>
+                        </td>
+                        <td>7071001</td>
+                        <td>
+                            <button id="btnPremInsert" class="btn btn-Chick">歷史資料列印</button>
+                            <button id="btnPremInsert" class="btn btn-Chick">照會通知</button>
+                        </td>
+                        <td>
+                            N
+                        </td>
+                        <td>
+                            學校操場，跌倒，左手橈骨骨幹骨折
+                        </td>
+                        <td>0597GH0000072</td>
+                        <td>H125402722</td>
+                        <td>**翔</td>
+                        <td>***********</td>
+                        <td>098/03/12</td>
+                        <td>陳怡靜</td>
+                        <td>098/03/12</td>
+                        <td></td>
+                        <td>正常件 資料以補充完畢</td>
+                        <td>陳怡靜</td>
+                    </tr>
+                </tbody>
+                        </table>
+                <!-- 刪欄位table -->
+                <!-- <table class="tblDataYellow" width="100%" align="center" border="0">
 					<tbody>
                     <tr>
                         <td class="tdDataScroleft">編輯</td>
@@ -363,111 +415,7 @@
                         </td>
                     </tr>
                 </tbody>
-                </table>
-                <!-- 原始table -->
-                <!-- <table class="tblDataYellow" width="100%" align="center" border="0">
-					<tbody>
-                    <tr>
-                        <td class="tdDataScroleft">編輯</td>
-                        <td class="tdDataRight">
-                            <input id="chkNOCLAIMCLOSE" type="checkbox" name="chkNOCLAIMCLOSE" checked="checked">
-                            <button class="btn-del">編輯</button>
-                            <button id="btnPremInsert" class="btn btn-Chick">歷史資料列印</button>
-                            <button id="btnPremInsert" class="btn btn-Chick">照會通知</button>
-                        </td>
-                        <td class="tdDataScroleft">接件號</td>
-                        <td class="tdDataRight">
-                            <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
-                        </td>
-                       
-                        <td class="tdDataScroleft">註銷否</td>
-                        <td class="tdDataRight">
-                            N
-                        </td>
-                        <td class="tdDataScroleft">出險日期</td>
-                        <td class="tdDataRight">
-                           097/12/25-14時
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="tdDataScroleft">事故說明</td>
-                        <td class="tdDataRight" colspan="3">
-                           學校操場，跌倒，左手橈骨骨幹骨折
-                        </td>
-                       
-                        <td class="tdDataScroleft">保單號碼</td>
-                        <td class="tdDataRight">
-                            0597GH0000072
-                        </td>
-                        <td class="tdDataScroleft">事故人ID</td>
-                        <td class="tdDataRight">
-                         H125402722
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="tdDataScroleft">姓名</td>
-                        <td class="tdDataRight">
-                           **翔
-                        </td>
-                       
-                        <td class="tdDataScroleft">電話</td>
-                        <td class="tdDataRight">
-                           **********
-                        </td>
-                        <td class="tdDataScroleft">理賠人員</td>
-                        <td class="tdDataRight">
-                            陳怡靜
-                        </td>
-                        <td class="tdDataScroleft">接件日</td>
-                        <td class="tdDataRight">
-                           098/03/12
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="tdDataScroleft">接件人員</td>
-                        <td class="tdDataRight">
-                            陳怡靜
-                        </td>
-                       
-                        <td class="tdDataScroleft">賠案號碼</td>
-                        <td class="tdDataRight">
-                           00098GH0C0003-1
-                        </td>
-                        <td class="tdDataScroleft">退件</td>
-                        <td class="tdDataRight">
-                            
-                        </td>
-                        <td class="tdDataScroleft">送件單位</td>
-                        <td class="tdDataRight">
-                           
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="tdDataScroleft">送件人姓名</td>
-                        <td class="tdDataRight">
-                           
-                        </td>
-                       
-                        <td class="tdDataScroleft">送件人ID</td>
-                        <td class="tdDataRight">
-                            
-                        </td>
-                        <td class="tdDataScroleft">接件狀態</td>
-                        <td class="tdDataRight">
-                           正常件
-                        </td>
-                        <td class="tdDataScroleft">接件狀態說明</td>
-                        <td class="tdDataRight">
-                            <select name="ddl_CLMM_HAS_CLAIM_FICLAINTYPE" language="javascript" id="ddl_CLMM_HAS_CLAIM_FICLAINTYPE" style="width:100px;">
-                                <option value="">是</option>
-                                <option value="">否</option>
-                            </select>
-                            <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
-                        </td>
-                    </tr>
-                </tbody>
                 </table> -->
-             
                 <!-- 受理文件欄位 -->
                 <table class="tblDataArea" width="100%" align="center" border="0">
                     <tbody>
@@ -640,7 +588,6 @@
                  
                 </tbody>
             </table>
-                
                 <div style="height: 20px;"></div>
                 <table class="tblDataArea" cellspacing="0" cellpadding="0">
                     <tbody>
