@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" lang="zh-Hant-TW">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+<title>華南產物保險-健康傷害險</title>
+<!-- jQuery -->
+<script src="../../shigen/plugin/jquery.min.js"></script>
+<!-- jQuery UI -->
+<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+<!-- bootstrap -->
+<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+<!-- table tabulator -->
+<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+<!-- fontawsome -->
+<script defer src="../../shigen/fonts/js/all.min.js"></script>
+<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+<!--load all styles -->
+<!-- Plug CSS樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+<!-- 共用樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type.css">
+<!-- 主題顏色切換 糖果世代 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+<!-- 主題顏色切換 海神寶藍 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+<!-- 主題顏色切換 法拉利紅 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+<!-- 主題顏色切換 繽紛馬卡 -->
+<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+<!-- 主題顏色切換 煙花季節 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+<!-- 主題顏色切換 冬雪初現 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+<!-- 自訂JS樣式 -->
+<script src="../../shigen/js/type.js"></script>
+<script src="../../shigen/js/common.js"></script>
+<script src="../../shigen/js/global.js"></script>
+<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+	<div class="ajax-aside-navRIN1"></div>
+	<section>
+		<div class="ajax-section-main"></div>
+		<div class="container-fluid">
+			<div class="content">
+				<div class="bread-crumbs">
+					<a href="">承保受理作業</a>
+				</div>
+                <div class="big_title title s1">RIN205000-SLIP管理</div>
+                <div class="row-group">
+					<div class="row">
+						<div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-oneBig">新增</button>
+                            <button class="btn btn-oneBig">查詢</button>
+                            <button class="btn btn-oneBig">清除</button>
+                            <button class="btn btn-oneBig">列印</button>
+                            <button class="btn btn-oneBig">切立帳單</button>
+                            <button class="btn btn-oneBig">離開</button>
+						</div>
+					</div>
+				</div>
+                
+                <table class="tblDataArea tblInquireArea" cellspacing="0" cellpadding="0" width="100%">
+                    <tbody>
+                        <tr>
+                            <td class="tdDataCaption">險別</td>
+                            <td class="tdDataField">
+                                <select name="" id="" style="width:150px;">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">保單類別</td>
+                            <td class="tdDataField">
+                                <select name="" id="" style="width:150px;">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                <input id="rblQryType1_0" type="radio" name="rblQryType1" value="1" checked="checked">SLIP NO
+                            </td>
+                            <td class="tdDataField">
+                                <input class="" type="text" maxlength="10" size="10" id="">
+                            </td>
+                            <td class="tdDataCaption">
+                                分號
+                            </td>
+                            <td class="tdDataField">
+                                <input class="" type="text" maxlength="10" size="10" id="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                <input id="rblQryType1_0" type="radio" name="rblQryType1" value="1" checked="checked">保單號
+                            </td>
+                            <td class="tdDataField">
+                                <input class="" type="text" maxlength="10" size="10" id="">
+                            </td>
+                            <td class="tdDataCaption">
+                                批單號
+                            </td>
+                            <td class="tdDataField">
+                                <input class="" type="text" maxlength="10" size="10" id="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                <input id="rblQryType1_0" type="radio" name="rblQryType1" value="1" checked=""><button class="btn btn-secondary">再保人</button>
+                            </td>
+                            <td class="tdDataField">
+                                <input class="" type="text" maxlength="10" size="10" id="">
+                            </td>
+                            <td class="tdDataCaption">
+                                簽單日區間
+                            </td>
+                            <td class="tdDataField">
+                                <input class="" type="text" maxlength="10" size="10" id="">~
+                                <input class="" type="text" maxlength="10" size="10" id="">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            <div style="height: 20px;"></div>
+<!------------------------------------------------- tab開始 -->
+
+                <div class="row-group" style="position:relative;">
+                    <ul class="row nav nav-pills" id="pills-tab" role="tablist">
+                        <li class="nav-item"><a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1"
+                                role="tab" aria-controls="pills-1" aria-selected="true">1:基本資料</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-2-tab" data-toggle="pill" href="#pills-2"
+                                role="tab" aria-controls="pills-2" aria-selected="false">2:條款</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-3-tab" data-toggle="pill" href="#pills-3"
+                                role="tab" aria-controls="pills-3" aria-selected="false">3:明細資料</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-4-tab" data-toggle="pill" href="#pills-4"
+                                role="tab" aria-controls="pills-4" aria-selected="false">4:收據資料</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-5-tab" data-toggle="pill" href="#pills-5"
+                                role="tab" aria-controls="pills-5" aria-selected="false">5:再保人</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-6-tab" data-toggle="pill" href="#pills-6"
+                                role="tab" aria-controls="pills-6" aria-selected="false">6:Security</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-7-tab" data-toggle="pill" href="#pills-7"
+                                role="tab" aria-controls="pills-7" aria-selected="false">7:分保配額</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-8-tab" data-toggle="pill" href="#pills-8"
+                                role="tab" aria-controls="pills-8" aria-selected="false">8:共保公司</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-8-tab" data-toggle="pill" href="#pills-9"
+                            role="tab" aria-controls="pills-8" aria-selected="false">9:備註與附件</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-8-tab" data-toggle="pill" href="#pills-10"
+                            role="tab" aria-controls="pills-8" aria-selected="false">10:分保險種</a></li>
+                    </ul>
+                    <div class="" style="position: absolute; right: 0; top: 0;">
+                        <button class="btn btn-secondary">資料統計</button>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="row-group tab-pane fade show active" id="pills-1" role="tabpanel"
+                        aria-labelledby="pills-1-tab">
+                        <table class="tblDataArea" width="100%" align="center" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="tdDataField" colspan="6">
+                                        <button class="btn btn-secondary" onclick="window.open('RIN205001.html', 'newwindow', config='height=900,width=1000,toolbar=no');">OFFER及保批單查詢</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">SLIP NO</td>
+                                    <td class="tdDataField">
+                                        <input class="" type="text" maxlength="10" size="10" id="">
+                                    </td>
+                                    <td class="tdDataCaption">分號</td>
+                                    <td class="tdDataField">
+                                        <input class="" type="text" maxlength="10" size="10" id="">
+                                    </td>
+                                    <td class="tdDataCaption">再保立帳日</td>
+                                    <td class="tdDataField">
+                                        <input class="" type="text" maxlength="10" size="10" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">SLIP生效起日</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">SLIP生效迄日</td>
+                                    <td class="tdDataField" >
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">業務分類</td>
+                                    <td class="tdDataField" >
+                                        <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:150px;">
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">臨分名稱</td>
+                                    <td class="tdDataField" colspan="5">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">臨分型態</td>
+                                    <td class="tdDataField">
+                                        <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:150px;">
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">1:一般件/2:前衛件</td>
+                                    <td class="tdDataField"></td>
+                                    <td class="tdDataCaption">RUNNIG NO</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">保單號</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">分號</td>
+                                    <td class="tdDataField"></td>
+                                    <td class="tdDataCaption">批單號</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">批改種類</td>
+                                    <td class="tdDataField" colspan="5"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">上年度SLIP號</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">分號</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">SLIP年度</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">發文者</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">Final Term</td>
+                                    <td class="tdDataField">
+                                        <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:150px;">
+                                            <option value="">Y 是</option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">保單類別</td>
+                                    <td class="tdDataField"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">前言</td>
+                                    <td class="tdDataField" colspan="5">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">臨分日</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">保單簽單日</td>
+                                    <td class="tdDataField"></td>
+                                    <td class="tdDataCaption">批單簽單日</td>
+                                    <td class="tdDataField"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">保單生效起期</td>
+                                    <td class="tdDataField"></td>
+                                    <td class="tdDataCaption">保單生效迄期</td>
+                                    <td class="tdDataField"></td>
+                                    <td class="tdDataCaption">保單分期期別</td>
+                                    <td class="tdDataField"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">批單生效起期</td>
+                                    <td class="tdDataField"></td>
+                                    <td class="tdDataCaption">批單生效迄期</td>
+                                    <td class="tdDataField"></td>
+                                    <td class="tdDataCaption">批單分期期別</td>
+                                    <td class="tdDataField"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">生效日說明</td>
+                                    <td class="tdDataField" colspan="5">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">要保人</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">要保人說明</td>
+                                    <td class="tdDataField" colspan="3">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">被保人ID</td>
+                                    <td class="tdDataField"></td>
+                                    <td class="tdDataCaption">序號</td>
+                                    <td class="tdDataField"></td>
+                                    <td class="tdDataCaption">被保人生日</td>
+                                    <td class="tdDataField"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">被保人姓名</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">要保人通訊地址</td>
+                                    <td class="tdDataField" colspan="3">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14" style="width: 50px;">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14" style="width: 200px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">傳真</td>
+                                    <td class="tdDataField"></td>
+                                    <td class="tdDataCaption">e-mail</td>
+                                    <td class="tdDataField" colspan="3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">業務性質代號</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">業務性質名稱</td>
+                                    <td class="tdDataField" colspan="3">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14" style="width: 80%;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">幣別</td>
+                                    <td class="tdDataField"></td>
+                                    <td class="tdDataCaption">出單單位</td>
+                                    <td class="tdDataField" colspan="3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">總保費原幣</td>
+                                    <td class="tdDataField"></td>
+                                    <td class="tdDataCaption">總保費NT</td>
+                                    <td class="tdDataField" colspan="3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">本單總保費原幣</td>
+                                    <td class="tdDataField"></td>
+                                    <td class="tdDataCaption">本單總保費NT</td>
+                                    <td class="tdDataField" colspan="3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">共保註記</td>
+                                    <td class="tdDataField"></td>
+                                    <td class="tdDataCaption">共保比例</td>
+                                    <td class="tdDataField" colspan="3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">結語</td>
+                                    <td class="tdDataField" colspan="5">
+                                        <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14" style="width: 80%;">
+                                    </td>
+                                </tr>
+                        </tbody>
+                        </table>
+                        
+                    </div>
+                    <!-- pills-1 end -->
+                    <div class="row-group tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
+                        
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody><tr valign="bottom">
+                                <td nowrap="" align="left">
+                                    <button class="btn btn-secondary" onclick="window.open('RIN101001.html', 'newwindow', config='height=900,width=1000,toolbar=no');">帳單模組設定</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                <span id="" class="">0</span>
+                                <span id="" class="">筆</span>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">每頁</span>
+                                    <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                    <span id="" class="">筆</span>
+                                    <button class="btn btn-secondary">go</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                    <span id="" class="">1</span>
+                                    <span id="" class="">頁</span>&nbsp;
+                                </td>
+                                <td align="right">
+                                    <span id="" class="">目前第</span>
+                                <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                <span id="" class="">頁</span>
+                                <button class="btn btn-secondary">go</button>
+                                <button class="btn btn-secondary">匯出資料</button>
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class=" tblCssDataGrid">
+                        <tbody>
+                            <tr class="cssDataGridHeader">
+                                <th style="width: 150px;">
+                                    <input id="chkTranObj" type="checkbox" name="chkTranObj" checked="">
+                                    <label>全選</label>
+                                </th>
+                                <th>保單號</th>
+                                <th>分號</th>
+                                <th>批單號</th>
+                                <th>條款序號</th>
+                                <th>條款代號</th>
+                                <th>條款中文名稱</th>
+                                <th>條款英文名稱</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <!-- pills-2 end -->
+                    <div class="row-group tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3-tab">
+                        <table class="tblDataArea" width="100%" align="center" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="tdDataCaption">專案代號</td>
+                                    <td class="tdDataField"></td>
+                                    <td class="tdDataCaption">投保人數</td>
+                                    <td class="tdDataField"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                <td class="tdDataField">
+                                    <h3 style="color: #ed4c6c;">標的明細</h3>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr valign="bottom">
+                                    <td nowrap="" align="left">
+                                        <button class="btn btn-secondary">新增項目</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                    <span id="" class="">0</span>
+                                    <span id="" class="">筆</span>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">每頁</span>
+                                        <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                        <span id="" class="">筆</span>
+                                        <button class="btn btn-secondary">go</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                        <span id="" class="">1</span>
+                                        <span id="" class="">頁</span>&nbsp;
+                                    </td>
+                                    <td align="right">
+                                        <span id="" class="">目前第</span>
+                                    <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                    <span id="" class="">頁</span>
+                                    <button class="btn btn-secondary">go</button>
+                                    <button class="btn btn-secondary">匯出資料</button>
+                                    
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody>
+                                <tr class="cssDataGridHeader">
+                                    <th>保單號</th>
+                                    <th>分號</th>
+                                    <th>批單號</th>
+                                    <th>標的物序號</th>
+                                    <th>標的物子序號</th>
+                                    <th>標的物代號</th>
+                                    <th>標的物中文名稱</th>
+                                    <th>標的物英文名稱</th>
+                                    <th>標的物說明</th>
+                                    <th>生效起日</th>
+                                    <th>生效迄日</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                <td class="tdDataField">
+                                    <h3 style="color: #ed4c6c;">險種明細</h3>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr valign="bottom">
+                                    <td nowrap="" align="left">
+                                        <button class="btn btn-secondary">新增項目</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                    <span id="" class="">0</span>
+                                    <span id="" class="">筆</span>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">每頁</span>
+                                        <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                        <span id="" class="">筆</span>
+                                        <button class="btn btn-secondary">go</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                        <span id="" class="">1</span>
+                                        <span id="" class="">頁</span>&nbsp;
+                                    </td>
+                                    <td align="right">
+                                        <span id="" class="">目前第</span>
+                                    <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                    <span id="" class="">頁</span>
+                                    <button class="btn btn-secondary">go</button>
+                                    <button class="btn btn-secondary">匯出資料</button>
+                                    
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody>
+                                <tr class="cssDataGridHeader">
+                                    <th><input id="chkTranObj" type="checkbox" name="chkTranObj" checked="">
+                                        <label>全選</label></th>
+                                    <th>保單號</th>
+                                    <th>分號</th>
+                                    <th>批單號</th>
+                                    <th>險種代碼</th>
+                                    <th>險種中文名稱</th>
+                                    <th>險種英文名稱</th>
+                                    <th>最高保額</th>
+                                    <th>保費</th>
+                                    <th>29險種</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                <td class="tdDataField">
+                                    <h3 style="color: #ed4c6c;">主附約相關資料</h3>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr valign="bottom">
+                                    <td nowrap="" align="left">
+                                        <button class="btn btn-secondary">新增項目</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                    <span id="" class="">0</span>
+                                    <span id="" class="">筆</span>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">每頁</span>
+                                        <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                        <span id="" class="">筆</span>
+                                        <button class="btn btn-secondary">go</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                        <span id="" class="">1</span>
+                                        <span id="" class="">頁</span>&nbsp;
+                                    </td>
+                                    <td align="right">
+                                        <span id="" class="">目前第</span>
+                                    <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                    <span id="" class="">頁</span>
+                                    <button class="btn btn-secondary">go</button>
+                                    <button class="btn btn-secondary">匯出資料</button>
+                                    
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody>
+                                <tr class="cssDataGridHeader">
+                                    <th><input id="chkTranObj" type="checkbox" name="chkTranObj" checked="">
+                                        <label>全選</label></th>
+                                    <th>保單號</th>
+                                    <th>分號</th>
+                                    <th>批單號</th>
+                                    <th>主約</th>
+                                    <th>附約一</th>
+                                    <th>附約二</th>
+                                    <th>附約三</th>
+                                    <th>附約四</th>
+                                    <th>附約五</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- pills-3 end -->
+                    <!-- pills-4 -->
+                    <div class="row-group tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-4-tab">
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr valign="bottom">
+                                    <td nowrap="" align="left">
+                                        <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                    <span id="" class="">0</span>
+                                    <span id="" class="">筆</span>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">每頁</span>
+                                        <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                        <span id="" class="">筆</span>
+                                        <button class="btn btn-secondary">go</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                        <span id="" class="">1</span>
+                                        <span id="" class="">頁</span>&nbsp;
+                                    </td>
+                                    <td align="right">
+                                        <span id="" class="">目前第</span>
+                                    <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                    <span id="" class="">頁</span>
+                                    <button class="btn btn-secondary">go</button>
+                                    <button class="btn btn-secondary">匯出資料</button>
+                                    
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody><tr class="cssDataGridHeader">
+                                <th>保單號</th>
+                                <th>分號</th>
+                                <th>批單號</th>
+                                <th>收費期別</th>
+                                <th>預計收費日期</th>
+                                <th>保單保期起日</th>
+                                <th>保單保期迄日</th>
+                                <th>批單有效起日</th>
+                                <th>批單有效迄日</th>
+                                <th>保批單保費</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                    <!-- pills-4 end -->
+                    <!-- pills-5 -->
+                    <div class="row-group tab-pane fade" id="pills-5" role="tabpanel" aria-labelledby="pills-5-tab">
+                        <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                <td class="tdDataField">
+                                    <h3 style="color: #ed4c6c;">再保人資料</h3>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr valign="bottom">
+                                    <td nowrap="" align="left">
+                                        <button class="btn btn-secondary">新增項目</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                    <span id="" class="">0</span>
+                                    <span id="" class="">筆</span>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">每頁</span>
+                                        <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                        <span id="" class="">筆</span>
+                                        <button class="btn btn-secondary">go</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                        <span id="" class="">1</span>
+                                        <span id="" class="">頁</span>&nbsp;
+                                    </td>
+                                    <td align="right">
+                                        <span id="" class="">目前第</span>
+                                    <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                    <span id="" class="">頁</span>
+                                    <button class="btn btn-secondary">go</button>
+                                    <button class="btn btn-secondary">匯出資料</button>
+                                    
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody>
+                                <tr class="cssDataGridHeader">
+                                    <th>再保人/再保經紀人</th>
+                                    <th>類別代號</th>
+                                    <th>分保保額</th>
+                                    <th>分保比例</th>
+                                    <th>起賠額</th>
+                                    <th>臨分總保費</th>
+                                    <th>再保費</th>
+                                    <th>佣金率</th>
+                                    <th>佣金</th>
+                                    <th>稅率</th>
+                                    <th>稅</th>
+                                    <th>保費調整比率</th>
+                                    <th>期數</th>
+                                    <th>覆證號</th>
+                                    <th>覆證日</th>
+                                    <th>通過顯著風險</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                <td class="tdDataField">
+                                    <h3 style="color: #ed4c6c;">分期資料</h3>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr valign="bottom">
+                                    <td nowrap="" align="left">
+                                        <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                    <span id="" class="">0</span>
+                                    <span id="" class="">筆</span>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">每頁</span>
+                                        <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                        <span id="" class="">筆</span>
+                                        <button class="btn btn-secondary">go</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                        <span id="" class="">1</span>
+                                        <span id="" class="">頁</span>&nbsp;
+                                    </td>
+                                    <td align="right">
+                                        <span id="" class="">目前第</span>
+                                    <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                    <span id="" class="">頁</span>
+                                    <button class="btn btn-secondary">go</button>
+                                    <button class="btn btn-secondary">匯出資料</button>
+                                    
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody>
+                                <tr class="cssDataGridHeader">
+                                    <th>再保人/再保經紀人</th>
+                                    <th>付款日</th>
+                                    <th>期別</th>
+                                    <th>分期比率</th>
+                                    <th>分期再保費</th>
+                                    <th>分期佣金</th>
+                                    <th>分期稅費</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- pills-5 end -->
+                    <!-- pills-6 -->
+                    <div class="row-group tab-pane fade" id="pills-6" role="tabpanel" aria-labelledby="pills-6-tab">
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody><tr valign="bottom">
+                                <td nowrap="" align="left">
+                                    <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                <span id="" class="">0</span>
+                                <span id="" class="">筆</span>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">每頁</span>
+                                    <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                    <span id="" class="">筆</span>
+                                    <button class="btn btn-secondary">go</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                    <span id="" class="">1</span>
+                                    <span id="" class="">頁</span>&nbsp;
+                                </td>
+                                <td align="right">
+                                    <span id="" class="">目前第</span>
+                                <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                <span id="" class="">頁</span>
+                                <button class="btn btn-secondary">go</button>
+                                <button class="btn btn-secondary">匯出資料</button>
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody><tr class="cssDataGridHeader">
+                                <th>隸屬經紀人</th>
+                                <th>再保人</th>
+                                <th>生效起始日</th>
+                                <th>分保比例</th>
+                                <th>狀態</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                    <!-- pills-6 end -->
+                    <!-- pills-7 -->
+                    <div class="row-group tab-pane fade" id="pills-7" role="tabpanel" aria-labelledby="pills-7-tab">
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody><tr valign="bottom">
+                                <td nowrap="" align="left">
+                                    <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                <span id="" class="">0</span>
+                                <span id="" class="">筆</span>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">每頁</span>
+                                    <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                    <span id="" class="">筆</span>
+                                    <button class="btn btn-secondary">go</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                    <span id="" class="">1</span>
+                                    <span id="" class="">頁</span>&nbsp;
+                                </td>
+                                <td align="right">
+                                    <span id="" class="">目前第</span>
+                                <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                <span id="" class="">頁</span>
+                                <button class="btn btn-secondary">go</button>
+                                <button class="btn btn-secondary">匯出資料</button>
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody><tr class="cssDataGridHeader">
+                                <th>保單號</th>
+                                <th>分號</th>
+                                <th>批單號</th>
+                                <th>險種代碼</th>
+                                <th>險種名稱</th>
+                                <th>分配最高保額(NT)</th>
+                                <th>分配總保費(NT)</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                    <!-- pills-7 end -->
+                    <!-- pills-8 -->
+                    <div class="row-group tab-pane fade" id="pills-8" role="tabpanel" aria-labelledby="pills-8-tab">
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody><tr valign="bottom">
+                                <td nowrap="" align="left">
+                                    <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                <span id="" class="">0</span>
+                                <span id="" class="">筆</span>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">每頁</span>
+                                    <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                    <span id="" class="">筆</span>
+                                    <button class="btn btn-secondary">go</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                    <span id="" class="">1</span>
+                                    <span id="" class="">頁</span>&nbsp;
+                                </td>
+                                <td align="right">
+                                    <span id="" class="">目前第</span>
+                                <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                <span id="" class="">頁</span>
+                                <button class="btn btn-secondary">go</button>
+                                <button class="btn btn-secondary">匯出資料</button>
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody>
+                                <tr class="cssDataGridHeader">
+                                    <th>保單號</th>
+                                    <th>分號</th>
+                                    <th>批單號</th>
+                                    <th>共保序號</th>
+                                    <th>共保註記</th>
+                                    <th>共保公司代號</th>
+                                    <th>共保比例分母</th>
+                                    <th>共保比例分子</th>
+                                    <th>共保保單號碼</th>
+                                    <th>共保批單號碼</th>
+                                    <th>備註</th>
+                                    <th>保額</th>
+                                    <th>保費</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><!-- pills-8 end -->
+                    <div class="row-group tab-pane fade" id="pills-9" role="tabpanel" aria-labelledby="pills-9-tab">
+                        <table class="tblDataArea" width="100%" align="center" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="tdDataField">
+                                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataField">
+                                        險種列印內容
+                                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody><tr valign="bottom">
+                                <td nowrap="" align="left">
+                                    <button class="btn btn-secondary" onclick="window.open('RIN101001.html', 'newwindow', config='height=900,width=1000,toolbar=no');">新增項目</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                    <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                <span id="" class="">0</span>
+                                <span id="" class="">筆</span>&nbsp;
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">每頁</span>
+                                    <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                    <span id="" class="">筆</span>
+                                    <button class="btn btn-secondary">go</button>
+                                </td>
+                                <td nowrap="" align="left">
+                                    <span id="" class="">總共</span>
+                                    <span id="" class="">1</span>
+                                    <span id="" class="">頁</span>&nbsp;
+                                </td>
+                                <td align="right">
+                                    <span id="" class="">目前第</span>
+                                <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                <span id="" class="">頁</span>
+                                <button class="btn btn-secondary">go</button>
+                                <button class="btn btn-secondary">匯出資料</button>
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody>
+                                <tr class="cssDataGridHeader">
+                                    <th>保單號</th>
+                                    <th>分號</th>
+                                    <th>批單號</th>
+                                    <th>附件序號</th>
+                                    <th>說明</th>
+                                    <th>附加檔案資訊</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><!-- pills-9 end -->
+                    <div class="row-group tab-pane fade" id="pills-10" role="tabpanel" aria-labelledby="pills-10-tab">
+                        <table class="tblDataArea" width="100%" align="center" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="tdDataField">
+                                        <select name="" id="" style="width:150px;">
+                                            <option value=""></option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr valign="bottom">
+                                    <td nowrap="" align="left">
+                                        <button class="btn btn-secondary">新增項目</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                    <span id="" class="">0</span>
+                                    <span id="" class="">筆</span>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">每頁</span>
+                                        <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                        <span id="" class="">筆</span>
+                                        <button class="btn btn-secondary">go</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                        <span id="" class="">1</span>
+                                        <span id="" class="">頁</span>&nbsp;
+                                    </td>
+                                    <td align="right">
+                                        <span id="" class="">目前第</span>
+                                    <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                    <span id="" class="">頁</span>
+                                    <button class="btn btn-secondary">go</button>
+                                    <button class="btn btn-secondary">匯出資料</button>
+                                    
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody>
+                                <tr class="cssDataGridHeader">
+                                    <th>刪除</th>
+                                    <th>險別</th>
+                                    <th>保單類別</th>
+                                    <th>險種代碼</th>
+                                    <th>險種中文名稱</th>
+                                    <th>險種英文名稱</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblDataArea" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                <td class="tdDataField">
+                                    <h3 style="color: #ed4c6c;">主附約相關資料</h3>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr valign="bottom">
+                                    <td nowrap="" align="left">
+                                        <button class="btn btn-secondary">主附約勾選確認鍵</button>
+                                        <button class="btn btn-secondary">主附約資料刪除</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                    <span id="" class="">0</span>
+                                    <span id="" class="">筆</span>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">每頁</span>
+                                        <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                        <span id="" class="">筆</span>
+                                        <button class="btn btn-secondary">go</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                        <span id="" class="">1</span>
+                                        <span id="" class="">頁</span>&nbsp;
+                                    </td>
+                                    <td align="right">
+                                        <span id="" class="">目前第</span>
+                                    <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                    <span id="" class="">頁</span>
+                                    <button class="btn btn-secondary">go</button>
+                                    <button class="btn btn-secondary">匯出資料</button>
+                                    
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody>
+                                <tr class="cssDataGridHeader">
+                                    <th><input id="chkTranObj" type="checkbox" name="chkTranObj" checked="">
+                                        <label>全選</label></th>
+                                    <th>保單號</th>
+                                    <th>分號</th>
+                                    <th>批單號</th>
+                                    <th>主約</th>
+                                    <th>附約一</th>
+                                    <th>附約二</th>
+                                    <th>附約三</th>
+                                    <th>附約四</th>
+                                    <th>附約五</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- pills-10 end -->
+                </div>
+
+<!------------------------------------------------- tab結束 -->
+			</div>
+			<!-- content end  -->
+		</div>
+	</section>
+	<!-- dialog -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+					<button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="foo">
+					<div id="example-table"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+</html>

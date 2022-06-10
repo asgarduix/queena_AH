@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" lang="zh-Hant-TW">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+<title>華南產物保險-健康傷害險</title>
+<!-- jQuery -->
+<script src="../../shigen/plugin/jquery.min.js"></script>
+<!-- jQuery UI -->
+<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+<!-- bootstrap -->
+<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+<!-- table tabulator -->
+<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+<!-- fontawsome -->
+<script defer src="../../shigen/fonts/js/all.min.js"></script>
+<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+<!--load all styles -->
+<!-- Plug CSS樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+<!-- 共用樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type.css">
+<!-- 主題顏色切換 糖果世代 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+<!-- 主題顏色切換 海神寶藍 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+<!-- 主題顏色切換 法拉利紅 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+<!-- 主題顏色切換 繽紛馬卡 -->
+<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+<!-- 主題顏色切換 煙花季節 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+<!-- 主題顏色切換 冬雪初現 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+<!-- 自訂JS樣式 -->
+<script src="../../shigen/js/type.js"></script>
+<script src="../../shigen/js/common.js"></script>
+<script src="../../shigen/js/global.js"></script>
+<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+	<div class="ajax-aside-navCLM"></div>
+	<section>
+		<div class="ajax-section-main"></div>
+		<div class="container-fluid">
+			<div class="content">
+				<div class="bread-crumbs">
+					<a href="">承保受理作業</a>
+				</div>
+                <div class="big_title title s1">RIN502000-年閱資料處理維護</div>
+                <div class="row-group">
+					<div class="row">
+						<div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-oneBig">新增</button>
+                            <button class="btn btn-oneBig">查詢</button>
+                            <button class="btn btn-oneBig">清除</button>
+                            <button class="btn btn-oneBig">匯出</button>
+                            <button class="btn btn-oneBig">匯入</button>
+                            <button class="btn btn-oneBig">離開</button>
+						</div>
+					</div> 
+				</div>
+                
+                <table class="tblDataArea tblInquireArea" cellspacing="0" cellpadding="0" width="100%">
+                    <tbody>
+                        <tr>
+                            <td class="tdDataCaption" style="">險別</td>
+                            <td class="tdDataField">
+                                <select id="ddlType" style="">
+                                    <option value="">險種</option>
+                                    <option value="">險種</option>
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">合約年度</td>
+                            <td class="tdDataField">
+                                <input class="clearable" name="Ucd_date:txtDate" style="width:30%;" type="text" value="" maxlength="10" size="10" id="">
+                            </td>
+                            <td class="tdDataCaption">合約編號</td>
+                            <td class="tdDataField">
+                                <input class="clearable" name="Ucd_date:txtDate" style="width:30%;" type="text" value="" maxlength="10" size="10" id="">
+                            </td>
+                            <td class="tdDataCaption" style="">再保人代號</td>
+                            <td class="tdDataField">
+                                <select id="ddlType" style="width:30%;">
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <td class="tdDataCaption" style="">帳單險類</td>
+                            <td class="tdDataField">
+                                <select id="ddlType" style="width:150px;">
+                                    <option value="">0170 責任保險</option>
+                                    <option value="">0210 保證保險</option>
+                                    <option value="">0211 (工程)保證保險</option>
+                                    <option value="">0220 信用保險</option>
+                                    <option value="">0230 其他財產保險</option>
+                                    <option value="">0243 (火災)傷害保險</option>
+                                    <option value="">0242 (汽車)傷害保險</option>
+                                    <option value="">0240 (個人)傷害保險</option>
+                                    <option value="">0241 (團體)傷害保險</option>
+                                    <option value="">0250 商業地震保險</option>
+                                    <option value="">0260 個人綜合保險</option>
+                                    <option value="">0261 團體綜合保險</option>
+                                    <option value="">0270 商業綜合保險</option>
+                                    <option value="">0280 颱風、洪水保險</option>
+                                    <option value="">0281 (車)颱風洪水保險</option>
+                                    <option value="">0290 政策住宅地震險</option>
+                                    <option value="">0300 健康險</option>
+                                    <option value="">0990 國外再保分進</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="divspace"></div>
+                <table class="tblDataArea" width="100%" align="center" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="tdDataCaption">險別</td>
+                            <td class="tdDataField">
+                                <select name="" language="javascript" id="" style="width: 150px;">
+                                    <option value="">1 再保佣金</option>
+                                    <option value="">2 盈餘佣金</option>
+                                </select>
+                            </td>
+                            <td class="tdDataCaption">合約年度</td>
+                            <td class="tdDataField"><input name="txtTemp14" type="text" maxlength="20" id="txtTemp14"></td>
+                            <td class="tdDataCaption">合約編號</td>
+                            <td class="tdDataField"><input name="txtTemp14" type="text" maxlength="20" id="txtTemp14"></td>
+                            <td class="tdDataCaption">再保人代號</td>
+                            <td class="tdDataField"><input name="txtTemp14" type="text" maxlength="20" id="txtTemp14"></td>
+                            <td class="tdDataCaption">帳單險類</td>
+                            <td class="tdDataField"><input name="txtTemp14" type="text" maxlength="20" id="txtTemp14"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="tblDataArea" width="100%" align="center" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="tdDataCaption">結算年</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                            <td class="tdDataCaption">結算月</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">年度毛再保費[A]</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                            <td class="tdDataCaption">年度賠款攤賠[F]</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">上年度轉入未滿期再保費[B]</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                            <td class="tdDataCaption">上年度轉入未決賠款[G]</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">本年度未滿期再保費[C]</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                            <td class="tdDataCaption">本年度未決賠款[H]</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">年度結算再保費[D=A+B-C]</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                            <td class="tdDataCaption">年度結算賠款攤賠[I=F-G+H]</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">實際業務佣金率[X]</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">%
+                            </td>
+                            <td class="tdDataCaption">再保業務損失率[J=I/D]</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">業務營業稅率[Y]</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">%
+                            </td>
+                            <td class="tdDataCaption">再保業務綜合損失率[L=(E+I)/D]</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">年度結算佣金與稅額[E=D*(X+Y)]</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                            <td class="tdDataCaption"></td>
+                            <td class="tdDataField">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">年度業務盈餘</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                            <td class="tdDataCaption">年度業虧損</td>
+                            <td class="tdDataField">
+                                <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14">
+                            </td>
+                        </tr>
+                </tbody>
+                </table>
+                
+			</div>
+			<!-- content end -->
+		</div>
+	</section>
+	<!-- dialog -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+					<button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="foo">
+					<div id="example-table"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+</html>

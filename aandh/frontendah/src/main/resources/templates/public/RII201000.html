@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" lang="zh-Hant-TW">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+<title>華南產物保險-健康傷害險</title>
+<!-- jQuery -->
+<script src="../../shigen/plugin/jquery.min.js"></script>
+<!-- jQuery UI -->
+<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+<!-- bootstrap -->
+<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+<!-- table tabulator -->
+<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+<!-- fontawsome -->
+<script defer src="../../shigen/fonts/js/all.min.js"></script>
+<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+<!--load all styles -->
+<!-- Plug CSS樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+<!-- 共用樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type.css">
+<!-- 主題顏色切換 糖果世代 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+<!-- 主題顏色切換 海神寶藍 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+<!-- 主題顏色切換 法拉利紅 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+<!-- 主題顏色切換 繽紛馬卡 -->
+<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+<!-- 主題顏色切換 煙花季節 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+<!-- 主題顏色切換 冬雪初現 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+<!-- 自訂JS樣式 -->
+<script src="../../shigen/js/type.js"></script>
+<script src="../../shigen/js/common.js"></script>
+<script src="../../shigen/js/global.js"></script>
+<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+	<div class="ajax-aside-navCLM"></div>
+	<section>
+		<div class="ajax-section-main"></div>
+		<div class="container-fluid">
+			<div class="content">
+				<div class="bread-crumbs">
+					<a href="">承保受理作業</a>
+				</div>
+                <div class="big_title title s1">RII201000-分進業務登入作業-OFFER</div>
+                <div class="row-group">
+					<div class="row">
+						<div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-oneBig">新增</button>
+                            <button class="btn btn-oneBig">查詢</button>
+                            <button class="btn btn-oneBig">清除</button>
+                            <button class="btn btn-oneBig">離開</button>
+						</div>
+					</div>
+				</div>
+                <div class="row-group">
+                    <ul class="row nav nav-pills" id="pills-tab" role="tablist">
+                        <li class="nav-item"><a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1"
+                                role="tab" aria-controls="pills-1" aria-selected="true">查詢條件</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-2-tab" data-toggle="pill" href="#pills-2"
+                                role="tab" aria-controls="pills-2" aria-selected="false">基本資料</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-3-tab" data-toggle="pill" href="#pills-3"
+                                role="tab" aria-controls="pills-3" aria-selected="true">COVEAGE</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-4-tab" data-toggle="pill" href="#pills-4"
+                                    role="tab" aria-controls="pills-4" aria-selected="false">備註與附件</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="row-group tab-pane fade show active" id="pills-1" role="tabpanel"
+                        aria-labelledby="pills-1-tab">
+                        <table class="tblDataArea tblInquireArea" cellspacing="0" cellpadding="0" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td class="tdDataCaption">險別</td>
+                                    <td class="tdDataField">
+                                        <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:150px;">
+                                            <option value=""></option>
+                                            <option value="">A 責任險</option>
+                                            <option value="">I 傷害險</option>
+                                            <option value="">H 健康險</option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">是否轉成SLIP</td>
+                                    <td class="tdDataField">
+                                        <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:150px;">
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">
+                                        <input type="radio" name="rio01" id="rio01"><label for="rio01">OFFER NO</label><br>
+                                    </td>
+                                    <td class="tdDataField" colspan="3">
+                                        <input name="" type="text" value="" id="">~<input name="" type="text" value="" id="" style="width: 30px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">
+                                        <input type="radio" name="rio01" id="rio02"><label for="rio02">分入公司</label>
+                                    </td>
+                                    <td class="tdDataField" colspan="3">
+                                        <button class="btn btn-secondary">查詢</button><input name="" type="text" value="" id="">(輸入再保人編號)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">
+                                        <input type="radio" name="rio01" id="rio03"><label for="rio03">OFFER日期區間</label>
+                                    </td>
+                                    <td class="tdDataField" colspan="3">
+                                        <input name="" type="text" value="" id="">~<input name="" type="text" value="" id="" style="">(輸入分入公司OFFER發出日期)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">
+                                        <input type="radio" name="rio01" id="rio04"><label for="rio04">要個人/被保險人名稱</label>
+                                    </td>
+                                    <td class="tdDataField" colspan="3">
+                                        <input name="" type="text" value="" id="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- pills-1 end -->
+                    <div class="row-group tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
+                        <table class="tblDataArea" width="100%" align="center" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="tdDataCaption">險別</td>
+                                    <td class="tdDataField">
+                                        <select name="" id="">
+                                            <option value=""></option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">保單類別</td>
+                                    <td class="tdDataField">
+                                        <select name="" id="">
+                                            <option value=""></option>
+                                        </select>
+                                        30險種
+                                        <select name="" id="">
+                                            <option value=""></option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">前期分進號</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">-
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">當期OfferNo</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">-
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">本期分進號</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">-
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">臨分型態</td>
+                                    <td class="tdDataField">
+                                        <select name="" id="">
+                                            <option value="">1 Proportional</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption"><button>分入公司</button></td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14" style="width: 50px;">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">連絡人</td>
+                                    <td class="tdDataField">
+                                        <select name="" id="">
+                                            <option value=""></option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">人數</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">對方OFFER號</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">OFFER日期</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">finalterm</td>
+                                    <td class="tdDataField">
+                                        <select name="" id="">
+                                            <option value="">Y 是</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">對方保單號</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">對方批單號</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">保批簽單日</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">對方保批單說明</td>
+                                    <td class="tdDataField" colspan="3">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">不記名</td>
+                                    <td class="tdDataField">
+                                        <select name="" id="">
+                                            <option value="">Y 是</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">保單號</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">批單號</td>
+                                    <td class="tdDataField" colspan="3">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">保批生效起</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14" style="width: 20px;">時
+                                    </td>
+                                    <td class="tdDataCaption">保批生效迄</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14" style="width: 20px;">時
+                                    </td>
+                                    <td class="tdDataCaption">說明</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">承接期間起</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14" style="width: 20px;">時
+                                    </td>
+                                    <td class="tdDataCaption">承接期間迄</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14" style="width: 20px;">時
+                                    </td>
+                                    <td class="tdDataCaption">說明</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">簽單年度</td>
+                                    <td class="tdDataField" colspan="6">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblDataArea" width="100%" align="center" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="tdDataCaption" rowspan="5">OFFER</td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">主要幣別</td>
+                                    <td class="tdDataField">
+                                        <select name="" id="">
+                                            <option value="">NTD 台幣</option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">幣別匯率</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">折扣率</td>
+                                    <td class="tdDataField" colspan="5">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">總保額</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">總保費</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">
+                                    </td>
+                                    <td class="tdDataCaption">分入比率</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">%
+                                    </td>
+                                    <td class="tdDataCaption">佣金率</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">%
+                                    </td>
+                                    <td class="tdDataCaption">代扣稅率</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">回覆日期</td>
+                                    <td class="tdDataField">
+                                        <select name="" id="">
+                                            <option value=""></option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">承接否</td>
+                                    <td class="tdDataField">
+                                        <select name="" id="">
+                                            <option value=""></option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">承接比率</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">%
+                                    </td>
+                                    <td class="tdDataCaption">佣金率</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">%
+                                    </td>
+                                    <td class="tdDataCaption">代扣稅率</td>
+                                    <td class="tdDataField">
+                                        <input name="txtTemp14" type="text" value="" maxlength="20" id="txtTemp14">%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">付款條件</td>
+                                    <td class="tdDataField">
+                                        <select name="" id="">
+                                            <option value="">1 期</option>
+                                        </select>
+                                        <input name="" type="text" value="1" maxlength="" id="" style="width: 10%;">
+                                    </td>
+                                    <td class="tdDataCaption">轉分出</td>
+                                    <td class="tdDataField">
+                                        <select name="" id="">
+                                            <option value="">N 否</option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">再保費</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="20" id="">
+                                    </td>
+                                    <td class="tdDataCaption">佣金</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="20" id="">
+                                    </td>
+                                    <td class="tdDataCaption">稅費</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="20" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption" colspan="2">轉分出總保額</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="1" maxlength="" id="">
+                                    </td>
+                                    <td class="tdDataCaption">轉分出總保費</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="1" maxlength="" id="">
+                                    </td>
+                                    <td class="tdDataCaption">轉分出佣金</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="20" id="">
+                                    </td>
+                                    <td class="tdDataCaption">轉分出稅費</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="20" id="">
+                                    </td>
+                                    <td class="tdDataCaption">顯著風險</td>
+                                    <td class="tdDataField">
+                                        N:未通過
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption" colspan="2">要保費/被保險人</td>
+                                    <td class="tdDataField" colspan="3">
+                                        <select name="" id="">
+                                            <option value="">1 身份證號</option>
+                                        </select>
+                                        <input name="" type="text" value="1" maxlength="" id="">
+                                        <input name="" type="text" value="1" maxlength="" id="" style="width:20%;">
+                                    </td>
+                                    <td class="tdDataCaption">要保人名稱</td>
+                                    <td class="tdDataField" colspan="5">
+                                        <input name="" type="text" value="1" maxlength="" id="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblDataArea" width="100%" align="center" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="tdDataCaption">要保費/被保險人</td>
+                                    <td class="tdDataField" colspan="3">
+                                        <select name="" id="">
+                                            <option value="">1 身份證號</option>
+                                        </select>
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                        <input name="" type="text" value="" maxlength="" id="" style="width:20%;">
+                                    </td>
+                                    <td class="tdDataCaption">要保人名稱</td>
+                                    <td class="tdDataField" colspan="3">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">身份別</td>
+                                    <td class="tdDataField" colspan="3">
+                                        <select name="" id="">
+                                            <option value="">1 自然人本國籍</option>
+                                        </select>
+                                    </td>
+                                    <td class="tdDataCaption">電子郵件</td>
+                                    <td class="tdDataField" colspan="3">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">公司電話</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                    <td class="tdDataCaption">生日</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                    <td class="tdDataCaption">營業處所</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                    <td class="tdDataField">
+                                        <button>行業別</button>
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">地址</td>
+                                    <td class="tdDataField" colspan="5">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                    <td class="tdDataField">
+                                        <button>職業別</button>
+                                    </td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblDataArea" width="100%" align="center" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="tdDataCaption" rowspan="3">業績</td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">經辦人 1</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                    <td class="tdDataCaption">經辦人 2</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                    <td class="tdDataCaption">經辦人 3</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                    <td class="tdDataCaption">經辦人 4</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption">業績 1</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">%
+                                    </td>
+                                    <td class="tdDataCaption">業績 2</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">%
+                                    </td>
+                                    <td class="tdDataCaption">業績 3</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">%
+                                    </td>
+                                    <td class="tdDataCaption">業績 4</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption" colspan="2">專案代號</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                    <td class="tdDataCaption">業務來源</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                    <td class="tdDataCaption"><button>保源</button></td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                    <td class="tdDataCaption">管理人</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption" colspan="2">國名代號</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                        <button>國名</button>
+                                    </td>
+                                    <td class="tdDataCaption">國名英文</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                    <td class="tdDataCaption">城市名稱</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                    <td class="tdDataCaption">辦事處中文</td>
+                                    <td class="tdDataField">
+                                        <input name="" type="text" value="" maxlength="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdDataCaption" colspan="2">建檔人員</td>
+                                    <td class="tdDataField">
+                                        009873
+                                    </td>
+                                    <td class="tdDataCaption">建檔日期</td>
+                                    <td class="tdDataField">
+                                        10/27/2021
+                                    </td>
+                                    <td class="tdDataCaption">修改人員</td>
+                                    <td class="tdDataField"></td>
+                                    <td class="tdDataCaption">修改日期</td>
+                                    <td class="tdDataField">
+                                        10/27/2021
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- pills-2 end -->
+                    <div class="row-group tab-pane fade" id="pills-3" role="tabpanel"
+                        aria-labelledby="pills-3-tab">
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr valign="bottom">
+                                    <td nowrap="" align="left">
+                                        <button class="btn btn-secondary">新增項目</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                    <span id="" class="">0</span>
+                                    <span id="" class="">筆</span>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">每頁</span>
+                                        <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                        <span id="" class="">筆</span>
+                                        <button class="btn btn-secondary">go</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                        <span id="" class="">1</span>
+                                        <span id="" class="">頁</span>&nbsp;
+                                    </td>
+                                    <td align="right">
+                                        <span id="" class="">目前第</span>
+                                    <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                    <span id="" class="">頁</span>
+                                    <button class="btn btn-secondary">go</button>
+                                    <button class="btn btn-secondary">匯出資料</button>
+                                    
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody>
+                                <tr class="cssDataGridHeader">
+                                    <th></th>
+                                    <th>範圍代號</th>
+                                    <th>範圍內容</th>
+                                    <th>人數</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href=""><button type="button" class="btn-editt">選取</button></a>
+                                        <a href=""><button type="button" class="btn-del">刪除</button></a>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- pills-3 end -->
+                    <div class="row-group tab-pane fade" id="pills-4" role="tabpanel"
+                        aria-labelledby="pills-4-tab">
+                        <table class="tblDataArea" width="100%" align="center" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="tdDataField">
+                                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="Table3" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr valign="bottom">
+                                    <td nowrap="" align="left">
+                                        <button class="btn btn-secondary">新增項目</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">下一頁</a>&nbsp;
+                                        <a id="" disabled="" tabindex="-1" class="">最後一頁</a>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                    <span id="" class="">0</span>
+                                    <span id="" class="">筆</span>&nbsp;
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">每頁</span>
+                                        <input name="" type="text" value="8" maxlength="4" id="" class="" style="width:32px;">
+                                        <span id="" class="">筆</span>
+                                        <button class="btn btn-secondary">go</button>
+                                    </td>
+                                    <td nowrap="" align="left">
+                                        <span id="" class="">總共</span>
+                                        <span id="" class="">1</span>
+                                        <span id="" class="">頁</span>&nbsp;
+                                    </td>
+                                    <td align="right">
+                                        <span id="" class="">目前第</span>
+                                    <input name="" type="text" value="1" maxlength="4" id="" class="" style="width:29px;">
+                                    <span id="" class="">頁</span>
+                                    <button class="btn btn-secondary">go</button>
+                                    <button class="btn btn-secondary">匯出資料</button>
+                                    
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="tblCssDataGrid">
+                            <tbody>
+                                <tr class="cssDataGridHeader">
+                                    <th></th>
+                                    <th>附件序號</th>
+                                    <th>說明</th>
+                                    <th>附加檔案資訊</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href=""><button type="button" class="btn-editt">選取</button></a>
+                                        <a href=""><button type="button" class="btn-del">刪除</button></a>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- pills-4 end -->
+                </div>
+    
+    <!------------------------------------------------- tab結束 -->
+                
+            
+			</div>
+			<!-- content end  -->
+		</div>
+	</section>
+	<!-- dialog -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+					<button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="foo">
+					<div id="example-table"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+</html>

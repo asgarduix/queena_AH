@@ -57,13 +57,14 @@
 				<div class="bread-crumbs">
 					<a href="">承保受理作業</a>
 				</div>
-                <div class="big_title title s1">RIN302000-預估攤賠資料查詢與調整</div>
+                <div class="big_title title s1">RIN530000-合約梯次佣金帳單切立</div>
                 <div class="row-group">
 					<div class="row">
 						<div class="col-12 text-left content_function_bar">
-                            <!-- <button class="btn btn-oneBig">修改</button> -->
-                            <button class="btn btn-oneBig" onclick="window.open('browsepage(RIN302000).html', 'newwindow', config='height=900,width=1000,toolbar=no');">查詢</button>
+                            <button class="btn btn-oneBig">新增</button>
+                            <button class="btn btn-oneBig">查詢</button>
                             <button class="btn btn-oneBig">清除</button>
+                            <button class="btn btn-oneBig">切立帳單</button>
                             <button class="btn btn-oneBig">離開</button>
 						</div>
 					</div>
@@ -80,86 +81,102 @@
                                 <option value="">H 健康險</option>
                             </select>
                         </td>
-                        <td class="tdDataCaption">賠案號</td>
+                        <td class="tdDataCaption">合約年度(西元)</td>
                         <td class="tdDataField">
-                            <input name="txtIISSBRCH" type="text" value="00" id="txtIISSBRCH">
+                            <input name="txtIISSBRCH" type="text" value="20" id="txtIISSBRCH">
                         </td>
-                        <td class="tdDataCaption">賠案序號</td>
+                        <td class="tdDataCaption">合約代號</td>
                         <td class="tdDataField">
-                            <input name="txtIISSBRCH" type="text" value="00" id="txtIISSBRCH">
+                            <input name="txtIISSBRCH" type="text" value="01" id="txtIISSBRCH">
                         </td>
-                        <td class="tdDataCaption">保單號</td>
+                        <td class="tdDataCaption">截止年月(YYYYMM)</td>
                         <td class="tdDataField" colspan="3">
                             <input name="" type="text" maxlength="40" id="txtIPOLICY">
                         </td>
                         </tr>
                     </tbody>
-                    </table>
+                </table>
 
-            <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
                 <!-- 受理文件欄位 -->
                 <table class="tblDataArea" width="100%" align="center" border="0">
                     <tbody>
                         <tr>
-                        <td class="tdDataCaption">賠案號</td>
-                        <td class="tdDataField">
-                            00099G00C0034
-                            <!-- <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14"> -->
-                        </td>
-                        <td class="tdDataCaption">賠案序號</td>
-                        <td class="tdDataField">
-                            0
-                            <!-- <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14"> -->
-                        </td>
-                        <td class="tdDataCaption">保單號</td>
-                        <td class="tdDataField">
-                            00098G00C0036
-                            <!-- <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14"> -->
-                        </td>
-                        </tr>
-                        <tr>
-                            <td class="tdDataCaption">受理日</td>
-                            <td class="tdDataField">
-                                2010/02/23
-                                <!-- <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14"> -->
-                            </td>
-                            <td class="tdDataCaption">出險日</td>
-                            <td class="tdDataField">
-                                2009/12/28
-                                <!-- <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14"> -->
-                            </td>
-                            <td class="tdDataCaption">預估日</td>
-                            <td class="tdDataField">
-                                2010/02/23
-                                <!-- <input name="txtTemp14"  type="text" maxlength="20" id="txtTemp14"> -->
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="tdDataCaption">出險原因代碼</td>
-                            <td class="tdDataField">
-                                960
-                                <!-- <input name="txtTemp14" type="text" maxlength="20" id="txtTemp14"> -->
-                            </td>
-                            <td class="tdDataCaption">出險原因說明</td>
-                            <td class="tdDataField">
-                                因地板溼滑跌倒致鼻部挫傷鼻骨骨折
-                                <!-- <input name="txtTemp14" class="CLMinput" type="text" maxlength="20" id="txtTemp14"> -->
-                            </td>
-                            <td class="tdDataCaption">分保註記</td>
+                            <td class="tdDataCaption">險別</td>
                             <td class="tdDataField">
                                 <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:150px;">
-                                    <option value="">Y 自動分保</option>
-                                    <option value="">N 人工分保</option>
+                                    <option value="">A 責任險</option>
+                                    <option value="">I 傷害險</option>
+                                    <option value="">H 健康險</option>
                                 </select>
                             </td>
                         </tr>
+                        <tr>
+                            <td class="tdDataCaption">合約年度</td>
+                            <td class="tdDataField">
+                                <input class="clearable" name="" style="width:20%;" type="text" value="" maxlength="10" size="10" id="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">合約代號</td>
+                            <td class="tdDataField">
+                                <input class="clearable" name="" style="width:20%;" type="text" value="" maxlength="10" size="10" id="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">截止年月</td>
+                            <td class="tdDataField">
+                                <input class="clearable" name="" style="width:20%;" type="text" value="" maxlength="10" size="10" id="">
+                                <button class="btn-addlist">取資料</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">再保費</td>
+                            <td class="tdDataField">
+                                <input class="clearable" name="" style="width:20%;" type="text" value="" maxlength="10" size="10" id="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">已決賠款</td>
+                            <td class="tdDataField">
+                                <input class="clearable" name="" style="width:20%;" type="text" value="" maxlength="10" size="10" id="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">未決賠款</td>
+                            <td class="tdDataField">
+                                <input class="clearable" name="" style="width:20%;" type="text" value="" maxlength="10" size="10" id="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">立帳註記</td>
+                            <td class="tdDataField">
+                                <input class="clearable" name="" style="width:20%;" type="text" value="" maxlength="10" size="10" id="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">立帳日期</td>
+                            <td class="tdDataField">
+                                <input class="clearable" name="" style="width:20%;" type="text" value="" maxlength="10" size="10" id="">
+                            </td>
+                        </tr>
                 </tbody>
-            </table>
-                
+                </table>
                 <div style="height: 20px;"></div>
-                
+
+                <table class="tblDataArea" width="100%" align="center" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="tdDataCaption" style="width: 250px;">梯次佣金30險種明細資料</td>
+                            <td class="tdDataField"></td>
+                        </tr>
+                </tbody>
+                </table>
 				<table id="Table2" class="tblFunctionBar" cellSpacing="0" cellPadding="0">
 					<tr vAlign="bottom">
+                        <td>
+                        <button id="DataGridBanner1" class="btn btn-secondary" onclick="window.open('browsepage(RIN305000).html', 'newwindow', config='height=900,width=1000,toolbar=no');">新增項目</button>
+                        </td>
 						<td noWrap align="left">
 							<a id="" disabled="" tabindex="-1" class="">第一頁</a>&nbsp;
 							<a id="" disabled="" tabindex="-1" class="">上一頁</a>&nbsp;
@@ -194,70 +211,30 @@
 				</table>
 				<table class="tblCssDataGrid">
 					<tr class="cssDataGridHeader">
-                        <!-- <th style="width: 50px;">編輯<a href="" ></a></th>
-						<th style="width: 50px;">刪除<a href="" ></a></th> -->
-						<th><a href="" >合約年度</a></th>
-                        <th><a href="">合約/臨分號</a></th>
-                        <th><a href="">臨分序號</a></th>
-                        <th><a href="">標的物序號</a></th>
-                        <th><a href="">險種代理</a></th>
-                        <th><a href="">再保人</a></th>
-                        <th><a href="">總保額</a></th>
-                        <th><a href="">公司分保額</a></th>
-                        <th><a href="">賠付金額</a></th>
-                        <th><a href="">自負額</a></th>
-                        <th><a href="">費用金額</a></th>
-                        <th><a href="">分攤比例</a></th>
-                        <th><a href="">分攤賠款</a></th>
-                        <th><a href="">攤賠費用</a></th>
-                        <th><a href="">攤賠金額</a></th>
-                        <th><a href="">調整原因說明</a></th>
+                        <th style="width: 50px;"><a href="" ></a></th>
+						<th style="width: 50px;"><a href="" ></a></th>
+						<th><a href="" >30險類</a></th>
+                        <th><a href="">再保費</a></th>
+                        <th><a href="">已決賠款</a></th>
+                        <th><a href="">未決賠款</a></th>
+                        <th><a href="">損失率(%)</a></th>
+                        <th><a href="">梯次佣金率(%)</a></th>
                     </tr>
                     <tr>
-                        <!-- <td style="width: 50px;">
-                           <button class="btn-editt">編輯</button>
+                        <td style="width: 50px;">
+                        <button class="btn-editt">編輯</button>
                         </td>
                         <td style="width: 50px;">
-                            <button class="btn-del">刪除</button>
-                        </td> -->
-                        <td>2019</td>
-                        <td>SIIP 191386</td>
-                        <td>1</td>
-                        <td>54</td>
-                        <td>7071002</td>
-                        <td>B000045</td>
-                        <td>50,000</td>
-                        <td>25,000</td>
-                        <td>21,315</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>50</td>
-                        <td>10,658</td>
-                        <td>0</td>
-                        <td>10,658</td>
+                            <button type="button" class="btn-del">取消</button>
+                        </td>
                         <td></td>
-                    </tr>
-                    <tr>
-                        <td>2019</td>
-                        <td>SIIP 191386</td>
-                        <td>1</td>
-                        <td>54</td>
-                        <td>7071010</td>
-                        <td>B000045</td>
-                        <td>5,000</td>
-                        <td>5,000</td>
-                        <td>1,315</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>50</td>
-                        <td>1,658</td>
-                        <td>0</td>
-                        <td>1,658</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td></td>
                     </tr>
                 </table>
-
-
 			</div>
 			<!-- content end  -->
 		</div>

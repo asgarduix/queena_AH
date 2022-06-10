@@ -9,6 +9,7 @@ $(function() {
 	$(".ajax-aside-navCMN").load("../../shigen/layout/ajax-aside-navCMN.html");
 	$(".ajax-section-main").load("../../shigen/layout/ajax-section-main.html");
 	$(".ajax-aside-navCLM").load("../../shigen/layout/ajax-aside-navCLM.html");
+	$(".ajax-aside-navRIN1").load("../../shigen/layout/ajax-aside-navRIN1.html");
 
 //	setTimeout(function() {
 //		$("a[href='login.html']").attr("href", "login");

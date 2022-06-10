@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" lang="zh-Hant-TW">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+<title>華南產物保險-健康傷害險</title>
+<!-- jQuery -->
+<script src="../../shigen/plugin/jquery.min.js"></script>
+<!-- jQuery UI -->
+<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+<!-- bootstrap -->
+<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+<!-- table tabulator -->
+<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+<!-- fontawsome -->
+<script defer src="../../shigen/fonts/js/all.min.js"></script>
+<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+<!--load all styles -->
+<!-- Plug CSS樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+<!-- 共用樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type.css">
+<!-- 主題顏色切換 糖果世代 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+<!-- 主題顏色切換 海神寶藍 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+<!-- 主題顏色切換 法拉利紅 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+<!-- 主題顏色切換 繽紛馬卡 -->
+<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+<!-- 主題顏色切換 煙花季節 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+<!-- 主題顏色切換 冬雪初現 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+<!-- 自訂JS樣式 -->
+<script src="../../shigen/js/type.js"></script>
+<script src="../../shigen/js/common.js"></script>
+<script src="../../shigen/js/global.js"></script>
+<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+	<div class="ajax-aside-navCLM"></div>
+	<section>
+		<div class="ajax-section-main"></div>
+		<div class="container-fluid">
+			<div class="content">
+				<div class="bread-crumbs">
+					<a href="">承保受理作業</a>
+				</div>
+                <div class="big_title title s1">RII401000-分進業務資料統計表</div>
+                <div class="row-group">
+					<div class="row">
+						<div class="col-12 text-left content_function_bar">
+                            <button class="btn btn-oneBig">清除</button>
+                            <button class="btn btn-oneBig">列印</button>
+                            <button class="btn btn-oneBig">離開</button>
+						</div>
+					</div>
+				</div>
+                <table class="tblDataArea tblInquireArea" cellspacing="0" cellpadding="0" width="100%">
+                    <tbody>
+                        <tr>
+                            <td class="tdDataCaption">險別</td>
+                            <td class="tdDataField">
+                                <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:150px;">
+                                    <option value=""></option>
+                                    <option value="">A 責任險</option>
+                                    <option value="">I 傷害險</option>
+                                    <option value="">H 健康險</option>
+                                </select>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">保單類別</td>
+                            <td class="tdDataField">
+                                <select name="ddliinskind1" language="javascript" id="ddliinskind1" style="width:150px;">
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                <button onClick="window.open('RicomQuery(RII401000).html', 'newwindow', config='height=900,width=1000,toolbar=no');">分入公司</button>
+                            </td>
+                            <td class="tdDataField">
+                                <input name="" type="text" value="" id="">(輸入再保人編號)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                統計期間類型
+                            </td>
+                            <td class="tdDataField">
+                                <input type="radio" name="rio01" id="rio01"><label for="rio01">保單起日</label>
+                                <input type="radio" name="rio01" id="rio02"><label for="rio02">建檔日(若為賠款則依未入帳日查詢)</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                統計期間起迄
+                            </td>
+                            <td class="tdDataField">
+                                <input name="" type="text" value="" id="">~<input name="" type="text" value="" id="" style="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                合約年度
+                            </td>
+                            <td class="tdDataField">
+                                <input name="" type="text" value="" id="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                分入保單號碼
+                            </td>
+                            <td class="tdDataField">
+                                <input name="" type="text" value="" id="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                簽單保單號碼
+                            </td>
+                            <td class="tdDataField">
+                                <input name="" type="text" value="" id="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                要保人
+                            </td>
+                            <td class="tdDataField">
+                                <input name="" type="text" value="" id="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdDataCaption">
+                                列印格式
+                            </td>
+                            <td class="tdDataField">
+                                <input type="radio" name="rio02" id="rio01"><label for="rio01">PDf</label>
+                                <input type="radio" name="rio02" id="rio02"><label for="rio02">EXCEL</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+			</div>
+			<!-- content end  -->
+		</div>
+	</section>
+	<!-- dialog -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+					<button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="foo">
+					<div id="example-table"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+</html>
