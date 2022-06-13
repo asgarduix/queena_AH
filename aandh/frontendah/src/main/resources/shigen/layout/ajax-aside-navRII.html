@@ -1,0 +1,115 @@
+<aside>
+	<div class="flexbox fjc" id="_menu_side_up">
+		<a href="index.html" class="nav-logo"></a>
+	</div>
+	<div class="scroll-box">
+		<div class="hide-box">
+			<div class="scroll-hidden">
+				<nav id="_menu_side">
+					<ul class="list_layer">
+						<li class="nav_box">
+							<a href="RII201000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>RII201000<br><span class="text s4">分進業務登錄作業-OFFER</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="RII202000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>RII202000<br><span class="text s4">分進業務登入作業-SLIP</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="RII301000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>RII301000<br><span class="text s4">分進初步出險通知書登錄</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="RII302000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>RII302000<br><span class="text s4">分進已付賠款通知書登錄</span></span>
+							</a>
+                        </li>
+                        <li class="nav_box">
+							<a href="RII401000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>RII401000<br><span class="text s4">分進業務資料統計表</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="RII403000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>RII403000<br><span class="text s4">年度分入業務一覽表</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="RII404000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>RII404000<br><span class="text s4">分入業務再保帳單一覽表</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="RII405000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>RII405000<br><span class="text s4">分入業務再保賠款明細一覽表</span></span>
+							</a>
+						</li>
+						<li class="nav_box">
+							<a href="RII406000.html" class="nav_first">
+								<i class="fab fa-black-tie"></i>
+								<span>RII406000<br><span class="text s4">分入業務估計表</span></span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="nav-bt-box">
+		<div class="nav-bt-left"></div>
+		<div class="nav-bt-right off"></div>
+	</div>
+</aside>
+<script>
+	$(document).ready(function () {
+
+
+		/* 無限層選單：列表收合 */
+		$(".list_layer .nav_box .nav_first").click(function () {
+			// $(this).next().slideUp();
+			var o = $(this);
+			var s = o.next().attr("style");
+
+			// f-else作開關
+			if (checkIsNullSpace(s) == true) {
+				o.next().attr("style", "display: block;");
+			} else {
+				o.next().removeAttr("style");
+			}
+		});
+
+
+		/* 左側選單：關閉*/
+		$(".nav-bt-left").click(function () {
+			$("aside").animate({ left: "-200px" }, 500);
+			$("section").animate({ paddingLeft: "20px", }, 500);
+			$(this).hide();
+			$(".nav-bt-right").show();
+			$(".main-box").removeClass("mbnoshow");
+			$(".content").removeClass("mbnoshow");
+		});
+
+
+		/* 左側選單：開啟*/
+		$(".nav-bt-right").click(function () {
+			$("aside").animate({ left: "0" }, 500);
+			$("section").animate({ paddingLeft: "220px", }, 500);
+			$(this).hide();
+			$(".nav-bt-left").show();
+			$(".main-box").addClass("mbnoshow");
+			$(".content").addClass("mbnoshow");
+		});
+
+	});
+</script>
