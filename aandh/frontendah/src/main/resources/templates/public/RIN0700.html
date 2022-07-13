@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" lang="zh-Hant-TW">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" href="../../shigen/images/general/favicon.ico">
+<title>華南產物保險-健康傷害險</title>
+<!-- jQuery -->
+<script src="../../shigen/plugin/jquery.min.js"></script>
+<!-- jQuery UI -->
+<link href="../../shigen/plugin/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+<script src="../../shigen/plugin/jquery_ui/jquery-ui.min.js"></script>
+<!-- 日期選擇器_民國年或西元年：支援 jQuery UI -->
+<script src="../../shigen/plugin/datepicker_globe_tw.js"></script>
+<!-- bootstrap -->
+<script src="../../shigen/plugin/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="../../shigen/plugin/bootstrap/bootstrap-grid-customizing.css">
+<!-- table tabulator -->
+<script type="text/javascript" src="../../shigen/plugin/tabulator.min.js"></script>
+<!-- fontawsome -->
+<script defer src="../../shigen/fonts/js/all.min.js"></script>
+<link href="../../shigen/fonts/css/all.css" rel="stylesheet">
+<!--load all styles -->
+<!-- Plug CSS樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type_plug.css">
+<!-- 共用樣式 -->
+<link rel="stylesheet" href="../../shigen/css/type.css">
+<!-- 主題顏色切換 糖果世代 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-candy.css"> -->
+<!-- 主題顏色切換 海神寶藍 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-sapphire.css"> -->
+<!-- 主題顏色切換 法拉利紅 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-red.css"> -->
+<!-- 主題顏色切換 繽紛馬卡 -->
+<link rel="stylesheet" href="../../shigen/css/type-colorful.css">
+<!-- 主題顏色切換 煙花季節 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-fireworks.css"> -->
+<!-- 主題顏色切換 冬雪初現 -->
+<!-- <link rel="stylesheet" href="../../shigen/css/type-snow.css"> -->
+<link href="../../shigen/css/colorful-tabulator.css" rel="stylesheet">
+
+<!-- 自訂JS樣式 -->
+<script src="../../shigen/js/type.js"></script>
+<script src="../../shigen/js/common.js"></script>
+<script src="../../shigen/js/global.js"></script>
+<!-- <script type="text/javascript" src="../../shigen/js/app/policyChangeAppl.js"></script> -->
+</head>
+
+<body>
+<div class="ajax-aside-navRIN1"></div>
+<section>
+    <div class="ajax-section-main"></div>
+    <div class="container-fluid">
+        <div class="content">
+            <div class="bread-crumbs">
+                <a href="">承保受理作業</a>
+            </div>
+            <div class="big_title title s1">RIN0700 再保帳單統計表</div>
+            <div class="row-group">
+                <div class="row">
+                    <div class="col-12 text-left content_function_bar">
+                        <button class="btn btn-oneBig">查詢</button>
+                        <button class="btn btn-oneBig">清除</button>
+                        <button class="btn btn-oneBig">列印</button>
+                        <button class="btn btn-oneBig">離開</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="item_title title s2">查詢</div> -->
+            <div class="row-group">
+                <div class="row">
+
+
+                    <!-- 頁籤開始 -->
+                    <div class="container-fluid">
+                    <div class="row-group" id="Tabstrip2">
+                        <ul class="row nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item"><a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1"
+                                    role="tab" aria-controls="pills-1" aria-selected="true">查詢</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" id="pills-2-tab" data-toggle="pill" href="#pills-2"
+                                    role="tab" aria-controls="pills-2" aria-selected="false">統計表</a>
+                            </li>	
+                        </ul>
+                    </div>
+                    </div>
+
+                     <!-- tab-content star  -->
+                     <div class="container-fluid">
+                        <div class="tab-content" id="pills-tabContent">
+
+                            <!-- 1 star -->
+                            <div class="row-group tab-pane fade show active" id="pills-1" role="tabpanel"
+                                aria-labelledby="pills-1-tab">
+                                <table id="Table2" class="tblDataArea tblInquireArea" width="95%%" align="center">
+
+                                    <tbody>
+                                    <tr>
+                                        <td class="tdDataCaption">種類</td>
+                                        <td class="tdDataField">
+                                            <select style="width: 150px;" name="" id="ddlQueryCls" onchange="" id="">
+                                                <option value="A">分出</option>
+                                                <option value="I"></option>
+                                            </select>
+                                        </td>
+                                        <td class="tdDataCaption">險種</td>
+                                        <td>
+                                            <select style="width: 150px;" name="" id="ddlQueryCls" onchange="" id="">
+                                                <option value="A">傷害險</option>
+                                                <option value="I"></option>
+                                            </select>
+                                        </td>
+                                        <td class="tdDataCaption">帳單列印日</td>
+                                        <td class="tdDataField" >
+                                            <input name="" type="text" value="" id="" style="width: 30%;">至
+                                            <input name="" type="text" value="" id="" style="width: 30%;">
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdDataCaption">帳單號碼</td>
+                                            <td class="tdDataField" colspan="5">
+                                                <input name="" type="text" value="" id="">
+                                            </td>
+                                        </tr>
+                                        
+                                        
+                </tbody>       
+                
+                            </table>
+                
+                
+                        
+                    
+                            </div>
+                            <!-- 1 end -->
+
+                            <!-- 2 star -->
+                            <div class="row-group tab-pane fade show" id="pills-2" role="tabpanel"
+                            aria-labelledby="pills-2-tab">
+                            
+
+
+                   
+                
+                        </div>
+                            <!-- 2 end -->
+
+                        </div>
+                    </div>
+                        <!-- tab-content end  -->
+                        <!-- 查詢table -->
+                        <table id="Table2" class="tblFunctionBar" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr valign="bottom">
+                                <td nowrap="" >
+                                    <button class="btn btn-secondary">全選</button>
+                                    <button class="btn btn-secondary">全不選</button>
+                                </td>
+                                <td nowrap="">
+                                    <a id="" class="">第一頁</a>
+                                    <a id="" class="">上一頁</a>
+                                    <a id="" class="">下一頁</a>
+                                    <a id="" class="">最後一頁</a>
+                                </td>
+                                <td nowrap="" >
+                                <span id="" class="">總共</span>
+                                <span id="" class="">0</span>
+                                <span id="" class="">筆</span>&nbsp;
+                                </td>
+                                <td nowrap="">
+                                    <span id="" class="">每頁</span>
+                                    <input name="" id="" class="" style="width:32px;">
+                                    <span id="" class="">筆</span>
+                                    <button class="btn btn-secondary">go</button>
+                                </td>
+                                <td nowrap="">
+                                    <span id="" class="">總共</span>
+                                    <span id="" class="">1</span>
+                                    <span id="" class="">頁</span>&nbsp;
+                                </td>
+                                <td >
+                                <span id="" class="">目前第</span>
+                                <input name="" type="text" value="1" id="" class="">
+                                <span id="" class="">頁</span>
+                                <button class="btn btn-secondary">go</button>
+                                <button class="btn btn-secondary">匯出資料</button>
+                                </td>
+                                </tr>
+                                </tbody>
+                            </table>
+    
+    
+                                    <table id="dgdbanMain" class="tblCssDataGrid">
+                                        <tbody><tr class="cssDataGridHeader">
+                                            <th style="width: 50px;"></th>
+                                            
+                                            <th><a href="">帳單號碼</a></th>
+                                            <th><a href="">帳單修正號</a></th>
+                                            <th><a href="">合約代號</a></th>
+                                            <th><a href="">幣別</a></th>
+                                            <th><a href="">再保費支出</a></th>
+                                            <th><a href="">再保佣金收入</a></th>
+                                            <th><a href="">OTHER_1</a></th>
+                                            <th><a href="">OTHER_2</a></th>
+                                            <th><a href="">OTHER_3</a></th>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" name="" id="">
+                                            </td>
+                                            
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        
+                                        
+                                        
+                                        
+                                    </tbody>
+                                </table>
+
+               </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <!-- content end  -->
+    </div>
+</section>
+<!-- dialog -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Title</h5>
+                <button id="_close_dialog" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="foo">
+                <div id="example-table"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" onclick="doModify(this);return false;">確定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<!-- 功能使用的js，建議放置在html最尾 -->
+<script type="text/javascript" src="../../shigen/js/app/HAS301001_11.js"></script>
+
+</html>

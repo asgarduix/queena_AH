@@ -936,7 +936,9 @@ table.default_table tbody tr td.title.text_s {
 .tblInquireArea input{
   width: 100%;
 }
-
+.tblInquireArea input[type=checkbox]{
+  width: auto;
+}
 
 .tblDataArea tr td.tdDataField{
   border: 1px solid #eee;
